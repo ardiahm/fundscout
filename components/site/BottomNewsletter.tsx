@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 
 export default function BottomNewsletter() {
   const topBarMessages = [
-    "Trusted by Innovative Companies",
-    "Data-driven Investor Discovery",
-    "Smart Startup → Smart Capital",
-    "Find the Perfect Investor for your Product",
+    "Google teams with Accel to hunt for India's AI breakouts",
+    "Kaaj raises $3.8M seed from Kindred Ventures",
+        "Curastory founder resigns, hires replacement",
+    "Emm raises $9M seed to create menstrual cups",
+
   ];
 
   return (

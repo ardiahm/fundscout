@@ -21,19 +21,14 @@ export default function UnivNavBar() {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  const topBarMessages = [
-    "Trusted by Innovative Companies",
-    "Data-driven Investor Discovery",
-    "Smart Startup → Smart Capital",
-    "Find the Perfect Investor for your Product",
-  ];
+ 
 
   return (
     <>
 
 
       {/* Main Navbar — sits under the purple bar */}
-      <nav className="fixed top-[0] left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-40">
+      <nav className="fixed top-[0] left-0 w-full  backdrop-blur-md shadow-sm z-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 lg:py-4">
           {/* Left side - Logo */}
           <NavigationMenu className="list-none">
@@ -43,7 +38,7 @@ export default function UnivNavBar() {
                 className={`navigationMenuTriggerStyle() text-2xl inline`}
               >
                 <Link
-                  href=""
+                  href="/"
                   className="inline font-semibold text-xl sm:text-2xl"
                 >
                   <span className="text-3xl">
@@ -57,13 +52,13 @@ export default function UnivNavBar() {
           {/* Desktop Links */}
           <NavigationMenu className="hidden lg:flex gap-6 list-none">
             {[
-              { id: "search", label: "Search" },
+              { id: "dashboard", label: "Search" },
               { id: "favorites", label: "Favorites" },
               { id: "pricing", label: "Pricing" },
             ].map((item) => (
               <NavigationMenuItem key={item.id} className="relative">
                 <NavigationMenuLink asChild className="text-xl inline">
-                  <Link href={`#${item.id}`}>{item.label}</Link>
+                  <Link href={`/${item.id}`}>{item.label}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
