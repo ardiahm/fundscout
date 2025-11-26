@@ -7,6 +7,7 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { motion } from "framer-motion";
+import { CircleUserRound } from "lucide-react";
 import React from "react";
 import { useState, useEffect } from "react";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
@@ -29,46 +30,11 @@ export default function UnivNavBar() {
 
   return (
     <>
-      {/* Top Bar Marquee — fixed, centered cutoff */}
-      <div className="fixed top-0 left-0 w-full bg-blue-600 text-white text-xs sm:text-sm py-1.5 sm:py-1 z-50">
-        {/* 80% width container to create the 10% cutoff on each side */}
-        <div className="mx-auto w-[80%] overflow-hidden">
-          <motion.div
-            className="flex whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 22,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            {/* First pass */}
-            <div className="flex">
-              {topBarMessages.map((msg, i) => (
-                <span key={i} className="mx-8 font-medium tracking-wide">
-                  {msg}
-                </span>
-              ))}
-            </div>
 
-            {/* Duplicate for seamless loop */}
-            <div className="flex">
-              {topBarMessages.map((msg, i) => (
-                <span
-                  key={`dup-${i}`}
-                  className="mx-8 font-medium tracking-wide"
-                >
-                  {msg}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
 
       {/* Main Navbar — sits under the purple bar */}
-      <nav className="fixed top-[28px] left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 lg:py-2">
+      <nav className="fixed top-[0] left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-40">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 lg:py-4">
           {/* Left side - Logo */}
           <NavigationMenu className="list-none">
             <NavigationMenuItem>
@@ -80,7 +46,9 @@ export default function UnivNavBar() {
                   href=""
                   className="inline font-semibold text-xl sm:text-2xl"
                 >
-                  Fund <span className="text-blue-600">Scout</span>
+                  <span className="text-3xl">
+                    Fund <span className="text-blue-600">Scout</span>
+                  </span>
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -91,24 +59,25 @@ export default function UnivNavBar() {
             {[
               { id: "search", label: "Search" },
               { id: "favorites", label: "Favorites" },
-          
               { id: "pricing", label: "Pricing" },
             ].map((item) => (
               <NavigationMenuItem key={item.id} className="relative">
                 <NavigationMenuLink asChild className="text-xl inline">
                   <Link href={`#${item.id}`}>{item.label}</Link>
                 </NavigationMenuLink>
-
-                {/* UNDERLINE INDICATOR */}
-                {activeSection === item.id && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute left-1/2 -bottom-1 transform -translate-x-1/2 w-6 h-[2px] bg-blue-600 rounded-full"
-                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                  />
-                )}
               </NavigationMenuItem>
             ))}
+
+            <NavigationMenuItem key="account" className="relative">
+              <NavigationMenuLink
+                asChild
+                className="text-xl inline-flex items-center"
+              >
+                <Link href="/account">
+                  <CircleUserRound className="size-8 pt-1 text-black/80" />
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
           </NavigationMenu>
 
           {/* Hamburger Menu Button (visible only on mobile) */}
@@ -165,13 +134,10 @@ export default function UnivNavBar() {
               >
                 Pricing
               </Link>
-              <Link
-                href="#quote"
-                onClick={closeMobileMenu}
-                className="text-xl font-semibold text-gray-800 hover:text-purple-600 transition-colors duration-200 py-2"
-              >
-                FREE <span className="text-blue-600">QUOTE</span>
-              </Link>
+              
+                <Link href="/account" className="text-xl flex gap-2">
+                  <CircleUserRound className="size-8 pt-1 text-black/80" /> <span className="pt-1">Account</span>
+                </Link>
             </div>
           </div>
         </div>

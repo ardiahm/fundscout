@@ -1,4 +1,16 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import {
+  Calendar,
+  Home,
+  Inbox,
+  Search,
+  Settings,
+  Rocket,
+  BarChart2,
+  Briefcase,
+  Presentation,
+  Sparkles,
+  Mail,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -9,61 +21,95 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
-// Menu items.
-const items = [
+const generatorItems = [
   {
     title: "Pitch Deck Generator",
     url: "#",
-    icon: Home,
+    icon: Presentation,
   },
   {
-    title: "Inbox",
+    title: "One Liner Generator",
     url: "#",
-    icon: Inbox,
+    icon: Sparkles,
   },
   {
-    title: "Calendar",
+    title: "Outreach Email Generator",
     url: "#",
-    icon: Calendar,
+    icon: Mail,
+  },
+];
+
+const toolItems = [
+  {
+    title: "Investor Finder",
+    url: "#",
+    icon: Rocket,
   },
   {
-    title: "Search",
+    title: "Market Research Tool",
     url: "#",
-    icon: Search,
+    icon: BarChart2,
   },
   {
-    title: "Settings",
+    title: "Startup Valuation Tool",
     url: "#",
-    icon: Settings,
+    icon: Briefcase,
   },
-]
+  //   {
+  //     title: "Settings",
+  //     url: "#",
+  //     icon: Settings,
+  //   },
+];
 
 export function AppSidebar() {
   return (
-    <div className="fixed pt-[100px]">
-        <Sidebar className="top-[75px] ">
-          <SidebarContent>
-            <SidebarGroup>
-              <SidebarGroupLabel className="text-xl py-6">Startup Tools</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu className="gap-3">
-                  {items.map((item) => (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild>
-                        <a href={item.url}>
-                          <item.icon />
-                          <span>{item.title}</span>
-                        </a>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </SidebarContent>
-        </Sidebar>
-    </div>
-  )
+    <Sidebar className="fixed top-[80px] h-[calc(100vh-60px-40px)] text-black border-r border-gray-300 z-40">
+      <SidebarContent>
+        {/* STARTUP GENERATORS */}
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-xl text-black py-6 pt-15">
+            Startup Generators
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="gap-3">
+              {generatorItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        {/* STARTUP TOOLS */}
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-xl text-black py-6">
+            Startup Tools
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="gap-3">
+              {toolItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </Sidebar>
+  );
 }
