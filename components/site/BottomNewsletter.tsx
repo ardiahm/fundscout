@@ -6,9 +6,8 @@ export default function BottomNewsletter() {
   const topBarMessages = [
     "Google teams with Accel to hunt for India's AI breakouts",
     "Kaaj raises $3.8M seed from Kindred Ventures",
-        "Curastory founder resigns, hires replacement",
+    "Curastory founder resigns, hires replacement",
     "Emm raises $9M seed to create menstrual cups",
-
   ];
 
   return (

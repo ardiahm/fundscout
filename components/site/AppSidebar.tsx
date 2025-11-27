@@ -70,7 +70,7 @@ export function AppSidebar() {
       <SidebarContent>
         {/* STARTUP GENERATORS */}
         <SidebarGroup>
-          <SidebarGroupLabel className="text-xl text-black py-6 pt-15">
+          <SidebarGroupLabel className="text-xl text-black py-6 pt-9">
             Startup Generators
           </SidebarGroupLabel>
           <SidebarGroupContent>
