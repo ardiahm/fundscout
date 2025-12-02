@@ -35,7 +35,7 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <Avatar.Root className="w-8 h-8 rounded-full overflow-hidden bg-gray-300">
                   <Avatar.Image src="/avatar1.png" alt="John Smith" />
-                  <Avatar.Fallback className="text-sm pl-2 pt-2">JS</Avatar.Fallback>
+                  <Avatar.Fallback className="text-sm pl-2">JS</Avatar.Fallback>
                 </Avatar.Root>
                 <span className="font-medium">John Smith</span>
               </div>

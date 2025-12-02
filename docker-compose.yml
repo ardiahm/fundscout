@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: fundscout-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: investor
+      POSTGRES_PASSWORD: investor
+      POSTGRES_DB: fundscout
+    ports:
+      - "5432:5432"
+    volumes:
+      - fundscout_data:/var/lib/postgresql/data
+
+volumes:
+  fundscout_data:

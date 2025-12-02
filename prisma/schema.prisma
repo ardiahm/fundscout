@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Investor {
+  id  Int @id @default(autoincrement())
+  name String
+  type String
+  avatarUrl String?
+  websiteUrl String?
+  investments Investment[]
+}
+
+model Company {
+  id Int @id @default(autoincrement())
+  name String
+  description String?
+  sectors CompanySector[]
+  investments Investment[]
+  logoUrl String?
+  websiteUrl String?
+  location String?
+  
+  }
+
+model Sector {
+  id Int @id @default(autoincrement())
+  name String @unique
+  companies CompanySector[]
+}
+
+model CompanySector {
+  id Int @id @default(autoincrement())
+  companyId Int
+  sectorId Int
+  company Company @relation(fields: [companyId], references: [id])
+  sector Sector @relation(fields: [sectorId], references: [id])
+}
+
+model Investment {
+  id Int @id @default(autoincrement())
+  investorId Int
+  companyId Int
+  amount Float?
+  stage String?
+  investedAt DateTime?
+  investor Investor @relation(fields: [investorId], references: [id])
+  company Company @relation(fields: [companyId], references: [id])
+}
