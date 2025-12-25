@@ -25,7 +25,6 @@ model Company {
   logoUrl String?
   websiteUrl String?
   location String?
-  
   }
 
 model Sector {

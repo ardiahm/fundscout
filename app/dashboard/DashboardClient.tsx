@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import * as Avatar from "@radix-ui/react-avatar";
 import { InvestorRow } from "@/components/site/InvestorRow";
-import { InvestorSummary } from "@/types/investor";
+import { InvestorSummary } from "@/backend/types/investor";
 
 type Props = {
   investors: InvestorSummary[];

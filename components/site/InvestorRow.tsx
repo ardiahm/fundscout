@@ -1,4 +1,4 @@
-import { InvestorSummary } from "../../types/investor"
+import { InvestorSummary } from "../../backend/types/investor"
 
 type Props = {
   investor: InvestorSummary
