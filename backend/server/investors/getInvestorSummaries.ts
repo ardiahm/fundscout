@@ -1,10 +1,18 @@
+import dotenv from "dotenv"
 import { prisma } from "../../lib/prisma"
+
+
+dotenv.config({ path: "backend/.env" })
+console.log("DATABASE_URL:", process.env.DATABASE_URL)
+
+
 
 export async function getInvestorSummaries() {
   const investors = await prisma.investor.findMany({
     select: {
       id: true,
       name: true,
+      type: true,
       avatarUrl: true,
       websiteUrl: true,
       investments: {
@@ -22,6 +30,8 @@ export async function getInvestorSummaries() {
 
   return investors.map(inv => {
     const investments = inv.investments
+
+    const type = inv.type
 
 const totalInvestments = investments.length
 
@@ -43,6 +53,7 @@ const averageInvestmentSize =
     return {
       id: inv.id,
       name: inv.name,
+      type: inv.type,
       avatarUrl: inv.avatarUrl,
       websiteUrl: inv.websiteUrl,
       totalInvestments,

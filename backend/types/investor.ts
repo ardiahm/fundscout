@@ -1,6 +1,7 @@
 export type InvestorSummary = {
   id: number
   name: string
+  type: string
   avatarUrl?: string | null
   websiteUrl?: string | null
 

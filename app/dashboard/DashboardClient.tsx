@@ -1,11 +1,11 @@
 "use client";
 
-import { AppSidebar } from "@/components/site/AppSidebar";
-import UnivNavBar from "@/components/site/UnivNavbar";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { AppSidebar } from "../components/site/AppSidebar";
+import UnivNavBar from "../components/site/UnivNavbar";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
 import * as Avatar from "@radix-ui/react-avatar";
-import { InvestorRow } from "@/components/site/InvestorRow";
+import { InvestorRow } from "../components/site/InvestorRow";
 import { InvestorSummary } from "@/backend/types/investor";
 
 type Props = {
@@ -15,14 +15,9 @@ type Props = {
 export default function DashboardClient({ investors }: Props) {
   return (
     <>
-      <div className="text-xl text-black font-semibold pb-3">
-        FS Dashboard
-      </div>
-
       <div className="w-full h-screen flex gap-4">
         {/* LEFT (2/3) */}
         <div className="w-max p-4">
-          
           {/* Search */}
           <div className="flex w-full max-w-md items-center gap-2">
             <Input
@@ -46,8 +41,6 @@ export default function DashboardClient({ investors }: Props) {
             ))}
           </div>
         </div>
-
-        
       </div>
     </>
   );

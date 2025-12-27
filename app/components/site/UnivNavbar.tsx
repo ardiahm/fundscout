@@ -5,12 +5,12 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+} from "../ui/navigation-menu";
 import { motion } from "framer-motion";
 import { CircleUserRound } from "lucide-react";
 import React from "react";
 import { useState, useEffect } from "react";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
 
 export default function UnivNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

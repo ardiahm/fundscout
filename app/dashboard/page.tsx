@@ -1,4 +1,4 @@
-import { getInvestorSummaries } from "@/server/investors/getInvestorSummaries"
+import { getInvestorSummaries } from "../../backend/server/investors/getInvestorSummaries"
 import DashboardClient from "./DashboardClient"
 
 export default async function DashboardPage() {
