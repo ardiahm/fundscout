@@ -30,16 +30,11 @@ interface InvestmentCardsProps {
   }[];
 }
 
-export default function InvestmentCards({
-  investments,
-}: InvestmentCardsProps) {
+export default function InvestmentCards({ investments }: InvestmentCardsProps) {
   if (investments.length === 0) {
-    return (
-      <p className="text-gray-500">No investments recorded.</p>
-    );
+    return <p className="text-gray-500">No investments recorded.</p>;
   }
 
-  
   return (
     <div className="grid grid-cols-2 gap-4">
       {investments.map((inv) => (
@@ -57,28 +52,28 @@ export default function InvestmentCards({
 
               <div>
                 <div className="font-medium text-lg">
-                  {inv.company.name}
+                  {inv.company.websiteUrl ? (
+                    <a
+                      href={inv.company.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-blue-700"
+                    >
+                      {inv.company.name}
+                    </a>
+                  ) : (
+                    inv.company.name
+                  )}
                 </div>
 
-                {inv.company.websiteUrl && (
-                  <a
-                    href={inv.company.websiteUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm text-blue-600 underline"
-                  >
-                    {inv.company.websiteUrl}
-                  </a>
+                {/* Company Description */}
+                {inv.company.description && (
+                  <p className="text-sm text-gray-600">
+                    {inv.company.description}
+                  </p>
                 )}
               </div>
             </div>
-
-            {/* Company Description */}
-            {inv.company.description && (
-              <p className="text-sm text-gray-600">
-                {inv.company.description}
-              </p>
-            )}
 
             {/* Meta Grid */}
             <div className="grid grid-cols-2 gap-2 text-sm">
@@ -93,27 +88,21 @@ export default function InvestmentCards({
 
               <div>
                 <span className="text-gray-500">Stage</span>
-                <div className="font-medium">
-                  {inv.stage ?? "—"}
-                </div>
+                <div className="font-medium">{inv.stage ?? "—"}</div>
               </div>
 
               <div>
                 <span className="text-gray-500">Invested At</span>
                 <div className="font-medium">
                   {inv.investedAt
-                    ? new Date(
-                        inv.investedAt
-                      ).toLocaleDateString()
+                    ? new Date(inv.investedAt).toLocaleDateString()
                     : "—"}
                 </div>
               </div>
 
               <div>
                 <span className="text-gray-500">Location</span>
-                <div className="font-medium">
-                  {inv.company.location ?? "—"}
-                </div>
+                <div className="font-medium">{inv.company.location ?? "—"}</div>
               </div>
             </div>
 
