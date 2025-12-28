@@ -153,6 +153,7 @@ async function main() {
     description: "Online payments and financial infrastructure for the internet",
     websiteUrl: "https://stripe.com",
     location: "San Francisco, CA",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQGluJhW7I1NYU7jF77E-9K9I46_ib_DUNHw&s"
   });
 
   const klarna = await getOrCreateCompany({

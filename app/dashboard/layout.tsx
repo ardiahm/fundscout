@@ -23,8 +23,8 @@ export default function DashboardLayout({
         <SidebarProvider>
           <AppSidebar />
           <main className="flex-1 px-6 py-6 overflow-y-auto">
-            <div className="text-xl text-black font-semibold pb-3">
-              FS Dashboard
+            <div className="text-2xl text-black font-semibold pb-3">
+              Investor Index
             </div>
             {children}
           </main>

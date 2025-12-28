@@ -31,8 +31,6 @@ export async function getInvestorSummaries() {
   return investors.map(inv => {
     const investments = inv.investments
 
-    const type = inv.type
-
 const totalInvestments = investments.length
 
 const investmentsWithAmount = investments.filter(
@@ -60,6 +58,7 @@ const averageInvestmentSize =
       averageInvestmentSize,
       mostRecentInvestmentCompany: mostRecent?.company.name ?? null,
       mostRecentInvestmentDate: mostRecent?.investedAt ?? null,
+      investments: inv.investments,
     }
   })
 }

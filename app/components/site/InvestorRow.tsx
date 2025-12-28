@@ -1,4 +1,5 @@
 import { InvestorSummary } from "../../../backend/types/investor";
+import Link from "next/link";
 
 type Props = {
   investor: InvestorSummary;
@@ -24,20 +25,18 @@ export function InvestorRow({ investor }: Props) {
           </div>
         )}
 
-
         <div className="flex flex-col">
-          <span className="font-medium text-gray-900">{investor.name}</span>
-          <div className="text-xs text-gray-600">
-            {investor.type}
-          </div>
+          <Link href={`/investor-profile/${investor.id}`}>
+            <span className="font-medium text-gray-900 hover:underline cursor-pointer">
+              {investor.name}
+            </span>
+          </Link>
+          <div className="text-xs text-gray-600">{investor.type}</div>
         </div>
       </div>
 
       {/* RIGHT: Stats */}
       <div className="flex items-center gap-10 text-sm text-gray-700">
-
-  
-
         {/* Latest Investment */}
         <Stat
           label="Latest Investment"
