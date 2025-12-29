@@ -8,6 +8,14 @@ export default function BottomNewsletter() {
     "Kaaj raises $3.8M seed from Kindred Ventures",
     "Curastory founder resigns, hires replacement",
     "Emm raises $9M seed to create menstrual cups",
+    "Scribe raises $75M at a $1.3B valuation in Series C funding",
+    "SpaceX Mafia founders raise over $3B across portfolio companies",
+    "Juliane Gallina joins Lavrock Ventures as a VC partner",
+    "AI startups in the US raised an estimated $150 billion in 2025",
+    "Warehouse automation startup Kargo.ai secures $42M Series B",
+    "Prosperr.io closes $4M seed round, led by Jungle Ventures",
+    "Rideflux secures ~$13.9M in pre-IPO funding",
+
   ];
 
   return (
@@ -18,9 +26,9 @@ export default function BottomNewsletter() {
         <div className="mx-auto w-[80%] overflow-hidden">
           <motion.div
             className="flex whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["0%", "-325%"] }}
             transition={{
-              duration: 22,
+              duration: 30,
               repeat: Infinity,
               ease: "linear",
             }}
