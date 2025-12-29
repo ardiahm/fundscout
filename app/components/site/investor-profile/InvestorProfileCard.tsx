@@ -61,7 +61,7 @@ export default function InvestorProfileCard({
 
           {website && (
             <CardAction>
-              <Button variant="link" asChild>
+              <Button variant="ghost" asChild>
                 <a
                   href={website}
                   target="_blank"

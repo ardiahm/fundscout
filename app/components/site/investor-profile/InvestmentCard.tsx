@@ -46,7 +46,7 @@ export default function InvestmentCards({ investments }: InvestmentCardsProps) {
                 <img
                   src={inv.company.logoUrl}
                   alt={inv.company.name}
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 object-contain rounded-md"
                 />
               )}
 

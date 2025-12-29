@@ -15,6 +15,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import InvestorProfileCard from "@/app/components/site/investor-profile/InvestorProfileCard";
 import InvestmentCards from "@/app/components/site/investor-profile/InvestmentCard";
+import LargestInvestmentCard from "@/app/components/site/investor-profile/LargestInvestmentCard";
+import MostRecentInvestmentCard from "@/app/components/site/investor-profile/MostRecentInvestmentCard";
 
 interface Props {
   investor: InvestorComplete;
@@ -42,10 +44,17 @@ export default function InvestorClient({ investor }: Props) {
         <InvestorProfileCard investor={investor} />
       </header>
 
+      <section>
+        <div className="grid grid-cols-2 space-x-5">
+          <LargestInvestmentCard investor={investor} />
+          <MostRecentInvestmentCard investor={investor} />
+        </div>
+      </section>
+
       {/* ================= Investments ================= */}
       <section>
         <h2 className="text-xl font-semibold mb-4">
-          Investments ({investor.investments.length})
+          Browse all ({investor.investments.length}) tracked investments:
         </h2>
 
         <InvestmentCards investments={investor.investments} />
