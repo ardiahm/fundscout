@@ -30,7 +30,7 @@ export default function InvestorClient({ investor }: Props) {
   const router = useRouter();
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
+    <div className="max-w-screen mx-10 px-6 py-10 space-y-10">
       {/* ================= Investor Header ================= */}
       <header className="mb-6">
         <Button
@@ -45,7 +45,7 @@ export default function InvestorClient({ investor }: Props) {
       </header>
 
       <section>
-        <div className="grid grid-cols-2 space-x-5">
+        <div className="grid grid-cols-1 md:grid-cols-[6fr_4fr] space-x-5 space-y-5">
           <LargestInvestmentCard investor={investor} />
           <MostRecentInvestmentCard investor={investor} />
         </div>
