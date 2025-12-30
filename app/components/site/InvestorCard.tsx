@@ -17,35 +17,65 @@ type Props = {
 export function InvestorCard({ investor }: Props) {
   return (
     <>
-      <Card>
+      <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80">
         <CardHeader>
           <CardTitle>
-            <div className="flex items-center gap-4">
-              {/* Avatar */}
-              <div className="flex items-center">
-                {investor.avatarUrl ? (
-                  <img
-                    src={investor.avatarUrl}
-                    alt={investor.name}
-                    className="h-9 w-9 rounded-full object-cover"
-                  />
-                ) : (
-                  <div className="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-sm font-medium text-gray-700">
-                    {investor.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                )}
+            <div className="flex">
+              {/* Avatar, Name, Type Container */}
+              <div className="flex items-center gap-4 pt-1">
+                {/* Avatar */}
+                <div className="flex items-center">
+                  {investor.avatarUrl ? (
+                    <img
+                      src={investor.avatarUrl}
+                      alt={investor.name}
+                      className="h-9 w-9 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-sm font-medium text-gray-700">
+                      {investor.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
+                  )}
+                </div>
+                {/* Name and Type */}
+                <div className="flex flex-col gap-1">
+                  <Link href={`/investor-profile/${investor.id}`}>
+                    <span className="font-medium text-gray-900 hover:underline cursor-pointer">
+                      {investor.name}
+                    </span>
+                  </Link>
+                  <div className="text-xs text-gray-600">{investor.type}</div>
+                </div>
               </div>
-              {/* Name and Type */}
-              <div className="flex flex-col gap-1">
-                <Link href={`/investor-profile/${investor.id}`}>
-                  <span className="font-medium text-gray-900 hover:underline cursor-pointer">
-                    {investor.name}
-                  </span>
-                </Link>
-                <div className="text-xs text-gray-600">{investor.type}</div>
+              {/* Stat Container */}
+              <div className="flex gap-20 text-right ml-auto pr-10">
+                <Stat
+                  label="Avg. Check"
+                  value={
+                    investor.averageInvestmentSize
+                      ? `$${investor.averageInvestmentSize.toLocaleString()}`
+                      : "—"
+                  }
+                />
+                <Stat
+                  label="Latest Inv. Company"
+                  value={investor.mostRecentInvestmentCompany ?? "Undisclosed"}
+                />
+                <Stat
+                  label="Latest Inv. Date"
+                  value={
+                    investor.mostRecentInvestmentDate
+                      ? investor.mostRecentInvestmentDate.toLocaleDateString()
+                      : "—"
+                  }
+                />
+                <Stat
+                  label="Total Inv."
+                  value={investor.totalInvestments.toString()}
+                />
               </div>
             </div>
           </CardTitle>
