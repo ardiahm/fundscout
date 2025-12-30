@@ -11,6 +11,7 @@ import { CircleUserRound } from "lucide-react";
 import React from "react";
 import { useState, useEffect } from "react";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import {UserButton} from "@clerk/nextjs"
 
 export default function UnivNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,9 +69,7 @@ export default function UnivNavBar() {
                 asChild
                 className="text-xl inline-flex items-center"
               >
-                <Link href="/account">
-                  <CircleUserRound className="size-8 pt-1 text-black/80" />
-                </Link>
+                  <UserButton />
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenu>
