@@ -45,7 +45,7 @@ export function InvestorRow({ investor }: Props) {
 
         {/* Date */}
         <Stat
-          label="Latest Investment Date"
+          label="Date"
           value={
             investor.mostRecentInvestmentDate
               ? investor.mostRecentInvestmentDate.toLocaleDateString()
