@@ -31,7 +31,7 @@ export default function DashboardLayout({
         </SidebarProvider>
       </div>
 
-      <BottomNewsletter />
+      {/*  */}
     </div>
   );
 }

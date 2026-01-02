@@ -17,9 +17,8 @@ export default function DashboardClient({ investors }: Props) {
       <div className="flex-1 p-4">
         {/* Search */}
         <div className="grid grid-cols-2 items-center gap-2">
-          <p className="text-left"></p>
-
-          <div className="flex gap-2 justify-end">
+          
+          <div className="flex gap-2 justify-end px-15">
             <Input
               type="search"
               placeholder="Search for VCs, Angels, and other funds"
@@ -32,10 +31,11 @@ export default function DashboardClient({ investors }: Props) {
               Enter
             </Button>
           </div>
+          <p className="text-left"></p>
         </div>
 
         {/* Investor Results */}
-        <div className="py-4 space-y-2">
+        <div className="py-4 space-y-2 px-15">
           {investors.map((investor, idx) => (
             <div
               key={investor.id}

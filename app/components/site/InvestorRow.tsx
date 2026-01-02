@@ -7,7 +7,7 @@ type Props = {
 
 export function InvestorRow({ investor }: Props) {
   return (
-    <div className="flex items-center justify-between rounded-md bg-blue-50 px-4 py-3 hover:bg-blue-100 transition">
+    <div className="flex items-center justify-between rounded-md bg-blue-50 px-4 py-5 hover:bg-blue-100 transition">
       {/* LEFT: Avatar + Name */}
       <div className="flex items-center gap-3 min-w-[240px]">
         {investor.avatarUrl ? (

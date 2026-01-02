@@ -17,7 +17,7 @@ type Props = {
 export function InvestorCard({ investor }: Props) {
   return (
     <>
-      <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80">
+      <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80 ">
         <CardHeader>
           <CardTitle>
             <div className="flex">
