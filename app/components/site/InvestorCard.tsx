@@ -20,9 +20,9 @@ export function InvestorCard({ investor }: Props) {
       <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80 ">
         <CardHeader>
           <CardTitle>
-            <div className="flex">
+            <div className="flex flex-w-full justify-between">
               {/* Avatar, Name, Type Container */}
-              <div className="flex items-center gap-4 pt-1">
+              <div className="flex items-center w-max gap-4 pt-1 ">
                 {/* Avatar */}
                 <div className="flex items-center">
                   {investor.avatarUrl ? (
@@ -51,7 +51,16 @@ export function InvestorCard({ investor }: Props) {
                 </div>
               </div>
               {/* Stat Container */}
-              <div className="flex gap-20 text-right ml-auto pr-10">
+              <div
+                className="
+    mt-4
+    grid grid-cols-2 gap-x-6 gap-y-3
+    text-right
+    sm:grid-cols-2 sm:text-right sm:py-1 sm:gap-y-6
+    md:mt-0
+    md:flex md:gap-16 md:ml-auto md:pr-10
+  "
+              >
                 <Stat
                   label="Avg. Check"
                   value={
@@ -89,9 +98,13 @@ export function InvestorCard({ investor }: Props) {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col text-right min-w-[120px]">
+    <div className="flex flex-col text-right min-w-0">
       <span className="text-xs text-gray-500">{label}</span>
-      <span className="font-medium">{value}</span>
+      {label.toLocaleLowerCase() === "avg. check" ? (
+        <span className="font-medium text-green-600">{value}</span>
+      ) : (
+        <span className="font-medium text-black">{value}</span>
+      )}
     </div>
   );
 }
