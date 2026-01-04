@@ -16,16 +16,15 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="antialiased overflow-hidden">
+    <div className="antialiased ">
       <UnivNavBar />
 
-      <div className="flex pt-[85px] pb-[40px] h-[calc(100vh-85px-40px)] overflow-hidden">
+<div className="flex pt-[85px] h-[calc(100vh-85px-0px)] overflow-hidden">
         <SidebarProvider>
-          <AppSidebar />
-          <main className="flex-1 px-6 py-6 overflow-y-auto">
-            <div className="text-2xl text-black font-semibold pb-3">
-              Investor Index
-            </div>
+          <div className="hidden lg:block">
+            <AppSidebar />
+          </div>
+          <main className="flex-1 px-6 py-6 overflow-y-auto pb-[200px] sm:px-0">
             {children}
           </main>
         </SidebarProvider>

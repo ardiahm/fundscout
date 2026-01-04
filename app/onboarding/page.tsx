@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { completeOnboarding } from "./_actions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/app/components/ui/radio-group"
-import Onboarding from "./Onboarding"
+import OnboardingClient from "./OnboardingClient"
 
 export default function OnboardingComponent() {
   const [error, setError] = React.useState("");
@@ -15,6 +15,8 @@ export default function OnboardingComponent() {
 
 
   return (
-    <Onboarding />
+    <div className="">
+      <OnboardingClient />
+    </div>
   );
 }

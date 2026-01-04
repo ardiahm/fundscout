@@ -1,15 +1,11 @@
 'use server'
 
 import { auth, clerkClient } from '@clerk/nextjs/server'
+import type { OnboardingData } from "./OnboardingClient";
 
-type OnboardingData = {
-  builderType: string | null
-  stage: string | null
-  industries: string[] | null
-  goals: string[] | null
-}
 
-export const completeOnboarding = async (data: OnboardingData) => {
+
+export const completeOnboarding = async (data: Partial<OnboardingData>) => {
   const { isAuthenticated, userId } = await auth()
 
   if (!isAuthenticated) {
@@ -22,7 +18,7 @@ export const completeOnboarding = async (data: OnboardingData) => {
     const res = await client.users.updateUser(userId, {
       publicMetadata: {
         onboardingComplete: true,
-        ...data,
+        onboarding: data,
       },
     })
     return { message: res.publicMetadata }

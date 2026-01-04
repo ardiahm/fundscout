@@ -57,8 +57,8 @@ export function InvestorCard({ investor }: Props) {
     grid grid-cols-2 gap-x-6 gap-y-3
     text-right
     sm:grid-cols-2 sm:text-right sm:py-1 sm:gap-y-6
-    md:mt-0
-    md:flex md:gap-16 md:ml-auto md:pr-10
+    md:grid-cols-2 md:gap-6 md:ml-auto md:pr-10 md:text-right
+    lg:flex lg:gap-x-12
   "
               >
                 <Stat
