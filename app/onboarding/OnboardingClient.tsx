@@ -4,9 +4,12 @@ import * as React from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { completeOnboarding } from "./_actions";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, redirect } from "next/navigation";
 import { useState } from "react";
 import OnboardingCard from "./components/OnboardingCard";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { InvestorCard } from "../components/site/InvestorCard";
 
 // replace dash with space in component
 export const INDUSTRIES = [
@@ -77,11 +80,14 @@ const onboardingQuestions = [
 
 export default function OnboardingClient() {
   const { user, isLoaded } = useUser();
+
+  const router = useRouter();
   // useState and Const declarations
   // needs error and set error, user and is loaded, router, step and setStep, data and setData
   const [step, setStep] = useState(0);
   const [data, setData] = useState<Partial<OnboardingData>>({});
-  const router = useRouter();
+
+  const [isOnboarded, setIsOnboarded] = useState(false);
 
   const searchParams = useSearchParams();
 
@@ -97,9 +103,18 @@ export default function OnboardingClient() {
   const question = onboardingQuestions[step];
 
   const handleComplete = async () => {
+    setIsOnboarded(true);
+    console.log("Boolean value: " + isOnboarded);
 
-    await completeOnboarding(data as OnboardingData);
-    router.push("/dashboard");
+    try {
+      console.log("Trying to redirect")
+      await completeOnboarding(data as OnboardingData);
+      await user?.reload();
+      router.push("/dashboard");
+    } catch (err) {
+      setIsOnboarded(false);
+      console.log(err);
+    }
   };
 
   const handleNext = () => {
@@ -124,33 +139,45 @@ export default function OnboardingClient() {
   const isFirstStep = step === 0;
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 pb-30">
-      {/* width container */}
-      <div className="w-full max-w-xl sm:max-w-2xl lg:max-w-3xl">
-        {/* animation wrapper */}
-        <div
-          key={step}
-          className="animate-in fade-in slide-in-from-right-4 duration-600"
-        >
-          <OnboardingCard
-            prompt={question.prompt}
-            options={question.options}
-            multiple={question.multiple}
-            value={data[question.key]}
-            onChange={(value) =>
-              setData((prev) => ({
-                ...prev,
-                [question.key]: value,
-              }))
-            }
-            isFirstStep={isFirstStep}
-            onBack={() => setStep((s) => Math.max(0, s - 1))}
-            isLastStep={isLastStep}
-            onNext={handleNext}
-          />
-          
+    <>
+      {isOnboarded ? (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <div className="h-40px w-40px animate-spin rounded-full border-2 border-black border-t-transparent" />
+            <p className="text-2xl text-muted-foreground">
+              Finalizing your setup…
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <div className="min-h-screen flex items-center justify-center px-4 pb-30">
+          {/* width container */}
+          <div className="w-full max-w-xl sm:max-w-2xl lg:max-w-3xl">
+            {/* animation wrapper */}
+            <div
+              key={step}
+              className="animate-in fade-in slide-in-from-right-4 duration-600"
+            >
+              <OnboardingCard
+                prompt={question.prompt}
+                options={question.options}
+                multiple={question.multiple}
+                value={data[question.key]}
+                onChange={(value) =>
+                  setData((prev) => ({
+                    ...prev,
+                    [question.key]: value,
+                  }))
+                }
+                isFirstStep={isFirstStep}
+                onBack={() => setStep((s) => Math.max(0, s - 1))}
+                isLastStep={isLastStep}
+                onNext={handleNext}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

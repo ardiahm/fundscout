@@ -16,15 +16,15 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="antialiased ">
+    <div className="antialiased">
       <UnivNavBar />
 
-      <div className="flex pt-[65px] h-[calc(100vh-95px)] overflow-hidden">
+      <div className="flex pt-[65px] max-h-screen ">
         <SidebarProvider>
           <div className="hidden lg:block">
             <AppSidebar />
           </div>
-          <main className="flex-1 px-6 overflow-y-auto pb-[200px] sm:px-0">
+          <main className="flex-1 px-6 overflow-y-auto pb-[100px] sm:px-0">
             <div className="pl-2 pt-5 ">
               <SidebarTrigger />
             </div>

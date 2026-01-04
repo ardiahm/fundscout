@@ -21,7 +21,9 @@ export const completeOnboarding = async (data: Partial<OnboardingData>) => {
         onboarding: data,
       },
     })
+    console.log("Onboarding complete")
     return { message: res.publicMetadata }
+    
   } catch (err) {
     return { error: 'There was an error updating the user metadata.' }
   }

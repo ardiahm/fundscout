@@ -30,7 +30,7 @@ export default function InvestorClient({ investor }: Props) {
   const router = useRouter();
 
   return (
-    <div className="max-w-screen mx-10 px-6 py-10 space-y-10">
+    <div className="max-w-screen mx-10 px-6 py-6 space-y-10">
       {/* ================= Investor Header ================= */}
       <header className="mb-6">
         <Button
