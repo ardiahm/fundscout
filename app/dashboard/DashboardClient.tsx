@@ -8,16 +8,18 @@ import type { InvestorComplete } from "@/backend/types/investor";
 
 type Props = {
   investors: InvestorComplete[];
+
 };
+
 
 export default function DashboardClient({ investors }: Props) {
   return (
     <div className="w-full flex gap-4">
       {/* LEFT (main column) */}
-      <div className="flex-1 p-4">
+      <div className="flex-1 pl-10 pb-10 pr-10 pt-2">
         {/* Search */}
         <div className="grid grid-cols-2 justify-end">
-          <div className="font-semibold px-4 text-3xl">
+          <div className="font-semibold px-4  text-3xl">
           
             Investor Index
           </div>

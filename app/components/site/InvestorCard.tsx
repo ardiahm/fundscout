@@ -53,7 +53,7 @@ export function InvestorCard({ investor }: Props) {
               {/* Stat Container */}
               <div
                 className="
-    mt-4
+    my-4
     grid grid-cols-2 gap-x-6 gap-y-3
     text-right
     sm:grid-cols-2 sm:text-right sm:py-1 sm:gap-y-6

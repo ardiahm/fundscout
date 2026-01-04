@@ -28,7 +28,7 @@ export default function BottomNewsletter() {
             className="flex whitespace-nowrap"
             animate={{ x: ["0%", "-325%"] }}
             transition={{
-              duration: 30,
+              duration: 40,
               repeat: Infinity,
               ease: "linear",
             }}

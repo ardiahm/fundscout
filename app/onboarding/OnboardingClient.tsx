@@ -97,7 +97,7 @@ export default function OnboardingClient() {
   const question = onboardingQuestions[step];
 
   const handleComplete = async () => {
-    
+
     await completeOnboarding(data as OnboardingData);
     router.push("/dashboard");
   };
@@ -148,6 +148,7 @@ export default function OnboardingClient() {
             isLastStep={isLastStep}
             onNext={handleNext}
           />
+          
         </div>
       </div>
     </div>

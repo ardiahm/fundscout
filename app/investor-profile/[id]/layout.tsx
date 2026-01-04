@@ -22,7 +22,7 @@ export default function InvestorProfileLayout({
       <div className="flex pt-[80px] h-[calc(100vh-85px-40px)] mb-30">
         <SidebarProvider>
           <AppSidebar />
-          <main className="flex-1 pt-1 pb-10 overflow-y-auto">
+          <main className="flex-1 pt-1 overflow-y-auto">
             <div className="pl-2">
               <SidebarTrigger />
             </div>
