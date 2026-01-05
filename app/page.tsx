@@ -6,10 +6,10 @@ import Image from "next/image";
 import { SignUp } from "@clerk/nextjs"
 import { SignedIn, SignedOut, useUser, UserButton, SignUpButton, SignInButton, SignOutButton} from "@clerk/nextjs"
 import Link from "next/link"
+import { Button } from "@/app/components/ui/button"  
 
 export default function Home() {
   const { user, isLoaded } = useUser();
-
 
 
   return (
@@ -32,7 +32,6 @@ export default function Home() {
                   Sign Up
                 </button>
             </SignUpButton>
-
             <SignInButton forceRedirectUrl="/dashboard"/>
           </div>
         </SignedOut>
@@ -51,7 +50,8 @@ export default function Home() {
               You are already signed in
             </p>
           </div>
-          <SignOutButton />
+          
+            <SignOutButton />
         </SignedIn>
       </div>
     </main>

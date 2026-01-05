@@ -42,3 +42,8 @@ export type CompanySector = Prisma.CompanySectorModel
  * 
  */
 export type Investment = Prisma.InvestmentModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel

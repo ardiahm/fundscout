@@ -17,10 +17,10 @@ import type * as Prisma from "./prismaNamespace"
 
 const config: runtime.GetPrismaClientConfig = {
   "previewFeatures": [],
-  "clientVersion": "7.0.1",
-  "engineVersion": "f09f2815f091dbba658cdcd2264306d88bb5bda6",
+  "clientVersion": "7.2.0",
+  "engineVersion": "0c8ef2ce45c83248ab3df073180d5eda9e8be7a3",
   "activeProvider": "postgresql",
-  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../lib/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Investor {\n  id          Int          @id @default(autoincrement())\n  name        String\n  type        String\n  avatarUrl   String?\n  websiteUrl  String?\n  investments Investment[]\n}\n\nmodel Company {\n  id          Int             @id @default(autoincrement())\n  name        String\n  description String?\n  sectors     CompanySector[]\n  investments Investment[]\n  logoUrl     String?\n  websiteUrl  String?\n  location    String?\n}\n\nmodel Sector {\n  id        Int             @id @default(autoincrement())\n  name      String          @unique\n  companies CompanySector[]\n}\n\nmodel CompanySector {\n  id        Int     @id @default(autoincrement())\n  companyId Int\n  sectorId  Int\n  company   Company @relation(fields: [companyId], references: [id])\n  sector    Sector  @relation(fields: [sectorId], references: [id])\n}\n\nmodel Investment {\n  id         Int       @id @default(autoincrement())\n  investorId Int\n  companyId  Int\n  amount     Float?\n  stage      String?\n  investedAt DateTime?\n  investor   Investor  @relation(fields: [investorId], references: [id])\n  company    Company   @relation(fields: [companyId], references: [id])\n}\n",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../lib/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Investor {\n  id          Int          @id @default(autoincrement())\n  name        String\n  type        String\n  avatarUrl   String?\n  websiteUrl  String?\n  investments Investment[]\n}\n\nmodel Company {\n  id          Int             @id @default(autoincrement())\n  name        String\n  description String?\n  sectors     CompanySector[]\n  investments Investment[]\n  logoUrl     String?\n  websiteUrl  String?\n  location    String?\n}\n\nmodel Sector {\n  id        Int             @id @default(autoincrement())\n  name      String          @unique\n  companies CompanySector[]\n}\n\nmodel CompanySector {\n  id        Int     @id @default(autoincrement())\n  companyId Int\n  sectorId  Int\n  company   Company @relation(fields: [companyId], references: [id])\n  sector    Sector  @relation(fields: [sectorId], references: [id])\n}\n\nmodel Investment {\n  id         Int       @id @default(autoincrement())\n  investorId Int\n  companyId  Int\n  amount     Float?\n  stage      String?\n  investedAt DateTime?\n  investor   Investor  @relation(fields: [investorId], references: [id])\n  company    Company   @relation(fields: [companyId], references: [id])\n}\n\nenum Plan {\n  FREE\n  PREMIUM\n  ULTIMATE\n}\n\nenum BuilderType {\n  SOLO\n  COLLABORATIVE\n}\n\nenum ProjectStage {\n  IDEATION\n  MVP\n  VALIDATION\n  RAISING_FUNDS\n}\n\nmodel User {\n  id          String @id @default(cuid())\n  clerkUserId String @unique\n\n  plan               Plan    @default(FREE)\n  onboardingComplete Boolean @default(false)\n\n  builderType BuilderType?\n  stage       ProjectStage?\n  industries  String[]      @default([])\n  goals       String[]      @default([])\n\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
   "runtimeDataModel": {
     "models": {},
     "enums": {},
@@ -28,7 +28,7 @@ const config: runtime.GetPrismaClientConfig = {
   }
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Investor\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"type\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"avatarUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"websiteUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"investments\",\"kind\":\"object\",\"type\":\"Investment\",\"relationName\":\"InvestmentToInvestor\"}],\"dbName\":null},\"Company\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"sectors\",\"kind\":\"object\",\"type\":\"CompanySector\",\"relationName\":\"CompanyToCompanySector\"},{\"name\":\"investments\",\"kind\":\"object\",\"type\":\"Investment\",\"relationName\":\"CompanyToInvestment\"},{\"name\":\"logoUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"websiteUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"location\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Sector\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companies\",\"kind\":\"object\",\"type\":\"CompanySector\",\"relationName\":\"CompanySectorToSector\"}],\"dbName\":null},\"CompanySector\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"sectorId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToCompanySector\"},{\"name\":\"sector\",\"kind\":\"object\",\"type\":\"Sector\",\"relationName\":\"CompanySectorToSector\"}],\"dbName\":null},\"Investment\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"investorId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"amount\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"stage\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"investedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"investor\",\"kind\":\"object\",\"type\":\"Investor\",\"relationName\":\"InvestmentToInvestor\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToInvestment\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"Investor\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"type\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"avatarUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"websiteUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"investments\",\"kind\":\"object\",\"type\":\"Investment\",\"relationName\":\"InvestmentToInvestor\"}],\"dbName\":null},\"Company\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"sectors\",\"kind\":\"object\",\"type\":\"CompanySector\",\"relationName\":\"CompanyToCompanySector\"},{\"name\":\"investments\",\"kind\":\"object\",\"type\":\"Investment\",\"relationName\":\"CompanyToInvestment\"},{\"name\":\"logoUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"websiteUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"location\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Sector\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companies\",\"kind\":\"object\",\"type\":\"CompanySector\",\"relationName\":\"CompanySectorToSector\"}],\"dbName\":null},\"CompanySector\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"sectorId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToCompanySector\"},{\"name\":\"sector\",\"kind\":\"object\",\"type\":\"Sector\",\"relationName\":\"CompanySectorToSector\"}],\"dbName\":null},\"Investment\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"investorId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"amount\",\"kind\":\"scalar\",\"type\":\"Float\"},{\"name\":\"stage\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"investedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"investor\",\"kind\":\"object\",\"type\":\"Investor\",\"relationName\":\"InvestmentToInvestor\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToInvestment\"}],\"dbName\":null},\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"clerkUserId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"plan\",\"kind\":\"enum\",\"type\":\"Plan\"},{\"name\":\"onboardingComplete\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"builderType\",\"kind\":\"enum\",\"type\":\"BuilderType\"},{\"name\":\"stage\",\"kind\":\"enum\",\"type\":\"ProjectStage\"},{\"name\":\"industries\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"goals\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 
 async function decodeBase64AsWasm(wasmBase64: string): Promise<WebAssembly.Module> {
   const { Buffer } = await import('node:buffer')
@@ -62,7 +62,7 @@ export interface PrismaClientConstructor {
    * const investors = await prisma.investor.findMany()
    * ```
    * 
-   * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client).
+   * Read more in our [docs](https://pris.ly/d/client).
    */
 
   new <
@@ -84,7 +84,7 @@ export interface PrismaClientConstructor {
  * const investors = await prisma.investor.findMany()
  * ```
  * 
- * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client).
+ * Read more in our [docs](https://pris.ly/d/client).
  */
 
 export interface PrismaClient<
@@ -113,7 +113,7 @@ export interface PrismaClient<
    * const result = await prisma.$executeRaw`UPDATE User SET cool = ${true} WHERE email = ${'user@email.com'};`
    * ```
    *
-   * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/raw-database-access).
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
    */
   $executeRaw<T = unknown>(query: TemplateStringsArray | Prisma.Sql, ...values: any[]): Prisma.PrismaPromise<number>;
 
@@ -125,7 +125,7 @@ export interface PrismaClient<
    * const result = await prisma.$executeRawUnsafe('UPDATE User SET cool = $1 WHERE email = $2 ;', true, 'user@email.com')
    * ```
    *
-   * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/raw-database-access).
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
    */
   $executeRawUnsafe<T = unknown>(query: string, ...values: any[]): Prisma.PrismaPromise<number>;
 
@@ -136,7 +136,7 @@ export interface PrismaClient<
    * const result = await prisma.$queryRaw`SELECT * FROM User WHERE id = ${1} OR email = ${'user@email.com'};`
    * ```
    *
-   * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/raw-database-access).
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
    */
   $queryRaw<T = unknown>(query: TemplateStringsArray | Prisma.Sql, ...values: any[]): Prisma.PrismaPromise<T>;
 
@@ -148,7 +148,7 @@ export interface PrismaClient<
    * const result = await prisma.$queryRawUnsafe('SELECT * FROM User WHERE id = $1 OR email = $2;', 1, 'user@email.com')
    * ```
    *
-   * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/raw-database-access).
+   * Read more in our [docs](https://pris.ly/d/raw-queries).
    */
   $queryRawUnsafe<T = unknown>(query: string, ...values: any[]): Prisma.PrismaPromise<T>;
 
@@ -223,6 +223,16 @@ export interface PrismaClient<
     * ```
     */
   get investment(): Prisma.InvestmentDelegate<ExtArgs, { omit: OmitOpts }>;
+
+  /**
+   * `prisma.user`: Exposes CRUD operations for the **User** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Users
+    * const users = await prisma.user.findMany()
+    * ```
+    */
+  get user(): Prisma.UserDelegate<ExtArgs, { omit: OmitOpts }>;
 }
 
 export function getPrismaClientClass(): PrismaClientConstructor {

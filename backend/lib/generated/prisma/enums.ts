@@ -9,7 +9,28 @@
 * 🟢 You can import this file directly.
 */
 
+export const Plan = {
+  FREE: 'FREE',
+  PREMIUM: 'PREMIUM',
+  ULTIMATE: 'ULTIMATE'
+} as const
+
+export type Plan = (typeof Plan)[keyof typeof Plan]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const BuilderType = {
+  SOLO: 'SOLO',
+  COLLABORATIVE: 'COLLABORATIVE'
+} as const
+
+export type BuilderType = (typeof BuilderType)[keyof typeof BuilderType]
+
+
+export const ProjectStage = {
+  IDEATION: 'IDEATION',
+  MVP: 'MVP',
+  VALIDATION: 'VALIDATION',
+  RAISING_FUNDS: 'RAISING_FUNDS'
+} as const
+
+export type ProjectStage = (typeof ProjectStage)[keyof typeof ProjectStage]

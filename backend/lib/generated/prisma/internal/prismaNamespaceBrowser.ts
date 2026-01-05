@@ -55,7 +55,8 @@ export const ModelName = {
   Company: 'Company',
   Sector: 'Sector',
   CompanySector: 'CompanySector',
-  Investment: 'Investment'
+  Investment: 'Investment',
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -124,6 +125,22 @@ export const InvestmentScalarFieldEnum = {
 } as const
 
 export type InvestmentScalarFieldEnum = (typeof InvestmentScalarFieldEnum)[keyof typeof InvestmentScalarFieldEnum]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  clerkUserId: 'clerkUserId',
+  plan: 'plan',
+  onboardingComplete: 'onboardingComplete',
+  builderType: 'builderType',
+  stage: 'stage',
+  industries: 'industries',
+  goals: 'goals',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
 export const SortOrder = {
