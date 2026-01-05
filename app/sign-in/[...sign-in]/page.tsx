@@ -1,5 +1,10 @@
-import { SignIn } from "@clerk/nextjs"
+import { SignIn, useUser } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-export default function Page() {
-    return <SignIn />
+export async function Page() {
+  const { userId } = await auth();
+  if (userId) redirect("/dashboard");
+  
+  return <SignIn forceRedirectUrl="/dashboard" />;
 }

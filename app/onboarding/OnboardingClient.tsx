@@ -93,12 +93,7 @@ export default function OnboardingClient() {
 
   if (!isLoaded) return null;
 
-  const devBypass = searchParams.get("dev") === "true";
-  const hasOnboarded = user?.publicMetadata?.onboardingComplete === true;
 
-  if (hasOnboarded && !devBypass) {
-    return null;
-  }
 
   const question = onboardingQuestions[step];
 

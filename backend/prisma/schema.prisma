@@ -51,3 +51,37 @@ model Investment {
   investor Investor @relation(fields: [investorId], references: [id])
   company Company @relation(fields: [companyId], references: [id])
 }
+
+enum Plan {
+  FREE
+  PREMIUM
+  ULTIMATE
+}
+
+enum BuilderType {
+  SOLO
+  COLLABORATIVE
+}
+
+enum ProjectStage {
+  IDEATION
+  MVP
+  VALIDATION
+  RAISING_FUNDS
+}
+
+model User {
+  id String @id @default(cuid())
+  clerkUserId String @unique
+
+  plan               Plan     @default(FREE)
+  onboardingComplete Boolean  @default(false)
+
+  builderType BuilderType?
+  stage ProjectStage?
+  industries String[] @default([])
+  goals String[] @default([])
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}

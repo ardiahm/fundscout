@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const isOnboardingRoute = createRouteMatcher(['/onboarding'])
 const isPublicRoute = createRouteMatcher(['/'])
+const isSignInRoute = createRouteMatcher(['/sign-in'])
+const isSignUpRoute = createRouteMatcher(['/sign-up'])
 
 export default clerkMiddleware(async (auth, req: NextRequest) => {
   // authenticated == signed in
@@ -27,6 +29,16 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
   // if user is auth and route is protected, let them view
   if (isAuthenticated && !isPublicRoute(req)) {
     return NextResponse.next()
+  }
+
+  if (isAuthenticated && isSignInRoute(req)) {
+    const dashboardUrl = new URL('/dashboard', req.url)
+    return NextResponse.redirect(dashboardUrl);
+  }
+
+  if (isAuthenticated && isSignUpRoute(req)) {
+    const dashboardUrl = new URL('/dashboard', req.url)
+    return NextResponse.redirect(dashboardUrl);
   }
 })
 
