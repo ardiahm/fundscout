@@ -30,16 +30,6 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
   if (isAuthenticated && !isPublicRoute(req)) {
     return NextResponse.next()
   }
-
-  if (isAuthenticated && isSignInRoute(req)) {
-    const dashboardUrl = new URL('/dashboard', req.url)
-    return NextResponse.redirect(dashboardUrl);
-  }
-
-  if (isAuthenticated && isSignUpRoute(req)) {
-    const dashboardUrl = new URL('/dashboard', req.url)
-    return NextResponse.redirect(dashboardUrl);
-  }
 })
 
 export const config = {

@@ -18,7 +18,10 @@ export const completeOnboarding = async (data: Partial<OnboardingData>) => {
     const res = await client.users.updateUser(userId, {
       publicMetadata: {
         onboardingComplete: true,
-        onboarding: data,
+        builderType: data.builderType?.toUpperCase(),
+        stage: data.stage?.toUpperCase(),
+        industries: data.industries,
+        goals: data.goals,
       },
     })
     console.log("Onboarding complete")
