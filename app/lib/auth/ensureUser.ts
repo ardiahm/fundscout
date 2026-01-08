@@ -1,12 +1,18 @@
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "../../../backend/lib/prisma";
-import { BuilderType, ProjectStage } from "../../../backend/lib/generated/prisma/client"
+import {
+  BuilderType,
+  ProjectStage,
+} from "../../../backend/lib/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { redirect } from "next/navigation";
 
 export async function ensureUser() {
   const { userId, sessionClaims } = await auth();
 
-  if (!userId) return null;
+  if (!userId) {
+    redirect("/sign-in");
+  }
 
   const metadata = sessionClaims?.metadata as
     | {
@@ -23,19 +29,28 @@ export async function ensureUser() {
     where: { clerkUserId: userId },
   });
 
+  console.log(prismaUser);
+
   // if user doesn't exist, create new user in prisma
   if (!prismaUser) {
+    console.log("Creating prismaUser")
     return prisma.user.create({
       data: {
         clerkUserId: userId,
         onboardingComplete:
           sessionClaims?.metadata?.onboardingComplete ?? false,
-        builderType: metadata?.builderType,
-        stage: metadata?.stage,
+        builderType: metadata?.builderType
+          ? (metadata.builderType.toUpperCase() as BuilderType)
+          : undefined,
+
+        stage: metadata?.stage
+          ? (metadata.stage.toUpperCase() as ProjectStage)
+          : undefined,
         industries: metadata?.industries,
         goals: metadata?.goals,
       },
     });
+    console.log(prismaUser)
   }
 
   // return user object

@@ -5,14 +5,16 @@ import { Button } from "../components/ui/button";
 import { InvestorRow } from "../components/site/InvestorRow";
 import { InvestorCard } from "../components/site/InvestorCard";
 import type { InvestorComplete } from "@/backend/types/investor";
+import {User} from "@/backend/lib/generated/prisma/client"
 
 type Props = {
   investors: InvestorComplete[];
+  user: User;
 
 };
 
 
-export default function DashboardClient({ investors }: Props) {
+export default function DashboardClient({ investors, user }: Props) {
   return (
     <div className="w-full flex gap-4">
       {/* LEFT (main column) */}
