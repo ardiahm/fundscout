@@ -47,3 +47,8 @@ export type Investment = Prisma.InvestmentModel
  * 
  */
 export type User = Prisma.UserModel
+/**
+ * Model FavoriteInvestor
+ * 
+ */
+export type FavoriteInvestor = Prisma.FavoriteInvestorModel

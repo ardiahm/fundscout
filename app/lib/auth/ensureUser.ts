@@ -50,7 +50,6 @@ export async function ensureUser() {
         goals: metadata?.goals,
       },
     });
-    console.log(prismaUser)
   }
 
   // return user object

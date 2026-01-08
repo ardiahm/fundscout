@@ -14,6 +14,8 @@ model Investor {
   avatarUrl String?
   websiteUrl String?
   investments Investment[]
+
+  favoritedBy FavoriteInvestor[]
 }
 
 model Company {
@@ -50,6 +52,9 @@ model Investment {
   investedAt DateTime?
   investor Investor @relation(fields: [investorId], references: [id])
   company Company @relation(fields: [companyId], references: [id])
+
+  @@index([investorId])
+  @@index([companyId])
 }
 
 enum Plan {
@@ -82,6 +87,20 @@ model User {
   industries String[] @default([])
   goals String[] @default([])
 
+  favoriteInvestors FavoriteInvestor[]
+
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
+}
+
+model FavoriteInvestor {
+  userId String
+  investorId Int
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  investor Investor @relation(fields: [investorId], references: [id], onDelete: Cascade)
+
+  @@id([userId, investorId])
+
+  createdAt DateTime @default(now())
 }

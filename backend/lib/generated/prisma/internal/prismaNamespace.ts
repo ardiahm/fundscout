@@ -389,7 +389,8 @@ export const ModelName = {
   Sector: 'Sector',
   CompanySector: 'CompanySector',
   Investment: 'Investment',
-  User: 'User'
+  User: 'User',
+  FavoriteInvestor: 'FavoriteInvestor'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -405,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user"
+    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -853,6 +854,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    FavoriteInvestor: {
+      payload: Prisma.$FavoriteInvestorPayload<ExtArgs>
+      fields: Prisma.FavoriteInvestorFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FavoriteInvestorFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FavoriteInvestorFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>
+        }
+        findFirst: {
+          args: Prisma.FavoriteInvestorFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FavoriteInvestorFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>
+        }
+        findMany: {
+          args: Prisma.FavoriteInvestorFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>[]
+        }
+        create: {
+          args: Prisma.FavoriteInvestorCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>
+        }
+        createMany: {
+          args: Prisma.FavoriteInvestorCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FavoriteInvestorCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>[]
+        }
+        delete: {
+          args: Prisma.FavoriteInvestorDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>
+        }
+        update: {
+          args: Prisma.FavoriteInvestorUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>
+        }
+        deleteMany: {
+          args: Prisma.FavoriteInvestorDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FavoriteInvestorUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FavoriteInvestorUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>[]
+        }
+        upsert: {
+          args: Prisma.FavoriteInvestorUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FavoriteInvestorPayload>
+        }
+        aggregate: {
+          args: Prisma.FavoriteInvestorAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFavoriteInvestor>
+        }
+        groupBy: {
+          args: Prisma.FavoriteInvestorGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FavoriteInvestorGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FavoriteInvestorCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FavoriteInvestorCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -958,6 +1033,15 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const FavoriteInvestorScalarFieldEnum = {
+  userId: 'userId',
+  investorId: 'investorId',
+  createdAt: 'createdAt'
+} as const
+
+export type FavoriteInvestorScalarFieldEnum = (typeof FavoriteInvestorScalarFieldEnum)[keyof typeof FavoriteInvestorScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1195,6 +1279,7 @@ export type GlobalOmitConfig = {
   companySector?: Prisma.CompanySectorOmit
   investment?: Prisma.InvestmentOmit
   user?: Prisma.UserOmit
+  favoriteInvestor?: Prisma.FavoriteInvestorOmit
 }
 
 /* Types for Logging */

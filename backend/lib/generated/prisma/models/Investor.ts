@@ -217,6 +217,7 @@ export type InvestorWhereInput = {
   avatarUrl?: Prisma.StringNullableFilter<"Investor"> | string | null
   websiteUrl?: Prisma.StringNullableFilter<"Investor"> | string | null
   investments?: Prisma.InvestmentListRelationFilter
+  favoritedBy?: Prisma.FavoriteInvestorListRelationFilter
 }
 
 export type InvestorOrderByWithRelationInput = {
@@ -226,6 +227,7 @@ export type InvestorOrderByWithRelationInput = {
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   websiteUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   investments?: Prisma.InvestmentOrderByRelationAggregateInput
+  favoritedBy?: Prisma.FavoriteInvestorOrderByRelationAggregateInput
 }
 
 export type InvestorWhereUniqueInput = Prisma.AtLeast<{
@@ -238,6 +240,7 @@ export type InvestorWhereUniqueInput = Prisma.AtLeast<{
   avatarUrl?: Prisma.StringNullableFilter<"Investor"> | string | null
   websiteUrl?: Prisma.StringNullableFilter<"Investor"> | string | null
   investments?: Prisma.InvestmentListRelationFilter
+  favoritedBy?: Prisma.FavoriteInvestorListRelationFilter
 }, "id">
 
 export type InvestorOrderByWithAggregationInput = {
@@ -270,6 +273,7 @@ export type InvestorCreateInput = {
   avatarUrl?: string | null
   websiteUrl?: string | null
   investments?: Prisma.InvestmentCreateNestedManyWithoutInvestorInput
+  favoritedBy?: Prisma.FavoriteInvestorCreateNestedManyWithoutInvestorInput
 }
 
 export type InvestorUncheckedCreateInput = {
@@ -279,6 +283,7 @@ export type InvestorUncheckedCreateInput = {
   avatarUrl?: string | null
   websiteUrl?: string | null
   investments?: Prisma.InvestmentUncheckedCreateNestedManyWithoutInvestorInput
+  favoritedBy?: Prisma.FavoriteInvestorUncheckedCreateNestedManyWithoutInvestorInput
 }
 
 export type InvestorUpdateInput = {
@@ -287,6 +292,7 @@ export type InvestorUpdateInput = {
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   investments?: Prisma.InvestmentUpdateManyWithoutInvestorNestedInput
+  favoritedBy?: Prisma.FavoriteInvestorUpdateManyWithoutInvestorNestedInput
 }
 
 export type InvestorUncheckedUpdateInput = {
@@ -296,6 +302,7 @@ export type InvestorUncheckedUpdateInput = {
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   investments?: Prisma.InvestmentUncheckedUpdateManyWithoutInvestorNestedInput
+  favoritedBy?: Prisma.FavoriteInvestorUncheckedUpdateManyWithoutInvestorNestedInput
 }
 
 export type InvestorCreateManyInput = {
@@ -388,11 +395,26 @@ export type InvestorUpdateOneRequiredWithoutInvestmentsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.InvestorUpdateToOneWithWhereWithoutInvestmentsInput, Prisma.InvestorUpdateWithoutInvestmentsInput>, Prisma.InvestorUncheckedUpdateWithoutInvestmentsInput>
 }
 
+export type InvestorCreateNestedOneWithoutFavoritedByInput = {
+  create?: Prisma.XOR<Prisma.InvestorCreateWithoutFavoritedByInput, Prisma.InvestorUncheckedCreateWithoutFavoritedByInput>
+  connectOrCreate?: Prisma.InvestorCreateOrConnectWithoutFavoritedByInput
+  connect?: Prisma.InvestorWhereUniqueInput
+}
+
+export type InvestorUpdateOneRequiredWithoutFavoritedByNestedInput = {
+  create?: Prisma.XOR<Prisma.InvestorCreateWithoutFavoritedByInput, Prisma.InvestorUncheckedCreateWithoutFavoritedByInput>
+  connectOrCreate?: Prisma.InvestorCreateOrConnectWithoutFavoritedByInput
+  upsert?: Prisma.InvestorUpsertWithoutFavoritedByInput
+  connect?: Prisma.InvestorWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.InvestorUpdateToOneWithWhereWithoutFavoritedByInput, Prisma.InvestorUpdateWithoutFavoritedByInput>, Prisma.InvestorUncheckedUpdateWithoutFavoritedByInput>
+}
+
 export type InvestorCreateWithoutInvestmentsInput = {
   name: string
   type: string
   avatarUrl?: string | null
   websiteUrl?: string | null
+  favoritedBy?: Prisma.FavoriteInvestorCreateNestedManyWithoutInvestorInput
 }
 
 export type InvestorUncheckedCreateWithoutInvestmentsInput = {
@@ -401,6 +423,7 @@ export type InvestorUncheckedCreateWithoutInvestmentsInput = {
   type: string
   avatarUrl?: string | null
   websiteUrl?: string | null
+  favoritedBy?: Prisma.FavoriteInvestorUncheckedCreateNestedManyWithoutInvestorInput
 }
 
 export type InvestorCreateOrConnectWithoutInvestmentsInput = {
@@ -424,6 +447,7 @@ export type InvestorUpdateWithoutInvestmentsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  favoritedBy?: Prisma.FavoriteInvestorUpdateManyWithoutInvestorNestedInput
 }
 
 export type InvestorUncheckedUpdateWithoutInvestmentsInput = {
@@ -432,6 +456,57 @@ export type InvestorUncheckedUpdateWithoutInvestmentsInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  favoritedBy?: Prisma.FavoriteInvestorUncheckedUpdateManyWithoutInvestorNestedInput
+}
+
+export type InvestorCreateWithoutFavoritedByInput = {
+  name: string
+  type: string
+  avatarUrl?: string | null
+  websiteUrl?: string | null
+  investments?: Prisma.InvestmentCreateNestedManyWithoutInvestorInput
+}
+
+export type InvestorUncheckedCreateWithoutFavoritedByInput = {
+  id?: number
+  name: string
+  type: string
+  avatarUrl?: string | null
+  websiteUrl?: string | null
+  investments?: Prisma.InvestmentUncheckedCreateNestedManyWithoutInvestorInput
+}
+
+export type InvestorCreateOrConnectWithoutFavoritedByInput = {
+  where: Prisma.InvestorWhereUniqueInput
+  create: Prisma.XOR<Prisma.InvestorCreateWithoutFavoritedByInput, Prisma.InvestorUncheckedCreateWithoutFavoritedByInput>
+}
+
+export type InvestorUpsertWithoutFavoritedByInput = {
+  update: Prisma.XOR<Prisma.InvestorUpdateWithoutFavoritedByInput, Prisma.InvestorUncheckedUpdateWithoutFavoritedByInput>
+  create: Prisma.XOR<Prisma.InvestorCreateWithoutFavoritedByInput, Prisma.InvestorUncheckedCreateWithoutFavoritedByInput>
+  where?: Prisma.InvestorWhereInput
+}
+
+export type InvestorUpdateToOneWithWhereWithoutFavoritedByInput = {
+  where?: Prisma.InvestorWhereInput
+  data: Prisma.XOR<Prisma.InvestorUpdateWithoutFavoritedByInput, Prisma.InvestorUncheckedUpdateWithoutFavoritedByInput>
+}
+
+export type InvestorUpdateWithoutFavoritedByInput = {
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  investments?: Prisma.InvestmentUpdateManyWithoutInvestorNestedInput
+}
+
+export type InvestorUncheckedUpdateWithoutFavoritedByInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.StringFieldUpdateOperationsInput | string
+  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  investments?: Prisma.InvestmentUncheckedUpdateManyWithoutInvestorNestedInput
 }
 
 
@@ -441,10 +516,12 @@ export type InvestorUncheckedUpdateWithoutInvestmentsInput = {
 
 export type InvestorCountOutputType = {
   investments: number
+  favoritedBy: number
 }
 
 export type InvestorCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   investments?: boolean | InvestorCountOutputTypeCountInvestmentsArgs
+  favoritedBy?: boolean | InvestorCountOutputTypeCountFavoritedByArgs
 }
 
 /**
@@ -464,6 +541,13 @@ export type InvestorCountOutputTypeCountInvestmentsArgs<ExtArgs extends runtime.
   where?: Prisma.InvestmentWhereInput
 }
 
+/**
+ * InvestorCountOutputType without action
+ */
+export type InvestorCountOutputTypeCountFavoritedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FavoriteInvestorWhereInput
+}
+
 
 export type InvestorSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -472,6 +556,7 @@ export type InvestorSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   avatarUrl?: boolean
   websiteUrl?: boolean
   investments?: boolean | Prisma.Investor$investmentsArgs<ExtArgs>
+  favoritedBy?: boolean | Prisma.Investor$favoritedByArgs<ExtArgs>
   _count?: boolean | Prisma.InvestorCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["investor"]>
 
@@ -502,6 +587,7 @@ export type InvestorSelectScalar = {
 export type InvestorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "type" | "avatarUrl" | "websiteUrl", ExtArgs["result"]["investor"]>
 export type InvestorInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   investments?: boolean | Prisma.Investor$investmentsArgs<ExtArgs>
+  favoritedBy?: boolean | Prisma.Investor$favoritedByArgs<ExtArgs>
   _count?: boolean | Prisma.InvestorCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type InvestorIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -511,6 +597,7 @@ export type $InvestorPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   name: "Investor"
   objects: {
     investments: Prisma.$InvestmentPayload<ExtArgs>[]
+    favoritedBy: Prisma.$FavoriteInvestorPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -913,6 +1000,7 @@ readonly fields: InvestorFieldRefs;
 export interface Prisma__InvestorClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   investments<T extends Prisma.Investor$investmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Investor$investmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvestmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  favoritedBy<T extends Prisma.Investor$favoritedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Investor$favoritedByArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoriteInvestorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1356,6 +1444,30 @@ export type Investor$investmentsArgs<ExtArgs extends runtime.Types.Extensions.In
   take?: number
   skip?: number
   distinct?: Prisma.InvestmentScalarFieldEnum | Prisma.InvestmentScalarFieldEnum[]
+}
+
+/**
+ * Investor.favoritedBy
+ */
+export type Investor$favoritedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FavoriteInvestor
+   */
+  select?: Prisma.FavoriteInvestorSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FavoriteInvestor
+   */
+  omit?: Prisma.FavoriteInvestorOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FavoriteInvestorInclude<ExtArgs> | null
+  where?: Prisma.FavoriteInvestorWhereInput
+  orderBy?: Prisma.FavoriteInvestorOrderByWithRelationInput | Prisma.FavoriteInvestorOrderByWithRelationInput[]
+  cursor?: Prisma.FavoriteInvestorWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FavoriteInvestorScalarFieldEnum | Prisma.FavoriteInvestorScalarFieldEnum[]
 }
 
 /**
