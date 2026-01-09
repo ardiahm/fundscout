@@ -20,7 +20,7 @@ export function InvestorCard({ investor }: Props) {
       <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80 ">
         <CardHeader>
           <CardTitle>
-            <div className="flex flex-w-full justify-between">
+            <div className="relative flex-w-full justify-between">
               {/* Avatar, Name, Type Container */}
               <div className="flex items-center w-max gap-4 pt-1 ">
                 {/* Avatar */}
@@ -86,6 +86,12 @@ export function InvestorCard({ investor }: Props) {
                   value={investor.totalInvestments.toString()}
                 />
               </div>
+              <div className="absolute top-2 right-2">
+                <FavoriteStar
+                  investorId={investor.id}
+                  initiallyFavorited={investor.isFavorited}
+                />
+              </div>
             </div>
           </CardTitle>
         </CardHeader>
@@ -106,5 +112,63 @@ function Stat({ label, value }: { label: string; value: string }) {
         <span className="font-medium text-black">{value}</span>
       )}
     </div>
+  );
+}
+
+/* ----- Star Component ----- */
+
+import { Star } from "lucide-react";
+import { useState, useTransition } from "react";
+import { toggleFavoriteInvestor } from "@/app/lib/favorites/toggleFavoriteInvestor";
+
+type FavoriteStarProps = {
+  investorId: number;
+  initiallyFavorited: boolean;
+};
+
+export function FavoriteStar({
+  investorId,
+  initiallyFavorited,
+}: FavoriteStarProps) {
+  "use client";
+  const [isFavorited, setIsFavorited] = useState(initiallyFavorited);
+  const [isPending, startTransition] = useTransition();
+
+  const handleClick = () => {
+    startTransition(async () => {
+      const prev = isFavorited;
+
+      // optimistic UI
+      setIsFavorited(!prev);
+
+      try {
+        console.log("toggled favorite: " + investorId);
+        await toggleFavoriteInvestor({ investorId });
+      } catch (err) {
+        // rollback on failure
+        setIsFavorited(prev);
+      }
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      disabled={isPending}
+      aria-label="Toggle favorite investor"
+      className="
+        p-1 rounded
+        transition
+        hover:bg-yellow-100
+        disabled:opacity-60
+      "
+    >
+      <Star
+        className={`h-5 w-5 transition ${
+          isFavorited ? "fill-yellow-400 text-yellow-400" : "text-gray-400"
+        }`}
+      />
+    </button>
   );
 }

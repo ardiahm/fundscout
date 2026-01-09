@@ -82,4 +82,6 @@ export type InvestorComplete = InvestorDetails & {
   averageInvestmentSize: number | null;
   mostRecentInvestmentCompany: string | null;
   mostRecentInvestmentDate: Date | null;
+
+  isFavorited: boolean;
 };

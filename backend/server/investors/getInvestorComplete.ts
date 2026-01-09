@@ -50,6 +50,7 @@ export async function getInvestorsComplete() {
         },
         orderBy: { investedAt: "desc" },
       },
+      favoritedBy: true
     },
   })
 
@@ -91,6 +92,7 @@ export async function getInvestorsComplete() {
 
       // full relational data
       investments,
+      isFavorited: inv.favoritedBy.length > 0
     }
   })
 }
