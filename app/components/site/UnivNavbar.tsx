@@ -11,7 +11,7 @@ import { CircleUserRound } from "lucide-react";
 import React from "react";
 import { useState, useEffect } from "react";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
-import {UserButton} from "@clerk/nextjs"
+import { UserButton } from "@clerk/nextjs";
 
 export default function UnivNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,12 +22,8 @@ export default function UnivNavBar() {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
- 
-
   return (
     <>
-
-
       {/* Main Navbar — sits under the purple bar */}
       <nav className="fixed top-[0] left-0 w-full  backdrop-blur-md shadow-sm z-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 lg:py-4">
@@ -64,12 +60,12 @@ export default function UnivNavBar() {
               </NavigationMenuItem>
             ))}
 
-            <NavigationMenuItem key="account" className="relative">
+            <NavigationMenuItem key="account" className="pt-1 pl-4">
               <NavigationMenuLink
                 asChild
                 className="text-xl inline-flex items-center"
               >
-                  <UserButton />
+                <UserButton />
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenu>
@@ -128,8 +124,10 @@ export default function UnivNavBar() {
               >
                 Pricing
               </Link>
-              
+              <div className="flex">
                 <UserButton />
+                <p className="text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2 px-3">Account</p>
+              </div>
             </div>
           </div>
         </div>
