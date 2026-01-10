@@ -1,8 +1,8 @@
-import dotenv from "dotenv"
-import { prisma } from "../../lib/prisma"
+import dotenv from "dotenv";
+import { prisma } from "../../lib/prisma";
 
-dotenv.config({ path: "backend/.env" })
-console.log("DATABASE_URL:", process.env.DATABASE_URL)
+dotenv.config({ path: "backend/.env" });
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
 /**
  * Returns full investor objects with:
@@ -10,8 +10,21 @@ console.log("DATABASE_URL:", process.env.DATABASE_URL)
  * - investments
  * - computed summary fields
  */
-export async function getInvestorsComplete() {
+export async function getInvestorsComplete(
+  userId?: string,
+  onlyFavorites: boolean = false
+) {
   const investors = await prisma.investor.findMany({
+    where:
+      onlyFavorites && userId
+        ? {
+            favoritedBy: {
+              some: {
+                userId,
+              },
+            },
+          }
+        : undefined,
     select: {
       id: true,
       name: true,
@@ -50,7 +63,12 @@ export async function getInvestorsComplete() {
         },
         orderBy: { investedAt: "desc" },
       },
-      favoritedBy: true
+      favoritedBy: userId
+        ? {
+            where: { userId },
+            select: { userId: true },
+          }
+        : false,
     },
   })
 
@@ -82,7 +100,6 @@ export async function getInvestorsComplete() {
       avatarUrl: inv.avatarUrl,
       websiteUrl: inv.websiteUrl,
 
-      // summary fields
       totalInvestments,
       averageInvestmentSize,
       mostRecentInvestmentCompany:
@@ -90,9 +107,8 @@ export async function getInvestorsComplete() {
       mostRecentInvestmentDate:
         mostRecentInvestment?.investedAt ?? null,
 
-      // full relational data
       investments,
-      isFavorited: inv.favoritedBy.length > 0
+      isFavorited: userId ? inv.favoritedBy.length > 0 : false,
     }
   })
 }
