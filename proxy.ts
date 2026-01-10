@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const isOnboardingRoute = createRouteMatcher(['/onboarding'])
 const isPublicRoute = createRouteMatcher(['/'])
-const isSignInRoute = createRouteMatcher(['/sign-in'])
-const isSignUpRoute = createRouteMatcher(['/sign-up'])
 
 export default clerkMiddleware(async (auth, req: NextRequest) => {
   // authenticated == signed in
