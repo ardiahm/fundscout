@@ -108,30 +108,28 @@ export default function UnivNavBar() {
           <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 sm:px-6 py-4">
             <div className="flex flex-col space-y-3 sm:space-y-4">
               <Link
-                href="#search"
+                href="/dashboard"
                 onClick={closeMobileMenu}
                 className="text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2"
               >
                 Search
               </Link>
               <Link
-                href="#favorites"
+                href="/favorites"
                 onClick={closeMobileMenu}
                 className="text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2"
               >
                 Favorites
               </Link>
               <Link
-                href="#pricing"
+                href="/dashboard"
                 onClick={closeMobileMenu}
                 className="text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2"
               >
                 Pricing
               </Link>
               
-                <Link href="/account" className="text-xl flex gap-2">
-                  <CircleUserRound className="size-8 pt-1 text-black/80" /> <span className="pt-1">Account</span>
-                </Link>
+                <UserButton />
             </div>
           </div>
         </div>
