@@ -20,10 +20,10 @@ export function InvestorCard({ investor }: Props) {
       <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80 ">
         <CardHeader>
           <CardTitle>
-            {/* Avatar, Name, Type, Star Container */}
-            <div>
+            {/* Avatar, Name, Type, Star, and Stats Container */}
+            <div className="my-3">
               <div className="flex w-full justify-between items-start">
-                {/* Avatar, Name, Type Container */}
+                {/* Avatar, Name, Type, and Star Container */}
                 <div className="flex items-center w-max gap-4 pt-1 ">
                   {/* Avatar */}
                   <div className="flex items-center">
@@ -51,40 +51,44 @@ export function InvestorCard({ investor }: Props) {
                     </Link>
                     <div className="text-xs text-gray-600">{investor.type}</div>
                   </div>
+                  {/* Star */}
+                  <div className="ml-auto">
+                    <FavoriteStar
+                      investorId={investor.id}
+                      initiallyFavorited={investor.isFavorited}
+                    />
+                  </div>
                 </div>
-                <div className="ml-auto">
-                  <FavoriteStar
-                    investorId={investor.id}
-                    initiallyFavorited={investor.isFavorited}
+
+                <div className="grid grid-cols-4 gap-x-12 max-w-container mx-10 pt-2">
+                  <Stat
+                    label="Avg. Check"
+                    value={
+                      investor.averageInvestmentSize
+                        ? `$${investor.averageInvestmentSize.toLocaleString()}`
+                        : "—"
+                    }
+                  />
+                  <Stat
+                    label="Latest Inv. Company"
+                    value={
+                      investor.mostRecentInvestmentCompany ?? "Undisclosed"
+                    }
+                  />
+                  <Stat
+                    label="Latest Inv. Date"
+                    value={
+                      investor.mostRecentInvestmentDate
+                        ? investor.mostRecentInvestmentDate.toLocaleDateString()
+                        : "—"
+                    }
+                  />
+                  <Stat
+                    label="Total Inv."
+                    value={investor.totalInvestments.toString()}
                   />
                 </div>
               </div>
-            </div>
-            <div className="grid grid-cols-4 gap-x-12 max-w-container mx-40 pt-8 pb-4">
-              <Stat
-                label="Avg. Check"
-                value={
-                  investor.averageInvestmentSize
-                    ? `$${investor.averageInvestmentSize.toLocaleString()}`
-                    : "—"
-                }
-              />
-              <Stat
-                label="Latest Inv. Company"
-                value={investor.mostRecentInvestmentCompany ?? "Undisclosed"}
-              />
-              <Stat
-                label="Latest Inv. Date"
-                value={
-                  investor.mostRecentInvestmentDate
-                    ? investor.mostRecentInvestmentDate.toLocaleDateString()
-                    : "—"
-                }
-              />
-              <Stat
-                label="Total Inv."
-                value={investor.totalInvestments.toString()}
-              />
             </div>
           </CardTitle>
         </CardHeader>
@@ -101,7 +105,7 @@ function Stat({ label, value }: { label: string; value: string }) {
       <span className="text-xs text-gray-500 tracking-light tabular-nums">
         {label}
       </span>
-      <div className="text-xl">
+      <div className="text-lg">
         {label.toLocaleLowerCase() === "avg. check" ? (
           <span className="text-green-600 tracking-light tabular-nums">
             {value}
@@ -161,7 +165,7 @@ export function FavoriteStar({
       className="
         p-1 rounded
         transition
-        hover:bg-yellow-100
+        hover:bg-yellow-100 
         disabled:opacity-60
       "
     >

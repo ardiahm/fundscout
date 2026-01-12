@@ -29,7 +29,6 @@ export async function ensureUser() {
     where: { clerkUserId: userId },
   });
 
-  console.log(prismaUser);
 
   // if user doesn't exist, create new user in prisma
   if (!prismaUser) {

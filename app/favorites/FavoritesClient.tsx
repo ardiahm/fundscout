@@ -9,9 +9,10 @@ import {Input} from "@/app/components/ui/input"
 
 type Props = {
     favoriteInvestors: InvestorComplete[],
+    favoriteInvestorsCount: number,
 }
 
-export default function FavoritesClient({favoriteInvestors}: Props) {
+export default function FavoritesClient({favoriteInvestors, favoriteInvestorsCount}: Props) {
 return (
     <>
     <div className="w-full flex gap-4">
@@ -21,7 +22,7 @@ return (
         <div className="grid grid-cols-2 justify-end">
           <div className="font-semibold px-4  text-3xl">
           
-            Favorite Investors
+            Favorite Investors{" ("}{favoriteInvestorsCount}{") "}
           </div>
           <div className="gap-3 flex w-full gap-2 md:justify-end px-4 md:px-10">
             <Input

@@ -6,10 +6,17 @@ import {auth} from "@clerk/nextjs/server"
 
 
 export default async function DashboardPage() {
-  const investors = await getInvestorsComplete();
   const user = await ensureUser();
+  const {} = await auth();
 
-  if (!user) redirect("/sign-in");
+  const userId = user.id;
+  if (!userId) {
+    redirect("/sign-in")
+  }
+
+    const investors = await getInvestorsComplete(userId);
+
+
 
   return <DashboardClient investors={investors} user={user}/>
 }

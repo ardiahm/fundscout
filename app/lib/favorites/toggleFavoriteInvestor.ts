@@ -1,9 +1,10 @@
-"use server"
+"use server";
 
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "../../../backend/lib/prisma";
 import { redirect } from "next/navigation";
 import { User } from "@/backend/lib/generated/prisma/client";
+import { revalidatePath, updateTag } from "next/cache";
 
 type Props = {
   investorId: number;
@@ -39,22 +40,24 @@ export async function toggleFavoriteInvestor({ investorId }: Props) {
 
   // if existing, delete; else, create
   if (isExistingFavorite) {
-    console.log("removing favorite: " + investorId)
     await prisma.favoriteInvestor.delete({
-    where: {
-      userId_investorId: {
+      where: {
+        userId_investorId: {
+          userId: prismaUserId,
+          investorId,
+        },
+      },
+    });
+  } else {
+    await prisma.favoriteInvestor.create({
+      data: {
         userId: prismaUserId,
         investorId,
       },
-    },
-  });
-  } else {
-    console.log("adding favorite: " + investorId)
-    await prisma.favoriteInvestor.create({
-    data: {
-        userId: prismaUserId,
-        investorId,
-    }
-  })
+    });
   }
+
+  // refresh dashboard and favorites (essentially re-running getInvestorsComplete)
+  revalidatePath("/dashboard");
+  revalidatePath("/favorites");
 }

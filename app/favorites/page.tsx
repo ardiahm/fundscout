@@ -18,5 +18,7 @@ export default async function FavoritesPage() {
 
   const favoriteInvestors = await getInvestorsComplete(userId, onlyFavorites);
 
-  return <FavoritesClient favoriteInvestors={favoriteInvestors}  />;
+  const favoriteInvestorsCount = favoriteInvestors.length;
+
+  return <FavoritesClient favoriteInvestors={favoriteInvestors} favoriteInvestorsCount={favoriteInvestorsCount} />;
 }
