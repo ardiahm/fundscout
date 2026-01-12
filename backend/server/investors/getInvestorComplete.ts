@@ -12,8 +12,10 @@ console.log("DATABASE_URL:", process.env.DATABASE_URL);
  */
 export async function getInvestorsComplete(
   userId?: string,
-  onlyFavorites: boolean = false
+  onlyFavorites: boolean = false,
+  searchQuery?: string,
 ) {
+
   const investors = await prisma.investor.findMany({
     where:
       onlyFavorites && userId
