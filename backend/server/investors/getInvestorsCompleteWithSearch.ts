@@ -271,4 +271,7 @@ export async function getInvestorsCompleteWithSearch(
       isFavorited: userId ? inv.favoritedBy.length > 0 : false,
     };
   });
+
+  
+
 }
