@@ -199,6 +199,7 @@ export type SectorOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   companies?: Prisma.CompanySectorOrderByRelationAggregateInput
+  _relevance?: Prisma.SectorOrderByRelevanceInput
 }
 
 export type SectorWhereUniqueInput = Prisma.AtLeast<{
@@ -262,6 +263,12 @@ export type SectorUpdateManyMutationInput = {
 export type SectorUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
+}
+
+export type SectorOrderByRelevanceInput = {
+  fields: Prisma.SectorOrderByRelevanceFieldEnum | Prisma.SectorOrderByRelevanceFieldEnum[]
+  sort: Prisma.SortOrder
+  search: string
 }
 
 export type SectorCountOrderByAggregateInput = {

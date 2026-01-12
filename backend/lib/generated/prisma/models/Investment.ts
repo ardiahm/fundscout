@@ -249,6 +249,7 @@ export type InvestmentOrderByWithRelationInput = {
   investedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   investor?: Prisma.InvestorOrderByWithRelationInput
   company?: Prisma.CompanyOrderByWithRelationInput
+  _relevance?: Prisma.InvestmentOrderByRelevanceInput
 }
 
 export type InvestmentWhereUniqueInput = Prisma.AtLeast<{
@@ -357,6 +358,12 @@ export type InvestmentListRelationFilter = {
 
 export type InvestmentOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type InvestmentOrderByRelevanceInput = {
+  fields: Prisma.InvestmentOrderByRelevanceFieldEnum | Prisma.InvestmentOrderByRelevanceFieldEnum[]
+  sort: Prisma.SortOrder
+  search: string
 }
 
 export type InvestmentCountOrderByAggregateInput = {

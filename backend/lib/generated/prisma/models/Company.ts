@@ -237,6 +237,7 @@ export type CompanyOrderByWithRelationInput = {
   location?: Prisma.SortOrderInput | Prisma.SortOrder
   sectors?: Prisma.CompanySectorOrderByRelationAggregateInput
   investments?: Prisma.InvestmentOrderByRelationAggregateInput
+  _relevance?: Prisma.CompanyOrderByRelevanceInput
 }
 
 export type CompanyWhereUniqueInput = Prisma.AtLeast<{
@@ -345,6 +346,12 @@ export type CompanyUncheckedUpdateManyInput = {
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type CompanyOrderByRelevanceInput = {
+  fields: Prisma.CompanyOrderByRelevanceFieldEnum | Prisma.CompanyOrderByRelevanceFieldEnum[]
+  sort: Prisma.SortOrder
+  search: string
 }
 
 export type CompanyCountOrderByAggregateInput = {

@@ -228,6 +228,7 @@ export type InvestorOrderByWithRelationInput = {
   websiteUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   investments?: Prisma.InvestmentOrderByRelationAggregateInput
   favoritedBy?: Prisma.FavoriteInvestorOrderByRelationAggregateInput
+  _relevance?: Prisma.InvestorOrderByRelevanceInput
 }
 
 export type InvestorWhereUniqueInput = Prisma.AtLeast<{
@@ -326,6 +327,12 @@ export type InvestorUncheckedUpdateManyInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type InvestorOrderByRelevanceInput = {
+  fields: Prisma.InvestorOrderByRelevanceFieldEnum | Prisma.InvestorOrderByRelevanceFieldEnum[]
+  sort: Prisma.SortOrder
+  search: string
 }
 
 export type InvestorCountOrderByAggregateInput = {

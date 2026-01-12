@@ -210,6 +210,7 @@ export type FavoriteInvestorOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
   investor?: Prisma.InvestorOrderByWithRelationInput
+  _relevance?: Prisma.FavoriteInvestorOrderByRelevanceInput
 }
 
 export type FavoriteInvestorWhereUniqueInput = Prisma.AtLeast<{
@@ -292,6 +293,12 @@ export type FavoriteInvestorListRelationFilter = {
 
 export type FavoriteInvestorOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type FavoriteInvestorOrderByRelevanceInput = {
+  fields: Prisma.FavoriteInvestorOrderByRelevanceFieldEnum | Prisma.FavoriteInvestorOrderByRelevanceFieldEnum[]
+  sort: Prisma.SortOrder
+  search: string
 }
 
 export type FavoriteInvestorUserIdInvestorIdCompoundUniqueInput = {

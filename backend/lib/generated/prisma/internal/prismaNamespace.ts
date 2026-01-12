@@ -1068,6 +1068,58 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
+export const InvestorOrderByRelevanceFieldEnum = {
+  name: 'name',
+  type: 'type',
+  avatarUrl: 'avatarUrl',
+  websiteUrl: 'websiteUrl'
+} as const
+
+export type InvestorOrderByRelevanceFieldEnum = (typeof InvestorOrderByRelevanceFieldEnum)[keyof typeof InvestorOrderByRelevanceFieldEnum]
+
+
+export const CompanyOrderByRelevanceFieldEnum = {
+  name: 'name',
+  description: 'description',
+  logoUrl: 'logoUrl',
+  websiteUrl: 'websiteUrl',
+  location: 'location'
+} as const
+
+export type CompanyOrderByRelevanceFieldEnum = (typeof CompanyOrderByRelevanceFieldEnum)[keyof typeof CompanyOrderByRelevanceFieldEnum]
+
+
+export const SectorOrderByRelevanceFieldEnum = {
+  name: 'name'
+} as const
+
+export type SectorOrderByRelevanceFieldEnum = (typeof SectorOrderByRelevanceFieldEnum)[keyof typeof SectorOrderByRelevanceFieldEnum]
+
+
+export const InvestmentOrderByRelevanceFieldEnum = {
+  stage: 'stage'
+} as const
+
+export type InvestmentOrderByRelevanceFieldEnum = (typeof InvestmentOrderByRelevanceFieldEnum)[keyof typeof InvestmentOrderByRelevanceFieldEnum]
+
+
+export const UserOrderByRelevanceFieldEnum = {
+  id: 'id',
+  clerkUserId: 'clerkUserId',
+  industries: 'industries',
+  goals: 'goals'
+} as const
+
+export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
+
+
+export const FavoriteInvestorOrderByRelevanceFieldEnum = {
+  userId: 'userId'
+} as const
+
+export type FavoriteInvestorOrderByRelevanceFieldEnum = (typeof FavoriteInvestorOrderByRelevanceFieldEnum)[keyof typeof FavoriteInvestorOrderByRelevanceFieldEnum]
+
+
 
 /**
  * Field references
