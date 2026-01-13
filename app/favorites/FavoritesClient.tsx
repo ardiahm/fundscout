@@ -3,6 +3,8 @@
 import type { InvestorComplete } from "@/backend/types/investor";
 import {User} from "@/backend/lib/generated/prisma/client"
 import { InvestorCard } from "@/app/components/site/InvestorCard"
+import { SearchBar } from "@/app/components/site/SearchBar"
+
 import {Button} from "@/app/components/ui/button"
 import {Input} from "@/app/components/ui/input"
 
@@ -13,6 +15,8 @@ type Props = {
 }
 
 export default function FavoritesClient({favoriteInvestors, favoriteInvestorsCount}: Props) {
+
+  const correctURL = "favorites";
 return (
     <>
     <div className="w-full flex gap-4">
@@ -24,19 +28,7 @@ return (
           
             Favorite Investors{" ("}{favoriteInvestorsCount}{") "}
           </div>
-          <div className="gap-3 flex w-full gap-2 md:justify-end px-4 md:px-10">
-            <Input
-              type="search"
-              placeholder="Search for VCs, Angels, and other funds"
-            />
-            <Button
-              type="submit"
-              variant="outline"
-              className="transition delay-20 hover:border-black"
-            >
-              Enter
-            </Button>
-          </div>
+          <SearchBar correctURL={correctURL} />
           <p className="text-left"></p>
         </div>
 

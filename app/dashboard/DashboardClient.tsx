@@ -2,7 +2,7 @@
 
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { InvestorRow } from "../components/site/InvestorRow";
+import { SearchBar } from "../components/site/SearchBar";
 import { InvestorCard } from "../components/site/InvestorCard";
 import type { InvestorComplete } from "@/backend/types/investor";
 import {User} from "@/backend/lib/generated/prisma/client"
@@ -15,6 +15,7 @@ type Props = {
 
 
 export default function DashboardClient({ investors, user }: Props) {
+  const correctURL = "dashboard";
   return (
     <div className="w-full flex gap-4">
       {/* LEFT (main column) */}
@@ -25,19 +26,7 @@ export default function DashboardClient({ investors, user }: Props) {
           
             Investor Index
           </div>
-          <div className="gap-3 flex w-full gap-2 md:justify-end px-4 md:px-10">
-            <Input
-              type="search"
-              placeholder="Search for VCs, Angels, and other funds"
-            />
-            <Button
-              type="submit"
-              variant="outline"
-              className="transition delay-20 hover:border-black"
-            >
-              Enter
-            </Button>
-          </div>
+          <SearchBar correctURL={correctURL} />
           <p className="text-left"></p>
         </div>
 

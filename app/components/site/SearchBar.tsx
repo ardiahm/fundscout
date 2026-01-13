@@ -5,14 +5,19 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/app/components/ui/input";
 import { Button } from "@/app/components/ui/button";
 
-export function SearchBar() {
+export function SearchBar({correctURL, }: {correctURL: string}) {
   const router = useRouter();
 
   const [query, setQuery] = useState("");
 
   const handleSubmit = () => {
     console.log("received query: " + query);
-    router.push(`/investors?search=${encodeURIComponent(query)}`);
+
+    if (!query) {
+      router.push(`/${correctURL}`);
+    } else {
+      router.push(`/${correctURL}?search=${encodeURIComponent(query)}`);
+    }
   };
 
   return (
@@ -30,6 +35,7 @@ export function SearchBar() {
         type="submit"
         variant="outline"
         className="transition delay-20 hover:border-black"
+        onClick={handleSubmit}
       >
         Enter
       </Button>

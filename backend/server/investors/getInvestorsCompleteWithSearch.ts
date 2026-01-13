@@ -27,7 +27,7 @@ export async function getInvestorsCompleteWithSearch(
         },
         ...(ftsQuery && {
           name: {
-            contains: ftsQuery,
+            search: ftsQuery,
           },
         }),
       },
@@ -85,7 +85,7 @@ export async function getInvestorsCompleteWithSearch(
         },
         ...(ftsQuery && {
           name: {
-            contains: ftsQuery,
+            search: ftsQuery,
           },
         }),
       },
