@@ -11,9 +11,15 @@ export default async function PricingPage() {
         redirect('/sign-in')
     }
 
+    const tier1Url = '/placeholder.com';
+    const tier2Url = '/placeholder2.com';
+
     return (
         <>
-        <PricingPageClient user={user} />
+        <div className="h-screen overflow-y-auto">
+            <PricingPageClient user={user} tier1={tier1Url} tier2={tier2Url} />
+        </div>
+        
         </>
     )
 }
