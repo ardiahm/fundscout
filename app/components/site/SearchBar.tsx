@@ -36,6 +36,7 @@ export function SearchBar({correctURL, }: {correctURL: string}) {
         variant="outline"
         className="transition delay-20 hover:border-black"
         onClick={handleSubmit}
+        disabled={!query}
       >
         Enter
       </Button>

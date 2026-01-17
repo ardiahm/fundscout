@@ -4,6 +4,9 @@ import { ensureUser } from "@/app/lib/auth/ensureUser";
 import FavoritesClient from "./FavoritesClient";
 import { auth } from "@clerk/nextjs/server";
 import {redirect} from "next/navigation"
+import {getInvestorSummaries} from "@/backend/server/investors/getInvestorSummaries";
+import {lightweightGetFavoriteInvestors} from "@/backend/server/favorites/lightweightGetFavoriteInvestors";
+
 
 export default async function FavoritesPage({
   searchParams,
@@ -18,14 +21,15 @@ export default async function FavoritesPage({
     redirect("/sign-in")
   }
 
-  const onlyFavorites = true;
+ 
+   const investorSummary = await getInvestorSummaries();
+ 
+   const favoriteInvestorsByID = await lightweightGetFavoriteInvestors(userId);
+ 
 
-   const search = await searchParams;
-  const searchValue = search.search;
-
-  const favoriteInvestors = await getInvestorsCompleteWithSearch(userId, onlyFavorites, searchValue);
-
-  const favoriteInvestorsCount = favoriteInvestors.length;
-
-  return <FavoritesClient favoriteInvestors={favoriteInvestors} favoriteInvestorsCount={favoriteInvestorsCount} />;
-}
+  return (
+  <FavoritesClient
+    investors={investorSummary}
+    initialFavoriteInvestorIDs={[...favoriteInvestorsByID]}
+  />
+);}

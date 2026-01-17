@@ -1,4 +1,4 @@
-import { InvestorComplete } from "../../../backend/types/investor";
+import { InvestorSummary } from "../../../backend/types/investor";
 import Link from "next/link";
 import {
   Card,
@@ -10,11 +10,14 @@ import {
   CardFooter,
 } from "@/app/components/ui/card";
 
-type Props = {
-  investor: InvestorComplete;
+export type InvestorCardProps = {
+  investor: InvestorSummary;
+  isFavorited: boolean;
+  onToggleFavorite: (investorId: number) => void;
 };
 
-export function InvestorCard({ investor }: Props) {
+
+export function InvestorCard({ investor, isFavorited, onToggleFavorite }: InvestorCardProps) {
   return (
     <>
       <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80 ">
@@ -35,10 +38,7 @@ export function InvestorCard({ investor }: Props) {
                       />
                     ) : (
                       <div className="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-sm font-medium text-gray-700">
-                        {investor.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
+                        {investor.name}
                       </div>
                     )}
                   </div>
@@ -54,8 +54,8 @@ export function InvestorCard({ investor }: Props) {
                   {/* Star */}
                   <div className="ml-auto">
                     <FavoriteStar
-                      investorId={investor.id}
-                      initiallyFavorited={investor.isFavorited}
+                      isFavorited={isFavorited}
+                      onClick={() => onToggleFavorite(investor.id)}
                     />
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export function InvestorCard({ investor }: Props) {
                     />
                     <Stat
                       label="Total Inv."
-                      value={investor.totalInvestments.toString()}
+                      value={investor.totalInvestments?.toLocaleString()}
                     />
                   </div>
                 </div>
@@ -127,53 +127,29 @@ function Stat({ label, value }: { label: string; value: string }) {
 import { Star } from "lucide-react";
 import { useState, useTransition } from "react";
 import { toggleFavoriteInvestor } from "@/app/lib/favorites/toggleFavoriteInvestor";
-
 type FavoriteStarProps = {
-  investorId: number;
-  initiallyFavorited: boolean;
+  isFavorited: boolean;
+  onClick: () => void;
 };
 
-export function FavoriteStar({
-  investorId,
-  initiallyFavorited,
-}: FavoriteStarProps) {
-  "use client";
-  const [isFavorited, setIsFavorited] = useState(initiallyFavorited);
-  const [isPending, startTransition] = useTransition();
-
-  const handleClick = () => {
-    startTransition(async () => {
-      const prev = isFavorited;
-
-      // optimistic UI
-      setIsFavorited(!prev);
-
-      try {
-        console.log("toggled favorite: " + investorId);
-        await toggleFavoriteInvestor({ investorId });
-      } catch (err) {
-        // rollback on failure
-        setIsFavorited(prev);
-      }
-    });
-  };
-
+export function FavoriteStar({ isFavorited, onClick }: FavoriteStarProps) {
   return (
     <button
       type="button"
-      onClick={handleClick}
-      disabled={isPending}
+      onClick={onClick}
       aria-label="Toggle favorite investor"
       className="
         p-1 rounded
         transition
-        hover:bg-yellow-100 
-        disabled:opacity-60
+        hover:bg-yellow-100
+        focus:outline-none
       "
     >
       <Star
         className={`h-5 w-5 transition ${
-          isFavorited ? "fill-yellow-400 text-yellow-400" : "text-gray-400"
+          isFavorited
+            ? "fill-yellow-400 text-yellow-400"
+            : "text-gray-400"
         }`}
       />
     </button>

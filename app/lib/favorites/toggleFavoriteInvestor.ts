@@ -6,11 +6,8 @@ import { redirect } from "next/navigation";
 import { User } from "@/backend/lib/generated/prisma/client";
 import { revalidatePath, updateTag } from "next/cache";
 
-type Props = {
-  investorId: number;
-};
 
-export async function toggleFavoriteInvestor({ investorId }: Props) {
+export async function toggleFavoriteInvestor(investorId: number) {
   // lightweight clerk auth
   const { userId } = await auth();
   if (!userId) {
@@ -57,7 +54,5 @@ export async function toggleFavoriteInvestor({ investorId }: Props) {
     });
   }
 
-  // refresh dashboard and favorites (essentially re-running getInvestorsComplete)
-  revalidatePath("/dashboard");
-  revalidatePath("/favorites");
+  console.log(prisma.favoriteInvestor)
 }
