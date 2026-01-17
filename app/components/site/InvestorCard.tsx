@@ -21,7 +21,7 @@ export function InvestorCard({ investor }: Props) {
         <CardHeader>
           <CardTitle>
             {/* Avatar, Name, Type, Star, and Stats Container */}
-            <div className="my-3">
+            <div className="my-2">
               <div className="flex flex-col gap-4 @wide:justify-between">
                 {/* Avatar, Name, Type, and Star Container */}
                 <div className="flex items-center gap-4 pt-1 ">
