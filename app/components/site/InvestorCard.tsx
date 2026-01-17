@@ -22,9 +22,9 @@ export function InvestorCard({ investor }: Props) {
           <CardTitle>
             {/* Avatar, Name, Type, Star, and Stats Container */}
             <div className="my-3">
-              <div className="flex w-full justify-between items-start">
+              <div className="flex flex-col gap-4 @wide:justify-between">
                 {/* Avatar, Name, Type, and Star Container */}
-                <div className="flex items-center w-max gap-4 pt-1 ">
+                <div className="flex items-center gap-4 pt-1 ">
                   {/* Avatar */}
                   <div className="flex items-center">
                     {investor.avatarUrl ? (
@@ -60,33 +60,35 @@ export function InvestorCard({ investor }: Props) {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-x-12 max-w-container mx-10 pt-2">
-                  <Stat
-                    label="Avg. Check"
-                    value={
-                      investor.averageInvestmentSize
-                        ? `$${investor.averageInvestmentSize.toLocaleString()}`
-                        : "—"
-                    }
-                  />
-                  <Stat
-                    label="Latest Inv. Company"
-                    value={
-                      investor.mostRecentInvestmentCompany ?? "Undisclosed"
-                    }
-                  />
-                  <Stat
-                    label="Latest Inv. Date"
-                    value={
-                      investor.mostRecentInvestmentDate
-                        ? investor.mostRecentInvestmentDate.toLocaleDateString()
-                        : "—"
-                    }
-                  />
-                  <Stat
-                    label="Total Inv."
-                    value={investor.totalInvestments.toString()}
-                  />
+                <div className="flex justify-center pt-2">
+                  <div className="grid grid-cols-2 items-center @sm:gap-x-4 @sm:gap-y-4 @md:grid-cols-2 @md:gap-x-8 @lg:grid-cols-4 @lg:gap-x-12 @lg:mx-10 max-w-container">
+                    <Stat
+                      label="Avg. Check"
+                      value={
+                        investor.averageInvestmentSize
+                          ? `$${investor.averageInvestmentSize.toLocaleString()}`
+                          : "—"
+                      }
+                    />
+                    <Stat
+                      label="Latest Inv. Company"
+                      value={
+                        investor.mostRecentInvestmentCompany ?? "Undisclosed"
+                      }
+                    />
+                    <Stat
+                      label="Latest Inv. Date"
+                      value={
+                        investor.mostRecentInvestmentDate
+                          ? investor.mostRecentInvestmentDate.toLocaleDateString()
+                          : "—"
+                      }
+                    />
+                    <Stat
+                      label="Total Inv."
+                      value={investor.totalInvestments.toString()}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -97,12 +99,12 @@ export function InvestorCard({ investor }: Props) {
   );
 }
 
-/* ---------- Small helper ---------- */
+/* ---------- Stat helper ---------- */
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col text-right min-w-0">
-      <span className="text-xs text-gray-500 tracking-light tabular-nums">
+    <div className="flex flex-col min-w-0">
+      <span className="text-[11px] md:text-xs text-gray-500 tracking-light tabular-nums">
         {label}
       </span>
       <div className="text-lg">

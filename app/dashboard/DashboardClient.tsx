@@ -31,7 +31,7 @@ export default function DashboardClient({ investors, user }: Props) {
         </div>
 
         {/* Investor Results */}
-        <div className="py-4 space-y-2 px-4 md:px-10">
+        <div className="@container py-4 space-y-2 px-4 md:px-10">
           {investors.map((investor, idx) => (
             <div
               key={investor.id}

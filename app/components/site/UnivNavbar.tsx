@@ -16,9 +16,6 @@ import { UserButton } from "@clerk/nextjs";
 export default function UnivNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // NEW: Track active tab via URL hash
-  const [activeSection, setActiveSection] = useState("");
-
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
