@@ -2,7 +2,7 @@
 
 import { prisma } from "../../lib/prisma"
 
-export async function getInvestorByIdComplete(id: number) {
+export async function getInvestorByIdComplete(id: number, userId?: string) {
   const investor = await prisma.investor.findUnique({
     where: { id },
     select: {
@@ -11,6 +11,12 @@ export async function getInvestorByIdComplete(id: number) {
       type: true,
       avatarUrl: true,
       websiteUrl: true,
+      favoritedBy: userId
+          ? {
+              where: { userId },
+              select: { userId: true },
+            }
+          : false,
       investments: {
         select: {
           id: true,
@@ -68,9 +74,17 @@ export async function getInvestorByIdComplete(id: number) {
 
   const mostRecentInvestment = investments[0] ?? null
 
+
+  const isFavorited =
+  userId && investor.favoritedBy
+    ? investor.favoritedBy.length > 0
+    : false
+
+
   return {
     ...investor,
     totalInvestments,
+    isFavorited,
     averageInvestmentSize,
     mostRecentInvestmentCompany:
       mostRecentInvestment?.company?.name ?? null,

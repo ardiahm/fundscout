@@ -2,32 +2,53 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/components/ui/button";
 import type { InvestorComplete } from "../../../backend/types/investor";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/app/components/ui/card";
-import Link from "next/link";
+import { useMemo, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import InvestorProfileCard from "@/app/components/site/investor-profile/InvestorProfileCard";
 import InvestmentCards from "@/app/components/site/investor-profile/InvestmentCard";
 import LargestInvestmentCard from "@/app/components/site/investor-profile/LargestInvestmentCard";
 import MostRecentInvestmentCard from "@/app/components/site/investor-profile/MostRecentInvestmentCard";
+import { toggleFavoriteInvestor } from "@/app/lib/favorites/toggleFavoriteInvestor";
 
 interface Props {
   investor: InvestorComplete;
+  initialFavoriteInvestorIDs: number[];
 }
 
-export default function InvestorClient({ investor }: Props) {
+export default function InvestorClient({
+  investor,
+  initialFavoriteInvestorIDs,
+}: Props) {
   if (!investor) {
     return <div className="p-6 text-gray-500">Investor not found.</div>;
   }
 
   const router = useRouter();
+
+  const [favoriteIds, setFavoriteIds] = useState<number[]>(
+    initialFavoriteInvestorIDs,
+  );
+
+  const favoriteSet = useMemo(() => new Set(favoriteIds), [favoriteIds]);
+
+  const toggleFavorite = async (investorId: number) => {
+    setFavoriteIds((prev) =>
+      prev.includes(investorId)
+        ? prev.filter((id) => id !== investorId)
+        : [...prev, investorId],
+    );
+
+    try {
+      await toggleFavoriteInvestor(investorId);
+    } catch (err) {
+      // optional rollback if you want
+      setFavoriteIds((prev) =>
+        prev.includes(investorId)
+          ? prev.filter((id) => id !== investorId)
+          : [...prev, investorId],
+      );
+    }
+  };
 
   return (
     <div className="max-w-screen mx-10 px-6 py-6 space-y-10">
@@ -41,7 +62,11 @@ export default function InvestorClient({ investor }: Props) {
           <ArrowLeft className="h-4 w-4" />
           Back to Dashboard
         </Button>
-        <InvestorProfileCard investor={investor} />
+        <InvestorProfileCard
+          investor={investor}
+          isFavorited={favoriteSet.has(investor.id)}
+          onToggleFavorite={toggleFavorite}
+        />
       </header>
 
       <section>
