@@ -9,7 +9,7 @@ export type InvestorSummary = {
   averageInvestmentSize: number | null;
 
   mostRecentInvestmentCompany: string | null;
-  mostRecentInvestmentDate: Date | null;
+  mostRecentInvestmentDate: string | null;
 };
 
 export type InvestorWithDetails = {

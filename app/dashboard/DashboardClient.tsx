@@ -59,7 +59,7 @@ export default function DashboardClient({
         </div>
 
         {/* Investor Results */}
-        <div className="@container py-4 space-y-2 px-4 md:px-10">
+        <div className="py-4 space-y-2 px-4 md:px-10">
           {investors.map((investor, idx) => (
             <div
               key={investor.id}
@@ -76,8 +76,6 @@ export default function DashboardClient({
           {investors.length > 0 && <div className="w-[350px] p-4"></div>}
         </div>
       </div>
-
-      {/* RIGHT (optional featured card / preview) */}
     </div>
   );
 }

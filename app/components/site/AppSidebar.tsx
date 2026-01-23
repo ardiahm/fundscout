@@ -66,7 +66,7 @@ const toolItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar className="hidden fixed top-[68px] h-[calc(100vh-60px-00px)] text-black !bg-white !important border border-gray-300 z-40">
+    <Sidebar className="hidden fixed top-[70px] h-[calc(100vh-60px-00px)] text-black !bg-white !important border border-gray-300 z-40">
       <SidebarContent>
         {/* STARTUP GENERATORS */}
         <SidebarGroup>

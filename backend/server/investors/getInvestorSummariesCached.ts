@@ -55,7 +55,8 @@ export const getInvestorSummariesCached = unstable_cache(
         mostRecentInvestmentCompany:
           mostRecent?.company.name ?? null,
         mostRecentInvestmentDate:
-          mostRecent?.investedAt ?? null,
+          mostRecent?.investedAt ?
+          mostRecent.investedAt.toLocaleDateString(): null,
         investments,
       };
     });

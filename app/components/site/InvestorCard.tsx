@@ -16,79 +16,93 @@ export type InvestorCardProps = {
   onToggleFavorite: (investorId: number) => void;
 };
 
-
-export function InvestorCard({ investor, isFavorited, onToggleFavorite }: InvestorCardProps) {
+export function InvestorCard({
+  investor,
+  isFavorited,
+  onToggleFavorite,
+}: InvestorCardProps) {
   return (
     <>
-      <Card className="bg-sky-100/20 transition delay-20 hover:bg-sky-100/80 ">
+      <Card className="relative bg-sky-100/20 transition hover:bg-sky-100/80">
         <CardHeader>
           <CardTitle>
-            {/* Avatar, Name, Type, Star, and Stats Container */}
-            <div className="my-2">
-              <div className="flex flex-col gap-4 @wide:justify-between">
-                {/* Avatar, Name, Type, and Star Container */}
-                <div className="flex items-center gap-4 pt-1 ">
+            <div className="flex flex-col gap-4 mx-auto">
+              {/* ---------- TOP ROW ---------- */}
+              <div className="flex items-start justify-between gap-4">
+                {/* Left: Avatar + Name + Type */}
+                <div className="flex items-center gap-4">
                   {/* Avatar */}
-                  <div className="flex items-center">
-                    {investor.avatarUrl ? (
-                      <img
-                        src={investor.avatarUrl}
-                        alt={investor.name}
-                        className="h-9 w-9 rounded-full object-cover"
-                      />
-                    ) : (
-                      <div className="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-sm font-medium text-gray-700">
-                        {investor.name}
-                      </div>
-                    )}
-                  </div>
-                  {/* Name and Type */}
-                  <div className="flex flex-col ">
+                  {investor.avatarUrl ? (
+                    <img
+                      src={investor.avatarUrl}
+                      alt={investor.name}
+                      className="h-9 w-9 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center text-sm font-medium text-gray-700">
+                      {investor.name}
+                    </div>
+                  )}
+
+                  {/* Name + Type */}
+                  <div className="flex flex-col">
                     <Link href={`/investor-profile/${investor.id}`}>
                       <span className="text-lg font-medium text-gray-900 hover:underline cursor-pointer">
                         {investor.name}
                       </span>
                     </Link>
-                    <div className="text-xs text-gray-600">{investor.type}</div>
-                  </div>
-                  {/* Star */}
-                  <div className="ml-auto">
-                    <FavoriteStar
-                      isFavorited={isFavorited}
-                      onClick={() => onToggleFavorite(investor.id)}
-                    />
+                    <span className="text-xs text-gray-600">
+                      {investor.type}
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex justify-center pt-2">
-                  <div className="grid grid-cols-2 items-center @sm:gap-x-4 @sm:gap-y-4 @md:grid-cols-2 @md:gap-x-8 @lg:grid-cols-4 @lg:gap-x-12 @lg:mx-10 max-w-container">
-                    <Stat
-                      label="Avg. Check"
-                      value={
-                        investor.averageInvestmentSize
-                          ? `$${investor.averageInvestmentSize.toLocaleString()}`
-                          : "—"
-                      }
-                    />
-                    <Stat
-                      label="Latest Inv. Company"
-                      value={
-                        investor.mostRecentInvestmentCompany ?? "Undisclosed"
-                      }
-                    />
-                    <Stat
-                      label="Latest Inv. Date"
-                      value={
-                        investor.mostRecentInvestmentDate
-                          ? investor.mostRecentInvestmentDate.toLocaleDateString()
-                          : "—"
-                      }
-                    />
-                    <Stat
-                      label="Total Inv."
-                      value={investor.totalInvestments?.toLocaleString()}
-                    />
-                  </div>
+                {/* Right: Star (fixed position) */}
+                <FavoriteStar
+                  isFavorited={isFavorited}
+                  onClick={() => onToggleFavorite(investor.id)}
+                />
+              </div>
+
+              {/* ---------- STATS GRID ---------- */}
+              <div className="mx-auto">
+                <div
+                  className="
+                    grid
+                    grid-cols-2
+                    gap-x-8 gap-y-4
+
+                    md:gap-x-30
+                    md:gap-y-6
+                    lg:grid-cols-none
+                    lg:grid-flow-col
+                    lg:auto-cols-[minmax(10rem,1fr)]
+                    lg:gap-x-10
+
+                      "
+                   >
+                  <Stat
+                    label="Latest Inv. "
+                    value={
+                      investor.mostRecentInvestmentCompany ?? "Undisclosed"
+                    }
+                  />
+                  <Stat
+                    label="Latest Inv. Date"
+                    value={investor.mostRecentInvestmentDate ?? "—"}
+                  />
+                  <Stat
+                    label="Total Inv."
+                    value={investor.totalInvestments?.toLocaleString()}
+                  />
+                  <Stat
+                    label="Avg. Check"
+                    value={
+                      investor.averageInvestmentSize
+                        ? `$${investor.averageInvestmentSize.toLocaleString()}`
+                        : "—"
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -103,11 +117,11 @@ export function InvestorCard({ investor, isFavorited, onToggleFavorite }: Invest
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col min-w-0">
+    <div className="flex flex-col text-center min-w-0">
       <span className="text-[11px] md:text-xs text-gray-500 tracking-light tabular-nums">
         {label}
       </span>
-      <div className="text-lg">
+      <div className="text-xl">
         {label.toLocaleLowerCase() === "avg. check" ? (
           <span className="text-green-600 tracking-light tabular-nums">
             {value}
@@ -146,10 +160,8 @@ export function FavoriteStar({ isFavorited, onClick }: FavoriteStarProps) {
       "
     >
       <Star
-        className={`h-5 w-5 transition ${
-          isFavorited
-            ? "fill-yellow-400 text-yellow-400"
-            : "text-gray-400"
+        className={`h-6 w-6 transition ${
+          isFavorited ? "fill-yellow-400 text-yellow-400" : "text-gray-400"
         }`}
       />
     </button>

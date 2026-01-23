@@ -17,7 +17,7 @@ export default function FavoritesClient({
 }: Props) {
   const correctURL = "favorites";
 
-  // ⭐ source of truth
+  //  source of truth
   const [favoriteIds, setFavoriteIds] = useState<number[]>(
     initialFavoriteInvestorIDs
   );
