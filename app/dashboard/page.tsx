@@ -25,7 +25,6 @@ export default async function DashboardPage({
   }
 
 
-
   const cachedInvestorSummary = await getInvestorSummariesCached();
 
   const favoriteInvestorsByID = await lightweightGetFavoriteInvestors(userId);

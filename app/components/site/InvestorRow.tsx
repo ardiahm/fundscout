@@ -48,7 +48,7 @@ export function InvestorRow({ investor }: Props) {
           label="Date"
           value={
             investor.mostRecentInvestmentDate
-              ? investor.mostRecentInvestmentDate.toLocaleDateString()
+              ? investor.mostRecentInvestmentDate.toString()
               : "—"
           }
         />
