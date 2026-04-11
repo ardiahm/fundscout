@@ -26,17 +26,17 @@ import {
 const generatorItems = [
   {
     title: "Pitch Deck Generator",
-    url: "#",
+    url: "/coming-soon",
     icon: Presentation,
   },
   {
     title: "One Liner Generator",
-    url: "#",
+    url: "/one-liner",
     icon: Sparkles,
   },
   {
     title: "Outreach Email Generator",
-    url: "#",
+    url: "/outreach",
     icon: Mail,
   },
 ];
@@ -44,17 +44,17 @@ const generatorItems = [
 const toolItems = [
   {
     title: "Investor Finder",
-    url: "#",
+    url: "/coming-soon",
     icon: Rocket,
   },
   {
     title: "Market Research Tool",
-    url: "#",
+    url: "/coming-soon",
     icon: BarChart2,
   },
   {
     title: "Startup Valuation Tool",
-    url: "#",
+    url: "/valuation",
     icon: Briefcase,
   },
   //   {
