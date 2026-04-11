@@ -5,6 +5,9 @@ import { useMemo, useState } from "react";
 import { InvestorCard } from "@/app/components/site/InvestorCard";
 import { SearchBar } from "@/app/components/site/SearchBar";
 import { toggleFavoriteInvestor } from "@/app/lib/favorites/toggleFavoriteInvestor";
+import { Button } from "@/app/components/ui/button";
+import Link from "next/link";
+
 
 type Props = {
   investors: InvestorSummary[];
@@ -19,36 +22,34 @@ export default function FavoritesClient({
 
   //  source of truth
   const [favoriteIds, setFavoriteIds] = useState<number[]>(
-    initialFavoriteInvestorIDs
+    initialFavoriteInvestorIDs,
   );
 
   // fast lookup
-  const favoriteSet = useMemo(
-    () => new Set(favoriteIds),
-    [favoriteIds]
-  );
+  const favoriteSet = useMemo(() => new Set(favoriteIds), [favoriteIds]);
 
   // derive visible favorites
   const visibleInvestors = useMemo(() => {
-    return investors.filter(inv => favoriteSet.has(inv.id));
+    return investors.filter((inv) => favoriteSet.has(inv.id));
   }, [investors, favoriteSet]);
 
   // optimistic toggle
   const toggleFavorite = async (investorId: number) => {
-    setFavoriteIds(prev =>
+    setFavoriteIds((prev) =>
       prev.includes(investorId)
-        ? prev.filter(id => id !== investorId)
-        : [...prev, investorId]
+        ? prev.filter((id) => id !== investorId)
+        : [...prev, investorId],
     );
 
     try {
       await toggleFavoriteInvestor(investorId);
+
     } catch {
       // rollback on failure
-      setFavoriteIds(prev =>
+      setFavoriteIds((prev) =>
         prev.includes(investorId)
-          ? prev.filter(id => id !== investorId)
-          : [...prev, investorId]
+          ? prev.filter((id) => id !== investorId)
+          : [...prev, investorId],
       );
     }
   };
@@ -84,8 +85,16 @@ export default function FavoritesClient({
           ))}
 
           {visibleInvestors.length === 0 && (
-            <div className="text-gray-500 text-sm px-4 py-10">
-              You haven’t favorited any investors yet.
+            <div className="flex flex-col items-center justify-center py-12 space-y-4">
+              <Link href="/dashboard">
+                <Button size="lg" className="px-8 py-6 text-lg font-semibold bg-blue-600">
+                  Return to Dashboard
+                </Button>
+              </Link>
+
+              <div className="text-gray-500 text-sm">
+                You haven’t favorited any investors yet.
+              </div>
             </div>
           )}
         </div>
