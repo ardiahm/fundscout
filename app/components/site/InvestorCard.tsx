@@ -47,7 +47,7 @@ export function InvestorCard({
                   {/* Name + Type */}
                   <div className="flex flex-col">
                     <Link href={`/investor-profile/${investor.id}`}>
-                      <span className="text-lg font-medium text-gray-900 hover:underline cursor-pointer">
+                      <span className="text-xl font-medium text-gray-900 hover:underline cursor-pointer">
                         {investor.name}
                       </span>
                     </Link>
@@ -121,7 +121,7 @@ function Stat({ label, value }: { label: string; value: string }) {
       <span className="text-[11px] md:text-xs text-gray-500 tracking-light tabular-nums">
         {label}
       </span>
-      <div className="text-xl">
+      <div className="text-lg">
         {label.toLocaleLowerCase() === "avg. check" ? (
           <span className="text-green-600 tracking-light tabular-nums">
             {value}
