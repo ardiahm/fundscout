@@ -23,7 +23,7 @@ export default function UnivNavBar() {
     <>
       {/* Main Navbar — sits under the purple bar */}
       <nav className="fixed top-[0] left-0 w-full  backdrop-blur-md shadow-sm z-40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3 lg:py-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4 lg:py-4">
           {/* Left side - Logo */}
           <NavigationMenu className="list-none">
             <NavigationMenuItem>
@@ -32,7 +32,7 @@ export default function UnivNavBar() {
                 className={`navigationMenuTriggerStyle() text-2xl inline`}
               >
                 <Link
-                  href="/"
+                  href="/dashboard"
                   className="inline font-semibold text-xl sm:text-2xl"
                 >
                   <span className="text-3xl">
