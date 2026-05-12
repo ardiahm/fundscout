@@ -17,7 +17,7 @@ import {InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGro
 import * as z from "zod";
 
 
-const formSchema = z.object({
+export const formSchema = z.object({
     target: z.enum(["Businesses", "Consumers", "Both"]),
     industry: z
       .string()
@@ -76,7 +76,6 @@ const form = useForm<z.infer<typeof formSchema>>({
   // what problem does it solve?  (problem)
   // what is the biggest result users get from your product (result)
   // what makes it better, faster, cheaper, easier, or more unique than existing options? (unique)
-  // how should this one liner sound? (tone)
 
   function onSubmit(data: z.infer<typeof formSchema>) {
     console.log("beginning to generate");
