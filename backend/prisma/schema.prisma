@@ -90,6 +90,8 @@ model User {
 
   favoriteInvestors FavoriteInvestor[]
 
+  oneLiners         OneLinerHistory?
+
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }
@@ -102,6 +104,49 @@ model FavoriteInvestor {
   investor Investor @relation(fields: [investorId], references: [id], onDelete: Cascade)
 
   @@id([userId, investorId])
+
+  createdAt DateTime @default(now())
+}
+
+model OneLinerHistory {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  interactions OneLinerInteraction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OneLinerInteraction {
+  id String @id @default(cuid())
+
+  historyId String
+  history OneLinerHistory @relation(fields: [historyId], references: [id], onDelete: Cascade)
+
+  submission OneLinerSubmission?
+
+  response Json
+
+  createdAt DateTime @default(now())
+}
+
+model OneLinerSubmission {
+  id String @id @default(cuid())
+
+  interactionId String @unique
+  interaction OneLinerInteraction @relation(fields: [interactionId], references: [id], onDelete: Cascade)
+
+  target String
+  industry String
+  name String
+  explanation String
+  user String
+  problem String
+  result String
+  unique String
 
   createdAt DateTime @default(now())
 }
