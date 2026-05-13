@@ -34,3 +34,12 @@ export const ProjectStage = {
 } as const
 
 export type ProjectStage = (typeof ProjectStage)[keyof typeof ProjectStage]
+
+
+export const OneLinerTarget = {
+  Businesses: 'Businesses',
+  Consumers: 'Consumers',
+  Both: 'Both'
+} as const
+
+export type OneLinerTarget = (typeof OneLinerTarget)[keyof typeof OneLinerTarget]

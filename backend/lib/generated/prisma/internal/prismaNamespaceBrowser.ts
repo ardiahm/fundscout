@@ -304,7 +304,6 @@ export type OneLinerInteractionOrderByRelevanceFieldEnum = (typeof OneLinerInter
 export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
   id: 'id',
   interactionId: 'interactionId',
-  target: 'target',
   industry: 'industry',
   name: 'name',
   explanation: 'explanation',

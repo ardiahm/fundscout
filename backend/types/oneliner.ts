@@ -1,3 +1,5 @@
+
+
 export type OneLinerSubmission = {
     id: string; 
     target: "Businesses" | "Consumers" | "Both";
@@ -23,7 +25,7 @@ export type OneLinerResponse = {
 
 export type OneLinerInteraction = {
     id: string;
-    submission: OneLinerSubmission;
+    submission: OneLinerSubmission | null;
     response: OneLinerResponse;
 }
 
@@ -31,3 +33,4 @@ export type OneLinerInteraction = {
 export type OneLinerHistory = {
     interactions: OneLinerInteraction[];
 }
+

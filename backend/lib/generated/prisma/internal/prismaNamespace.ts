@@ -1417,7 +1417,6 @@ export type OneLinerInteractionOrderByRelevanceFieldEnum = (typeof OneLinerInter
 export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
   id: 'id',
   interactionId: 'interactionId',
-  target: 'target',
   industry: 'industry',
   name: 'name',
   explanation: 'explanation',
@@ -1552,6 +1551,20 @@ export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'J
  * Reference to a field of type 'QueryMode'
  */
 export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+/**
+ * Reference to a field of type 'OneLinerTarget'
+ */
+export type EnumOneLinerTargetFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OneLinerTarget'>
+    
+
+
+/**
+ * Reference to a field of type 'OneLinerTarget[]'
+ */
+export type ListEnumOneLinerTargetFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OneLinerTarget[]'>
     
 
 /**

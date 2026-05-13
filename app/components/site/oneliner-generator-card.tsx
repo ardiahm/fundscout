@@ -92,6 +92,8 @@ const form = useForm<z.infer<typeof formSchema>>({
       };
     console.log(data);
     // call api's, update values, etc
+
+    // implement promise, once data is verified in prisma, router push to /one-liner (history)
   }
 
   return (

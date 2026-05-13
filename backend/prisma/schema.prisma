@@ -139,7 +139,7 @@ model OneLinerSubmission {
   interactionId String @unique
   interaction OneLinerInteraction @relation(fields: [interactionId], references: [id], onDelete: Cascade)
 
-  target String
+  target OneLinerTarget
   industry String
   name String
   explanation String
@@ -149,4 +149,10 @@ model OneLinerSubmission {
   unique String
 
   createdAt DateTime @default(now())
+}
+
+enum OneLinerTarget {
+  Businesses
+  Consumers
+  Both
 }

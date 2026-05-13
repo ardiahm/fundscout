@@ -27,7 +27,7 @@ export type AggregateOneLinerSubmission = {
 export type OneLinerSubmissionMinAggregateOutputType = {
   id: string | null
   interactionId: string | null
-  target: string | null
+  target: $Enums.OneLinerTarget | null
   industry: string | null
   name: string | null
   explanation: string | null
@@ -41,7 +41,7 @@ export type OneLinerSubmissionMinAggregateOutputType = {
 export type OneLinerSubmissionMaxAggregateOutputType = {
   id: string | null
   interactionId: string | null
-  target: string | null
+  target: $Enums.OneLinerTarget | null
   industry: string | null
   name: string | null
   explanation: string | null
@@ -186,7 +186,7 @@ export type OneLinerSubmissionGroupByArgs<ExtArgs extends runtime.Types.Extensio
 export type OneLinerSubmissionGroupByOutputType = {
   id: string
   interactionId: string
-  target: string
+  target: $Enums.OneLinerTarget
   industry: string
   name: string
   explanation: string
@@ -221,7 +221,7 @@ export type OneLinerSubmissionWhereInput = {
   NOT?: Prisma.OneLinerSubmissionWhereInput | Prisma.OneLinerSubmissionWhereInput[]
   id?: Prisma.StringFilter<"OneLinerSubmission"> | string
   interactionId?: Prisma.StringFilter<"OneLinerSubmission"> | string
-  target?: Prisma.StringFilter<"OneLinerSubmission"> | string
+  target?: Prisma.EnumOneLinerTargetFilter<"OneLinerSubmission"> | $Enums.OneLinerTarget
   industry?: Prisma.StringFilter<"OneLinerSubmission"> | string
   name?: Prisma.StringFilter<"OneLinerSubmission"> | string
   explanation?: Prisma.StringFilter<"OneLinerSubmission"> | string
@@ -255,7 +255,7 @@ export type OneLinerSubmissionWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.OneLinerSubmissionWhereInput | Prisma.OneLinerSubmissionWhereInput[]
   OR?: Prisma.OneLinerSubmissionWhereInput[]
   NOT?: Prisma.OneLinerSubmissionWhereInput | Prisma.OneLinerSubmissionWhereInput[]
-  target?: Prisma.StringFilter<"OneLinerSubmission"> | string
+  target?: Prisma.EnumOneLinerTargetFilter<"OneLinerSubmission"> | $Enums.OneLinerTarget
   industry?: Prisma.StringFilter<"OneLinerSubmission"> | string
   name?: Prisma.StringFilter<"OneLinerSubmission"> | string
   explanation?: Prisma.StringFilter<"OneLinerSubmission"> | string
@@ -290,7 +290,7 @@ export type OneLinerSubmissionScalarWhereWithAggregatesInput = {
   NOT?: Prisma.OneLinerSubmissionScalarWhereWithAggregatesInput | Prisma.OneLinerSubmissionScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"OneLinerSubmission"> | string
   interactionId?: Prisma.StringWithAggregatesFilter<"OneLinerSubmission"> | string
-  target?: Prisma.StringWithAggregatesFilter<"OneLinerSubmission"> | string
+  target?: Prisma.EnumOneLinerTargetWithAggregatesFilter<"OneLinerSubmission"> | $Enums.OneLinerTarget
   industry?: Prisma.StringWithAggregatesFilter<"OneLinerSubmission"> | string
   name?: Prisma.StringWithAggregatesFilter<"OneLinerSubmission"> | string
   explanation?: Prisma.StringWithAggregatesFilter<"OneLinerSubmission"> | string
@@ -303,7 +303,7 @@ export type OneLinerSubmissionScalarWhereWithAggregatesInput = {
 
 export type OneLinerSubmissionCreateInput = {
   id?: string
-  target: string
+  target: $Enums.OneLinerTarget
   industry: string
   name: string
   explanation: string
@@ -318,7 +318,7 @@ export type OneLinerSubmissionCreateInput = {
 export type OneLinerSubmissionUncheckedCreateInput = {
   id?: string
   interactionId: string
-  target: string
+  target: $Enums.OneLinerTarget
   industry: string
   name: string
   explanation: string
@@ -331,7 +331,7 @@ export type OneLinerSubmissionUncheckedCreateInput = {
 
 export type OneLinerSubmissionUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  target?: Prisma.StringFieldUpdateOperationsInput | string
+  target?: Prisma.EnumOneLinerTargetFieldUpdateOperationsInput | $Enums.OneLinerTarget
   industry?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   explanation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -346,7 +346,7 @@ export type OneLinerSubmissionUpdateInput = {
 export type OneLinerSubmissionUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   interactionId?: Prisma.StringFieldUpdateOperationsInput | string
-  target?: Prisma.StringFieldUpdateOperationsInput | string
+  target?: Prisma.EnumOneLinerTargetFieldUpdateOperationsInput | $Enums.OneLinerTarget
   industry?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   explanation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -360,7 +360,7 @@ export type OneLinerSubmissionUncheckedUpdateInput = {
 export type OneLinerSubmissionCreateManyInput = {
   id?: string
   interactionId: string
-  target: string
+  target: $Enums.OneLinerTarget
   industry: string
   name: string
   explanation: string
@@ -373,7 +373,7 @@ export type OneLinerSubmissionCreateManyInput = {
 
 export type OneLinerSubmissionUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  target?: Prisma.StringFieldUpdateOperationsInput | string
+  target?: Prisma.EnumOneLinerTargetFieldUpdateOperationsInput | $Enums.OneLinerTarget
   industry?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   explanation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -387,7 +387,7 @@ export type OneLinerSubmissionUpdateManyMutationInput = {
 export type OneLinerSubmissionUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   interactionId?: Prisma.StringFieldUpdateOperationsInput | string
-  target?: Prisma.StringFieldUpdateOperationsInput | string
+  target?: Prisma.EnumOneLinerTargetFieldUpdateOperationsInput | $Enums.OneLinerTarget
   industry?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   explanation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -483,9 +483,13 @@ export type OneLinerSubmissionUncheckedUpdateOneWithoutInteractionNestedInput = 
   update?: Prisma.XOR<Prisma.XOR<Prisma.OneLinerSubmissionUpdateToOneWithWhereWithoutInteractionInput, Prisma.OneLinerSubmissionUpdateWithoutInteractionInput>, Prisma.OneLinerSubmissionUncheckedUpdateWithoutInteractionInput>
 }
 
+export type EnumOneLinerTargetFieldUpdateOperationsInput = {
+  set?: $Enums.OneLinerTarget
+}
+
 export type OneLinerSubmissionCreateWithoutInteractionInput = {
   id?: string
-  target: string
+  target: $Enums.OneLinerTarget
   industry: string
   name: string
   explanation: string
@@ -498,7 +502,7 @@ export type OneLinerSubmissionCreateWithoutInteractionInput = {
 
 export type OneLinerSubmissionUncheckedCreateWithoutInteractionInput = {
   id?: string
-  target: string
+  target: $Enums.OneLinerTarget
   industry: string
   name: string
   explanation: string
@@ -527,7 +531,7 @@ export type OneLinerSubmissionUpdateToOneWithWhereWithoutInteractionInput = {
 
 export type OneLinerSubmissionUpdateWithoutInteractionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  target?: Prisma.StringFieldUpdateOperationsInput | string
+  target?: Prisma.EnumOneLinerTargetFieldUpdateOperationsInput | $Enums.OneLinerTarget
   industry?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   explanation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -540,7 +544,7 @@ export type OneLinerSubmissionUpdateWithoutInteractionInput = {
 
 export type OneLinerSubmissionUncheckedUpdateWithoutInteractionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  target?: Prisma.StringFieldUpdateOperationsInput | string
+  target?: Prisma.EnumOneLinerTargetFieldUpdateOperationsInput | $Enums.OneLinerTarget
   industry?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   explanation?: Prisma.StringFieldUpdateOperationsInput | string
@@ -631,7 +635,7 @@ export type $OneLinerSubmissionPayload<ExtArgs extends runtime.Types.Extensions.
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     interactionId: string
-    target: string
+    target: $Enums.OneLinerTarget
     industry: string
     name: string
     explanation: string
@@ -1066,7 +1070,7 @@ export interface Prisma__OneLinerSubmissionClient<T, Null = never, ExtArgs exten
 export interface OneLinerSubmissionFieldRefs {
   readonly id: Prisma.FieldRef<"OneLinerSubmission", 'String'>
   readonly interactionId: Prisma.FieldRef<"OneLinerSubmission", 'String'>
-  readonly target: Prisma.FieldRef<"OneLinerSubmission", 'String'>
+  readonly target: Prisma.FieldRef<"OneLinerSubmission", 'OneLinerTarget'>
   readonly industry: Prisma.FieldRef<"OneLinerSubmission", 'String'>
   readonly name: Prisma.FieldRef<"OneLinerSubmission", 'String'>
   readonly explanation: Prisma.FieldRef<"OneLinerSubmission", 'String'>
