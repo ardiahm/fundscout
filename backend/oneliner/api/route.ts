@@ -23,7 +23,6 @@ const GeminiOneLinerResponseSchema = z.object({
     .length(3, "Gemini must return exactly 3 one-liners."),
 });
 
-type GeminiOneLinerResponse = z.infer<typeof GeminiOneLinerResponseSchema>;
 
 const adapter = new PrismaPg({
   connectionString: "postgresql://investor:investor@localhost:5432/fundscout",
@@ -48,18 +47,21 @@ export default async function OneLinerGeminiCommunication(
     return 0;
   }
 
+  // initialize google gen ai
   const ai = new GoogleGenAI({});
 
+  // prompt gemini, send user submission, return JSON
   const geminiRawResponse = await sendSubmission(ai, oneLinerSubmission);
 
+  // validate and parse gemini JSON response from above by comparing with ResponseSchema from Zod
+  // return [ {id = index, response = "...."}, {...}]
   const finalOneLiners = await parseAndValidateGeminiResponse(geminiRawResponse);
 
-  const savedOneLiners = await saveGeneratedOneLiners(
-    userId,
-    oneLinerSubmission,
-    finalOneLiners,
+  // save one liners in prisma, either update or create user's interaction history
+  const savedOneLiners = await saveGeneratedOneLiners(userId, oneLinerSubmission, finalOneLiners,
   );
 
+  // return array of generated responses in proper format
   return savedOneLiners;
 }
 
@@ -85,7 +87,6 @@ The user submission includes IN THIS ORDER:
 Use all of this information to create one-liners that:
 - Are concise and clear
 - Accurately describe the product
-- Reflect the selected tone
 - Speak to the intended target audience
 - Communicate the main value proposition
 - Avoid vague or overused words like "revolutionary", "cutting-edge", "game-changing", or "innovative"
@@ -102,15 +103,12 @@ Return ONLY valid JSON in this exact shape:
 {
   "generated_responses": [
     {
-      "id": "1",
       "response": "First one-liner here"
     },
     {
-      "id": "2",
       "response": "Second one-liner here"
     },
     {
-      "id": "3",
       "response": "Third one-liner here"
     }
   ]
@@ -161,6 +159,7 @@ async function parseAndValidateGeminiResponse(
       id: index,
       response: item.response,
     })),
+    
   };
 }
 
@@ -190,5 +189,28 @@ async function saveGeneratedOneLiners(userId: string, oneLinerSubmission: OneLin
                 },
             },
         },
-    })
+        create: {
+            userId,
+            interactions: {
+                create: {
+                    response: finalOneLiners,
+
+                    submission: {
+                        create: {
+                            target: oneLinerSubmission.target,
+                            industry: oneLinerSubmission.industry,
+                            name: oneLinerSubmission.name,
+                            explanation: oneLinerSubmission.explanation,
+                            user: oneLinerSubmission.user,
+                            problem: oneLinerSubmission.problem,
+                            result: oneLinerSubmission.result,
+                            unique: oneLinerSubmission.unique,
+                        },
+                    },
+                },
+            },
+        }
+    });
+
+    return finalOneLiners.generated_responses;
 }
