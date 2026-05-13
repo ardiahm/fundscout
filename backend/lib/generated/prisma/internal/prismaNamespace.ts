@@ -390,7 +390,10 @@ export const ModelName = {
   CompanySector: 'CompanySector',
   Investment: 'Investment',
   User: 'User',
-  FavoriteInvestor: 'FavoriteInvestor'
+  FavoriteInvestor: 'FavoriteInvestor',
+  OneLinerHistory: 'OneLinerHistory',
+  OneLinerInteraction: 'OneLinerInteraction',
+  OneLinerSubmission: 'OneLinerSubmission'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor"
+    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor" | "oneLinerHistory" | "oneLinerInteraction" | "oneLinerSubmission"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -928,6 +931,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    OneLinerHistory: {
+      payload: Prisma.$OneLinerHistoryPayload<ExtArgs>
+      fields: Prisma.OneLinerHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OneLinerHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OneLinerHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.OneLinerHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OneLinerHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.OneLinerHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.OneLinerHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.OneLinerHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OneLinerHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.OneLinerHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>
+        }
+        update: {
+          args: Prisma.OneLinerHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.OneLinerHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OneLinerHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OneLinerHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.OneLinerHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.OneLinerHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOneLinerHistory>
+        }
+        groupBy: {
+          args: Prisma.OneLinerHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneLinerHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OneLinerHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneLinerHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
+    OneLinerInteraction: {
+      payload: Prisma.$OneLinerInteractionPayload<ExtArgs>
+      fields: Prisma.OneLinerInteractionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OneLinerInteractionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OneLinerInteractionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>
+        }
+        findFirst: {
+          args: Prisma.OneLinerInteractionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OneLinerInteractionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>
+        }
+        findMany: {
+          args: Prisma.OneLinerInteractionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>[]
+        }
+        create: {
+          args: Prisma.OneLinerInteractionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>
+        }
+        createMany: {
+          args: Prisma.OneLinerInteractionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OneLinerInteractionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>[]
+        }
+        delete: {
+          args: Prisma.OneLinerInteractionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>
+        }
+        update: {
+          args: Prisma.OneLinerInteractionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>
+        }
+        deleteMany: {
+          args: Prisma.OneLinerInteractionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OneLinerInteractionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OneLinerInteractionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>[]
+        }
+        upsert: {
+          args: Prisma.OneLinerInteractionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerInteractionPayload>
+        }
+        aggregate: {
+          args: Prisma.OneLinerInteractionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOneLinerInteraction>
+        }
+        groupBy: {
+          args: Prisma.OneLinerInteractionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneLinerInteractionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OneLinerInteractionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneLinerInteractionCountAggregateOutputType> | number
+        }
+      }
+    }
+    OneLinerSubmission: {
+      payload: Prisma.$OneLinerSubmissionPayload<ExtArgs>
+      fields: Prisma.OneLinerSubmissionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OneLinerSubmissionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OneLinerSubmissionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>
+        }
+        findFirst: {
+          args: Prisma.OneLinerSubmissionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OneLinerSubmissionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>
+        }
+        findMany: {
+          args: Prisma.OneLinerSubmissionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>[]
+        }
+        create: {
+          args: Prisma.OneLinerSubmissionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>
+        }
+        createMany: {
+          args: Prisma.OneLinerSubmissionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OneLinerSubmissionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>[]
+        }
+        delete: {
+          args: Prisma.OneLinerSubmissionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>
+        }
+        update: {
+          args: Prisma.OneLinerSubmissionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>
+        }
+        deleteMany: {
+          args: Prisma.OneLinerSubmissionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OneLinerSubmissionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OneLinerSubmissionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>[]
+        }
+        upsert: {
+          args: Prisma.OneLinerSubmissionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OneLinerSubmissionPayload>
+        }
+        aggregate: {
+          args: Prisma.OneLinerSubmissionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOneLinerSubmission>
+        }
+        groupBy: {
+          args: Prisma.OneLinerSubmissionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneLinerSubmissionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OneLinerSubmissionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OneLinerSubmissionCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1044,12 +1269,56 @@ export const FavoriteInvestorScalarFieldEnum = {
 export type FavoriteInvestorScalarFieldEnum = (typeof FavoriteInvestorScalarFieldEnum)[keyof typeof FavoriteInvestorScalarFieldEnum]
 
 
+export const OneLinerHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OneLinerHistoryScalarFieldEnum = (typeof OneLinerHistoryScalarFieldEnum)[keyof typeof OneLinerHistoryScalarFieldEnum]
+
+
+export const OneLinerInteractionScalarFieldEnum = {
+  id: 'id',
+  historyId: 'historyId',
+  response: 'response',
+  createdAt: 'createdAt'
+} as const
+
+export type OneLinerInteractionScalarFieldEnum = (typeof OneLinerInteractionScalarFieldEnum)[keyof typeof OneLinerInteractionScalarFieldEnum]
+
+
+export const OneLinerSubmissionScalarFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  target: 'target',
+  industry: 'industry',
+  name: 'name',
+  explanation: 'explanation',
+  user: 'user',
+  problem: 'problem',
+  result: 'result',
+  unique: 'unique',
+  createdAt: 'createdAt'
+} as const
+
+export type OneLinerSubmissionScalarFieldEnum = (typeof OneLinerSubmissionScalarFieldEnum)[keyof typeof OneLinerSubmissionScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -1118,6 +1387,47 @@ export const FavoriteInvestorOrderByRelevanceFieldEnum = {
 } as const
 
 export type FavoriteInvestorOrderByRelevanceFieldEnum = (typeof FavoriteInvestorOrderByRelevanceFieldEnum)[keyof typeof FavoriteInvestorOrderByRelevanceFieldEnum]
+
+
+export const OneLinerHistoryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
+} as const
+
+export type OneLinerHistoryOrderByRelevanceFieldEnum = (typeof OneLinerHistoryOrderByRelevanceFieldEnum)[keyof typeof OneLinerHistoryOrderByRelevanceFieldEnum]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
+
+
+export const OneLinerInteractionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  historyId: 'historyId'
+} as const
+
+export type OneLinerInteractionOrderByRelevanceFieldEnum = (typeof OneLinerInteractionOrderByRelevanceFieldEnum)[keyof typeof OneLinerInteractionOrderByRelevanceFieldEnum]
+
+
+export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  target: 'target',
+  industry: 'industry',
+  name: 'name',
+  explanation: 'explanation',
+  user: 'user',
+  problem: 'problem',
+  result: 'result',
+  unique: 'unique'
+} as const
+
+export type OneLinerSubmissionOrderByRelevanceFieldEnum = (typeof OneLinerSubmissionOrderByRelevanceFieldEnum)[keyof typeof OneLinerSubmissionOrderByRelevanceFieldEnum]
 
 
 
@@ -1230,6 +1540,20 @@ export type EnumProjectStageFieldRefInput<$PrismaModel> = FieldRefInputType<$Pri
 export type ListEnumProjectStageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectStage[]'>
     
 
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
 /**
  * Batch Payload for updateMany & deleteMany & createMany
  */
@@ -1332,6 +1656,9 @@ export type GlobalOmitConfig = {
   investment?: Prisma.InvestmentOmit
   user?: Prisma.UserOmit
   favoriteInvestor?: Prisma.FavoriteInvestorOmit
+  oneLinerHistory?: Prisma.OneLinerHistoryOmit
+  oneLinerInteraction?: Prisma.OneLinerInteractionOmit
+  oneLinerSubmission?: Prisma.OneLinerSubmissionOmit
 }
 
 /* Types for Logging */

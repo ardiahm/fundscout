@@ -57,7 +57,10 @@ export const ModelName = {
   CompanySector: 'CompanySector',
   Investment: 'Investment',
   User: 'User',
-  FavoriteInvestor: 'FavoriteInvestor'
+  FavoriteInvestor: 'FavoriteInvestor',
+  OneLinerHistory: 'OneLinerHistory',
+  OneLinerInteraction: 'OneLinerInteraction',
+  OneLinerSubmission: 'OneLinerSubmission'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -153,12 +156,56 @@ export const FavoriteInvestorScalarFieldEnum = {
 export type FavoriteInvestorScalarFieldEnum = (typeof FavoriteInvestorScalarFieldEnum)[keyof typeof FavoriteInvestorScalarFieldEnum]
 
 
+export const OneLinerHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OneLinerHistoryScalarFieldEnum = (typeof OneLinerHistoryScalarFieldEnum)[keyof typeof OneLinerHistoryScalarFieldEnum]
+
+
+export const OneLinerInteractionScalarFieldEnum = {
+  id: 'id',
+  historyId: 'historyId',
+  response: 'response',
+  createdAt: 'createdAt'
+} as const
+
+export type OneLinerInteractionScalarFieldEnum = (typeof OneLinerInteractionScalarFieldEnum)[keyof typeof OneLinerInteractionScalarFieldEnum]
+
+
+export const OneLinerSubmissionScalarFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  target: 'target',
+  industry: 'industry',
+  name: 'name',
+  explanation: 'explanation',
+  user: 'user',
+  problem: 'problem',
+  result: 'result',
+  unique: 'unique',
+  createdAt: 'createdAt'
+} as const
+
+export type OneLinerSubmissionScalarFieldEnum = (typeof OneLinerSubmissionScalarFieldEnum)[keyof typeof OneLinerSubmissionScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const JsonNullValueInput = {
+  JsonNull: 'JsonNull'
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -227,4 +274,45 @@ export const FavoriteInvestorOrderByRelevanceFieldEnum = {
 } as const
 
 export type FavoriteInvestorOrderByRelevanceFieldEnum = (typeof FavoriteInvestorOrderByRelevanceFieldEnum)[keyof typeof FavoriteInvestorOrderByRelevanceFieldEnum]
+
+
+export const OneLinerHistoryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
+} as const
+
+export type OneLinerHistoryOrderByRelevanceFieldEnum = (typeof OneLinerHistoryOrderByRelevanceFieldEnum)[keyof typeof OneLinerHistoryOrderByRelevanceFieldEnum]
+
+
+export const JsonNullValueFilter = {
+  DbNull: 'DbNull',
+  JsonNull: 'JsonNull',
+  AnyNull: 'AnyNull'
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
+
+
+export const OneLinerInteractionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  historyId: 'historyId'
+} as const
+
+export type OneLinerInteractionOrderByRelevanceFieldEnum = (typeof OneLinerInteractionOrderByRelevanceFieldEnum)[keyof typeof OneLinerInteractionOrderByRelevanceFieldEnum]
+
+
+export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  target: 'target',
+  industry: 'industry',
+  name: 'name',
+  explanation: 'explanation',
+  user: 'user',
+  problem: 'problem',
+  result: 'result',
+  unique: 'unique'
+} as const
+
+export type OneLinerSubmissionOrderByRelevanceFieldEnum = (typeof OneLinerSubmissionOrderByRelevanceFieldEnum)[keyof typeof OneLinerSubmissionOrderByRelevanceFieldEnum]
 

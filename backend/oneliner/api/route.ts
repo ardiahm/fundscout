@@ -7,7 +7,7 @@ import type {
 import { ensureUser } from "@/app/lib/auth/ensureUser";
 import { z } from "zod";
 import { formSchema } from "@/app/components/site/oneliner-generator-card";
-import {PrismaClient} from  "../../lib/generated/prisma/client";
+import { prisma } from  "../../lib/prisma";
 import { PrismaPg } from "@prisma/adapter-pg";
 
 const GeminiOneLinerResponseSchema = z.object({
@@ -22,13 +22,6 @@ const GeminiOneLinerResponseSchema = z.object({
     )
     .length(3, "Gemini must return exactly 3 one-liners."),
 });
-
-
-const adapter = new PrismaPg({
-  connectionString: "postgresql://investor:investor@localhost:5432/fundscout",
-});
-
-const prisma = new PrismaClient({ adapter });
 
 
 export default async function OneLinerGeminiCommunication(
@@ -163,8 +156,8 @@ async function parseAndValidateGeminiResponse(
   };
 }
 
-async function saveGeneratedOneLiners(userId: string, oneLinerSubmission: OneLinerSubmission, finalOneLiners: OneLinerResponse): Promise<GeneratedOneLiner[]> {
-    await prisma.oneLinerHistory.upsert({
+async function saveGeneratedOneLiners(userId: string, oneLinerSubmission: OneLinerSubmission, finalOneLiners: OneLinerResponse): Promise<GeneratedOneLiner[]> { 
+  await prisma.oneLinerHistory.upsert({
         where: {
             userId,
         },

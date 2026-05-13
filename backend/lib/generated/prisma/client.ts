@@ -74,3 +74,18 @@ export type User = Prisma.UserModel
  * 
  */
 export type FavoriteInvestor = Prisma.FavoriteInvestorModel
+/**
+ * Model OneLinerHistory
+ * 
+ */
+export type OneLinerHistory = Prisma.OneLinerHistoryModel
+/**
+ * Model OneLinerInteraction
+ * 
+ */
+export type OneLinerInteraction = Prisma.OneLinerInteractionModel
+/**
+ * Model OneLinerSubmission
+ * 
+ */
+export type OneLinerSubmission = Prisma.OneLinerSubmissionModel

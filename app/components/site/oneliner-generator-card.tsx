@@ -1,3 +1,5 @@
+"use client";
+
 import { Input } from "../ui/input";
 import {
   Card,
@@ -49,8 +51,6 @@ export const formSchema = z.object({
       .max(128, "Uniqueness must be at most 128 characters."),
   });
 
-
-
 export default function OneLinerGenerator() {
   
 const form = useForm<z.infer<typeof formSchema>>({
@@ -79,10 +79,10 @@ const form = useForm<z.infer<typeof formSchema>>({
 
   function onSubmit(data: z.infer<typeof formSchema>) {
     console.log("beginning to generate");
-    toast("Beginning to generate..."),
+
+    toast("Beginning to generate..."), 
       {
         description: "Be patient!",
-        position: "bottom-center",
         classNames: {
             content: "flex flex-col gap-2"
         },
@@ -107,7 +107,12 @@ const form = useForm<z.infer<typeof formSchema>>({
     <CardContent className="w-full min-w-0">
       <form
         id="oneliner"
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(
+          onSubmit,
+          (errors) => {
+            console.log("Form verification failed:", errors);
+          }
+        )}
         className="w-full min-w-0"
       >
         <FieldGroup className="w-full min-w-0">
@@ -286,6 +291,39 @@ const form = useForm<z.infer<typeof formSchema>>({
                 <Field data-invalid={fieldState.invalid} className="w-full min-w-0">
                   <FieldLabel htmlFor="problem-response">
                     What problem does your solution solve?
+                  </FieldLabel>
+
+                  <InputGroup className="w-full min-w-0 overflow-hidden">
+                    <InputGroupTextarea
+                      {...field}
+                      id="user-response"
+                      placeholder="Managers have to deal with messy paperwork."
+                      rows={6}
+                      maxLength={64}
+                      className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
+                      aria-invalid={fieldState.invalid}
+                    />
+
+                    <InputGroupAddon align="block-end">
+                      <InputGroupText className="tabular-nums">
+                        {field.value?.length ?? 0}/64 characters
+                      </InputGroupText>
+                    </InputGroupAddon>
+                  </InputGroup>
+
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="result"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid} className="w-full min-w-0">
+                  <FieldLabel htmlFor="problem-response">
+                    What is the biggest outcome from using your solution?
                   </FieldLabel>
 
                   <InputGroup className="w-full min-w-0 overflow-hidden">

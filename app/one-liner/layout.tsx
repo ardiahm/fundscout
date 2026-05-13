@@ -28,7 +28,7 @@ export default function OneLinerClient({
             </div>
             <div className="pb-30">{children}</div>
             </main>
-            <Toaster />
+            <Toaster position="bottom-center" />
           
         </SidebarProvider>
       </div>
