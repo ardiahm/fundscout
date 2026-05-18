@@ -24,7 +24,7 @@ export function HistoryClient({ userId, userHistory }: { userId: string, userHis
 
   let hasHistory = false;
 
-  if (count > 0) { hasHistory = true};
+  if (count > 0) { hasHistory = true };
 
 
   return (

@@ -15,8 +15,6 @@ export default async function OneLinerPage() {
   }
 
   let userHistory = await getUsersOneLinerHistory(userId);
-  
-
 
   return (
     <div className="p-5 lg:mx-30 md:mx-30 sm:mx-20">

@@ -16,6 +16,7 @@ import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod"
 import {Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldSet} from "@/app/components/ui/field";
 import {InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea} from "@/app/components/ui/input-group";
+import OneLinerGeminiCommunication from "@/backend/oneliner/api/route";
 import * as z from "zod";
 
 
@@ -66,6 +67,7 @@ const form = useForm<z.infer<typeof formSchema>>({
             unique: "",
         },
     })
+
   
 
   // businesses, consumers, both (target)
@@ -77,24 +79,27 @@ const form = useForm<z.infer<typeof formSchema>>({
   // what is the biggest result users get from your product (result)
   // what makes it better, faster, cheaper, easier, or more unique than existing options? (unique)
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
     console.log("beginning to generate");
+    console.log("form submission: ", data);
 
-    toast("Beginning to generate..."), 
-      {
-        description: "Be patient!",
-        classNames: {
-            content: "flex flex-col gap-2"
-        },
-        style: {
-            "--border-radius": "calc(var(--radius) + 4px)"
-        } as React.CSSProperties,
-      };
-    console.log(data);
+    const toastPromise = OneLinerGeminiCommunication(data);
+
+    toast.promise(toastPromise, {
+      loading: "Generating...",
+      success: "One-liners generated!",
+      error: "Something went wrong. "
+    });
+
+    const generatedOneLiners = await toastPromise;
+
+    console.log(generatedOneLiners);
     // call api's, update values, etc
 
     // implement promise, once data is verified in prisma, router push to /one-liner (history)
   }
+
+  
 
   return (
   <Card className="mx-auto w-full max-w-3xl overflow-hidden px-5">

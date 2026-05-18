@@ -23,9 +23,10 @@ const GeminiOneLinerResponseSchema = z.object({
     .length(3, "Gemini must return exactly 3 one-liners."),
 });
 
+type OneLinerSubmissionInput = Omit<OneLinerSubmission, "id">;
 
 export default async function OneLinerGeminiCommunication(
-  oneLinerSubmission: OneLinerSubmission,
+  oneLinerSubmission: OneLinerSubmissionInput,
 ): Promise<GeneratedOneLiner[] | 0> {
   // verify user
   const user = await ensureUser();
@@ -60,7 +61,7 @@ export default async function OneLinerGeminiCommunication(
 
 async function sendSubmission(
   ai: GoogleGenAI,
-  submission: OneLinerSubmission,
+  submission: OneLinerSubmissionInput,
 ): Promise<string> {
   const prompt = `
 You are an expert startup messaging strategist.
@@ -156,7 +157,7 @@ async function parseAndValidateGeminiResponse(
   };
 }
 
-async function saveGeneratedOneLiners(userId: string, oneLinerSubmission: OneLinerSubmission, finalOneLiners: OneLinerResponse): Promise<GeneratedOneLiner[]> { 
+async function saveGeneratedOneLiners(userId: string, oneLinerSubmission: OneLinerSubmissionInput, finalOneLiners: OneLinerResponse): Promise<GeneratedOneLiner[]> { 
   await prisma.oneLinerHistory.upsert({
         where: {
             userId,
