@@ -10,7 +10,6 @@ import {
 } from "@/app/components/ui/empty";
 import { Button } from "@/app/components/ui/button";
 import { BookX } from "lucide-react";
-import { useRouter } from "next/navigation";
 import type {OneLinerInteraction } from "@/backend/types/oneliner";
 import { EmptyHistoricalOneLiners } from "../components/site/one-liners/EmptyHistoricalOneLiners";
 import { DisplayHistoricalOneLiners } from "../components/site/one-liners/DisplayHistoricalOneLiners";
@@ -18,9 +17,8 @@ import { DisplayHistoricalOneLiners } from "../components/site/one-liners/Displa
 
 // history client checks if a user has any historical one liners
 export function HistoryClient({ userId, userHistory }: { userId: string, userHistory: OneLinerInteraction[]}) {
-  const router = useRouter();
 
-  let count = userHistory.length;
+  let count = userHistory?.length;
 
   let hasHistory = false;
 
@@ -31,7 +29,7 @@ export function HistoryClient({ userId, userHistory }: { userId: string, userHis
     // if they have history, display historical one liners, else display empty historical one liners component
     // empty component redircts to /one-liner/generator (form)
     <div>
-        {hasHistory ? <DisplayHistoricalOneLiners /> : <EmptyHistoricalOneLiners />}
+        {hasHistory ? <DisplayHistoricalOneLiners history={userHistory} /> : <EmptyHistoricalOneLiners />}
     </div>
   )
 }

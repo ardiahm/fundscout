@@ -27,6 +27,7 @@ export type OneLinerInteraction = {
     id: string;
     submission: OneLinerSubmission | null;
     response: OneLinerResponse;
+    createdAt: Date;
 }
 
 

@@ -85,34 +85,27 @@ const form = useForm<z.infer<typeof formSchema>>({
   // what makes it better, faster, cheaper, easier, or more unique than existing options? (unique)
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
+    try {
     console.log("beginning to generate");
     console.log("form submission: ", data);
-
-    console.log("API key present: ", !!process.env.GEMINI_API_KEY);
-    console.log("API key values: ", process.env.GEMINI_API_KEY?.slice(0, 10), "...");
-
-
-    console.log("cwd: ", process.cwd());
 
     const toastPromise = OneLinerGeminiCommunication(data);
 
     toast.promise(toastPromise, {
       loading: "Generating...",
       success: "One-liners generated!",
-      error: "Something went wrong. "
+      error: "Something went wrong.",
     });
 
     const generatedOneLiners = await toastPromise;
 
-    // redirect back to history page ('/one-liner')
-    router.push('/one-liner');
-
-    // debug: console log one liners
     console.log(generatedOneLiners);
-    // call api's, update values, etc
 
-    // implement promise, once data is verified in prisma, router push to /one-liner (history)
-  }
+    router.refresh();
+  } catch (error) {
+    console.error("Failed to generate one-liners:", error);
+  } 
+}
 
   
 
