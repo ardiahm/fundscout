@@ -46,7 +46,7 @@ export function CardGeneratedOneLiner({
           </CardDescription>
         </CardHeader>
         <Separator />
-        <CardContent>
+        <CardContent className="space-y-3">
           {interaction.response.generated_responses.map((oneLiner, index) => (
             <p key={oneLiner.id}>
               {index + 1}: {oneLiner.response}

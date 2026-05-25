@@ -27,7 +27,7 @@ export function DisplayHistoricalOneLiners({
   history,
 }: DisplayHistoricalOneLinersProps) {
   return (
-    <div className="grid grid-cols-1">
+    <div className="grid grid-cols-2 gap-20 ">
       {history.map((interaction) => (
         <CardGeneratedOneLiner key={interaction.id} interaction={interaction} />
       ))}
