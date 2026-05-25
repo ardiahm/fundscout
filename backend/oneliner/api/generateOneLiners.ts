@@ -105,7 +105,7 @@ Use all of this information to create one-liners that:
 - Sound natural, not robotic
 - Do not invent facts that were not provided in the submission
 
-Generate 3 different one-liners. They should vary slightly in phrasing and emphasis while staying faithful to the submission.
+Generate 3 different one-liners. They should vary slightly in phrasing, emphasis, and length while staying faithful to the submission.
 
 User submission:
 ${JSON.stringify(submission, null, 2)}
