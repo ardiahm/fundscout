@@ -16,7 +16,10 @@ import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod"
 import {Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldSet} from "@/app/components/ui/field";
 import {InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea} from "@/app/components/ui/input-group";
-import OneLinerGeminiCommunication from "@/backend/oneliner/api/route";
+import OneLinerGeminiCommunication from "@/backend/oneliner/api/generateOneLiners";
+import 'dotenv/config'
+import { useRouter } from "next/navigation";
+
 import * as z from "zod";
 
 
@@ -25,7 +28,7 @@ export const formSchema = z.object({
     industry: z
       .string()
       .min(5, "Industry must be at least 5 characters.")
-      .max(60, "Industry must be at most 60 characters."),
+      .max(64, "Industry must be at most 64 characters."),
     name: z
       .string()
       .min(2, "Name of product must be at least 2 characters.")
@@ -37,34 +40,36 @@ export const formSchema = z.object({
     user: z
       .string()
       .min(5, "Ideal user must be at least 5 characters.")
-      .max(64, "Ideal user must be at most 64 characters."),
+      .max(256, "Ideal user must be at most 256 characters."),
     problem: z
       .string()
       .min(5, "Problem must be at least 5 characters.")
-      .max(64, "Problem must be at most 64 characters."),
+      .max(256, "Problem must be at most 256 characters."),
     result: z
       .string()
       .min(5, "Result must be at least 5 characters.")
-      .max(64, "Result must be at most 64 characters."),
+      .max(256, "Result must be at most 256 characters."),
     unique: z
       .string()
       .min(5, "Uniqueness must be at least 5 characters.")
-      .max(128, "Uniqueness must be at most 128 characters."),
+      .max(256, "Uniqueness must be at most 256 characters."),
   });
 
 export default function OneLinerGenerator() {
+
+  const router = useRouter();
   
 const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             target: "Businesses",
-            industry: "",
-            name: "",
-            explanation: "",
-            user: "",
-            problem: "",
-            result: "",
-            unique: "",
+            industry: "Startups, Venture Capital",
+            name: "FundScout",
+            explanation: "Reduce the time it takes founders to go from ideation to active fundraising, helping generate all pitch collateral along the way, and connecting founders with the right investors",
+            user: "Startup founders who want to consolidate their startup vision in one place",
+            problem: "Helps founders generate and brainstorm all things relevant to their startup idea in one place, and connecst founders with the right investors for their industry",
+            result: "Save time and submit applications to venture funds which are more relevant to investors",
+            unique: "as a developer, very cheap to maintain. for users, nothing like it exists on the market",
         },
     })
 
@@ -83,6 +88,12 @@ const form = useForm<z.infer<typeof formSchema>>({
     console.log("beginning to generate");
     console.log("form submission: ", data);
 
+    console.log("API key present: ", !!process.env.GEMINI_API_KEY);
+    console.log("API key values: ", process.env.GEMINI_API_KEY?.slice(0, 10), "...");
+
+
+    console.log("cwd: ", process.cwd());
+
     const toastPromise = OneLinerGeminiCommunication(data);
 
     toast.promise(toastPromise, {
@@ -93,6 +104,10 @@ const form = useForm<z.infer<typeof formSchema>>({
 
     const generatedOneLiners = await toastPromise;
 
+    // redirect back to history page ('/one-liner')
+    router.push('/one-liner');
+
+    // debug: console log one liners
     console.log(generatedOneLiners);
     // call api's, update values, etc
 
@@ -173,13 +188,13 @@ const form = useForm<z.infer<typeof formSchema>>({
                           id="industry-response"
                           placeholder="Finance, Restaurant, Marketing, etc."
                           rows={6}
-                          maxLength={60}
+                          maxLength={64}
                           className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
                           aria-invalid={fieldState.invalid}
                         />
                         <InputGroupAddon align="block-end">
                           <InputGroupText className="tabular-nums">
-                            {field.value?.length ?? 0}/60 characters
+                            {field.value?.length ?? 0}/64 characters
                           </InputGroupText>
                         </InputGroupAddon>
                       </InputGroup>
@@ -273,14 +288,14 @@ const form = useForm<z.infer<typeof formSchema>>({
                       id="user-response"
                       placeholder="HR, Doctors, Coaches, etc."
                       rows={6}
-                      maxLength={64}
+                      maxLength={256}
                       className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
                       aria-invalid={fieldState.invalid}
                     />
 
                     <InputGroupAddon align="block-end">
                       <InputGroupText className="tabular-nums">
-                        {field.value?.length ?? 0}/64 characters
+                        {field.value?.length ?? 0}/256 characters
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -306,14 +321,14 @@ const form = useForm<z.infer<typeof formSchema>>({
                       id="user-response"
                       placeholder="Managers have to deal with messy paperwork."
                       rows={6}
-                      maxLength={64}
+                      maxLength={256}
                       className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
                       aria-invalid={fieldState.invalid}
                     />
 
                     <InputGroupAddon align="block-end">
                       <InputGroupText className="tabular-nums">
-                        {field.value?.length ?? 0}/64 characters
+                        {field.value?.length ?? 0}/256 characters
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -339,14 +354,14 @@ const form = useForm<z.infer<typeof formSchema>>({
                       id="user-response"
                       placeholder="Saves money and time."
                       rows={6}
-                      maxLength={64}
+                      maxLength={256}
                       className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
                       aria-invalid={fieldState.invalid}
                     />
 
                     <InputGroupAddon align="block-end">
                       <InputGroupText className="tabular-nums">
-                        {field.value?.length ?? 0}/64 characters
+                        {field.value?.length ?? 0}/256 characters
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -372,14 +387,14 @@ const form = useForm<z.infer<typeof formSchema>>({
                       id="user-response"
                       placeholder="First web-based application to support multiple employee-accounts."
                       rows={6}
-                      maxLength={128}
+                      maxLength={256}
                       className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
                       aria-invalid={fieldState.invalid}
                     />
 
                     <InputGroupAddon align="block-end">
                       <InputGroupText className="tabular-nums">
-                        {field.value?.length ?? 0}/128 characters
+                        {field.value?.length ?? 0}/256 characters
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>

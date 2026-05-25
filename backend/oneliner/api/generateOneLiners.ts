@@ -1,4 +1,4 @@
-"use server"
+"use server";
 
 import { GoogleGenAI } from "@google/genai";
 import type {
@@ -9,8 +9,9 @@ import type {
 import { ensureUser } from "@/app/lib/auth/ensureUser";
 import { z } from "zod";
 import { formSchema } from "@/app/components/site/oneliner-generator-card";
-import { prisma } from  "../../lib/prisma";
+import { prisma } from "../../lib/prisma";
 import { PrismaPg } from "@prisma/adapter-pg";
+import "dotenv/config";
 
 const GeminiOneLinerResponseSchema = z.object({
   generated_responses: z
@@ -30,8 +31,12 @@ type OneLinerSubmissionInput = Omit<OneLinerSubmission, "id">;
 export default async function OneLinerGeminiCommunication(
   oneLinerSubmission: OneLinerSubmissionInput,
 ): Promise<GeneratedOneLiner[] | 0> {
+
+  console.log("SERVER GENERATE ONE LINERS STARTED");
+
   // verify user
   const user = await ensureUser();
+  console.log("ENSURE USER DONE");
 
   const userId = user.id;
   if (!userId) {
@@ -42,19 +47,22 @@ export default async function OneLinerGeminiCommunication(
   if (!oneLinerSubmission) {
     return 0;
   }
+  console.log("ONE LINER RECEIVED");
 
-  // initialize google gen ai
-  const ai = new GoogleGenAI({});
-
+ 
   // prompt gemini, send user submission, return JSON
-  const geminiRawResponse = await sendSubmission(ai, oneLinerSubmission);
+  const geminiRawResponse = await sendSubmission(oneLinerSubmission);
 
   // validate and parse gemini JSON response from above by comparing with ResponseSchema from Zod
   // return [ {id = index, response = "...."}, {...}]
-  const finalOneLiners = await parseAndValidateGeminiResponse(geminiRawResponse);
+  const finalOneLiners =
+    await parseAndValidateGeminiResponse(geminiRawResponse);
 
   // save one liners in prisma, either update or create user's interaction history
-  const savedOneLiners = await saveGeneratedOneLiners(userId, oneLinerSubmission, finalOneLiners,
+  const savedOneLiners = await saveGeneratedOneLiners(
+    userId,
+    oneLinerSubmission,
+    finalOneLiners,
   );
 
   // return array of generated responses in proper format
@@ -62,9 +70,17 @@ export default async function OneLinerGeminiCommunication(
 }
 
 async function sendSubmission(
-  ai: GoogleGenAI,
   submission: OneLinerSubmissionInput,
 ): Promise<string> {
+
+
+  console.log("GEMINI KEY AT SERVER: ", process.env.GEMINI_API_KEY ? "FOUND" : "MISSING");
+  console.log("GEMINI KEY VALUE: ", process.env.GEMINI_API_KEY);
+
+
+  const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
+
+
   const prompt = `
 You are an expert startup messaging strategist.
 
@@ -124,6 +140,8 @@ Return ONLY valid JSON in this exact shape:
     throw new Error("Gemini returned an empty response.");
   }
 
+  console.log(response.text);
+
   return response.text;
 }
 
@@ -150,63 +168,75 @@ async function parseAndValidateGeminiResponse(
 
   const validatedResponses = validationResult.data.generated_responses;
 
+  console.log(
+    validatedResponses.map((item, index) => ({
+      id: index,
+      response: item.response,
+    })),
+  );
+
   return {
     generated_responses: validatedResponses.map((item, index) => ({
       id: index,
       response: item.response,
     })),
-    
   };
 }
 
-async function saveGeneratedOneLiners(userId: string, oneLinerSubmission: OneLinerSubmissionInput, finalOneLiners: OneLinerResponse): Promise<GeneratedOneLiner[]> { 
+async function saveGeneratedOneLiners(
+  userId: string,
+  oneLinerSubmission: OneLinerSubmissionInput,
+  finalOneLiners: OneLinerResponse,
+): Promise<GeneratedOneLiner[]> {
+  console.log("saving in prisma");
+
   await prisma.oneLinerHistory.upsert({
-        where: {
-            userId,
-        },
+    where: {
+      userId,
+    },
 
-        update: {
-            interactions: {
-                create: {
-                    response: finalOneLiners,
-
-                    submission: {
-                        create: {
-                            target: oneLinerSubmission.target,
-                            industry: oneLinerSubmission.industry,
-                            name: oneLinerSubmission.name,
-                            explanation: oneLinerSubmission.explanation,
-                            user: oneLinerSubmission.user,
-                            problem: oneLinerSubmission.problem,
-                            result: oneLinerSubmission.result,
-                            unique: oneLinerSubmission.unique,
-                        },
-                    },
-                },
-            },
-        },
+    update: {
+      interactions: {
         create: {
-            userId,
-            interactions: {
-                create: {
-                    response: finalOneLiners,
+          response: finalOneLiners,
 
-                    submission: {
-                        create: {
-                            target: oneLinerSubmission.target,
-                            industry: oneLinerSubmission.industry,
-                            name: oneLinerSubmission.name,
-                            explanation: oneLinerSubmission.explanation,
-                            user: oneLinerSubmission.user,
-                            problem: oneLinerSubmission.problem,
-                            result: oneLinerSubmission.result,
-                            unique: oneLinerSubmission.unique,
-                        },
-                    },
-                },
+          submission: {
+            create: {
+              target: oneLinerSubmission.target,
+              industry: oneLinerSubmission.industry,
+              name: oneLinerSubmission.name,
+              explanation: oneLinerSubmission.explanation,
+              user: oneLinerSubmission.user,
+              problem: oneLinerSubmission.problem,
+              result: oneLinerSubmission.result,
+              unique: oneLinerSubmission.unique,
             },
-        }
-    });
+          },
+        },
+      },
+    },
+    create: {
+      userId,
+      interactions: {
+        create: {
+          response: finalOneLiners,
 
-    return finalOneLiners.generated_responses;
+          submission: {
+            create: {
+              target: oneLinerSubmission.target,
+              industry: oneLinerSubmission.industry,
+              name: oneLinerSubmission.name,
+              explanation: oneLinerSubmission.explanation,
+              user: oneLinerSubmission.user,
+              problem: oneLinerSubmission.problem,
+              result: oneLinerSubmission.result,
+              unique: oneLinerSubmission.unique,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  return finalOneLiners.generated_responses;
 }
