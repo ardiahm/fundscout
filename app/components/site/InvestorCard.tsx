@@ -9,6 +9,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/app/components/ui/card";
+import { Button } from "@/app/components/ui/button";
 
 export type InvestorCardProps = {
   investor: InvestorSummary;
@@ -80,20 +81,23 @@ export function InvestorCard({
                     lg:gap-x-10
 
                       "
-                   >
+                >
                   <Stat
                     label="Latest Inv. "
                     value={
                       investor.mostRecentInvestmentCompany ?? "Undisclosed"
                     }
+                    investorID={investor.id}
                   />
                   <Stat
                     label="Latest Inv. Date"
                     value={investor.mostRecentInvestmentDate ?? "—"}
+                    investorID={investor.id}
                   />
                   <Stat
                     label="Total Inv."
                     value={investor.totalInvestments?.toLocaleString()}
+                    investorID={investor.id}
                   />
                   <Stat
                     label="Avg. Check"
@@ -102,6 +106,7 @@ export function InvestorCard({
                         ? `$${investor.averageInvestmentSize.toLocaleString()}`
                         : "—"
                     }
+                    investorID={investor.id}
                   />
                 </div>
               </div>
@@ -115,7 +120,15 @@ export function InvestorCard({
 
 /* ---------- Stat helper ---------- */
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Stat({
+  label,
+  value,
+  investorID,
+}: {
+  label: string;
+  value: string;
+  investorID: number;
+}) {
   return (
     <div className="flex flex-col text-center min-w-0">
       <span className="text-[11px] md:text-xs text-gray-500 tracking-light tabular-nums">
@@ -123,13 +136,17 @@ function Stat({ label, value }: { label: string; value: string }) {
       </span>
       <div className="text-lg">
         {label.toLocaleLowerCase() === "avg. check" ? (
-          <span className="text-green-600 tracking-light tabular-nums">
-            {value}
-          </span>
+          <Link href={`/investor-profile/${investorID}`}>
+            <span className="text-green-600 text-xl tracking-light hover:underline cursor-pointer tabular-nums">
+              {value}
+            </span>
+          </Link>
         ) : (
-          <span className="text-black tracking-light tabular-nums">
-            {value}
-          </span>
+          <Link href={`/investor-profile/${investorID}`}>
+            <span className="text-black text-xl tracking-light hover:underline cursor-pointer tabular-nums ">
+              {value}
+            </span>
+          </Link>
         )}
       </div>
     </div>

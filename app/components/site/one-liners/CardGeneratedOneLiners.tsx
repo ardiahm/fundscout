@@ -9,9 +9,13 @@ import { Input } from "@/app/components/ui/input";
 import { Label } from "@/app/components/ui/label";
 import {
   Popover,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverDescription,
   PopoverContent,
   PopoverTrigger,
 } from "@/app/components/ui/popover";
+
 import {
   Card,
   CardContent,
@@ -22,6 +26,7 @@ import {
 } from "@/app/components/ui/card";
 import type { OneLinerInteraction } from "@/backend/types/oneliner";
 import { Separator } from "@/app/components/ui/separator";
+import { X } from "lucide-react";
 
 // take a look at tabs and popover documentation, need to
 // figure out what this page should look like.
@@ -38,8 +43,24 @@ export function CardGeneratedOneLiner({
     <div>
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl">
-            {interaction.submission?.name}
+          <CardTitle className="text-3xl flex justify-between">
+            <div>{interaction.submission?.name}</div>
+            {/* need to change styling */}
+            <div>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline">X</Button>
+                </PopoverTrigger>
+                <PopoverContent align="start">
+                  <PopoverHeader>
+                    <PopoverTitle>Are you sure?</PopoverTitle>
+                    <PopoverDescription className="flex justify-center pt-2">
+                      <Button className="bg-blue-600 hover:bg-blue-700">I want to delete</Button>
+                    </PopoverDescription>
+                  </PopoverHeader>
+                </PopoverContent>
+              </Popover>
+            </div>
           </CardTitle>
           <CardDescription>
             {interaction.createdAt?.toLocaleDateString()}
