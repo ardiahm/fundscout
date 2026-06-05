@@ -54,7 +54,7 @@ export function DisplayHistoricalOneLiners({
             <Separator />
           </div>
           <CardContent className="py-6">
-            <div className="flex flex-col gap-8 lg:flex-row">
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 ">
               {history.map((interaction) => (
                 <CardGeneratedOneLiner
                   key={interaction.id}

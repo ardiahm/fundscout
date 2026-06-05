@@ -32,7 +32,8 @@ type OneLinerInteractionCardProps = {
 };
 
 export function CardGeneratedOneLiner({
-  interaction, deleteAction
+  interaction,
+  deleteAction,
 }: OneLinerInteractionCardProps) {
   const [isPending, startTransition] = useTransition();
 
@@ -41,7 +42,12 @@ export function CardGeneratedOneLiner({
       <Card>
         <CardHeader>
           <CardTitle className="text-3xl flex justify-between">
-            <div>{interaction.submission?.name}</div>
+            <div>
+              <span className="font-light">Name: </span>
+              <span className="font-medium">
+                {interaction.submission?.name}
+              </span>
+            </div>
             {/* need to change styling */}
             <div>
               <Popover>
@@ -70,15 +76,18 @@ export function CardGeneratedOneLiner({
             </div>
           </CardTitle>
           <CardDescription>
-            {interaction.createdAt?.toLocaleDateString()}
+            <span className="font-light">Date: </span>
+            <span className="font-medium">
+              {interaction.createdAt?.toLocaleDateString()}
+            </span>
           </CardDescription>
         </CardHeader>
         <Separator />
-        <CardContent className="space-y-5">
+        <CardContent className="space-y-5 ">
           {interaction.response.generated_responses.map((oneLiner, index) => (
             <div
               key={oneLiner.id}
-              className="grid grid-cols-[2rem_1fr] items-baseline gap-4 lg:min-h-[110px]"
+              className="grid grid-cols-[2rem_1fr] items-baseline gap-4 lg:min-h-[130px]"
             >
               <span className="leading-8 font-medium">{index + 1}:</span>
 
