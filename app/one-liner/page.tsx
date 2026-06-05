@@ -4,6 +4,7 @@ import { prisma } from "@/backend/lib/prisma";
 import { getUsersOneLinerHistory } from "@/backend/oneliner/api/getUsersOneLinerHistory";
 import { EmptyHistoricalOneLiners } from "@/app/components/site/one-liners/EmptyHistoricalOneLiners";
 import { HistoryClient } from "@/app/one-liner/HistoryClient";
+import { deleteOneLinerInteraction } from "@/backend/server/one-liners/deleteOneLinerInteraction";
 
 export default async function OneLinerPage() {
   // verify user
@@ -16,9 +17,11 @@ export default async function OneLinerPage() {
 
   let userHistory = await getUsersOneLinerHistory(userId);
 
+  
+
   return (
     <div className="p-5 lg:mx-30 md:mx-30 sm:mx-20">
-      <HistoryClient userId={userId} userHistory={userHistory} />
+      <HistoryClient userId={userId} userHistory={userHistory} deleteAction={deleteOneLinerInteraction} />
     </div>
   );
 }

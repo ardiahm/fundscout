@@ -31,29 +31,35 @@ import {useRouter} from "next/navigation";
 
 type DisplayHistoricalOneLinersProps = {
   history: OneLinerInteraction[];
+  deleteAction: (interactionId: string) => Promise<void>;
 };
 
 export function DisplayHistoricalOneLiners({
-  history,
+  history, deleteAction
 }: DisplayHistoricalOneLinersProps) {
 
   const router = useRouter();
+
+
   
   return (
     <>
-      <Card>
+      <Card className="min-w-200">
         <CardHeader>
           <CardTitle className="text-2xl flex justify-between pb-2">
             <div>Generated One-Liners: </div>
             <Button className="text-xl py-2 bg-blue-600 hover:bg-blue-800" onClick={() => router.push("/one-liner/generator")} >Generate More</Button>
           </CardTitle>
-          <Separator />
+          <div className="py-2">
+            <Separator />
+          </div>
           <CardContent className="py-6">
-            <div className="grid grid-cols-2 gap-20">
+            <div className="flex flex-col gap-8 lg:flex-row">
               {history.map((interaction) => (
                 <CardGeneratedOneLiner
                   key={interaction.id}
                   interaction={interaction}
+                  deleteAction={deleteAction}
                 />
               ))}
             </div>

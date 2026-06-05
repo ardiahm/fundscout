@@ -1,12 +1,6 @@
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/app/components/ui/tabs";
+"use client";
+
 import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
-import { Label } from "@/app/components/ui/label";
 import {
   Popover,
   PopoverHeader,
@@ -26,7 +20,7 @@ import {
 } from "@/app/components/ui/card";
 import type { OneLinerInteraction } from "@/backend/types/oneliner";
 import { Separator } from "@/app/components/ui/separator";
-import { X } from "lucide-react";
+import { useTransition } from "react";
 
 // take a look at tabs and popover documentation, need to
 // figure out what this page should look like.
@@ -34,11 +28,14 @@ import { X } from "lucide-react";
 
 type OneLinerInteractionCardProps = {
   interaction: OneLinerInteraction;
+  deleteAction: (interactionId: string) => Promise<void>;
 };
 
 export function CardGeneratedOneLiner({
-  interaction,
+  interaction, deleteAction
 }: OneLinerInteractionCardProps) {
+  const [isPending, startTransition] = useTransition();
+
   return (
     <div>
       <Card>
@@ -51,11 +48,21 @@ export function CardGeneratedOneLiner({
                 <PopoverTrigger asChild>
                   <Button variant="outline">X</Button>
                 </PopoverTrigger>
-                <PopoverContent align="start">
+                <PopoverContent align="start" className="max-w-40">
                   <PopoverHeader>
                     <PopoverTitle>Are you sure?</PopoverTitle>
-                    <PopoverDescription className="flex justify-center pt-2">
-                      <Button className="bg-blue-600 hover:bg-blue-700">I want to delete</Button>
+                    <PopoverDescription className="flex pt-2">
+                      <Button
+                        className="bg-blue-600 hover:bg-blue-700"
+                        variant="destructive"
+                        onClick={() => {
+                          startTransition(async () => {
+                            await deleteAction(interaction.id);
+                          });
+                        }}
+                      >
+                        {isPending ? "Deleting..." : "I want to delete"}
+                      </Button>
                     </PopoverDescription>
                   </PopoverHeader>
                 </PopoverContent>
@@ -67,11 +74,16 @@ export function CardGeneratedOneLiner({
           </CardDescription>
         </CardHeader>
         <Separator />
-        <CardContent className="space-y-3">
+        <CardContent className="space-y-5">
           {interaction.response.generated_responses.map((oneLiner, index) => (
-            <p key={oneLiner.id}>
-              {index + 1}: {oneLiner.response}
-            </p>
+            <div
+              key={oneLiner.id}
+              className="grid grid-cols-[2rem_1fr] items-baseline gap-4 lg:min-h-[110px]"
+            >
+              <span className="leading-8 font-medium">{index + 1}:</span>
+
+              <p className="m-0 leading-8">{oneLiner.response}</p>
+            </div>
           ))}
         </CardContent>
       </Card>

@@ -156,8 +156,6 @@ function Stat({
 /* ----- Star Component ----- */
 
 import { Star } from "lucide-react";
-import { useState, useTransition } from "react";
-import { toggleFavoriteInvestor } from "@/app/lib/favorites/toggleFavoriteInvestor";
 type FavoriteStarProps = {
   isFavorited: boolean;
   onClick: () => void;
