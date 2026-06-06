@@ -8,10 +8,10 @@ import type {
 } from "@/backend/types/oneliner";
 import { ensureUser } from "@/app/lib/auth/ensureUser";
 import { z } from "zod";
-import { formSchema } from "@/app/components/site/oneliner-generator-card";
 import { prisma } from "../../lib/prisma";
-import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
+import { headers } from "next/headers";
+import { checkRateLimit } from "@/backend/server/rate-limit/rateLimit";
 
 const GeminiOneLinerResponseSchema = z.object({
   generated_responses: z
@@ -28,10 +28,22 @@ const GeminiOneLinerResponseSchema = z.object({
 
 type OneLinerSubmissionInput = Omit<OneLinerSubmission, "id">;
 
+type OneLinerGeminiSuccess = {
+  success: true;
+  data: GeneratedOneLiner[];
+  remaining: number;
+};
+
+type OneLinerGeminiError = {
+  success: false;
+  error: string;
+};
+
+type OneLinerGeminiResult = OneLinerGeminiSuccess | OneLinerGeminiError;
+
 export default async function OneLinerGeminiCommunication(
   oneLinerSubmission: OneLinerSubmissionInput,
-): Promise<GeneratedOneLiner[] | 0> {
-
+): Promise<OneLinerGeminiResult> {
   console.log("SERVER GENERATE ONE LINERS STARTED");
 
   // verify user
@@ -40,46 +52,82 @@ export default async function OneLinerGeminiCommunication(
 
   const userId = user.id;
   if (!userId) {
-    return 0;
+    return {
+      success: false,
+      error: "You must be signed in to generate one-liners",
+    };
   }
 
   // verify submission
   if (!oneLinerSubmission) {
-    return 0;
+    return {
+      success: false,
+      error: "Missing one-liner submission",
+    };
   }
   console.log("ONE LINER RECEIVED");
 
- 
-  // prompt gemini, send user submission, return JSON
-  const geminiRawResponse = await sendSubmission(oneLinerSubmission);
+  const rateLimitKey = `user:${userId}`;
 
-  // validate and parse gemini JSON response from above by comparing with ResponseSchema from Zod
-  // return [ {id = index, response = "...."}, {...}]
-  const finalOneLiners =
-    await parseAndValidateGeminiResponse(geminiRawResponse);
+  const rateLimit = await checkRateLimit({
+    key: rateLimitKey,
+    action: "generate-one-liner",
+    limit: 4,
+    windowMs: 24 * 60 * 60 * 1000,
+  });
 
-  // save one liners in prisma, either update or create user's interaction history
-  const savedOneLiners = await saveGeneratedOneLiners(
-    userId,
-    oneLinerSubmission,
-    finalOneLiners,
-  );
+  if (!rateLimit.allowed) {
+    return {
+      success: false,
+      error: `You have reached your generation limit. Try again on ${rateLimit.resetAt.toLocaleDateString()} at ${rateLimit.resetAt.toLocaleTimeString()}.`,
+    };
+  }
 
-  // return array of generated responses in proper format
-  return savedOneLiners;
+  try {
+    // prompt gemini, send user submission, return JSON
+    const geminiRawResponse = await sendSubmission(oneLinerSubmission);
+
+    // validate and parse gemini JSON response from above by comparing with ResponseSchema from Zod
+    // return [ {id = index, response = "...."}, {...}]
+    const finalOneLiners =
+      await parseAndValidateGeminiResponse(geminiRawResponse);
+
+    // save one liners in prisma, either update or create user's interaction history
+    const savedOneLiners = await saveGeneratedOneLiners(
+      userId,
+      oneLinerSubmission,
+      finalOneLiners,
+    );
+
+    console.log("Remaining generations: ", rateLimit.remaining);
+    console.log("Reset DATE: ", rateLimit.resetAt.toLocaleDateString(), "Reset TIME: ", rateLimit.resetAt.toLocaleTimeString());
+
+    // return array of generated responses in proper format
+    return {
+      success: true,
+      data: savedOneLiners,
+      remaining: rateLimit.remaining,
+    };
+  } catch (error) {
+    console.error("Failed to generate one-liners: ", error);
+
+    return {
+      success: false,
+      error: "Something went wrong while generating your one-liners",
+    };
+  }
 }
 
 async function sendSubmission(
   submission: OneLinerSubmissionInput,
 ): Promise<string> {
-
-
-  console.log("GEMINI KEY AT SERVER: ", process.env.GEMINI_API_KEY ? "FOUND" : "MISSING");
+  console.log(
+    "GEMINI KEY AT SERVER: ",
+    process.env.GEMINI_API_KEY ? "FOUND" : "MISSING",
+  );
   console.log("GEMINI KEY VALUE: ", process.env.GEMINI_API_KEY);
 
-
-  const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
-
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
   const prompt = `
 You are an expert startup messaging strategist.
