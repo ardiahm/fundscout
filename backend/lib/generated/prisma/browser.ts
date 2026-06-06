@@ -67,3 +67,8 @@ export type OneLinerInteraction = Prisma.OneLinerInteractionModel
  * 
  */
 export type OneLinerSubmission = Prisma.OneLinerSubmissionModel
+/**
+ * Model RateLimit
+ * 
+ */
+export type RateLimit = Prisma.RateLimitModel

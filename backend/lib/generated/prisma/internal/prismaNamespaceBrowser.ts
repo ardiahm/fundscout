@@ -60,7 +60,8 @@ export const ModelName = {
   FavoriteInvestor: 'FavoriteInvestor',
   OneLinerHistory: 'OneLinerHistory',
   OneLinerInteraction: 'OneLinerInteraction',
-  OneLinerSubmission: 'OneLinerSubmission'
+  OneLinerSubmission: 'OneLinerSubmission',
+  RateLimit: 'RateLimit'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -193,6 +194,19 @@ export const OneLinerSubmissionScalarFieldEnum = {
 export type OneLinerSubmissionScalarFieldEnum = (typeof OneLinerSubmissionScalarFieldEnum)[keyof typeof OneLinerSubmissionScalarFieldEnum]
 
 
+export const RateLimitScalarFieldEnum = {
+  id: 'id',
+  key: 'key',
+  action: 'action',
+  count: 'count',
+  resetAt: 'resetAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type RateLimitScalarFieldEnum = (typeof RateLimitScalarFieldEnum)[keyof typeof RateLimitScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -314,4 +328,13 @@ export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
 } as const
 
 export type OneLinerSubmissionOrderByRelevanceFieldEnum = (typeof OneLinerSubmissionOrderByRelevanceFieldEnum)[keyof typeof OneLinerSubmissionOrderByRelevanceFieldEnum]
+
+
+export const RateLimitOrderByRelevanceFieldEnum = {
+  id: 'id',
+  key: 'key',
+  action: 'action'
+} as const
+
+export type RateLimitOrderByRelevanceFieldEnum = (typeof RateLimitOrderByRelevanceFieldEnum)[keyof typeof RateLimitOrderByRelevanceFieldEnum]
 
