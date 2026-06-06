@@ -46,9 +46,9 @@ export function DisplayHistoricalOneLiners({
     <>
       <Card className="min-w-200">
         <CardHeader>
-          <CardTitle className="text-2xl flex justify-between pb-2">
-            <div>Generated One-Liners: </div>
-            <Button className="text-xl py-2 bg-blue-600 hover:bg-blue-800" onClick={() => router.push("/one-liner/generator")} >Generate More</Button>
+          <CardTitle className="text-3xl flex justify-between pb-2">
+            <div className="pt-2 pl-2">Generated One-Liners: </div>
+            <Button className="text-xl px-8 py-6 font-semibold bg-blue-600 hover:bg-blue-800" onClick={() => router.push("/one-liner/generator")} >Generate More</Button>
           </CardTitle>
           <div className="py-2">
             <Separator />

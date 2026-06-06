@@ -63,13 +63,13 @@ const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             target: "Businesses",
-            industry: "Startups, Venture Capital",
-            name: "FundScout",
-            explanation: "Reduce the time it takes founders to go from ideation to active fundraising, helping generate all pitch collateral along the way, and connecting founders with the right investors",
-            user: "Startup founders who want to consolidate their startup vision in one place",
-            problem: "Helps founders generate and brainstorm all things relevant to their startup idea in one place, and connecst founders with the right investors for their industry",
-            result: "Save time and submit applications to venture funds which are more relevant to investors",
-            unique: "as a developer, very cheap to maintain. for users, nothing like it exists on the market",
+            industry: "",
+            name: "",
+            explanation: "",
+            user: "",
+            problem: "",
+            result: "",
+            unique: "",
         },
     })
 
@@ -404,9 +404,10 @@ const form = useForm<z.infer<typeof formSchema>>({
     </CardContent>
 
     <CardFooter className="flex justify-end">
-      <Button type="submit" form="oneliner" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+      <Button type="submit" form="oneliner" size="lg" className="px-8 py-6 text-lg font-semibold bg-blue-600 text-white hover:bg-blue-700">
         Submit
       </Button>
+
     </CardFooter>
   </Card>
 );
