@@ -101,7 +101,7 @@ const form = useForm<z.infer<typeof formSchema>>({
 
     console.log(generatedOneLiners);
 
-    router.replace("/one-liner");
+    router.replace("/one-liner", { scroll: true});
   } catch (error) {
     console.error("Failed to generate one-liners:", error);
   } 

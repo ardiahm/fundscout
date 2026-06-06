@@ -1,17 +1,4 @@
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/app/components/ui/tabs";
 import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
-import { Label } from "@/app/components/ui/label";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/app/components/ui/popover";
 import {
   Card,
   CardContent,
@@ -24,6 +11,7 @@ import { CardGeneratedOneLiner } from "@/app/components/site/one-liners/CardGene
 import type { OneLinerInteraction } from "@/backend/types/oneliner";
 import { Separator } from "@/app/components/ui/separator";
 import {useRouter} from "next/navigation";
+import { useEffect } from "react"
 
 // take a look at tabs and popover documentation, need to
 // figure out what this page should look like.
@@ -40,6 +28,9 @@ export function DisplayHistoricalOneLiners({
 
   const router = useRouter();
 
+    useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }, []);
 
   
   return (

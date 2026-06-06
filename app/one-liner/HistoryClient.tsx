@@ -13,6 +13,7 @@ import { BookX } from "lucide-react";
 import type { OneLinerInteraction } from "@/backend/types/oneliner";
 import { EmptyHistoricalOneLiners } from "../components/site/one-liners/EmptyHistoricalOneLiners";
 import { DisplayHistoricalOneLiners } from "../components/site/one-liners/DisplayHistoricalOneLiners";
+import { useEffect } from "react"
 
 type HistoryClientProps = {
   userId: string;
@@ -33,6 +34,10 @@ export function HistoryClient({
   if (count > 0) {
     hasHistory = true;
   }
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     // if they have history, display historical one liners, else display empty historical one liners component

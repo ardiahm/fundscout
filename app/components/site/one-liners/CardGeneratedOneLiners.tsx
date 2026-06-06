@@ -85,7 +85,7 @@ export function CardGeneratedOneLiner({
         </CardHeader>
         <Separator />
         <CardContent>
-          <div>
+        
             {interaction.response.generated_responses.map((oneLiner, index) => (
               <div
                 key={oneLiner.id}
@@ -102,7 +102,7 @@ export function CardGeneratedOneLiner({
                 </div>
               </div>
             ))}
-          </div>
+
         </CardContent>
       </Card>
     </div>
