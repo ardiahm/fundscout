@@ -85,22 +85,24 @@ export function CardGeneratedOneLiner({
         </CardHeader>
         <Separator />
         <CardContent>
-          {interaction.response.generated_responses.map((oneLiner, index) => (
-            <div
-              key={oneLiner.id}
-              className="grid grid-cols-[2rem_1fr] gap-4 lg:min-h-[130px]"
-            >
-              <span className="leading-8 font-medium">{index + 1}:</span>
+          <div>
+            {interaction.response.generated_responses.map((oneLiner, index) => (
+              <div
+                key={oneLiner.id}
+                className="relative grid grid-cols-[2rem_1fr] gap-4 pb-6 lg:min-h-[130px]"
+              >
+                <span className="leading-8 font-medium">{index + 1}:</span>
 
-              <div className="space-y-3">
-                <p className="m-0 leading-8">{oneLiner.response}</p>
+                <div className="pr-28">
+                  <p className="m-0 leading-8">{oneLiner.response}</p>
+                </div>
 
-                <div className="pb-3">
-                  <CopyButton text={`${index + 1}: ${oneLiner.response}`}  />
+                <div className="absolute top-0 right-0">
+                  <CopyButton text={`${oneLiner.response}`} />
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>
