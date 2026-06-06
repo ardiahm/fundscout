@@ -21,6 +21,7 @@ import {
 import type { OneLinerInteraction } from "@/backend/types/oneliner";
 import { Separator } from "@/app/components/ui/separator";
 import { useTransition } from "react";
+import { CopyButton } from "../../ui/CopyButton";
 
 // take a look at tabs and popover documentation, need to
 // figure out what this page should look like.
@@ -83,15 +84,21 @@ export function CardGeneratedOneLiner({
           </CardDescription>
         </CardHeader>
         <Separator />
-        <CardContent className="space-y-5 ">
+        <CardContent>
           {interaction.response.generated_responses.map((oneLiner, index) => (
             <div
               key={oneLiner.id}
-              className="grid grid-cols-[2rem_1fr] items-baseline gap-4 lg:min-h-[130px]"
+              className="grid grid-cols-[2rem_1fr] gap-4 lg:min-h-[130px]"
             >
               <span className="leading-8 font-medium">{index + 1}:</span>
 
-              <p className="m-0 leading-8">{oneLiner.response}</p>
+              <div className="space-y-3">
+                <p className="m-0 leading-8">{oneLiner.response}</p>
+
+                <div className="pb-3">
+                  <CopyButton text={`${index + 1}: ${oneLiner.response}`}  />
+                </div>
+              </div>
             </div>
           ))}
         </CardContent>
