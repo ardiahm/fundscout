@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "One Liner Generator",
 };
 
-export default function OneLinerLayout({
+export default function OutreachLayout({
   children,
 }: {
   children: React.ReactNode;
