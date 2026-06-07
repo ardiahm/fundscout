@@ -1,6 +1,6 @@
 "use client";
 
-import OneLinerGenerator from "@/app/components/site/oneliner-generator-card";
+import OneLinerGenerator from "@/app/components/site/one-liners/oneliner-generator-form";
 
 export default function OneLinerClient() {
 
