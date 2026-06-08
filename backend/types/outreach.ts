@@ -37,7 +37,7 @@ export type OutreachSubmission = {
   // Ask
   call_to_action: OutreachCallToAction;
 
-  cta_details?: string;
+  call_to_action_details?: string;
 
   // Style
   tone: OutreachTone;
@@ -45,7 +45,7 @@ export type OutreachSubmission = {
 };
 
 export type GeneratedOutreach = {
-  id: number;
+  id: string;
   response: string;
 };
 
