@@ -157,6 +157,108 @@ enum OneLinerTarget {
   Both
 }
 
+model OutreachHistory {
+  id  String  @id @default(cuid())
+
+  userId string @unique
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  interactions OutreachInteraction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OutreachInteraction {
+  id String @id @default(cuid())
+
+  historyId String
+  history OutreachHistory @relation(fields: [historyId], references: [id], onDelete: Cascade)
+
+  submission OutreachSubmission?
+
+  response Json
+
+  createdAt DateTime @default(now())
+}
+
+model OutreachSubmission {
+  id String @id @default(cuid())
+
+  interactionId String @unique
+  interaction OutreachInteraction @relation(fields: [interactionId], references: [id], onDelete: Cascade)
+  
+  sender_name String
+  sender_role String?
+  sender_company  String?
+  sender_background String?
+
+  recipient_name  String?
+  recipient_role  String?
+  recipient_company String?
+  recipient_industry  String?
+
+  goal                    OutreachGoal
+  method                  OutreachMethod
+  relationship            OutreachRelationship
+  relationship_context    String?
+  reason_for_reaching_out String
+  call_to_action          OutreachCallToAction
+  call_to_action_details  String?
+  tone                    OutreachTone
+  length                  OutreachLength
+}
+
+enum OutreachGoals {
+  BOOK_A_MEETING
+  ASK_FOR_ADVICE
+  PITCH_PRODUCT_SERVICE
+  FOLLOW_UP
+  NETWORK
+  RECRUITING_JOB_OPPORTUNITY
+  PARTNERSHIP
+  OTHER
+}
+
+enum OutreachMethods {
+  EMAIL
+  MESSAGE_LINKEDIN_MOBILE
+}
+
+enum OutreachRelationship {
+  COLD_OUTREACH
+  MET_BEFORE
+  REFERRED_BY_SOMEONE
+  EXISTING_CUSTOMER_CLIENT
+  PAST_CONVERSATION
+  FRIEND_ACQUAINTANCE
+}
+
+enum OutreachCallToAction {
+  SCHEDULE_A_CALL
+  REPLY_WITH_INTEREST
+  GIVE_FEEDBACK
+  TRY_THE_PRODUCT
+  MAKE_AN_INTRODUCTION
+  ANSWER_A_QUESTION
+  OTHER
+}
+
+enum OutreachTone {
+  PROFESSIONAL
+  CASUAL
+  FRIENDLY
+  CONFIDENT
+  WARM
+  DIRECT
+}
+
+enum OutreachLength {
+  SHORT
+  MEDIUM
+  DETAILED
+}
+
 model RateLimit {
   id    String    @id @default(cuid())
   key   String

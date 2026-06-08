@@ -24,7 +24,7 @@ export type OutreachSubmission = {
     | "Partnership"
     | "Other";
 
-  form: "Email" | "Message (LinkedIn or Mobile)";
+  method: "Email" | "Message (LinkedIn or Mobile)";
 
   relationship:
     | "Cold outreach"
@@ -34,12 +34,10 @@ export type OutreachSubmission = {
     | "Past conversation"
     | "Friend/acquaintance";
 
-  connection_context?: string;
+  relationship_context?: string;
 
   // Message context
   reason_for_reaching_out: string;
-  personalization?: string;
-  value_proposition?: string;
 
   // Ask
   call_to_action:
