@@ -30,7 +30,7 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@/app/components/ui/input-group";
-import OneLinerGeminiCommunication from "@/backend/oneliner/api/generateOneLiners";
+import OneLinerGeminiCommunication from "@/backend/api/oneliner/generateOneLiners";
 import "dotenv/config";
 import { useRouter } from "next/navigation";
 

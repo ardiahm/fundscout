@@ -1,7 +1,7 @@
 import OneLinerClient from "./generator/one-liner-client";
 import { ensureUser } from "@/app/lib/auth/ensureUser";
 import { prisma } from "@/backend/lib/prisma";
-import { getUsersOneLinerHistory } from "@/backend/oneliner/api/getUsersOneLinerHistory";
+import { getUsersOneLinerHistory } from "@/backend/api/oneliner/getUsersOneLinerHistory";
 import { EmptyHistoricalOneLiners } from "@/app/components/site/one-liners/EmptyHistoricalOneLiners";
 import { HistoryClient } from "@/app/one-liner/HistoryClient";
 import { deleteOneLinerInteraction } from "@/backend/server/one-liners/deleteOneLinerInteraction";

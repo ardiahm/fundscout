@@ -10,7 +10,6 @@ import { ensureUser } from "@/app/lib/auth/ensureUser";
 import { z } from "zod";
 import { prisma } from "../../lib/prisma";
 import "dotenv/config";
-import { headers } from "next/headers";
 import { checkRateLimit } from "@/backend/server/rate-limit/rateLimit";
 
 const GeminiOneLinerResponseSchema = z.object({

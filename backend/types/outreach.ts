@@ -10,7 +10,7 @@ import {
 export type OutreachSubmission = {
   id: string;
 
-  // Sender
+  // Sender:
   sender_name: string;
   sender_role?: string;
   sender_company?: string;
