@@ -23,9 +23,6 @@ import { Separator } from "@/app/components/ui/separator";
 import { useTransition } from "react";
 import { CopyButton } from "../../ui/CopyButton";
 
-// take a look at tabs and popover documentation, need to
-// figure out what this page should look like.
-// to have delete one liner functionality- must have a parent server component which contains this.
 
 type OneLinerInteractionCardProps = {
   interaction: OneLinerInteraction;

@@ -152,6 +152,7 @@ Use all of this information to create one-liners that:
 - Avoid vague or overused words like "revolutionary", "cutting-edge", "game-changing", or "innovative"
 - Sound natural, not robotic
 - Do not invent facts that were not provided in the submission
+- Do not provide any information that is irrelevant to your task at hand: generating one liners
 
 Generate 3 different one-liners. They should vary slightly in phrasing, emphasis, and length while staying faithful to the submission.
 
