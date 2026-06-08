@@ -57,3 +57,19 @@ export type OutreachSubmission = {
   tone: "Professional" | "Casual" | "Friendly" | "Confident" | "Warm" | "Direct";
   length: "Short" | "Medium" | "Detailed";
 };
+
+export type GeneratedOutreach = {
+    id: number;
+    response: string;
+}
+
+export type OutreachInteraction = {
+    id: string;
+    submission: OutreachSubmission | null;
+    response: GeneratedOutreach;
+    createdAt: Date;
+}
+
+export type OutreachHistory = {
+    interactions: OutreachInteraction[];
+} 
