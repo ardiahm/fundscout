@@ -61,6 +61,9 @@ export const ModelName = {
   OneLinerHistory: 'OneLinerHistory',
   OneLinerInteraction: 'OneLinerInteraction',
   OneLinerSubmission: 'OneLinerSubmission',
+  OutreachHistory: 'OutreachHistory',
+  OutreachInteraction: 'OutreachInteraction',
+  OutreachSubmission: 'OutreachSubmission',
   RateLimit: 'RateLimit'
 } as const
 
@@ -192,6 +195,51 @@ export const OneLinerSubmissionScalarFieldEnum = {
 } as const
 
 export type OneLinerSubmissionScalarFieldEnum = (typeof OneLinerSubmissionScalarFieldEnum)[keyof typeof OneLinerSubmissionScalarFieldEnum]
+
+
+export const OutreachHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OutreachHistoryScalarFieldEnum = (typeof OutreachHistoryScalarFieldEnum)[keyof typeof OutreachHistoryScalarFieldEnum]
+
+
+export const OutreachInteractionScalarFieldEnum = {
+  id: 'id',
+  historyId: 'historyId',
+  response: 'response',
+  createdAt: 'createdAt'
+} as const
+
+export type OutreachInteractionScalarFieldEnum = (typeof OutreachInteractionScalarFieldEnum)[keyof typeof OutreachInteractionScalarFieldEnum]
+
+
+export const OutreachSubmissionScalarFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  sender_name: 'sender_name',
+  sender_role: 'sender_role',
+  sender_company: 'sender_company',
+  sender_background: 'sender_background',
+  recipient_name: 'recipient_name',
+  recipient_role: 'recipient_role',
+  recipient_company: 'recipient_company',
+  recipient_industry: 'recipient_industry',
+  goal: 'goal',
+  method: 'method',
+  relationship: 'relationship',
+  relationship_context: 'relationship_context',
+  reason_for_reaching_out: 'reason_for_reaching_out',
+  call_to_action: 'call_to_action',
+  call_to_action_details: 'call_to_action_details',
+  tone: 'tone',
+  length: 'length'
+} as const
+
+export type OutreachSubmissionScalarFieldEnum = (typeof OutreachSubmissionScalarFieldEnum)[keyof typeof OutreachSubmissionScalarFieldEnum]
 
 
 export const RateLimitScalarFieldEnum = {
@@ -328,6 +376,41 @@ export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
 } as const
 
 export type OneLinerSubmissionOrderByRelevanceFieldEnum = (typeof OneLinerSubmissionOrderByRelevanceFieldEnum)[keyof typeof OneLinerSubmissionOrderByRelevanceFieldEnum]
+
+
+export const OutreachHistoryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
+} as const
+
+export type OutreachHistoryOrderByRelevanceFieldEnum = (typeof OutreachHistoryOrderByRelevanceFieldEnum)[keyof typeof OutreachHistoryOrderByRelevanceFieldEnum]
+
+
+export const OutreachInteractionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  historyId: 'historyId'
+} as const
+
+export type OutreachInteractionOrderByRelevanceFieldEnum = (typeof OutreachInteractionOrderByRelevanceFieldEnum)[keyof typeof OutreachInteractionOrderByRelevanceFieldEnum]
+
+
+export const OutreachSubmissionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  sender_name: 'sender_name',
+  sender_role: 'sender_role',
+  sender_company: 'sender_company',
+  sender_background: 'sender_background',
+  recipient_name: 'recipient_name',
+  recipient_role: 'recipient_role',
+  recipient_company: 'recipient_company',
+  recipient_industry: 'recipient_industry',
+  relationship_context: 'relationship_context',
+  reason_for_reaching_out: 'reason_for_reaching_out',
+  call_to_action_details: 'call_to_action_details'
+} as const
+
+export type OutreachSubmissionOrderByRelevanceFieldEnum = (typeof OutreachSubmissionOrderByRelevanceFieldEnum)[keyof typeof OutreachSubmissionOrderByRelevanceFieldEnum]
 
 
 export const RateLimitOrderByRelevanceFieldEnum = {

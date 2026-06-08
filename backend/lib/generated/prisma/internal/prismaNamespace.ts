@@ -394,6 +394,9 @@ export const ModelName = {
   OneLinerHistory: 'OneLinerHistory',
   OneLinerInteraction: 'OneLinerInteraction',
   OneLinerSubmission: 'OneLinerSubmission',
+  OutreachHistory: 'OutreachHistory',
+  OutreachInteraction: 'OutreachInteraction',
+  OutreachSubmission: 'OutreachSubmission',
   RateLimit: 'RateLimit'
 } as const
 
@@ -410,7 +413,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor" | "oneLinerHistory" | "oneLinerInteraction" | "oneLinerSubmission" | "rateLimit"
+    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor" | "oneLinerHistory" | "oneLinerInteraction" | "oneLinerSubmission" | "outreachHistory" | "outreachInteraction" | "outreachSubmission" | "rateLimit"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1154,6 +1157,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    OutreachHistory: {
+      payload: Prisma.$OutreachHistoryPayload<ExtArgs>
+      fields: Prisma.OutreachHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OutreachHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OutreachHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.OutreachHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OutreachHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.OutreachHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.OutreachHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.OutreachHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OutreachHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.OutreachHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>
+        }
+        update: {
+          args: Prisma.OutreachHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.OutreachHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OutreachHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OutreachHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.OutreachHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.OutreachHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOutreachHistory>
+        }
+        groupBy: {
+          args: Prisma.OutreachHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OutreachHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OutreachHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OutreachHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
+    OutreachInteraction: {
+      payload: Prisma.$OutreachInteractionPayload<ExtArgs>
+      fields: Prisma.OutreachInteractionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OutreachInteractionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OutreachInteractionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>
+        }
+        findFirst: {
+          args: Prisma.OutreachInteractionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OutreachInteractionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>
+        }
+        findMany: {
+          args: Prisma.OutreachInteractionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>[]
+        }
+        create: {
+          args: Prisma.OutreachInteractionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>
+        }
+        createMany: {
+          args: Prisma.OutreachInteractionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OutreachInteractionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>[]
+        }
+        delete: {
+          args: Prisma.OutreachInteractionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>
+        }
+        update: {
+          args: Prisma.OutreachInteractionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>
+        }
+        deleteMany: {
+          args: Prisma.OutreachInteractionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OutreachInteractionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OutreachInteractionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>[]
+        }
+        upsert: {
+          args: Prisma.OutreachInteractionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachInteractionPayload>
+        }
+        aggregate: {
+          args: Prisma.OutreachInteractionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOutreachInteraction>
+        }
+        groupBy: {
+          args: Prisma.OutreachInteractionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OutreachInteractionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OutreachInteractionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OutreachInteractionCountAggregateOutputType> | number
+        }
+      }
+    }
+    OutreachSubmission: {
+      payload: Prisma.$OutreachSubmissionPayload<ExtArgs>
+      fields: Prisma.OutreachSubmissionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OutreachSubmissionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OutreachSubmissionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>
+        }
+        findFirst: {
+          args: Prisma.OutreachSubmissionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OutreachSubmissionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>
+        }
+        findMany: {
+          args: Prisma.OutreachSubmissionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>[]
+        }
+        create: {
+          args: Prisma.OutreachSubmissionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>
+        }
+        createMany: {
+          args: Prisma.OutreachSubmissionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OutreachSubmissionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>[]
+        }
+        delete: {
+          args: Prisma.OutreachSubmissionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>
+        }
+        update: {
+          args: Prisma.OutreachSubmissionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>
+        }
+        deleteMany: {
+          args: Prisma.OutreachSubmissionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OutreachSubmissionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OutreachSubmissionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>[]
+        }
+        upsert: {
+          args: Prisma.OutreachSubmissionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OutreachSubmissionPayload>
+        }
+        aggregate: {
+          args: Prisma.OutreachSubmissionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOutreachSubmission>
+        }
+        groupBy: {
+          args: Prisma.OutreachSubmissionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OutreachSubmissionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OutreachSubmissionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OutreachSubmissionCountAggregateOutputType> | number
+        }
+      }
+    }
     RateLimit: {
       payload: Prisma.$RateLimitPayload<ExtArgs>
       fields: Prisma.RateLimitFieldRefs
@@ -1381,6 +1606,51 @@ export const OneLinerSubmissionScalarFieldEnum = {
 export type OneLinerSubmissionScalarFieldEnum = (typeof OneLinerSubmissionScalarFieldEnum)[keyof typeof OneLinerSubmissionScalarFieldEnum]
 
 
+export const OutreachHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OutreachHistoryScalarFieldEnum = (typeof OutreachHistoryScalarFieldEnum)[keyof typeof OutreachHistoryScalarFieldEnum]
+
+
+export const OutreachInteractionScalarFieldEnum = {
+  id: 'id',
+  historyId: 'historyId',
+  response: 'response',
+  createdAt: 'createdAt'
+} as const
+
+export type OutreachInteractionScalarFieldEnum = (typeof OutreachInteractionScalarFieldEnum)[keyof typeof OutreachInteractionScalarFieldEnum]
+
+
+export const OutreachSubmissionScalarFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  sender_name: 'sender_name',
+  sender_role: 'sender_role',
+  sender_company: 'sender_company',
+  sender_background: 'sender_background',
+  recipient_name: 'recipient_name',
+  recipient_role: 'recipient_role',
+  recipient_company: 'recipient_company',
+  recipient_industry: 'recipient_industry',
+  goal: 'goal',
+  method: 'method',
+  relationship: 'relationship',
+  relationship_context: 'relationship_context',
+  reason_for_reaching_out: 'reason_for_reaching_out',
+  call_to_action: 'call_to_action',
+  call_to_action_details: 'call_to_action_details',
+  tone: 'tone',
+  length: 'length'
+} as const
+
+export type OutreachSubmissionScalarFieldEnum = (typeof OutreachSubmissionScalarFieldEnum)[keyof typeof OutreachSubmissionScalarFieldEnum]
+
+
 export const RateLimitScalarFieldEnum = {
   id: 'id',
   key: 'key',
@@ -1515,6 +1785,41 @@ export const OneLinerSubmissionOrderByRelevanceFieldEnum = {
 } as const
 
 export type OneLinerSubmissionOrderByRelevanceFieldEnum = (typeof OneLinerSubmissionOrderByRelevanceFieldEnum)[keyof typeof OneLinerSubmissionOrderByRelevanceFieldEnum]
+
+
+export const OutreachHistoryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
+} as const
+
+export type OutreachHistoryOrderByRelevanceFieldEnum = (typeof OutreachHistoryOrderByRelevanceFieldEnum)[keyof typeof OutreachHistoryOrderByRelevanceFieldEnum]
+
+
+export const OutreachInteractionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  historyId: 'historyId'
+} as const
+
+export type OutreachInteractionOrderByRelevanceFieldEnum = (typeof OutreachInteractionOrderByRelevanceFieldEnum)[keyof typeof OutreachInteractionOrderByRelevanceFieldEnum]
+
+
+export const OutreachSubmissionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  sender_name: 'sender_name',
+  sender_role: 'sender_role',
+  sender_company: 'sender_company',
+  sender_background: 'sender_background',
+  recipient_name: 'recipient_name',
+  recipient_role: 'recipient_role',
+  recipient_company: 'recipient_company',
+  recipient_industry: 'recipient_industry',
+  relationship_context: 'relationship_context',
+  reason_for_reaching_out: 'reason_for_reaching_out',
+  call_to_action_details: 'call_to_action_details'
+} as const
+
+export type OutreachSubmissionOrderByRelevanceFieldEnum = (typeof OutreachSubmissionOrderByRelevanceFieldEnum)[keyof typeof OutreachSubmissionOrderByRelevanceFieldEnum]
 
 
 export const RateLimitOrderByRelevanceFieldEnum = {
@@ -1664,6 +1969,90 @@ export type EnumOneLinerTargetFieldRefInput<$PrismaModel> = FieldRefInputType<$P
 export type ListEnumOneLinerTargetFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OneLinerTarget[]'>
     
 
+
+/**
+ * Reference to a field of type 'OutreachGoal'
+ */
+export type EnumOutreachGoalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachGoal'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachGoal[]'
+ */
+export type ListEnumOutreachGoalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachGoal[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachMethod'
+ */
+export type EnumOutreachMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachMethod'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachMethod[]'
+ */
+export type ListEnumOutreachMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachMethod[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachRelationship'
+ */
+export type EnumOutreachRelationshipFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachRelationship'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachRelationship[]'
+ */
+export type ListEnumOutreachRelationshipFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachRelationship[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachCallToAction'
+ */
+export type EnumOutreachCallToActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachCallToAction'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachCallToAction[]'
+ */
+export type ListEnumOutreachCallToActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachCallToAction[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachTone'
+ */
+export type EnumOutreachToneFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachTone'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachTone[]'
+ */
+export type ListEnumOutreachToneFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachTone[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachLength'
+ */
+export type EnumOutreachLengthFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachLength'>
+    
+
+
+/**
+ * Reference to a field of type 'OutreachLength[]'
+ */
+export type ListEnumOutreachLengthFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachLength[]'>
+    
+
 /**
  * Batch Payload for updateMany & deleteMany & createMany
  */
@@ -1769,6 +2158,9 @@ export type GlobalOmitConfig = {
   oneLinerHistory?: Prisma.OneLinerHistoryOmit
   oneLinerInteraction?: Prisma.OneLinerInteractionOmit
   oneLinerSubmission?: Prisma.OneLinerSubmissionOmit
+  outreachHistory?: Prisma.OutreachHistoryOmit
+  outreachInteraction?: Prisma.OutreachInteractionOmit
+  outreachSubmission?: Prisma.OutreachSubmissionOmit
   rateLimit?: Prisma.RateLimitOmit
 }
 

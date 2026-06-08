@@ -325,6 +325,108 @@ export type EnumOneLinerTargetWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumOneLinerTargetFilter<$PrismaModel>
 }
 
+export type EnumOutreachGoalFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachGoal | Prisma.EnumOutreachGoalFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachGoalFilter<$PrismaModel> | $Enums.OutreachGoal
+}
+
+export type EnumOutreachMethodFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachMethod | Prisma.EnumOutreachMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachMethodFilter<$PrismaModel> | $Enums.OutreachMethod
+}
+
+export type EnumOutreachRelationshipFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachRelationship | Prisma.EnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachRelationshipFilter<$PrismaModel> | $Enums.OutreachRelationship
+}
+
+export type EnumOutreachCallToActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachCallToAction | Prisma.EnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachCallToActionFilter<$PrismaModel> | $Enums.OutreachCallToAction
+}
+
+export type EnumOutreachToneFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachTone | Prisma.EnumOutreachToneFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachToneFilter<$PrismaModel> | $Enums.OutreachTone
+}
+
+export type EnumOutreachLengthFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachLength | Prisma.EnumOutreachLengthFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachLengthFilter<$PrismaModel> | $Enums.OutreachLength
+}
+
+export type EnumOutreachGoalWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachGoal | Prisma.EnumOutreachGoalFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachGoalWithAggregatesFilter<$PrismaModel> | $Enums.OutreachGoal
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachGoalFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachGoalFilter<$PrismaModel>
+}
+
+export type EnumOutreachMethodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachMethod | Prisma.EnumOutreachMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachMethodWithAggregatesFilter<$PrismaModel> | $Enums.OutreachMethod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachMethodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachMethodFilter<$PrismaModel>
+}
+
+export type EnumOutreachRelationshipWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachRelationship | Prisma.EnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachRelationshipWithAggregatesFilter<$PrismaModel> | $Enums.OutreachRelationship
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachRelationshipFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachRelationshipFilter<$PrismaModel>
+}
+
+export type EnumOutreachCallToActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachCallToAction | Prisma.EnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachCallToActionWithAggregatesFilter<$PrismaModel> | $Enums.OutreachCallToAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachCallToActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachCallToActionFilter<$PrismaModel>
+}
+
+export type EnumOutreachToneWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachTone | Prisma.EnumOutreachToneFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachToneWithAggregatesFilter<$PrismaModel> | $Enums.OutreachTone
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachToneFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachToneFilter<$PrismaModel>
+}
+
+export type EnumOutreachLengthWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachLength | Prisma.EnumOutreachLengthFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachLengthWithAggregatesFilter<$PrismaModel> | $Enums.OutreachLength
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachLengthFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachLengthFilter<$PrismaModel>
+}
+
 export type NestedIntFilter<$PrismaModel = never> = {
   equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
@@ -620,6 +722,108 @@ export type NestedEnumOneLinerTargetWithAggregatesFilter<$PrismaModel = never> =
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumOneLinerTargetFilter<$PrismaModel>
   _max?: Prisma.NestedEnumOneLinerTargetFilter<$PrismaModel>
+}
+
+export type NestedEnumOutreachGoalFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachGoal | Prisma.EnumOutreachGoalFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachGoalFilter<$PrismaModel> | $Enums.OutreachGoal
+}
+
+export type NestedEnumOutreachMethodFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachMethod | Prisma.EnumOutreachMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachMethodFilter<$PrismaModel> | $Enums.OutreachMethod
+}
+
+export type NestedEnumOutreachRelationshipFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachRelationship | Prisma.EnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachRelationshipFilter<$PrismaModel> | $Enums.OutreachRelationship
+}
+
+export type NestedEnumOutreachCallToActionFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachCallToAction | Prisma.EnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachCallToActionFilter<$PrismaModel> | $Enums.OutreachCallToAction
+}
+
+export type NestedEnumOutreachToneFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachTone | Prisma.EnumOutreachToneFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachToneFilter<$PrismaModel> | $Enums.OutreachTone
+}
+
+export type NestedEnumOutreachLengthFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachLength | Prisma.EnumOutreachLengthFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachLengthFilter<$PrismaModel> | $Enums.OutreachLength
+}
+
+export type NestedEnumOutreachGoalWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachGoal | Prisma.EnumOutreachGoalFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachGoal[] | Prisma.ListEnumOutreachGoalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachGoalWithAggregatesFilter<$PrismaModel> | $Enums.OutreachGoal
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachGoalFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachGoalFilter<$PrismaModel>
+}
+
+export type NestedEnumOutreachMethodWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachMethod | Prisma.EnumOutreachMethodFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachMethod[] | Prisma.ListEnumOutreachMethodFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachMethodWithAggregatesFilter<$PrismaModel> | $Enums.OutreachMethod
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachMethodFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachMethodFilter<$PrismaModel>
+}
+
+export type NestedEnumOutreachRelationshipWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachRelationship | Prisma.EnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachRelationship[] | Prisma.ListEnumOutreachRelationshipFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachRelationshipWithAggregatesFilter<$PrismaModel> | $Enums.OutreachRelationship
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachRelationshipFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachRelationshipFilter<$PrismaModel>
+}
+
+export type NestedEnumOutreachCallToActionWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachCallToAction | Prisma.EnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachCallToAction[] | Prisma.ListEnumOutreachCallToActionFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachCallToActionWithAggregatesFilter<$PrismaModel> | $Enums.OutreachCallToAction
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachCallToActionFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachCallToActionFilter<$PrismaModel>
+}
+
+export type NestedEnumOutreachToneWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachTone | Prisma.EnumOutreachToneFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachTone[] | Prisma.ListEnumOutreachToneFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachToneWithAggregatesFilter<$PrismaModel> | $Enums.OutreachTone
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachToneFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachToneFilter<$PrismaModel>
+}
+
+export type NestedEnumOutreachLengthWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OutreachLength | Prisma.EnumOutreachLengthFieldRefInput<$PrismaModel>
+  in?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OutreachLength[] | Prisma.ListEnumOutreachLengthFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOutreachLengthWithAggregatesFilter<$PrismaModel> | $Enums.OutreachLength
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOutreachLengthFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOutreachLengthFilter<$PrismaModel>
 }
 
 

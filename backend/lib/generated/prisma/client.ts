@@ -90,6 +90,21 @@ export type OneLinerInteraction = Prisma.OneLinerInteractionModel
  */
 export type OneLinerSubmission = Prisma.OneLinerSubmissionModel
 /**
+ * Model OutreachHistory
+ * 
+ */
+export type OutreachHistory = Prisma.OutreachHistoryModel
+/**
+ * Model OutreachInteraction
+ * 
+ */
+export type OutreachInteraction = Prisma.OutreachInteractionModel
+/**
+ * Model OutreachSubmission
+ * 
+ */
+export type OutreachSubmission = Prisma.OutreachSubmissionModel
+/**
  * Model RateLimit
  * 
  */

@@ -216,6 +216,7 @@ export type UserWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorListRelationFilter
   oneLiners?: Prisma.XOR<Prisma.OneLinerHistoryNullableScalarRelationFilter, Prisma.OneLinerHistoryWhereInput> | null
+  outreachHistory?: Prisma.XOR<Prisma.OutreachHistoryNullableScalarRelationFilter, Prisma.OutreachHistoryWhereInput> | null
 }
 
 export type UserOrderByWithRelationInput = {
@@ -231,6 +232,7 @@ export type UserOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   favoriteInvestors?: Prisma.FavoriteInvestorOrderByRelationAggregateInput
   oneLiners?: Prisma.OneLinerHistoryOrderByWithRelationInput
+  outreachHistory?: Prisma.OutreachHistoryOrderByWithRelationInput
   _relevance?: Prisma.UserOrderByRelevanceInput
 }
 
@@ -250,6 +252,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorListRelationFilter
   oneLiners?: Prisma.XOR<Prisma.OneLinerHistoryNullableScalarRelationFilter, Prisma.OneLinerHistoryWhereInput> | null
+  outreachHistory?: Prisma.XOR<Prisma.OutreachHistoryNullableScalarRelationFilter, Prisma.OutreachHistoryWhereInput> | null
 }, "id" | "clerkUserId">
 
 export type UserOrderByWithAggregationInput = {
@@ -297,6 +300,7 @@ export type UserCreateInput = {
   updatedAt?: Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorCreateNestedManyWithoutUserInput
   oneLiners?: Prisma.OneLinerHistoryCreateNestedOneWithoutUserInput
+  outreachHistory?: Prisma.OutreachHistoryCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -312,6 +316,7 @@ export type UserUncheckedCreateInput = {
   updatedAt?: Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorUncheckedCreateNestedManyWithoutUserInput
   oneLiners?: Prisma.OneLinerHistoryUncheckedCreateNestedOneWithoutUserInput
+  outreachHistory?: Prisma.OutreachHistoryUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -327,6 +332,7 @@ export type UserUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorUpdateManyWithoutUserNestedInput
   oneLiners?: Prisma.OneLinerHistoryUpdateOneWithoutUserNestedInput
+  outreachHistory?: Prisma.OutreachHistoryUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -342,6 +348,7 @@ export type UserUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorUncheckedUpdateManyWithoutUserNestedInput
   oneLiners?: Prisma.OneLinerHistoryUncheckedUpdateOneWithoutUserNestedInput
+  outreachHistory?: Prisma.OutreachHistoryUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -503,6 +510,20 @@ export type UserUpdateOneRequiredWithoutOneLinersNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOneLinersInput, Prisma.UserUpdateWithoutOneLinersInput>, Prisma.UserUncheckedUpdateWithoutOneLinersInput>
 }
 
+export type UserCreateNestedOneWithoutOutreachHistoryInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOutreachHistoryInput, Prisma.UserUncheckedCreateWithoutOutreachHistoryInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOutreachHistoryInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutOutreachHistoryNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOutreachHistoryInput, Prisma.UserUncheckedCreateWithoutOutreachHistoryInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOutreachHistoryInput
+  upsert?: Prisma.UserUpsertWithoutOutreachHistoryInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOutreachHistoryInput, Prisma.UserUpdateWithoutOutreachHistoryInput>, Prisma.UserUncheckedUpdateWithoutOutreachHistoryInput>
+}
+
 export type UserCreateWithoutFavoriteInvestorsInput = {
   id?: string
   clerkUserId: string
@@ -515,6 +536,7 @@ export type UserCreateWithoutFavoriteInvestorsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   oneLiners?: Prisma.OneLinerHistoryCreateNestedOneWithoutUserInput
+  outreachHistory?: Prisma.OutreachHistoryCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFavoriteInvestorsInput = {
@@ -529,6 +551,7 @@ export type UserUncheckedCreateWithoutFavoriteInvestorsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   oneLiners?: Prisma.OneLinerHistoryUncheckedCreateNestedOneWithoutUserInput
+  outreachHistory?: Prisma.OutreachHistoryUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFavoriteInvestorsInput = {
@@ -559,6 +582,7 @@ export type UserUpdateWithoutFavoriteInvestorsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   oneLiners?: Prisma.OneLinerHistoryUpdateOneWithoutUserNestedInput
+  outreachHistory?: Prisma.OutreachHistoryUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFavoriteInvestorsInput = {
@@ -573,6 +597,7 @@ export type UserUncheckedUpdateWithoutFavoriteInvestorsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   oneLiners?: Prisma.OneLinerHistoryUncheckedUpdateOneWithoutUserNestedInput
+  outreachHistory?: Prisma.OutreachHistoryUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateWithoutOneLinersInput = {
@@ -587,6 +612,7 @@ export type UserCreateWithoutOneLinersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorCreateNestedManyWithoutUserInput
+  outreachHistory?: Prisma.OutreachHistoryCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutOneLinersInput = {
@@ -601,6 +627,7 @@ export type UserUncheckedCreateWithoutOneLinersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorUncheckedCreateNestedManyWithoutUserInput
+  outreachHistory?: Prisma.OutreachHistoryUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutOneLinersInput = {
@@ -631,6 +658,7 @@ export type UserUpdateWithoutOneLinersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorUpdateManyWithoutUserNestedInput
+  outreachHistory?: Prisma.OutreachHistoryUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOneLinersInput = {
@@ -645,6 +673,83 @@ export type UserUncheckedUpdateWithoutOneLinersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   favoriteInvestors?: Prisma.FavoriteInvestorUncheckedUpdateManyWithoutUserNestedInput
+  outreachHistory?: Prisma.OutreachHistoryUncheckedUpdateOneWithoutUserNestedInput
+}
+
+export type UserCreateWithoutOutreachHistoryInput = {
+  id?: string
+  clerkUserId: string
+  plan?: $Enums.Plan
+  onboardingComplete?: boolean
+  builderType?: $Enums.BuilderType | null
+  stage?: $Enums.ProjectStage | null
+  industries?: Prisma.UserCreateindustriesInput | string[]
+  goals?: Prisma.UserCreategoalsInput | string[]
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  favoriteInvestors?: Prisma.FavoriteInvestorCreateNestedManyWithoutUserInput
+  oneLiners?: Prisma.OneLinerHistoryCreateNestedOneWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutOutreachHistoryInput = {
+  id?: string
+  clerkUserId: string
+  plan?: $Enums.Plan
+  onboardingComplete?: boolean
+  builderType?: $Enums.BuilderType | null
+  stage?: $Enums.ProjectStage | null
+  industries?: Prisma.UserCreateindustriesInput | string[]
+  goals?: Prisma.UserCreategoalsInput | string[]
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  favoriteInvestors?: Prisma.FavoriteInvestorUncheckedCreateNestedManyWithoutUserInput
+  oneLiners?: Prisma.OneLinerHistoryUncheckedCreateNestedOneWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutOutreachHistoryInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutOutreachHistoryInput, Prisma.UserUncheckedCreateWithoutOutreachHistoryInput>
+}
+
+export type UserUpsertWithoutOutreachHistoryInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutOutreachHistoryInput, Prisma.UserUncheckedUpdateWithoutOutreachHistoryInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutOutreachHistoryInput, Prisma.UserUncheckedCreateWithoutOutreachHistoryInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutOutreachHistoryInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutOutreachHistoryInput, Prisma.UserUncheckedUpdateWithoutOutreachHistoryInput>
+}
+
+export type UserUpdateWithoutOutreachHistoryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  plan?: Prisma.EnumPlanFieldUpdateOperationsInput | $Enums.Plan
+  onboardingComplete?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  builderType?: Prisma.NullableEnumBuilderTypeFieldUpdateOperationsInput | $Enums.BuilderType | null
+  stage?: Prisma.NullableEnumProjectStageFieldUpdateOperationsInput | $Enums.ProjectStage | null
+  industries?: Prisma.UserUpdateindustriesInput | string[]
+  goals?: Prisma.UserUpdategoalsInput | string[]
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  favoriteInvestors?: Prisma.FavoriteInvestorUpdateManyWithoutUserNestedInput
+  oneLiners?: Prisma.OneLinerHistoryUpdateOneWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutOutreachHistoryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  clerkUserId?: Prisma.StringFieldUpdateOperationsInput | string
+  plan?: Prisma.EnumPlanFieldUpdateOperationsInput | $Enums.Plan
+  onboardingComplete?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  builderType?: Prisma.NullableEnumBuilderTypeFieldUpdateOperationsInput | $Enums.BuilderType | null
+  stage?: Prisma.NullableEnumProjectStageFieldUpdateOperationsInput | $Enums.ProjectStage | null
+  industries?: Prisma.UserUpdateindustriesInput | string[]
+  goals?: Prisma.UserUpdategoalsInput | string[]
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  favoriteInvestors?: Prisma.FavoriteInvestorUncheckedUpdateManyWithoutUserNestedInput
+  oneLiners?: Prisma.OneLinerHistoryUncheckedUpdateOneWithoutUserNestedInput
 }
 
 
@@ -691,6 +796,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   updatedAt?: boolean
   favoriteInvestors?: boolean | Prisma.User$favoriteInvestorsArgs<ExtArgs>
   oneLiners?: boolean | Prisma.User$oneLinersArgs<ExtArgs>
+  outreachHistory?: boolean | Prisma.User$outreachHistoryArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -737,6 +843,7 @@ export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = run
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   favoriteInvestors?: boolean | Prisma.User$favoriteInvestorsArgs<ExtArgs>
   oneLiners?: boolean | Prisma.User$oneLinersArgs<ExtArgs>
+  outreachHistory?: boolean | Prisma.User$outreachHistoryArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -747,6 +854,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   objects: {
     favoriteInvestors: Prisma.$FavoriteInvestorPayload<ExtArgs>[]
     oneLiners: Prisma.$OneLinerHistoryPayload<ExtArgs> | null
+    outreachHistory: Prisma.$OutreachHistoryPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1155,6 +1263,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   readonly [Symbol.toStringTag]: "PrismaPromise"
   favoriteInvestors<T extends Prisma.User$favoriteInvestorsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$favoriteInvestorsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavoriteInvestorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   oneLiners<T extends Prisma.User$oneLinersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$oneLinersArgs<ExtArgs>>): Prisma.Prisma__OneLinerHistoryClient<runtime.Types.Result.GetResult<Prisma.$OneLinerHistoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  outreachHistory<T extends Prisma.User$outreachHistoryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$outreachHistoryArgs<ExtArgs>>): Prisma.Prisma__OutreachHistoryClient<runtime.Types.Result.GetResult<Prisma.$OutreachHistoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1622,6 +1731,25 @@ export type User$oneLinersArgs<ExtArgs extends runtime.Types.Extensions.Internal
    */
   include?: Prisma.OneLinerHistoryInclude<ExtArgs> | null
   where?: Prisma.OneLinerHistoryWhereInput
+}
+
+/**
+ * User.outreachHistory
+ */
+export type User$outreachHistoryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the OutreachHistory
+   */
+  select?: Prisma.OutreachHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the OutreachHistory
+   */
+  omit?: Prisma.OutreachHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OutreachHistoryInclude<ExtArgs> | null
+  where?: Prisma.OutreachHistoryWhereInput
 }
 
 /**

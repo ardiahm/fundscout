@@ -43,3 +43,71 @@ export const OneLinerTarget = {
 } as const
 
 export type OneLinerTarget = (typeof OneLinerTarget)[keyof typeof OneLinerTarget]
+
+
+export const OutreachGoal = {
+  BOOK_A_MEETING: 'BOOK_A_MEETING',
+  ASK_FOR_ADVICE: 'ASK_FOR_ADVICE',
+  PITCH_PRODUCT_SERVICE: 'PITCH_PRODUCT_SERVICE',
+  FOLLOW_UP: 'FOLLOW_UP',
+  NETWORK: 'NETWORK',
+  RECRUITING_JOB_OPPORTUNITY: 'RECRUITING_JOB_OPPORTUNITY',
+  PARTNERSHIP: 'PARTNERSHIP',
+  OTHER: 'OTHER'
+} as const
+
+export type OutreachGoal = (typeof OutreachGoal)[keyof typeof OutreachGoal]
+
+
+export const OutreachMethod = {
+  EMAIL: 'EMAIL',
+  MESSAGE_LINKEDIN_MOBILE: 'MESSAGE_LINKEDIN_MOBILE'
+} as const
+
+export type OutreachMethod = (typeof OutreachMethod)[keyof typeof OutreachMethod]
+
+
+export const OutreachRelationship = {
+  COLD_OUTREACH: 'COLD_OUTREACH',
+  MET_BEFORE: 'MET_BEFORE',
+  REFERRED_BY_SOMEONE: 'REFERRED_BY_SOMEONE',
+  EXISTING_CUSTOMER_CLIENT: 'EXISTING_CUSTOMER_CLIENT',
+  PAST_CONVERSATION: 'PAST_CONVERSATION',
+  FRIEND_ACQUAINTANCE: 'FRIEND_ACQUAINTANCE'
+} as const
+
+export type OutreachRelationship = (typeof OutreachRelationship)[keyof typeof OutreachRelationship]
+
+
+export const OutreachCallToAction = {
+  SCHEDULE_A_CALL: 'SCHEDULE_A_CALL',
+  REPLY_WITH_INTEREST: 'REPLY_WITH_INTEREST',
+  GIVE_FEEDBACK: 'GIVE_FEEDBACK',
+  TRY_THE_PRODUCT: 'TRY_THE_PRODUCT',
+  MAKE_AN_INTRODUCTION: 'MAKE_AN_INTRODUCTION',
+  ANSWER_A_QUESTION: 'ANSWER_A_QUESTION',
+  OTHER: 'OTHER'
+} as const
+
+export type OutreachCallToAction = (typeof OutreachCallToAction)[keyof typeof OutreachCallToAction]
+
+
+export const OutreachTone = {
+  PROFESSIONAL: 'PROFESSIONAL',
+  CASUAL: 'CASUAL',
+  FRIENDLY: 'FRIENDLY',
+  CONFIDENT: 'CONFIDENT',
+  WARM: 'WARM',
+  DIRECT: 'DIRECT'
+} as const
+
+export type OutreachTone = (typeof OutreachTone)[keyof typeof OutreachTone]
+
+
+export const OutreachLength = {
+  SHORT: 'SHORT',
+  MEDIUM: 'MEDIUM',
+  DETAILED: 'DETAILED'
+} as const
+
+export type OutreachLength = (typeof OutreachLength)[keyof typeof OutreachLength]
