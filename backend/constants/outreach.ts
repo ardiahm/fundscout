@@ -6,12 +6,8 @@ import {
   OutreachTone,
   OutreachLength,
 } from "@/backend/lib/generated/prisma/client";
-import {
-    OutreachSubmission,
-    GeneratedOutreach,
-    OutreachInteraction,
-    OutreachHistory
-} from "@/backend/types/outreach";
+
+import type { OutreachSubmission } from "@/backend/types/outreach";
 
 export const outreachGoalLabels: Record<OutreachGoal, string> = {
   [OutreachGoal.BOOK_A_MEETING]: "Book a meeting",
@@ -63,11 +59,43 @@ export const outreachLengthLabels: Record<OutreachLength, string> = {
   [OutreachLength.DETAILED]: "Detailed",
 };
 
+const displayValue = (value?: string | null) => {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : "Not provided";
+};
+
+export type FormattedOutreachSubmission = Omit<
+  OutreachSubmission,
+  "goal" | "method" | "relationship" | "call_to_action" | "tone" | "length"
+> & {
+  goal: string;
+  method: string;
+  relationship: string;
+  call_to_action: string;
+  tone: string;
+  length: string;
+};
+
 export function formatOutreachSubmissionForGemini(
   submission: OutreachSubmission,
-) {
+): FormattedOutreachSubmission {
   return {
     ...submission,
+
+    sender_name: displayValue(submission.sender_name),
+    sender_role: displayValue(submission.sender_role),
+    sender_company: displayValue(submission.sender_company),
+    sender_background: displayValue(submission.sender_background),
+
+    recipient_name: displayValue(submission.recipient_name),
+    recipient_role: displayValue(submission.recipient_role),
+    recipient_company: displayValue(submission.recipient_company),
+    recipient_industry: displayValue(submission.recipient_industry),
+
+    relationship_context: displayValue(submission.relationship_context),
+    reason_for_reaching_out: displayValue(submission.reason_for_reaching_out),
+    call_to_action_details: displayValue(submission.call_to_action_details),
+
     goal: outreachGoalLabels[submission.goal],
     method: outreachMethodLabels[submission.method],
     relationship: outreachRelationshipLabels[submission.relationship],
