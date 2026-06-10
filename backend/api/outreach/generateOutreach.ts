@@ -21,9 +21,12 @@ import {
 } from "@/backend/lib/generated/prisma/client";
 import {
   OutreachSubmission,
-  GeneratedOutreach
+  GeneratedOutreach,
 } from "@/backend/types/outreach";
-import { formatOutreachSubmissionForGemini, FormattedOutreachSubmission } from "@/backend/constants/outreach";
+import {
+  formatOutreachSubmissionForGemini,
+  FormattedOutreachSubmission,
+} from "@/backend/constants/outreach";
 
 const GeminiGeneratedOutReachSchema = z.object({
   response: z
@@ -46,8 +49,6 @@ type OutreachGeminiError = {
 };
 
 type OutreachGeminiResult = OutreachGeminiSuccess | OutreachGeminiError;
-
-
 
 export default async function OutreachGeminiCommunication(
   outreachSubmission: OutreachSubmission,
@@ -92,22 +93,42 @@ export default async function OutreachGeminiCommunication(
   }
 
   try {
+    const formattedUserSubmission =
+      formatOutreachSubmissionForGemini(outreachSubmission);
 
-    const formattedUserSubmission = formatOutreachSubmissionForGemini(outreachSubmission);
+    const geminiRawResponse = await sendSubmissionToGemini(
+      formattedUserSubmission,
+    );
 
-    const geminiRawResponse = await sendSubmissionToGemini(formattedUserSubmission);
+    const parsedGeminiResponse =
+      await parseGeminiRawResponse(geminiRawResponse);
 
-    
+    const savedOutreachGeneration = await saveGeneratedOutreach(
+      userId,
+      outreachSubmission,
+      parsedGeminiResponse,
+    );
+
+    return {
+      success: true,
+      data: savedOutreachGeneration,
+      remaining: rateLimit.remaining,
+    };
+  } catch (err) {
+    console.error("Failed to generate one-liners: ", err);
+    return {
+      success: false,
+      error: "Something went wrong while generating your one-liners",
+    };
   }
-
-  
 }
 
-
-async function sendSubmissionToGemini(submission: FormattedOutreachSubmission): Promise<string> {
+async function sendSubmissionToGemini(
+  submission: FormattedOutreachSubmission,
+): Promise<string> {
   console.log("OUTREACH GENERATION HIT");
 
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY});
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
   const prompt = `
 You are an expert outreach and startup messaging strategist.
@@ -238,17 +259,136 @@ User submission:
 ${JSON.stringify(submission, null, 2)}
 `;
 
-const response = await ai.models.generateContent({
-  model: "gemini-2.5-flash",
-  contents: prompt,
-  config: {
-    responseMimeType: "application/json",
-  }
-});
+  const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: prompt,
+    config: {
+      responseMimeType: "application/json",
+    },
+  });
 
-if (!response.text) {
-  throw new Error("Gemini returned an empty response");
+  if (!response.text) {
+    throw new Error("Gemini returned an empty response");
+  }
+
+  return response.text;
 }
 
-return response.text;
+async function parseGeminiRawResponse(
+  rawResponse: string,
+): Promise<GeneratedOutreach> {
+  let parsedJson: unknown;
+
+  try {
+    parsedJson = JSON.parse(rawResponse);
+  } catch {
+    throw new Error("Gemini returned invalid JSON");
+  }
+
+  const validationResult = GeminiGeneratedOutReachSchema.safeParse(parsedJson);
+
+  if (!validationResult.success) {
+    console.error(
+      "Gemini response failed validation: ",
+      validationResult.error,
+    );
+    throw new Error("Gemini response did not match the expected format.");
+  }
+
+  const validatedResponse = validationResult.data.response;
+
+  return {
+    id: "1",
+    response: validatedResponse,
+  };
+}
+
+async function saveGeneratedOutreach(
+  userId: string,
+  outreachSubmission: OutreachSubmissionInput,
+  parsedGeminiResponse: GeneratedOutreach,
+): Promise<GeneratedOutreach> {
+  console.log("Saving outreach in prisma");
+
+  await prisma.outreachHistory.upsert({
+    where: {
+      userId,
+    },
+
+    update: {
+      interactions: {
+        create: {
+          response: parsedGeminiResponse,
+
+          submission: {
+            create: {
+              sender_name: outreachSubmission.sender_name,
+              sender_role: outreachSubmission.sender_role,
+              sender_company: outreachSubmission.sender_company,
+              sender_background: outreachSubmission.sender_background,
+
+              recipient_name: outreachSubmission.recipient_name,
+              recipient_role: outreachSubmission.recipient_role,
+              recipient_company: outreachSubmission.recipient_company,
+              recipient_industry: outreachSubmission.recipient_industry,
+
+              goal: outreachSubmission.goal,
+              method: outreachSubmission.method,
+              relationship: outreachSubmission.relationship,
+              relationship_context: outreachSubmission.relationship_context,
+
+              reason_for_reaching_out:
+                outreachSubmission.reason_for_reaching_out,
+
+              call_to_action: outreachSubmission.call_to_action,
+              call_to_action_details: outreachSubmission.call_to_action_details,
+
+              tone: outreachSubmission.tone,
+              length: outreachSubmission.length,
+            },
+          },
+        },
+      },
+    },
+
+    create: {
+      userId,
+
+      interactions: {
+        create: {
+          response: parsedGeminiResponse,
+
+          submission: {
+            create: {
+              sender_name: outreachSubmission.sender_name,
+              sender_role: outreachSubmission.sender_role,
+              sender_company: outreachSubmission.sender_company,
+              sender_background: outreachSubmission.sender_background,
+
+              recipient_name: outreachSubmission.recipient_name,
+              recipient_role: outreachSubmission.recipient_role,
+              recipient_company: outreachSubmission.recipient_company,
+              recipient_industry: outreachSubmission.recipient_industry,
+
+              goal: outreachSubmission.goal,
+              method: outreachSubmission.method,
+              relationship: outreachSubmission.relationship,
+              relationship_context: outreachSubmission.relationship_context,
+
+              reason_for_reaching_out:
+                outreachSubmission.reason_for_reaching_out,
+
+              call_to_action: outreachSubmission.call_to_action,
+              call_to_action_details: outreachSubmission.call_to_action_details,
+
+              tone: outreachSubmission.tone,
+              length: outreachSubmission.length,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  return parsedGeminiResponse;
 }
