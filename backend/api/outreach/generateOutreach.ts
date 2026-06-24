@@ -12,14 +12,6 @@ import { prisma } from "../../lib/prisma";
 import "dotenv/config";
 import { checkRateLimit } from "@/backend/server/rate-limit/rateLimit";
 import {
-  OutreachGoal,
-  OutreachMethod,
-  OutreachRelationship,
-  OutreachCallToAction,
-  OutreachTone,
-  OutreachLength,
-} from "@/backend/lib/generated/prisma/client";
-import {
   OutreachSubmission,
   GeneratedOutreach,
 } from "@/backend/types/outreach";
