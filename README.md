@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FundScout
 
-## Getting Started
+FundScout is a full-stack platform built using Next.js, Prisma (ORM built off PostgreSQL), Docker, and Clerk.
 
-First, run the development server:
+## Inspiration
+
+Through my early years of undergrad, I've become more and more involved in entrepreneurship. I started this project as a SaaS venture, and realized over time that this project, for lack of better words, would not be _the one_.
+
+## Understanding Backend
+
+First, begin by starting the Docker container (which exposes port 5432). The container contains an image of Postgres 16.
+
+Look at commit history, which contains the scripts necessary to seed/populate the database in ~/backend/scripts/*.ts
+
+In ~/docker-compose.yml, you can modify which port is being exposed. If you do this, you must also modify which port is being listened to in .ENV
+
+To verify the Docker container is running:
+
+```bash
+docker ps
+```
+
+## Running Development Server
+
+Run the development server using:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to load FundScout.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features of FundScout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+When it comes to Investor/Investment Data, FundScout allows users to:
 
-## Learn More
+1. Browse through an Invest Index, which contains data surrounding investors and their investments:
+    1. Company invested in.
+    2. Amount of investment.
+    3. Date of investment.
+    4. Company sectors (industries)
+2. Favorite and Unfavorite investors, and filter by favorites by visiting /favorites
+3. Search for investors present in the Invest Index
 
-To learn more about Next.js, take a look at the following resources:
+FundScout also helps generate pitch collateral, reducing the time it takes for users to go from ideation to active fundraising. FundScout specifically helps users:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Generate One-Liners, to accurately and impactfully describe their product/business. This requires users filling out a form answering:
+    1. Who are you targeting? (Businesses, Consumers, Both)
+    2. What industry are you building in?
+    3. What's the name of your product/company?
+    4. In simple terms, what does your solution do?
+    5. Who is your ideal user?
+    6. What problem does your solution solve?
+    7. What is the biggest outcome from using your solution?
+    8. What makes it better, faster, cheaper, easier, or more unique than existing options?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Generate Outreach, to assist in any attempt at communication between user and desired recipient. This requires users filling out a form answering:
+    1. Sender Name
+    2. Sender Role (optional)
+    3. Sender Company (optional)
+    4. Sender Background (optional)
+    5. Recipient Name
+    6. Recipient Role (optional)
+    7. Recipient Company (optional)
+    8. Recipient Industry (optional)
+    9. Relationship Context (i.e. cold outreach, met before, referred by someone, existing customer, etc. )
+    10. Reason for Reaching Out
+    11. Call To Action (i.e. schedule a call, reply with interest, give feedback, make an introduction, etc. )
+    12. Desired message length (Short, Medium, Detailed)
 
-## Deploy on Vercel
+## Middleware
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All authentication within FundScout is powered by _Clerk_. This ensures:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Users visiting a webpage are logged in and all /onboarding fields have been filled during their account creation.
+
+In the case there are empty fields (i.e. a developer added more questions), users will be re-routed to update their /onboarding answers
+
+## Server Actions
+
+### Rate Limiting
+
+All rate limiting is handled via a RateLimit model in the database schema. All functions for rate limiting can be found in ~/backend/server/rate-limit/rateLimit.ts
+
+The function, checkRateLimit, requires:
+
+1. Key (userId from Clerk)
+2. Action (what service is the user trying to use)
+3. Limit (how many more times can user use this service)
+4. windowMs (how many Ms until limit resets)
+    1. windowMs within OneLiner Generation = 24 * 60 * 60 * 1000 = 1 day
+    2. windowMs within Outreach Generation = 24 * 60 * 60 * 1000 = 1 day
+
+_Return Object_:
+allowed: boolean
+remaining: int
+resetAt: DateTime
+
+The RateLimit model searches for an existing rateLimit for the provided Key and Action:
+
+1. If it doesn't exist, or rate limit is due for a reset (windowMs), model upserts in Prisma.
+2. If it does exist, but limit has been reached:
+    1. _Return Object_.allowed = false
+    2. _Return Object_.remaining = 0
+    3. _Return Object_.resetAt: _unchanged_
+3. If it does exist, and limit hasn't been reached, incremement count, and return:
+    1. _Return Object_.allowed = true
+    2. _Return Object_.remaining = limit - count
+    3. _Return Object_.resetAt: _unchanged_
+
