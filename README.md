@@ -6,6 +6,9 @@ FundScout is a full-stack platform built using Next.js, Prisma (ORM built off Po
 
 Through my early years of undergrad, I've become more and more involved in entrepreneurship. I started this project as a SaaS venture, and realized over time that this project, for lack of better words, would not be _the one_.
 
+## Picture Gallery
+![]()
+
 ## Understanding Backend
 
 First, begin by starting the Docker container (which exposes port 5432). The container contains an image of Postgres 16.
