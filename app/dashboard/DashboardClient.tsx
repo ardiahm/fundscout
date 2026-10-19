@@ -49,7 +49,7 @@ export default function DashboardClient({
   return (
     <div className="w-full flex gap-4">
       {/* LEFT (main column) */}
-      <div className="flex-1 pl-10 pb-10 pr-10 pt-2">
+      <div className="flex-1 min-w-0 px-2 pb-10 pt-2 sm:px-10">
         {/* Search */}
         <div className="flex flex-col md:grid md:grid-cols-2 md:justify-end lg:grid lg:grid-cols-2 lg:justify-end">
           <div className="font-semibold px-4  text-3xl">Investor Index</div>
@@ -59,7 +59,7 @@ export default function DashboardClient({
         </div>
 
         {/* Investor Results */}
-        <div className="py-4 space-y-2 px-4 md:px-10">
+        <div className="py-4 space-y-2 px-0 sm:px-4 md:px-10">
           {investors.map((investor, idx) => (
             <div
               key={investor.id}
@@ -73,7 +73,7 @@ export default function DashboardClient({
               />
             </div>
           ))}
-          {investors.length > 0 && <div className="w-[350px] p-4"></div>}
+          {investors.length > 0 && <div className="w-full p-4"></div>}
         </div>
       </div>
     </div>
