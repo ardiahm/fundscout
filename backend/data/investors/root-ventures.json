@@ -50,6 +50,11 @@
       "company": { "name": "Particle", "description": "Provides an IoT platform of connectivity hardware and cloud software for connected devices.", "websiteUrl": "https://www.particle.io", "location": "San Francisco, CA", "sectors": ["IoT", "Hardware", "Cloud Infrastructure"] },
       "stage": "Series A", "amount": 10400000, "investedAt": "2016-11-18",
       "sourceUrl": "https://venturebeat.com/2016/11/18/particle-raises-10-4-million"
+    },
+    {
+      "company": {"name": "Volund", "description": "Builds low-cost, mass-producible turbine engines for defense platforms.", "websiteUrl": "https://volundmfg.com", "location": "Huntington Beach, CA", "sectors": ["Defense Tech", "Aerospace", "Manufacturing"]},
+      "stage": "Seed", "amount": 12000000, "investedAt": "2026-06-04",
+      "sourceUrl": "https://www.tectonicdefense.com/?p=1875"
     }
   ]
 }

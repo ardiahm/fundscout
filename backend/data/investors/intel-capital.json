@@ -51,6 +51,21 @@
       "company": { "name": "Lilt", "description": "Provides AI-assisted translation and localization software for businesses.", "websiteUrl": "https://lilt.com", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"] },
       "stage": "Series C", "amount": 55000000, "investedAt": "2022-04-07",
       "sourceUrl": "https://techcrunch.com/2022/04/07/lilt-raises-55m-to-bolster-its-business-focused-ai-translation-platform/"
+    },
+    {
+      "company": {"name": "TrueFoundry", "description": "Offers a platform for deploying and managing AI models and applications at scale.", "websiteUrl": "https://www.truefoundry.com", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools", "Cloud Infrastructure"]},
+      "stage": "Series A", "amount": 19000000, "investedAt": "2025-02-06",
+      "sourceUrl": "https://techcrunch.com/2025/02/06/intel-capital-fuels-truefoundrys-19m-funding-to-help-boost-ai-deployments-at-scale/"
+    },
+    {
+      "company": {"name": "RealSense", "description": "Makes stereoscopic depth cameras and vision systems for robotics and automation.", "websiteUrl": "https://realsenseai.com", "location": "Cupertino, CA", "sectors": ["Hardware", "Robotics"]},
+      "stage": "Series A", "amount": 50000000, "investedAt": "2025-07-11",
+      "sourceUrl": "https://techcrunch.com/2025/07/11/realsense-spins-out-of-intel-to-scale-its-stereoscopic-imaging-technology/"
+    },
+    {
+      "company": {"name": "Truffle Security", "description": "Develops TruffleHog, a tool that finds, verifies and remediates leaked secrets like API keys.", "websiteUrl": "https://trufflesecurity.com", "location": "San Francisco, CA", "sectors": ["Cybersecurity", "Developer Tools"]},
+      "stage": "Series B", "amount": 25000000, "investedAt": "2025-11-06",
+      "sourceUrl": "https://www.securityweek.com/truffle-security-raises-25-million-for-secret-scanning-engine/"
     }
   ]
 }

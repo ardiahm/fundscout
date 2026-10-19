@@ -50,6 +50,41 @@
       "company": { "name": "Nominal", "description": "Provides software for testing, monitoring and analyzing data from hardware systems.", "websiteUrl": "https://nominal.io", "location": "Los Angeles, CA", "sectors": ["Data & Analytics", "Enterprise Software", "Defense Tech"] },
       "stage": "Series B", "amount": 80000000, "investedAt": "2026-03-05",
       "sourceUrl": "https://nominal.io/blog/series-b2"
+    },
+    {
+      "company": { "name": "Anduril", "description": "Builds autonomous defense systems, drones and AI-powered command and control software.", "websiteUrl": "https://www.anduril.com", "location": "Costa Mesa, CA", "sectors": ["Defense Tech", "AI", "Hardware"] },
+      "stage": "Growth", "amount": 2500000000, "investedAt": "2025-06-05",
+      "sourceUrl": "https://techcrunch.com/2025/06/05/anduril-raises-2-5b-at-30-5b-valuation-led-by-founders-fund/"
+    },
+    {
+      "company": { "name": "Radiant", "description": "Develops portable nuclear microreactors for off-grid and defense power.", "websiteUrl": "https://www.radiantnuclear.com", "location": "El Segundo, CA", "sectors": ["Energy", "Hardware", "Defense Tech"] },
+      "stage": "Growth", "amount": 300000000, "investedAt": "2025-12-17",
+      "sourceUrl": "https://techcrunch.com/2025/12/17/radiant-nuclear-raises-300m-for-its-semi-sized-1-mw-reactor/"
+    },
+    {
+      "company": { "name": "Monaco", "description": "AI-native sales platform that replaces legacy CRM and sales point solutions for startups.", "websiteUrl": "https://www.monaco.com", "location": "San Francisco, CA", "sectors": ["AI", "SaaS", "Enterprise Software"] },
+      "stage": "Series A", "amount": 25000000, "investedAt": "2026-02-11",
+      "sourceUrl": "https://techcrunch.com/2026/02/11/former-founders-fund-vc-sam-blond-launches-ai-sales-startup-to-upend-salesforce/"
+    },
+    {
+      "company": { "name": "Layup Parts", "description": "Makes custom carbon fiber and fiberglass composite parts for aerospace and defense customers.", "websiteUrl": "https://www.layupparts.com", "location": "Huntington Beach, CA", "sectors": ["Manufacturing", "Aerospace", "Defense Tech"] },
+      "stage": "Series A", "amount": 42000000, "investedAt": "2026-06-02",
+      "sourceUrl": "https://techcrunch.com/2026/06/02/ex-anduril-engineer-raises-42m-to-build-the-amazon-of-composite-parts/"
+    },
+    {
+      "company": { "name": "Impulse Space", "description": "Builds in-space transportation vehicles that move satellites between orbits.", "websiteUrl": "https://impulsespace.com", "location": "Redondo Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Series D", "amount": 500000000, "investedAt": "2026-06-03",
+      "sourceUrl": "https://impulsespace.com/updates/impulse-space-raises-500-million-dollar-series-d-to-build-in-space-mobility-infrastructure-for-the-space-economy"
+    },
+    {
+      "company": { "name": "Endurance Energy", "description": "Develops subsea geothermal power plants that tap heat beneath the ocean floor.", "websiteUrl": "https://www.enduranceenergy.com", "location": "Seattle, WA", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Series A", "amount": 54000000, "investedAt": "2026-06-11",
+      "sourceUrl": "https://techcrunch.com/2026/06/11/endurance-energy-raises-54m-to-harness-a-massive-untapped-energy-source/"
+    },
+    {
+      "company": { "name": "Varda", "description": "Builds orbital capsules that manufacture materials in microgravity and return them to Earth.", "websiteUrl": "https://www.varda.com", "location": "El Segundo, CA", "sectors": ["Space", "Manufacturing", "Aerospace"] },
+      "stage": "Series D", "amount": 251000000, "investedAt": "2026-09-30",
+      "sourceUrl": "https://techfundingnews.com/varda-raises-251m-led-by-lux-capital-and-natural-capital-to-make-medicines-in-orbit/"
     }
   ]
 }

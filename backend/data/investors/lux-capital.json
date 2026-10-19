@@ -50,6 +50,31 @@
       "company": { "name": "WindBorne", "description": "Operates long-duration weather balloons and AI models for weather forecasting.", "websiteUrl": "https://windbornesystems.com", "location": "Redwood City, CA", "sectors": ["AI", "Hardware", "Climate Tech"] },
       "stage": "Series B", "amount": 37000000, "investedAt": "2026-08-05",
       "sourceUrl": "https://windbornesystems.com/blog/windborne-systems-raises-37-million-to-build-the-worlds-weather-intelligence-infrastructure"
+    },
+    {
+      "company": { "name": "Phonic", "description": "Speech-to-speech voice agent platform for customer-facing phone workflows.", "websiteUrl": "https://phonic.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Seed", "amount": 4000000, "investedAt": "2025-04-03",
+      "sourceUrl": "https://www.luxcapital.com/news/announcing-our-investment-in-phonic-making-voice-agents-reliable-at-scale"
+    },
+    {
+      "company": { "name": "Cognichip", "description": "Uses generative AI to speed up the design of semiconductor chips.", "websiteUrl": "https://cognichip.ai", "location": "San Francisco, CA", "sectors": ["AI", "Semiconductors"] },
+      "stage": "Seed", "amount": 33000000, "investedAt": "2025-05-15",
+      "sourceUrl": "https://techcrunch.com/2025/05/15/cognichip-emerges-from-stealth-with-the-goal-of-using-generative-ai-to-develop-new-chips/"
+    },
+    {
+      "company": { "name": "Impulse Space", "description": "Builds in-space transportation vehicles that move satellites between orbits.", "websiteUrl": "https://impulsespace.com", "location": "Redondo Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Series D", "amount": 500000000, "investedAt": "2026-06-03",
+      "sourceUrl": "https://impulsespace.com/updates/impulse-space-raises-500-million-dollar-series-d-to-build-in-space-mobility-infrastructure-for-the-space-economy"
+    },
+    {
+      "company": { "name": "Helion", "description": "Develops fusion power plants and is building one to supply electricity to Microsoft.", "websiteUrl": "https://www.helionenergy.com", "location": "Everett, WA", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Growth", "amount": 465000000, "investedAt": "2026-06-04",
+      "sourceUrl": "https://helionenergy.com/newsroom/helion-raises-465-million-series-g-funding-round-to-meet-surging-global-demand-for-power"
+    },
+    {
+      "company": { "name": "Varda", "description": "Builds orbital capsules that manufacture materials in microgravity and return them to Earth.", "websiteUrl": "https://www.varda.com", "location": "El Segundo, CA", "sectors": ["Space", "Manufacturing", "Aerospace"] },
+      "stage": "Series D", "amount": 251000000, "investedAt": "2026-09-30",
+      "sourceUrl": "https://techfundingnews.com/varda-raises-251m-led-by-lux-capital-and-natural-capital-to-make-medicines-in-orbit/"
     }
   ]
 }

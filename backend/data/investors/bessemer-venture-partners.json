@@ -51,6 +51,26 @@
       "company": { "name": "Luxury Presence", "description": "Website and marketing software for real estate agents and brokerages.", "websiteUrl": "https://www.luxurypresence.com", "location": "Los Angeles, CA", "sectors": ["Proptech", "SaaS"] },
       "stage": "Series B", "amount": 25900000, "investedAt": "2021-11-16",
       "sourceUrl": "https://techcrunch.com/2021/11/16/real-estate-marketing-software-provider-luxury-presence-raises-25-9m-in-bessemer-led-series-b/"
+    },
+    {
+      "company": { "name": "Julius", "description": "AI data analyst that analyzes and visualizes datasets from natural language prompts.", "websiteUrl": "https://julius.ai", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Seed", "amount": 10000000, "investedAt": "2025-07-28",
+      "sourceUrl": "https://techcrunch.com/2025/07/28/ai-data-analyst-startup-julius-nabs-10m-seed-round/"
+    },
+    {
+      "company": { "name": "Inertia", "description": "Developing laser-driven inertial confinement fusion power plants.", "websiteUrl": "https://inertia.com", "location": "Livermore, CA", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Series A", "amount": 450000000, "investedAt": "2026-02-11",
+      "sourceUrl": "https://techcrunch.com/2026/02/11/twilio-co-founders-fusion-power-startup-raises-450m-from-bessemer-and-alphabets-gv/"
+    },
+    {
+      "company": { "name": "Vapi", "description": "Developer platform for building, deploying and managing AI voice agents.", "websiteUrl": "https://vapi.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools", "Communication"] },
+      "stage": "Series B", "amount": 50000000, "investedAt": "2026-05-12",
+      "sourceUrl": "https://techcrunch.com/2026/05/12/vapi-hits-500m-valuation-as-amazon-ring-chose-its-ai-platform-over-40-rivals/"
+    },
+    {
+      "company": { "name": "Malachyte", "description": "Real-time AI product recommendations and personalization for online stores.", "websiteUrl": "https://www.malachyte.com", "location": "New York, NY", "sectors": ["AI", "E-commerce"] },
+      "stage": "Seed", "amount": 10000000, "investedAt": "2026-08-06",
+      "sourceUrl": "https://techcrunch.com/2026/08/06/ex-spotify-employees-raise-10m-to-bring-the-ai-behind-its-recommendations-to-e-commerce/"
     }
   ]
 }

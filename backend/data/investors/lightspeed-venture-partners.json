@@ -46,6 +46,36 @@
       "company": { "name": "Harvey", "description": "Generative AI platform for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["Legal Tech", "AI"] },
       "stage": "Growth", "amount": null, "investedAt": "2026-09-09",
       "sourceUrl": "https://lsvp.com/stories/helping-legal-teams-own-their-intelligence-our-series-h-investment-in-harvey/"
+    },
+    {
+      "company": { "name": "Helion", "description": "Company developing fusion power plants to generate electricity.", "websiteUrl": "https://www.helionenergy.com", "location": "Everett, WA", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Series F", "amount": 425000000, "investedAt": "2025-01-28",
+      "sourceUrl": "https://techcrunch.com/2025/01/28/helion-raises-425m-to-help-build-a-fusion-reactor-for-microsoft/"
+    },
+    {
+      "company": { "name": "Base Power", "description": "Company that installs home batteries and operates them as a distributed power network.", "websiteUrl": "https://www.basepowercompany.com", "location": "Austin, TX", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Series B", "amount": 200000000, "investedAt": "2025-04-09",
+      "sourceUrl": "https://techcrunch.com/2025/04/09/a16z-backs-base-power-in-200m-round-for-home-backup-batteries/"
+    },
+    {
+      "company": { "name": "Exa", "description": "Web search engine and API built for AI applications and agents.", "websiteUrl": "https://exa.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series B", "amount": 85000000, "investedAt": "2025-09",
+      "sourceUrl": "https://www.lw.com/en/news/2025/09/latham-watkins-advises-exa-in-us85-million-series-b-financing-with-benchmark-and-lightspeed"
+    },
+    {
+      "company": { "name": "Resolve AI", "description": "AI agents that troubleshoot production software incidents for engineering teams.", "websiteUrl": "https://www.resolve.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 125000000, "investedAt": "2026-02-04",
+      "sourceUrl": "https://techcrunch.com/2026/02/04/ai-sre-resolve-ai-confirms-125m-raise-unicorn-valuation/"
+    },
+    {
+      "company": { "name": "Science Corporation", "description": "Neurotechnology company building brain-computer interfaces, including a retinal implant to restore vision.", "websiteUrl": "https://science.xyz", "location": "Alameda, CA", "sectors": ["Medical Devices", "Hardware"] },
+      "stage": "Series C", "amount": 230000000, "investedAt": "2026-03-05",
+      "sourceUrl": "https://techcrunch.com/2026/03/05/science-corp-closes-230m-round-as-it-pushes-to-get-its-brain-implant-to-patients/"
+    },
+    {
+      "company": { "name": "Helion", "description": "Company developing fusion power plants to generate electricity.", "websiteUrl": "https://www.helionenergy.com", "location": "Everett, WA", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Growth", "amount": 465000000, "investedAt": "2026-06-04",
+      "sourceUrl": "https://techcrunch.com/2026/06/04/helion-the-sam-altman-backed-fusion-startup-raises-465m-to-build-a-power-plant-for-microsoft/"
     }
   ]
 }

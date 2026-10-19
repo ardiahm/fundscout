@@ -51,6 +51,21 @@
       "company": { "name": "Grw AI", "description": "AI sales system that handles deal prep, follow-ups, CRM updates and call coaching.", "websiteUrl": "https://grw.ai", "location": "San Francisco, CA", "sectors": ["AI", "SaaS"] },
       "stage": "Pre-Seed", "amount": 2400000, "investedAt": "2024-12-04",
       "sourceUrl": "https://www.siliconlegal.com/sls-client-precursor-ventures-leads-grw-ais-2-4m-pre-seed-round/"
+    },
+    {
+      "company": {"name": "Interface", "description": "Uses AI to audit industrial operating procedures against regulations and drawings.", "websiteUrl": "https://getinterface.ai", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"]},
+      "stage": "Seed", "amount": 3500000, "investedAt": "2025-11-21",
+      "sourceUrl": "https://techcrunch.com/2025/11/21/how-this-founders-unlikely-path-to-silicon-valley-could-become-an-edge-in-industrial-tech/"
+    },
+    {
+      "company": {"name": "Bluecore Energy", "description": "Develops small nuclear reactors deployed on floating barges.", "websiteUrl": "https://bluecore.energy", "location": "Long Beach, CA", "sectors": ["Energy", "Climate Tech"]},
+      "stage": "Pre-Seed", "amount": 10000000, "investedAt": "2026-07-21",
+      "sourceUrl": "https://raising.fi/news/bluecore-energy-pre-seed-july-2026"
+    },
+    {
+      "company": {"name": "Bluecore Energy", "description": "Develops small nuclear reactors deployed on floating barges.", "websiteUrl": "https://bluecore.energy", "location": "Long Beach, CA", "sectors": ["Energy", "Climate Tech"]},
+      "stage": "Seed", "amount": 50000000, "investedAt": "2026-09-09",
+      "sourceUrl": "https://afrotech.com/bluecore-energy-raises-50m-seed-round"
     }
   ]
 }

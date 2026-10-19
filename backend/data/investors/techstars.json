@@ -41,6 +41,36 @@
       "company": { "name": "Origami Space", "description": "Builds deployable RF and LiDAR antenna systems for satellites.", "websiteUrl": "https://origamispace.com", "location": "Berthoud, CO", "sectors": ["Space", "Aerospace", "Hardware"] },
       "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
       "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "Clear Solar", "description": "Electrostatic robots that clean solar panels.", "websiteUrl": "https://clearsolarco.com", "location": "New York, NY", "sectors": ["Robotics", "Energy"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "FibrX", "description": "Fiber-optic sensing platform that monitors structural strain, temperature and corrosion in real time.", "websiteUrl": "https://fibrx.io", "location": "Las Vegas, NV", "sectors": ["IoT", "Hardware"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "FelixFusion", "description": "AI tool that matches manufacturers with government contracts.", "websiteUrl": "https://felixfusion.ai", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "Petra Power", "description": "Solid oxide fuel cells for auxiliary power unit systems.", "websiteUrl": "https://petrapower.com", "location": "Solon, OH", "sectors": ["Energy", "Hardware"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "PowerBox Technology", "description": "Modular AI-driven device and software that integrate renewable power and battery storage.", "websiteUrl": "https://powerboxtech.com", "location": "Champaign, IL", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "Pulsar Space Systems", "description": "Tracks launches, reentries and other space objects using GNSS stations and the ionosphere.", "websiteUrl": "https://pulsarspacesystems.com", "location": "Louisville, CO", "sectors": ["Space", "Aerospace"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2026-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class"
     }
   ]
 }

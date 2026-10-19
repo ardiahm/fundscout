@@ -46,6 +46,16 @@
       "company": { "name": "Majority", "description": "Mobile banking service built for migrants living in the US.", "websiteUrl": "https://www.majority.com", "location": "Houston, TX", "sectors": ["Banking", "Fintech"] },
       "stage": "Series A", "amount": 27000000, "investedAt": "2021-12-07",
       "sourceUrl": "https://techcrunch.com/2021/12/07/majority-raises-27m-series-a-six-months-after-its-seed-round-to-expand-mobile-banking-for-migrants/"
+    },
+    {
+      "company": { "name": "Panacea Financial", "description": "Banking, lending and advisory platform built for physicians, dentists and veterinarians.", "websiteUrl": "https://www.panaceafinancial.com", "location": "Little Rock, AR", "sectors": ["Banking", "Fintech"] },
+      "stage": "Series B", "amount": 37000000, "investedAt": "2025-07-15",
+      "sourceUrl": "https://www.vcaonline.com/news/2025071504/panacea-financial-extends-series-b-to-62m-from-valar-ventures/"
+    },
+    {
+      "company": { "name": "Octane", "description": "Point-of-sale financing platform for powersports and recreational vehicle purchases.", "websiteUrl": "https://www.octane.co", "location": "New York, NY", "sectors": ["Fintech", "Consumer Finance"] },
+      "stage": "Series F", "amount": 100000000, "investedAt": "2025-12-16",
+      "sourceUrl": "https://www.crowdfundinsider.com/2025/12/256501-octane-closes-100m-series-f/"
     }
   ]
 }

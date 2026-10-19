@@ -36,6 +36,41 @@
       "company": { "name": "WindBorne", "description": "Operates long-duration weather balloons and AI models for weather forecasting.", "websiteUrl": "https://windbornesystems.com", "location": "Redwood City, CA", "sectors": ["AI", "Hardware", "Climate Tech"] },
       "stage": "Series B", "amount": 37000000, "investedAt": "2026-08-05",
       "sourceUrl": "https://windbornesystems.com/blog/windborne-systems-raises-37-million-to-build-the-worlds-weather-intelligence-infrastructure"
+    },
+    {
+      "company": { "name": "Fastino", "description": "Builds small task-specific AI language models for enterprises.", "websiteUrl": "https://fastino.ai", "location": "Palo Alto, CA", "sectors": ["AI", "Enterprise Software"] },
+      "stage": "Seed", "amount": 17500000, "investedAt": "2025-05-07",
+      "sourceUrl": "https://techcrunch.com/2025/05/07/fastino-trains-ai-models-on-cheap-gaming-gpus-and-just-raised-17-5m-led-by-khosla/"
+    },
+    {
+      "company": { "name": "Commonwealth Fusion Systems", "description": "Develops compact tokamak fusion power plants using high-temperature superconducting magnets.", "websiteUrl": "https://cfs.energy", "location": "Devens, MA", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Series B", "amount": 863000000, "investedAt": "2025-08-28",
+      "sourceUrl": "https://techcrunch.com/2025/08/28/nvidia-google-and-bill-gates-help-commonwealth-fusion-systems-raise-863m/"
+    },
+    {
+      "company": { "name": "Science Corporation", "description": "Neural engineering company developing the PRIMA retinal implant and brain-computer interfaces.", "websiteUrl": "https://science.xyz", "location": "Alameda, CA", "sectors": ["Medical Devices", "Hardware"] },
+      "stage": "Series C", "amount": 230000000, "investedAt": "2026-03-05",
+      "sourceUrl": "https://techcrunch.com/2026/03/05/science-corp-closes-230m-round-as-it-pushes-to-get-its-brain-implant-to-patients/"
+    },
+    {
+      "company": { "name": "Glydways", "description": "Builds autonomous transit networks of small electric vehicles on dedicated guideways.", "websiteUrl": "https://www.glydways.com", "location": "San Francisco, CA", "sectors": ["Autonomous Vehicles", "Transportation"] },
+      "stage": "Series C", "amount": 170000000, "investedAt": "2026-04-14",
+      "sourceUrl": "https://techcrunch.com/2026/04/15/this-khosla-backed-autonomous-pod-startup-just-raised-170m-now-its-aiming-for-more/"
+    },
+    {
+      "company": { "name": "Slash", "description": "Business banking, corporate card and expense management platform.", "websiteUrl": "https://www.slash.com", "location": "San Francisco, CA", "sectors": ["Fintech", "Banking"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2026-04-16",
+      "sourceUrl": "https://techcrunch.com/2026/04/16/slash-a-ramp-competitor-founded-by-teenagers-raises-100m-at-1-4b-valuation/"
+    },
+    {
+      "company": { "name": "Norm Ai", "description": "AI platform that automates legal and regulatory compliance work for enterprises.", "websiteUrl": "https://www.norm.ai", "location": "New York, NY", "sectors": ["AI", "Legal Tech"] },
+      "stage": "Series C", "amount": 120000000, "investedAt": "2026-07-07",
+      "sourceUrl": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/"
+    },
+    {
+      "company": { "name": "Varda", "description": "Builds orbital capsules that manufacture materials in microgravity and return them to Earth.", "websiteUrl": "https://www.varda.com", "location": "El Segundo, CA", "sectors": ["Space", "Manufacturing", "Aerospace"] },
+      "stage": "Series D", "amount": 251000000, "investedAt": "2026-09-30",
+      "sourceUrl": "https://techfundingnews.com/varda-raises-251m-led-by-lux-capital-and-natural-capital-to-make-medicines-in-orbit/"
     }
   ]
 }

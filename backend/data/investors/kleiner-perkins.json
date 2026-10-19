@@ -56,6 +56,36 @@
       "company": { "name": "Glean", "description": "AI-powered enterprise search and work assistant across company apps.", "websiteUrl": "https://www.glean.com", "location": "Palo Alto, CA", "sectors": ["Enterprise Software", "AI"] },
       "stage": "Series D", "amount": 200000000, "investedAt": "2024-02-27",
       "sourceUrl": "https://www.glean.com/press/glean-announces-over-200m-series-d-to-accelerate-secure-deployment-of-generative-ai-in-the-enterprise"
+    },
+    {
+      "company": { "name": "Hippocratic AI", "description": "Builds safety-focused generative AI agents for non-diagnostic healthcare tasks.", "websiteUrl": "https://www.hippocraticai.com", "location": "Palo Alto, CA", "sectors": ["Healthtech", "AI"] },
+      "stage": "Series B", "amount": 141000000, "investedAt": "2025-01-09",
+      "sourceUrl": "https://techcrunch.com/2025/01/09/hippocratic-ai-raises-141m-for-creating-patient-facing-ai-agents/"
+    },
+    {
+      "company": { "name": "Multiply Mortgage", "description": "Employee benefit that gives workers home-buying guidance and discounted mortgage rates.", "websiteUrl": "https://www.multiplymortgage.com", "location": "Denver, CO", "sectors": ["Fintech", "Consumer Finance", "HR Tech"] },
+      "stage": "Series A", "amount": 23500000, "investedAt": "2025-03-19",
+      "sourceUrl": "https://techcrunch.com/2025/03/19/mortgage-as-an-employee-benefit-kleiner-perkins-leads-23-5m-series-a-for-multiply-mortgage/"
+    },
+    {
+      "company": { "name": "Harvey", "description": "Generative AI platform for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["AI", "Legal Tech"] },
+      "stage": "Series E", "amount": 300000000, "investedAt": "2025-06-23",
+      "sourceUrl": "https://www.harvey.ai/blog/harvey-raises-series-e"
+    },
+    {
+      "company": { "name": "PermitFlow", "description": "AI software that automates construction permitting, inspections and licensing for builders.", "websiteUrl": "https://www.permitflow.com", "location": "New York, NY", "sectors": ["AI", "Proptech", "SaaS"] },
+      "stage": "Series B", "amount": 54000000, "investedAt": "2025-12",
+      "sourceUrl": "https://pulse2.com/permitflow-54-million-series-b/"
+    },
+    {
+      "company": { "name": "fal", "description": "Generative media platform that hosts image, video and audio AI models for developers.", "websiteUrl": "https://fal.ai", "location": "San Francisco, CA", "sectors": ["AI", "Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series D", "amount": 140000000, "investedAt": "2025-12-09",
+      "sourceUrl": "https://www.businesswire.com/news/home/20251209532649/en/fal-Raises-140M-in-Series-D-Led-by-Sequoia-with-Major-Participation-from-Kleiner-Perkins-and-NVentures-NVIDIA%E2%80%99s-venture-capital-arm-to-Accelerate-the-Future-of-Real-Time-Generative-Media"
+    },
+    {
+      "company": { "name": "Lotus Health", "description": "Free AI-powered primary care service with doctors reviewing diagnoses and prescriptions.", "websiteUrl": "https://lotus.ai", "location": "San Francisco, CA", "sectors": ["AI", "Healthtech"] },
+      "stage": "Series A", "amount": 35000000, "investedAt": "2026-02-03",
+      "sourceUrl": "https://techcrunch.com/2026/02/03/lotus-health-nabs-35m-for-ai-doctor-that-sees-patients-for-free/"
     }
   ]
 }

@@ -144,6 +144,36 @@
       "amount": 52000000,
       "investedAt": "2024-07-11",
       "sourceUrl": "https://fireworks.ai/blog/fireworks-ai-series-b-compound-ai"
+    },
+    {
+      "company": { "name": "Rillet", "description": "AI-native ERP and general ledger software for mid-market finance teams.", "websiteUrl": "https://www.rillet.com", "location": "New York, NY", "sectors": ["Fintech", "SaaS", "AI"] },
+      "stage": "Series A", "amount": 25000000, "investedAt": "2025-05-28",
+      "sourceUrl": "https://techcrunch.com/2025/05/28/rillet-raises-25m-from-sequoia-to-automate-general-ledger-systems-using-ai/"
+    },
+    {
+      "company": { "name": "Juicebox", "description": "AI-powered search engine for finding job candidates using natural language.", "websiteUrl": "https://juicebox.ai", "location": "San Francisco, CA", "sectors": ["AI", "HR Tech"] },
+      "stage": "Series A", "amount": 30000000, "investedAt": "2025-09-25",
+      "sourceUrl": "https://techcrunch.com/2025/09/25/juicebox-raises-30m-from-sequoia-to-revolutionize-hiring-with-llm-powered-search/"
+    },
+    {
+      "company": { "name": "Sandstone", "description": "AI platform for managing in-house legal department workflows and relationships.", "websiteUrl": "https://sandstone.com", "location": "New York, NY", "sectors": ["Legal Tech", "AI", "SaaS"] },
+      "stage": "Seed", "amount": 10000000, "investedAt": "2026-01-13",
+      "sourceUrl": "https://sandstone.com/blog/sandstone-launches-with-seed-led-by-sequoia-to-usher-in-ai-native-legal"
+    },
+    {
+      "company": { "name": "Peregrine", "description": "AI platform that unifies data from disconnected systems for public safety and government agencies.", "websiteUrl": "https://peregrine.io", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics", "Enterprise Software"] },
+      "stage": "Series D", "amount": 250000000, "investedAt": "2026-06-22",
+      "sourceUrl": "https://peregrine.io/resources/peregrine-technologies-raises-250-million-series-d-at-68-billion-valuation"
+    },
+    {
+      "company": { "name": "Glow", "description": "Endpoint security platform that governs software, AI agents and developer tools on employee devices.", "websiteUrl": "https://www.glow.io", "location": "Palo Alto, CA", "sectors": ["Cybersecurity", "AI"] },
+      "stage": "Series A", "amount": 180000000, "investedAt": "2026-07-22",
+      "sourceUrl": "https://techcrunch.com/2026/07/22/glow-emerges-from-stealth-at-1-2b-valuation-to-challenge-endpoint-security-in-the-ai-era/"
+    },
+    {
+      "company": { "name": "Neros", "description": "Builds autonomous FPV and interceptor drones for defense customers.", "websiteUrl": "https://neros.tech", "location": "El Segundo, CA", "sectors": ["Defense Tech", "Hardware", "Robotics"] },
+      "stage": "Series C", "amount": 250000000, "investedAt": "2026-08-12",
+      "sourceUrl": "https://www.wilmerhale.com/en/insights/news/20260811-neros-raises-250m-series-c-at-2b-valuation-to-scale-autonomous-and-interceptor-drone-programs"
     }
   ]
 }

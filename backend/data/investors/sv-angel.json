@@ -31,6 +31,16 @@
       "company": { "name": "Method", "description": "Financial connectivity API for consumer debts such as loans and credit cards.", "websiteUrl": "https://methodfi.com", "location": "Austin, TX", "sectors": ["Fintech", "Developer Tools"] },
       "stage": "Series A", "amount": 16000000, "investedAt": "2023-01-26",
       "sourceUrl": "https://techcrunch.com/2023/01/26/method-raises-16m-to-power-loan-repayment-balance-transfers-and-more-across-fintech-apps/"
+    },
+    {
+      "company": { "name": "David AI", "description": "Provides audio datasets used to train and evaluate speech and audio AI models.", "websiteUrl": "https://www.withdavid.ai", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Seed", "amount": 5000000, "investedAt": "2025-01-16",
+      "sourceUrl": "https://www.withdavid.ai/news/announcing-our-5m-seed-round-led-by-first-round"
+    },
+    {
+      "company": { "name": "Sandstone", "description": "AI platform for managing in-house legal department workflows and relationships.", "websiteUrl": "https://sandstone.com", "location": "New York, NY", "sectors": ["Legal Tech", "AI", "SaaS"] },
+      "stage": "Series A", "amount": 30000000, "investedAt": "2026-06-09",
+      "sourceUrl": "https://sandstone.com/blog/sandstone-raises-series-a"
     }
   ]
 }

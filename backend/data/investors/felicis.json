@@ -136,6 +136,72 @@
       "amount": 13800000,
       "investedAt": "2024-03-05",
       "sourceUrl": "https://www.metaplane.dev/blog/metaplane-raises-13m-series-a"
+    },
+    {
+      "company": {
+        "name": "Runlayer",
+        "description": "Security and control platform for enterprise AI agents and MCP servers.",
+        "websiteUrl": "https://www.runlayer.com",
+        "location": "New York, NY",
+        "sectors": [
+          "Cybersecurity",
+          "AI",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Seed",
+      "amount": 11000000,
+      "investedAt": "2025-11-17",
+      "sourceUrl": "https://techcrunch.com/2025/11/17/mcp-ai-agent-security-startup-runlayer-launches-with-8-unicorns-11m-from-khoslas-keith-rabois-and-felicis/"
+    },
+    {
+      "company": {
+        "name": "Artemis",
+        "description": "AI-native security operations platform positioned as a replacement for legacy SIEM tools.",
+        "websiteUrl": "https://www.artemissecurity.com",
+        "location": "New York, NY",
+        "sectors": [
+          "Cybersecurity",
+          "AI"
+        ]
+      },
+      "stage": "Series A",
+      "amount": null,
+      "investedAt": "2026-04-15",
+      "sourceUrl": "https://www.felicis.com/blog/artemis-series-a-security-gets-a-new-brain"
+    },
+    {
+      "company": {
+        "name": "Exa",
+        "description": "Web search engine and API built for AI applications and agents.",
+        "websiteUrl": "https://exa.ai",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "Developer Tools"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 250000000,
+      "investedAt": "2026-05",
+      "sourceUrl": "https://www.felicis.com/blog/exa-series-c-search-in-the-age-of-agents"
+    },
+    {
+      "company": {
+        "name": "Runlayer",
+        "description": "Security and control platform for enterprise AI agents and MCP servers.",
+        "websiteUrl": "https://www.runlayer.com",
+        "location": "New York, NY",
+        "sectors": [
+          "Cybersecurity",
+          "AI",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Series A",
+      "amount": null,
+      "investedAt": "2026-06-24",
+      "sourceUrl": "https://www.felicis.com/blog/runlayer-series-a-how-enterprises-actually-become-ai-native"
     }
   ]
 }

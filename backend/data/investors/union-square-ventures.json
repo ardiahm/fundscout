@@ -56,6 +56,31 @@
       "company": { "name": "Tutor Intelligence", "description": "AI-powered robots for warehouse tasks such as palletizing and case picking.", "websiteUrl": "https://www.tutorintelligence.com", "location": "Watertown, MA", "sectors": ["Robotics", "AI", "Logistics"] },
       "stage": "Series A", "amount": 34000000, "investedAt": "2025-12-02",
       "sourceUrl": "https://pulse2.com/tutor-intelligence-34-million-series-a/"
+    },
+    {
+      "company": { "name": "Efficient Computer", "description": "Designs energy-efficient general-purpose processors and compilers.", "websiteUrl": "https://efficient.computer", "location": "Pittsburgh, PA", "sectors": ["Semiconductors", "Hardware"] },
+      "stage": "Series A", "amount": 60000000, "investedAt": "2026-02-18",
+      "sourceUrl": "https://www.vcaonline.com/news/2026021816/efficient-computer-raises-60-million-to-advance-energy-efficient-general-purpose-processors-for-ai/"
+    },
+    {
+      "company": { "name": "Board", "description": "Tabletop game console with a touchscreen that recognizes physical game pieces.", "websiteUrl": "https://board.fun", "location": "New York, NY", "sectors": ["Gaming", "Consumer Electronics"] },
+      "stage": "Series A", "amount": 20000000, "investedAt": "2026-06-02",
+      "sourceUrl": "https://techcrunch.com/2026/06/02/board-the-new-game-startup-from-mirror-founder-brynn-putnam-raises-20m-has-already-sold-thousands/"
+    },
+    {
+      "company": { "name": "Suno", "description": "Generative AI platform for creating music from text prompts.", "websiteUrl": "https://suno.com", "location": "Cambridge, MA", "sectors": ["AI", "Entertainment"] },
+      "stage": "Series D", "amount": 400000000, "investedAt": "2026-06-03",
+      "sourceUrl": "https://suno.com/blog/series-d-announcement"
+    },
+    {
+      "company": { "name": "Fomo", "description": "Social trading app for crypto tokens and other assets across multiple blockchains.", "websiteUrl": "https://fomo.family", "location": "New York, NY", "sectors": ["Crypto", "Fintech", "Social"] },
+      "stage": "Series B", "amount": 75000000, "investedAt": "2026-06-22",
+      "sourceUrl": "https://www.vcaonline.com/news/2026062205/fomo-raises-75-million-series-b-led-by-index-ventures-to-scale-global-consumer-trading-app/"
+    },
+    {
+      "company": { "name": "Pascal", "description": "Prediction market exchange built for professional traders.", "websiteUrl": "https://pascal.trade", "location": "New York, NY", "sectors": ["Fintech", "Crypto"] },
+      "stage": "Series A", "amount": 9000000, "investedAt": "2026-07-16",
+      "sourceUrl": "https://www.fortune.com/2026/07/16/exclusive-prediction-market-startup-pascal-9-million-heavyweights-kalshi-and-polymarket/"
     }
   ]
 }

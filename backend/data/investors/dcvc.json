@@ -51,6 +51,36 @@
       "company": { "name": "Embark", "description": "Developed self-driving software for long-haul semi trucks.", "websiteUrl": "https://embarktrucks.com", "location": "San Francisco, CA", "sectors": ["Autonomous Vehicles", "Logistics", "Transportation"] },
       "stage": "Series C", "amount": 70000000, "investedAt": "2019-09-25",
       "sourceUrl": "https://www.forbes.com/sites/alanohnsman/2019/09/25/self-driving-startup-embark-raises-70-million-opens-freight-hubs-for-robot-big-rigs/"
+    },
+    {
+      "company": { "name": "ElectronX", "description": "U.S.-regulated energy exchange offering short-term power risk management products.", "websiteUrl": "https://www.electronx.com", "location": "Chicago, IL", "sectors": ["Fintech", "Energy"] },
+      "stage": "Series A", "amount": 30000000, "investedAt": "2025-11-14",
+      "sourceUrl": "https://www.electronx.com/news-insights-collections/energy-exchange-electronx-raises-usd30m-series-a-round"
+    },
+    {
+      "company": { "name": "SF Compute", "description": "Marketplace for buying and reselling GPU computing capacity for AI.", "websiteUrl": "https://sfcompute.com", "location": "San Francisco, CA", "sectors": ["Cloud Infrastructure", "AI", "Marketplace"] },
+      "stage": "Series A", "amount": 40000000, "investedAt": "2025-11-26",
+      "sourceUrl": "https://sfcompute.com/news/sf-compute-series-a"
+    },
+    {
+      "company": { "name": "Fervo Energy", "description": "Develops next-generation enhanced geothermal power projects.", "websiteUrl": "https://fervoenergy.com", "location": "Houston, TX", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Series E", "amount": 462000000, "investedAt": "2025-12-10",
+      "sourceUrl": "https://pulse2.com/fervo-energy-462-million-series-e/"
+    },
+    {
+      "company": { "name": "Radiant", "description": "Develops portable nuclear microreactors for off-grid and defense power.", "websiteUrl": "https://www.radiantnuclear.com", "location": "El Segundo, CA", "sectors": ["Energy", "Hardware", "Defense Tech"] },
+      "stage": "Growth", "amount": 300000000, "investedAt": "2025-12-17",
+      "sourceUrl": "https://www.dcvc.com/news-insights/dcvc-2025-q4-update"
+    },
+    {
+      "company": { "name": "Impulse Space", "description": "Builds in-space transportation vehicles that move satellites between orbits.", "websiteUrl": "https://impulsespace.com", "location": "Redondo Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Series D", "amount": 500000000, "investedAt": "2026-06-03",
+      "sourceUrl": "https://www.dcvc.com/news-insights/dcvc-2026-q2-update"
+    },
+    {
+      "company": { "name": "TypeSafe", "description": "Builds natively composable AI systems designed to work with software and other AIs.", "websiteUrl": "https://typesafe.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Seed", "amount": 40000000, "investedAt": "2026-09-15",
+      "sourceUrl": "https://www.dcvc.com/news-insights/typesafe-emerges-from-stealth-with-a-new-way-of-doing-ai"
     }
   ]
 }

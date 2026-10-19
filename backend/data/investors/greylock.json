@@ -46,6 +46,31 @@
       "company": { "name": "Rubrik", "description": "Data security and backup software for enterprise and cloud data.", "websiteUrl": "https://www.rubrik.com", "location": "Palo Alto, CA", "sectors": ["Cybersecurity", "Cloud Infrastructure", "Enterprise Software"] },
       "stage": "Series B", "amount": 40000000, "investedAt": "2015-05",
       "sourceUrl": "https://techcrunch.com/2024/04/26/rubrik-ipo-paid-off-greylock-vc-asheem-chandna/"
+    },
+    {
+      "company": { "name": "Bretton AI", "description": "AI agents for financial crime compliance and back-office operations at banks and fintechs; formerly Greenlite AI.", "websiteUrl": "https://www.bretton.com", "location": "San Francisco, CA", "sectors": ["AI", "Fintech", "Banking"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2025-05-21",
+      "sourceUrl": "https://www.americanbanker.com/news/greenlite-ai-raises-15m-for-financial-crime-ai-assistant"
+    },
+    {
+      "company": { "name": "Bedrock Data", "description": "Data security platform for discovering, classifying and governing enterprise data used by AI.", "websiteUrl": "https://www.bedrockdata.ai", "location": "Menlo Park, CA", "sectors": ["Cybersecurity", "Data & Analytics", "AI"] },
+      "stage": "Series A", "amount": 25000000, "investedAt": "2025-11-19",
+      "sourceUrl": "https://pulse2.com/bedrock-data-25-million-series-a/"
+    },
+    {
+      "company": { "name": "Resolve AI", "description": "AI agents that troubleshoot production software incidents for engineering teams.", "websiteUrl": "https://www.resolve.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 125000000, "investedAt": "2026-02-04",
+      "sourceUrl": "https://techcrunch.com/2026/02/04/ai-sre-resolve-ai-confirms-125m-raise-unicorn-valuation/"
+    },
+    {
+      "company": { "name": "Cogent", "description": "AI agents that investigate and remediate security vulnerabilities for enterprises.", "websiteUrl": "https://cogent.com", "location": "San Francisco, CA", "sectors": ["Cybersecurity", "AI"] },
+      "stage": "Series A", "amount": 42000000, "investedAt": "2026-02-18",
+      "sourceUrl": "https://www.thesaasnews.com/news/cogent-security-raises-42-million-series-a"
+    },
+    {
+      "company": { "name": "Antioch", "description": "Simulation platform for testing robotics and physical AI systems before real-world deployment.", "websiteUrl": "https://antioch.com", "location": "New York, NY", "sectors": ["AI", "Robotics", "Developer Tools"] },
+      "stage": "Series A", "amount": 32000000, "investedAt": "2026-09-08",
+      "sourceUrl": "https://www.newswire.com/news/antioch-raises-32m-to-bring-software-speed-to-physical-ai-development"
     }
   ]
 }

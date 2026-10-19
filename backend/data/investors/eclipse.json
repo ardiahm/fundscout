@@ -50,6 +50,31 @@
       "company": { "name": "Tandem PV", "description": "Manufactures solar panels that layer perovskite cells on silicon modules.", "websiteUrl": "https://www.tandempv.com", "location": "Fremont, CA", "sectors": ["Energy", "Climate Tech", "Hardware"] },
       "stage": "Series A", "amount": 50000000, "investedAt": "2025-03-04",
       "sourceUrl": "https://eclipse.capital/blog/unlocking-us-energy-independence"
+    },
+    {
+      "company": { "name": "Anode", "description": "Builds mobile battery microgrids that replace diesel generators for temporary power and EV charging.", "websiteUrl": "https://anode.tech", "location": "San Francisco, CA", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Seed", "amount": 9000000, "investedAt": "2025-09-26",
+      "sourceUrl": "https://eclipse.capital/blog/on-demand-mobile-microgrids"
+    },
+    {
+      "company": { "name": "Foxglove", "description": "Data and observability platform for robotics and physical AI developers.", "websiteUrl": "https://foxglove.dev", "location": "San Francisco, CA", "sectors": ["Robotics", "Developer Tools", "Data & Analytics"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2025-11-11",
+      "sourceUrl": "https://foxglove.dev/blog/foxglove-series-b"
+    },
+    {
+      "company": { "name": "VulcanForms", "description": "Digital metal additive manufacturing company producing precision parts in the U.S.", "websiteUrl": "https://www.vulcanforms.com", "location": "Devens, MA", "sectors": ["Manufacturing", "Hardware"] },
+      "stage": "Series D", "amount": 220000000, "investedAt": "2026-01-30",
+      "sourceUrl": "https://eclipse.capital/blog/Putting-Pedal-to-Metal"
+    },
+    {
+      "company": { "name": "Ever", "description": "Online marketplace for buying and selling used electric vehicles.", "websiteUrl": "https://www.evercars.com", "location": "San Francisco, CA", "sectors": ["Marketplace", "E-commerce", "Transportation"] },
+      "stage": "Series A", "amount": 31000000, "investedAt": "2026-02-12",
+      "sourceUrl": "https://techcrunch.com/2026/02/12/eclipse-backs-all-ev-marketplace-ever-in-31m-funding-round/"
+    },
+    {
+      "company": { "name": "Humble Robotics", "description": "Builds the Humble Hauler, a cabless autonomous electric truck for dock-to-dock freight.", "websiteUrl": "https://humblerobotics.ai", "location": "San Francisco, CA", "sectors": ["Autonomous Vehicles", "Logistics", "Robotics"] },
+      "stage": "Seed", "amount": 24000000, "investedAt": "2026-04-21",
+      "sourceUrl": "https://fortune.com/2026/04/21/exclusive-humble-freight-autonomous-truck-eclipse-trucking/"
     }
   ]
 }

@@ -144,6 +144,41 @@
       "amount": 2000000000,
       "investedAt": "2025-07-15",
       "sourceUrl": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+    },
+    {
+      "company": { "name": "Base Power", "description": "Company that installs home batteries and operates them as a distributed power network.", "websiteUrl": "https://www.basepowercompany.com", "location": "Austin, TX", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Series B", "amount": 200000000, "investedAt": "2025-04-09",
+      "sourceUrl": "https://techcrunch.com/2025/04/09/a16z-backs-base-power-in-200m-round-for-home-backup-batteries/"
+    },
+    {
+      "company": { "name": "Substack", "description": "Platform for writers to publish and earn money from paid newsletters.", "websiteUrl": "https://substack.com", "location": "San Francisco, CA", "sectors": ["Media", "Social"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2025-07-17",
+      "sourceUrl": "https://techcrunch.com/2025/07/17/substack-raises-100m-from-chernin-group-andreessen-horowitz-skims-ceo-and-more/"
+    },
+    {
+      "company": { "name": "EliseAI", "description": "AI software that automates leasing, resident and patient communications for housing and healthcare operators.", "websiteUrl": "https://eliseai.com", "location": "New York, NY", "sectors": ["AI", "Proptech", "Healthtech"] },
+      "stage": "Series E", "amount": 250000000, "investedAt": "2025-08-20",
+      "sourceUrl": "https://eliseai.com/blog/eliseai-raises-250m-series-e"
+    },
+    {
+      "company": { "name": "fal", "description": "Generative media platform that hosts image, video and audio AI models for developers.", "websiteUrl": "https://fal.ai", "location": "San Francisco, CA", "sectors": ["AI", "Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series D", "amount": 140000000, "investedAt": "2025-12-09",
+      "sourceUrl": "https://www.businesswire.com/news/home/20251209532649/en/fal-Raises-140M-in-Series-D-Led-by-Sequoia-with-Major-Participation-from-Kleiner-Perkins-and-NVentures-NVIDIA%E2%80%99s-venture-capital-arm-to-Accelerate-the-Future-of-Real-Time-Generative-Media"
+    },
+    {
+      "company": { "name": "Standard Nuclear", "description": "Manufacturer of advanced TRISO nuclear fuel for small modular and advanced reactors.", "websiteUrl": "https://www.standardnuclear.com", "location": "Oak Ridge, TN", "sectors": ["Energy", "Climate Tech", "Manufacturing"] },
+      "stage": "Series A", "amount": 140000000, "investedAt": "2026-01-26",
+      "sourceUrl": "https://techcrunch.com/2026/01/28/standard-nuclear-raises-140m-as-nuclear-power-enters-its-gold-rush-era/"
+    },
+    {
+      "company": { "name": "Netris", "description": "Network automation software that helps AI cloud operators set up and run GPU clouds.", "websiteUrl": "https://www.netris.io", "location": "Santa Clara, CA", "sectors": ["Cloud Infrastructure", "AI", "Enterprise Software"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2026-06-25",
+      "sourceUrl": "https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/"
+    },
+    {
+      "company": { "name": "EliseAI", "description": "AI software that automates leasing, resident and patient communications for housing and healthcare operators.", "websiteUrl": "https://eliseai.com", "location": "New York, NY", "sectors": ["AI", "Proptech", "Healthtech"] },
+      "stage": "Growth", "amount": 350000000, "investedAt": "2026-09-29",
+      "sourceUrl": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/"
     }
   ]
 }

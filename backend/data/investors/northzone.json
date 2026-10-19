@@ -1,6 +1,6 @@
 {
   "investor": { "name": "Northzone", "type": "Venture Capital", "websiteUrl": "https://www.northzone.com" },
-  "notes": "Only 8 US rounds could be confirmed with sources that name Northzone and give a stage and US headquarters. Other US portfolio rounds (Blitzy $200M 2026, Filed $17.2M 2025, Bedrock Ocean Series A 2023) were left out because the stage or headquarters city could not be confirmed.",
+  "notes": "Only US rounds confirmed by sources that name Northzone, a stage and a US headquarters are included. Blitzy's $200M 2026 growth round was added once Northzone's post confirmed it as a growth round led by Northzone (Cambridge, MA HQ). Filed ($17.2M, 2025) and Bedrock Ocean (Series A, 2023) are left out because the stage or headquarters city could not be confirmed.",
   "investments": [
     {
       "company": { "name": "Fubo", "description": "Live TV streaming service focused on sports.", "websiteUrl": "https://www.fubo.tv", "location": "New York, NY", "sectors": ["Media", "Entertainment"] },
@@ -41,6 +41,16 @@
       "company": { "name": "GC AI", "description": "AI assistant for in-house legal teams to draft, review and research documents.", "websiteUrl": "https://gc.ai", "location": "San Francisco, CA", "sectors": ["Legal Tech", "AI"] },
       "stage": "Series B", "amount": 60000000, "investedAt": "2025-11-12",
       "sourceUrl": "https://www.artificiallawyer.com/2025/11/12/gc-ai-raises-60m-at-0-55-billion-valuation/"
+    },
+    {
+      "company": { "name": "XBOW", "description": "Autonomous AI system that finds and validates software security vulnerabilities.", "websiteUrl": "https://xbow.com", "location": "Seattle, WA", "sectors": ["Cybersecurity", "AI"] },
+      "stage": "Series C", "amount": 120000000, "investedAt": "2026-03-18",
+      "sourceUrl": "https://xbow.com/news/xbow-raises-120m-to-scale"
+    },
+    {
+      "company": { "name": "Blitzy", "description": "Autonomous software development platform that coordinates AI agents across enterprise codebases.", "websiteUrl": "https://blitzy.com", "location": "Cambridge, MA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Growth", "amount": 200000000, "investedAt": "2026-05-05",
+      "sourceUrl": "https://www.businesswire.com/news/home/20260505342338/en/Blitzy-Raises-200-Million-at-1.4-Billion-Valuation"
     }
   ]
 }

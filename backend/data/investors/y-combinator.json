@@ -157,6 +157,31 @@
       "amount": 120000000,
       "investedAt": "2022-03-16",
       "sourceUrl": "https://www.silversmith.com/news/webflow-raises-120m-series-c-at-4b-valuation-led-by-yc-continuity"
+    },
+    {
+      "company": { "name": "Bretton AI", "description": "AI agents for financial crime compliance and back-office operations at banks and fintechs; formerly Greenlite AI.", "websiteUrl": "https://www.bretton.com", "location": "San Francisco, CA", "sectors": ["AI", "Fintech", "Banking"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2025-05-21",
+      "sourceUrl": "https://www.americanbanker.com/news/greenlite-ai-raises-15m-for-financial-crime-ai-assistant"
+    },
+    {
+      "company": { "name": "David AI", "description": "Provides audio datasets used to train and evaluate speech and audio AI models.", "websiteUrl": "https://www.withdavid.ai", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Series A", "amount": 25000000, "investedAt": "2025-05-22",
+      "sourceUrl": "https://www.withdavid.ai/news/announcing-our-25m-series-a"
+    },
+    {
+      "company": { "name": "Julius", "description": "AI data analyst that analyzes and visualizes datasets from natural language prompts.", "websiteUrl": "https://julius.ai", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Seed", "amount": 10000000, "investedAt": "2025-07-28",
+      "sourceUrl": "https://techcrunch.com/2025/07/28/ai-data-analyst-startup-julius-nabs-10m-seed-round/"
+    },
+    {
+      "company": { "name": "Lemon Slice", "description": "Diffusion model and API that generate real-time video avatars from a single image.", "websiteUrl": "https://www.lemonslice.com", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Seed", "amount": 10500000, "investedAt": "2025-12-23",
+      "sourceUrl": "https://techcrunch.com/2025/12/23/lemon-slice-nabs-10-5m-from-yc-and-matrix-to-build-out-its-digital-avatar-tech/"
+    },
+    {
+      "company": { "name": "Blacksmith", "description": "Provides faster, lower-cost runners for GitHub Actions continuous integration jobs.", "websiteUrl": "https://www.blacksmith.sh", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series B", "amount": 45000000, "investedAt": "2026-08-12",
+      "sourceUrl": "https://techcrunch.com/2026/08/12/blacksmiths-valuation-jumps-10x-to-550m-as-ai-coding-fuels-software-validation/"
     }
   ]
 }

@@ -32,7 +32,7 @@
       "sourceUrl": "https://blog.initialized.com/2022/09/pano-our-series-a-investment-in-climate-adaptation/"
     },
     {
-      "company": { "name": "PermitFlow", "description": "Software that automates construction permit applications for builders and contractors.", "websiteUrl": "https://www.permitflow.com", "location": "San Jose, CA", "sectors": ["Proptech", "SaaS"] },
+      "company": { "name": "PermitFlow", "description": "Software that automates construction permit applications for builders and contractors.", "websiteUrl": "https://www.permitflow.com", "location": "New York, NY", "sectors": ["Proptech", "SaaS"] },
       "stage": "Seed", "amount": 5500000, "investedAt": "2023-05-08",
       "sourceUrl": "https://techcrunch.com/2023/05/08/permitflow-construction-permit-automation/"
     },
@@ -50,6 +50,21 @@
       "company": { "name": "ZeroEntropy", "description": "Search and retrieval infrastructure, including rerankers, for AI applications.", "websiteUrl": "https://www.zeroentropy.dev", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
       "stage": "Seed", "amount": 4200000, "investedAt": "2025-07-09",
       "sourceUrl": "https://blog.initialized.com/2025/07/supercharging-llms-why-were-excited-to-lead-zeroentropys-4-2m-seed-round/"
+    },
+    {
+      "company": {"name": "Arcturus", "description": "Develops carbon-nanomaterial-infused metals for lighter, stronger electrical conductors.", "websiteUrl": "https://arcturus.io", "location": "Los Angeles, CA", "sectors": ["Energy", "Manufacturing", "Hardware"]},
+      "stage": "Seed", "amount": 8000000, "investedAt": "2026-06-30",
+      "sourceUrl": "https://techcrunch.com/2026/06/30/arcturus-could-halve-the-grids-electrical-losses-using-its-nano-infused-copper/"
+    },
+    {
+      "company": {"name": "Robocurve", "description": "Independently benchmarks how well frontier AI models control real robots.", "websiteUrl": "https://robocurve.org", "location": "San Francisco, CA", "sectors": ["Robotics", "AI"]},
+      "stage": "Seed", "amount": 10000000, "investedAt": "2026-09-14",
+      "sourceUrl": "https://robocurve.org/blog/seed-raise/"
+    },
+    {
+      "company": {"name": "Hop Aero", "description": "Develops rocket cargo vehicles for point-to-point delivery to remote or contested areas.", "websiteUrl": "https://hopaero.com", "location": "Los Angeles, CA", "sectors": ["Aerospace", "Defense Tech", "Logistics"]},
+      "stage": "Seed", "amount": 11000000, "investedAt": "2026-09-30",
+      "sourceUrl": "https://payloadspace.com/exclusive-hop-aero-raises-11m-for-suborbital-point-to-point-delivery/"
     }
   ]
 }

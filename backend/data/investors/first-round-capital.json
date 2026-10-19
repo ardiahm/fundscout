@@ -46,6 +46,26 @@
       "company": { "name": "Genera", "description": "Agent-based platform that handles customer deployments for enterprise AI software vendors.", "websiteUrl": "https://withgenera.com", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"] },
       "stage": "Seed", "amount": 10000000, "investedAt": "2026-08-11",
       "sourceUrl": "https://dealroom.co/news/144512-genera-raises-10m-seed-to-speed-up-enterprise-ai-deployments/"
+    },
+    {
+      "company": { "name": "Quartermaster", "description": "Maritime awareness network that turns commercial vessels into sensing nodes with its SmartMast hardware.", "websiteUrl": "https://www.quartermaster.us", "location": "Arlington, VA", "sectors": ["Defense Tech", "Hardware", "Data & Analytics"] },
+      "stage": "Series A", "amount": 43000000, "investedAt": "2026-05-25",
+      "sourceUrl": "https://pulse2.com/quartermaster-43-million-raised-for-maritime-awareness-network/"
+    },
+    {
+      "company": { "name": "Parallel Web Systems", "description": "Web search and extraction APIs that give AI agents structured access to the open web.", "websiteUrl": "https://parallel.ai", "location": "Palo Alto, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series B", "amount": 100000000, "investedAt": "2026-04-29",
+      "sourceUrl": "https://pulse2.com/parallel-web-systems-100-million-series-b-at-2-billion-valuation-raised-to-scale-ai-agent-web-infrastructure/"
+    },
+    {
+      "company": { "name": "Actively", "description": "AI agents that run account research, prospecting and deal progression for enterprise sales teams.", "websiteUrl": "https://www.actively.ai", "location": "New York, NY", "sectors": ["AI", "SaaS"] },
+      "stage": "Series B", "amount": 45000000, "investedAt": "2026-04-28",
+      "sourceUrl": "https://pulse2.com/actively-45-million-raised-to-scale-intelligence-led-revenue-platform-powered-by-per-account-ai-agents/"
+    },
+    {
+      "company": { "name": "daydream", "description": "AI-native search agency that pairs SEO agents with human experts.", "websiteUrl": "https://withdaydream.com", "location": "San Francisco, CA", "sectors": ["AI", "Media"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2026-04-03",
+      "sourceUrl": "https://en.prnasia.com/releases/apac/daydream-raises-15m-series-a-to-build-the-world-s-best-ai-native-agency-for-seo-527971.shtml"
     }
   ]
 }

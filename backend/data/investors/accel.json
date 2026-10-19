@@ -131,6 +131,31 @@
       "amount": 2000000000,
       "investedAt": "2025-07-15",
       "sourceUrl": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+    },
+    {
+      "company": { "name": "Linear", "description": "Issue tracking and project planning software for product teams.", "websiteUrl": "https://linear.app", "location": "San Francisco, CA", "sectors": ["Productivity", "Developer Tools", "SaaS"] },
+      "stage": "Series C", "amount": 82000000, "investedAt": "2025-06-10",
+      "sourceUrl": "https://whbl.com/?p=839466"
+    },
+    {
+      "company": { "name": "Cursor", "description": "AI-powered code editor built by Anysphere.", "websiteUrl": "https://cursor.com", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series D", "amount": 2300000000, "investedAt": "2025-11-13",
+      "sourceUrl": "https://www.accel.com/news/our-series-d-in-cursor-pushing-the-frontier-of-ai-forward"
+    },
+    {
+      "company": { "name": "PermitFlow", "description": "AI software that automates construction permitting, inspections and licensing for builders.", "websiteUrl": "https://www.permitflow.com", "location": "New York, NY", "sectors": ["AI", "Proptech", "SaaS"] },
+      "stage": "Series B", "amount": 54000000, "investedAt": "2025-12",
+      "sourceUrl": "https://pulse2.com/permitflow-54-million-series-b/"
+    },
+    {
+      "company": { "name": "Sapiom", "description": "Financial infrastructure that lets AI agents authenticate and pay for software, APIs, data and compute.", "websiteUrl": "https://www.sapiom.ai", "location": "San Francisco, CA", "sectors": ["AI", "Payments", "Fintech"] },
+      "stage": "Seed", "amount": 15000000, "investedAt": "2026-02-05",
+      "sourceUrl": "https://techcrunch.com/2026/02/05/sapiom-raises-15m-to-help-ai-agents-buy-their-own-tech-tools/"
+    },
+    {
+      "company": { "name": "Ema", "description": "AI agents that automate multi-step business processes across HR, IT and finance.", "websiteUrl": "https://www.ema.co", "location": "Mountain View, CA", "sectors": ["AI", "Enterprise Software"] },
+      "stage": "Series B", "amount": 77000000, "investedAt": "2026-09-23",
+      "sourceUrl": "https://techcrunch.com/2026/09/23/ema-raises-77m-as-ai-starts-eating-into-enterprise-software-and-services/"
     }
   ]
 }

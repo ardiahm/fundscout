@@ -1,61 +1,273 @@
 {
-  "investor": { "name": "Insight Partners", "type": "Growth Equity", "websiteUrl": "https://www.insightpartners.com" },
+  "investor": {
+    "name": "Insight Partners",
+    "type": "Growth Equity",
+    "websiteUrl": "https://www.insightpartners.com"
+  },
   "notes": "The Spur and Kiteworks rounds had no series letter in the source and are recorded as Growth; Databricks Series J is mapped to Growth. Kiteworks' $456M included primary and secondary shares.",
   "investments": [
     {
-      "company": { "name": "Jasper", "description": "Generative AI platform for writing marketing content.", "websiteUrl": "https://www.jasper.ai", "location": "Austin, TX", "sectors": ["AI", "SaaS"] },
-      "stage": "Series A", "amount": 125000000, "investedAt": "2022-10-17",
+      "company": {
+        "name": "Jasper",
+        "description": "Generative AI platform for writing marketing content.",
+        "websiteUrl": "https://www.jasper.ai",
+        "location": "Austin, TX",
+        "sectors": [
+          "AI",
+          "SaaS"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 125000000,
+      "investedAt": "2022-10-17",
       "sourceUrl": "https://www.jasper.ai/blog/jasper-announces-125m-series-a-funding"
     },
     {
-      "company": { "name": "Fermyon", "description": "WebAssembly-based platform for building and running serverless cloud apps.", "websiteUrl": "https://www.fermyon.com", "location": "Longmont, CO", "sectors": ["Developer Tools", "Cloud Infrastructure"] },
-      "stage": "Series A", "amount": 20000000, "investedAt": "2022-10-24",
+      "company": {
+        "name": "Fermyon",
+        "description": "WebAssembly-based platform for building and running serverless cloud apps.",
+        "websiteUrl": "https://www.fermyon.com",
+        "location": "Longmont, CO",
+        "sectors": [
+          "Developer Tools",
+          "Cloud Infrastructure"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 20000000,
+      "investedAt": "2022-10-24",
       "sourceUrl": "https://techcrunch.com/2022/10/24/fermyon-cloud-app-webassembly-20m-funding-series-a/"
     },
     {
-      "company": { "name": "AssemblyAI", "description": "API platform for speech-to-text transcription and audio intelligence models.", "websiteUrl": "https://www.assemblyai.com", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
-      "stage": "Series B", "amount": 30000000, "investedAt": "2022-07-14",
+      "company": {
+        "name": "AssemblyAI",
+        "description": "API platform for speech-to-text transcription and audio intelligence models.",
+        "websiteUrl": "https://www.assemblyai.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "Developer Tools"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 30000000,
+      "investedAt": "2022-07-14",
       "sourceUrl": "https://techcrunch.com/2022/07/14/flush-with-new-cash-assemblyai-looks-to-grow-its-ai-as-a-service-business/"
     },
     {
-      "company": { "name": "Middesk", "description": "Business identity verification and underwriting data platform.", "websiteUrl": "https://www.middesk.com", "location": "San Francisco, CA", "sectors": ["Fintech", "Data & Analytics"] },
-      "stage": "Series B", "amount": 57000000, "investedAt": "2022-06-09",
+      "company": {
+        "name": "Middesk",
+        "description": "Business identity verification and underwriting data platform.",
+        "websiteUrl": "https://www.middesk.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "Fintech",
+          "Data & Analytics"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 57000000,
+      "investedAt": "2022-06-09",
       "sourceUrl": "https://techcrunch.com/2022/06/09/middesk-raises-57m/"
     },
     {
-      "company": { "name": "Asylon", "description": "Robotic security service using drones and robot dogs to patrol facilities.", "websiteUrl": "https://asylonrobotics.com", "location": "Philadelphia, PA", "sectors": ["Robotics", "Hardware"] },
-      "stage": "Series B", "amount": 26000000, "investedAt": "2025-07-22",
+      "company": {
+        "name": "Asylon",
+        "description": "Robotic security service using drones and robot dogs to patrol facilities.",
+        "websiteUrl": "https://asylonrobotics.com",
+        "location": "Philadelphia, PA",
+        "sectors": [
+          "Robotics",
+          "Hardware"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 26000000,
+      "investedAt": "2025-07-22",
       "sourceUrl": "https://techcrunch.com/2025/07/22/robot-guard-dogs-help-asylon-raise-a-26m-series-b/"
     },
     {
-      "company": { "name": "Mosyle", "description": "Device management and security software for Apple devices in businesses and schools.", "websiteUrl": "https://mosyle.com", "location": "Winter Park, FL", "sectors": ["Cybersecurity", "Enterprise Software"] },
-      "stage": "Series B", "amount": 196000000, "investedAt": "2022-05-04",
+      "company": {
+        "name": "Mosyle",
+        "description": "Device management and security software for Apple devices in businesses and schools.",
+        "websiteUrl": "https://mosyle.com",
+        "location": "Winter Park, FL",
+        "sectors": [
+          "Cybersecurity",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 196000000,
+      "investedAt": "2022-05-04",
       "sourceUrl": "https://techcrunch.com/2022/05/04/mosyle-rides-its-device-management-software-to-the-bank-raising-196m/"
     },
     {
-      "company": { "name": "Nymbus", "description": "Cloud core banking platform for banks and credit unions.", "websiteUrl": "https://www.nymbus.com", "location": "Jacksonville, FL", "sectors": ["Banking", "Fintech", "SaaS"] },
-      "stage": "Series D", "amount": 70000000, "investedAt": "2023-05-25",
+      "company": {
+        "name": "Nymbus",
+        "description": "Cloud core banking platform for banks and credit unions.",
+        "websiteUrl": "https://www.nymbus.com",
+        "location": "Jacksonville, FL",
+        "sectors": [
+          "Banking",
+          "Fintech",
+          "SaaS"
+        ]
+      },
+      "stage": "Series D",
+      "amount": 70000000,
+      "investedAt": "2023-05-25",
       "sourceUrl": "https://techcrunch.com/2023/05/25/nymbus-lands-70m-to-help-banks-digitally-transform/"
     },
     {
-      "company": { "name": "Canary Technologies", "description": "Guest management software for hotels covering check-in, messaging and upsells.", "websiteUrl": "https://www.canarytechnologies.com", "location": "San Francisco, CA", "sectors": ["Travel Services", "SaaS"] },
-      "stage": "Series D", "amount": 80000000, "investedAt": "2025-06-12",
+      "company": {
+        "name": "Canary Technologies",
+        "description": "Guest management software for hotels covering check-in, messaging and upsells.",
+        "websiteUrl": "https://www.canarytechnologies.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "Travel Services",
+          "SaaS"
+        ]
+      },
+      "stage": "Series D",
+      "amount": 80000000,
+      "investedAt": "2025-06-12",
       "sourceUrl": "https://techcrunch.com/2025/06/12/hotel-management-platform-canary-nabs-80m-series-d-from-yc-insight-partners/"
     },
     {
-      "company": { "name": "Spur", "description": "Bot and proxy detection data that helps companies identify fake users and threats.", "websiteUrl": "https://spur.us", "location": "Lake Mary, FL", "sectors": ["Cybersecurity", "Data & Analytics"] },
-      "stage": "Growth", "amount": 200000000, "investedAt": "2026-07-28",
+      "company": {
+        "name": "Spur",
+        "description": "Bot and proxy detection data that helps companies identify fake users and threats.",
+        "websiteUrl": "https://spur.us",
+        "location": "Lake Mary, FL",
+        "sectors": [
+          "Cybersecurity",
+          "Data & Analytics"
+        ]
+      },
+      "stage": "Growth",
+      "amount": 200000000,
+      "investedAt": "2026-07-28",
       "sourceUrl": "https://techcrunch.com/2026/07/28/bot-detection-startup-spur-nabs-200m-from-insight/"
     },
     {
-      "company": { "name": "Kiteworks", "description": "Platform for securing email, file sharing and other exchanges of sensitive data.", "websiteUrl": "https://www.kiteworks.com", "location": "San Mateo, CA", "sectors": ["Cybersecurity", "Enterprise Software"] },
-      "stage": "Growth", "amount": 456000000, "investedAt": "2024-08-14",
+      "company": {
+        "name": "Kiteworks",
+        "description": "Platform for securing email, file sharing and other exchanges of sensitive data.",
+        "websiteUrl": "https://www.kiteworks.com",
+        "location": "San Mateo, CA",
+        "sectors": [
+          "Cybersecurity",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Growth",
+      "amount": 456000000,
+      "investedAt": "2024-08-14",
       "sourceUrl": "https://techcrunch.com/2024/08/14/kiteworks-captures-456m-at-a-1b-valuation-to-help-secure-sensitive-data/"
     },
     {
-      "company": { "name": "Databricks", "description": "Data and AI platform built around the lakehouse architecture.", "websiteUrl": "https://www.databricks.com", "location": "San Francisco, CA", "sectors": ["Data & Analytics", "AI", "Cloud Infrastructure"] },
-      "stage": "Growth", "amount": 10000000000, "investedAt": "2024-12-17",
+      "company": {
+        "name": "Databricks",
+        "description": "Data and AI platform built around the lakehouse architecture.",
+        "websiteUrl": "https://www.databricks.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "Data & Analytics",
+          "AI",
+          "Cloud Infrastructure"
+        ]
+      },
+      "stage": "Growth",
+      "amount": 10000000000,
+      "investedAt": "2024-12-17",
       "sourceUrl": "https://www.databricks.com/company/newsroom/press-releases/databricks-raising-10b-series-j-investment-62b-valuation"
+    },
+    {
+      "company": {
+        "name": "Heron",
+        "description": "AI platform that automates document-heavy workflows for business lenders, equipment finance firms and insurers.",
+        "websiteUrl": "https://herondata.io",
+        "location": "New York, NY",
+        "sectors": [
+          "AI",
+          "Fintech",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 16000000,
+      "investedAt": "2025-07-15",
+      "sourceUrl": "https://www.insightpartners.com/ideas/heron-raises-16m-series-a-to-bring-the-ai-revolution-from-silicon-valley-to-american-businesses/"
+    },
+    {
+      "company": {
+        "name": "Delve",
+        "description": "AI agents that automate security and privacy compliance work such as evidence collection and reporting.",
+        "websiteUrl": "https://delve.co",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "Cybersecurity",
+          "SaaS"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 32000000,
+      "investedAt": "2025-07-22",
+      "sourceUrl": "https://techcrunch.com/2025/07/22/21-year-old-mit-dropouts-raise-32m-at-300m-valuation-led-by-insight/"
+    },
+    {
+      "company": {
+        "name": "GovWell",
+        "description": "AI software that helps local governments run permitting and licensing.",
+        "websiteUrl": "https://www.govwell.com",
+        "location": "New York, NY",
+        "sectors": [
+          "AI",
+          "SaaS",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 25000000,
+      "investedAt": "2026-05-14",
+      "sourceUrl": "https://www.insightpartners.com/ideas/govwell-raises-25m-series-a-led-by-insight-partners-to-build-the-ai-operating-system-for-modern-government/"
+    },
+    {
+      "company": {
+        "name": "Higharc",
+        "description": "AI platform for homebuilders covering home design, estimating, sales and construction documents.",
+        "websiteUrl": "https://www.higharc.com",
+        "location": "Durham, NC",
+        "sectors": [
+          "Proptech",
+          "AI",
+          "SaaS"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 95000000,
+      "investedAt": "2026-06-30",
+      "sourceUrl": "https://www.insightpartners.com/ideas/higharc-raises-95m-series-c-to-scale-ai-for-homebuilding/"
+    },
+    {
+      "company": {
+        "name": "Confido",
+        "description": "AI back-office platform for consumer packaged goods brands covering deductions, trade spend and forecasting.",
+        "websiteUrl": "https://www.confidotech.com",
+        "location": "New York, NY",
+        "sectors": [
+          "AI",
+          "Enterprise Software",
+          "SaaS"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 55000000,
+      "investedAt": "2026-09-22",
+      "sourceUrl": "https://pulse2.com/confido-raises-55-million-series-b-led-by-insight-partners-to-develop-ai-based-software-for-cpg-companies/"
     }
   ]
 }

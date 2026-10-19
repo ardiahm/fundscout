@@ -140,6 +140,72 @@
       "amount": 250000000,
       "investedAt": "2024-03-12",
       "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-applied-intuition"
+    },
+    {
+      "company": {
+        "name": "Nirvana Insurance",
+        "description": "AI-powered commercial insurance for trucking fleets that uses telematics data to price risk.",
+        "websiteUrl": "https://www.nirvanatech.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "Insurtech",
+          "AI",
+          "Transportation"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 80000000,
+      "investedAt": "2025-03-10",
+      "sourceUrl": "https://techcrunch.com/2025/03/10/nirvana-keeps-on-truckin-with-80m-at-a-830m-valuation-for-its-ai-powered-insurance/"
+    },
+    {
+      "company": {
+        "name": "Bevel",
+        "description": "AI health companion app that turns wearable and habit data into sleep, fitness and nutrition insights.",
+        "websiteUrl": "https://www.bevel.health",
+        "location": "New York, NY",
+        "sectors": [
+          "Healthtech",
+          "AI"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 10000000,
+      "investedAt": "2025-10-30",
+      "sourceUrl": "https://techcrunch.com/2025/10/30/bevel-raises-10m-series-a-from-general-catalyst-for-its-ai-health-companion/"
+    },
+    {
+      "company": {
+        "name": "Mercor",
+        "description": "AI-driven hiring platform that matches experts with AI labs and companies.",
+        "websiteUrl": "https://www.mercor.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "HR Tech",
+          "Marketplace"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 350000000,
+      "investedAt": "2025-10-27",
+      "sourceUrl": "https://techcrunch.com/2025/10/27/mercor-quintuples-valuation-to-10b-with-350m-series-c/"
+    },
+    {
+      "company": {
+        "name": "Hippocratic AI",
+        "description": "Builds safety-focused generative AI agents for non-diagnostic healthcare tasks.",
+        "websiteUrl": "https://www.hippocraticai.com",
+        "location": "Palo Alto, CA",
+        "sectors": [
+          "Healthtech",
+          "AI"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 126000000,
+      "investedAt": "2025-11-03",
+      "sourceUrl": "https://www.businesswire.com/news/home/20251103432446/en/Hippocratic-AI-Raises-%2524126-Million-in-Series-C-at-%25243.5-Billion-Valuation-Led-by-Avenir-Growth-to-Expand-Clinically-Safe-Generative-AI-Agents-Across-Healthcare"
     }
   ]
 }

@@ -51,6 +51,31 @@
       "company": { "name": "Modular", "description": "Develops software infrastructure for building and running AI models across different hardware.", "websiteUrl": "https://www.modular.com", "location": "Los Altos, CA", "sectors": ["AI", "Developer Tools"] },
       "stage": "Seed", "amount": 30000000, "investedAt": "2022-06-30",
       "sourceUrl": "https://techcrunch.com/2022/06/30/modular-closes-30m-seed-round-to-simplify-the-process-of-developing-ai-systems/"
+    },
+    {
+      "company": {"name": "Crash Override", "description": "Builds an engineering relationship management platform that maps how software is built and shipped.", "websiteUrl": "https://crashoverride.com", "location": "New York, NY", "sectors": ["Developer Tools", "Cybersecurity"]},
+      "stage": "Seed", "amount": 28000000, "investedAt": "2025-07-15",
+      "sourceUrl": "https://pulse2.com/crash-override-28-million-seed-closed-for-launching-first-engineering-relationship-management-platform"
+    },
+    {
+      "company": {"name": "Inertia", "description": "Develops high-powered laser technology for inertial fusion power plants.", "websiteUrl": "https://inertia.com", "location": "Livermore, CA", "sectors": ["Energy", "Climate Tech", "Hardware"]},
+      "stage": "Series A", "amount": 450000000, "investedAt": "2026-02-11",
+      "sourceUrl": "https://techcrunch.com/2026/02/11/twilio-co-founders-fusion-power-startup-raises-450m-from-bessemer-and-alphabets-gv/"
+    },
+    {
+      "company": {"name": "Translucent", "description": "Provides an AI financial platform that helps health systems manage margins and operations.", "websiteUrl": "https://www.translucent.ai", "location": "New York, NY", "sectors": ["AI", "Healthtech", "Data & Analytics"]},
+      "stage": "Series A", "amount": 27000000, "investedAt": "2026-03-11",
+      "sourceUrl": "https://hitconsultant.net/2026/03/11/translucent-27m-series-a-gv-agentic-ai-healthcare-finance/"
+    },
+    {
+      "company": {"name": "Sierra", "description": "Builds conversational AI agents for enterprise customer experience.", "websiteUrl": "https://sierra.ai", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"]},
+      "stage": "Series E", "amount": 950000000, "investedAt": "2026-05-04",
+      "sourceUrl": "https://www.gv.com/news/sierra-ai-giving-the-enterprise-a-voice"
+    },
+    {
+      "company": {"name": "Blacksmith", "description": "Provides faster, lower-cost runners for GitHub Actions continuous integration jobs.", "websiteUrl": "https://www.blacksmith.sh", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cloud Infrastructure"]},
+      "stage": "Series B", "amount": 45000000, "investedAt": "2026-08-12",
+      "sourceUrl": "https://techcrunch.com/2026/08/12/blacksmiths-valuation-jumps-10x-to-550m-as-ai-coding-fuels-software-validation/"
     }
   ]
 }
