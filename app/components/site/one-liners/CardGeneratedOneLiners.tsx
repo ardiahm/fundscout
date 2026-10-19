@@ -39,7 +39,7 @@ export function CardGeneratedOneLiner({
     <div>
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl flex justify-between">
+          <CardTitle className="text-2xl sm:text-3xl flex justify-between gap-2">
             <div>
               <span className="font-light">Name: </span>
               <span className="font-medium">
@@ -90,11 +90,11 @@ export function CardGeneratedOneLiner({
               >
                 <span className="leading-8 font-medium">{index + 1}:</span>
 
-                <div className="pr-28">
+                <div className="sm:pr-28">
                   <p className="m-0 leading-8">{oneLiner.response}</p>
                 </div>
 
-                <div className="absolute top-0 right-0">
+                <div className="col-start-2 sm:absolute sm:top-0 sm:right-0">
                   <CopyButton text={`${oneLiner.response}`} />
                 </div>
               </div>

@@ -20,7 +20,7 @@ export default async function OneLinerPage() {
   
 
   return (
-    <div className="p-5 lg:mx-30 md:mx-30 sm:mx-20">
+    <div className="p-2 sm:p-5 lg:mx-30 md:mx-30 sm:mx-20">
       <HistoryClient userId={userId} userHistory={userHistory} deleteAction={deleteOneLinerInteraction} />
     </div>
   );
