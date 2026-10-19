@@ -88,6 +88,7 @@ export function InvestorCard({
                       investor.mostRecentInvestmentCompany ?? "Undisclosed"
                     }
                     investorID={investor.id}
+                    truncate
                   />
                   <Stat
                     label="Latest Inv. Date"
@@ -124,10 +125,14 @@ function Stat({
   label,
   value,
   investorID,
+  truncate = false,
 }: {
   label: string;
   value: string;
   investorID: number;
+  // for long text like company names: one line with "...", capped at the
+  // column's normal width (10rem on lg) so it can't widen this card's columns
+  truncate?: boolean;
 }) {
   return (
     <div className="flex flex-col text-center min-w-0">
@@ -142,8 +147,12 @@ function Stat({
             </span>
           </Link>
         ) : (
-          <Link href={`/investor-profile/${investorID}`}>
-            <span className="text-black text-xl tracking-light hover:underline cursor-pointer tabular-nums ">
+          <Link
+            href={`/investor-profile/${investorID}`}
+            className={truncate ? "block min-w-0 lg:max-w-[10rem] lg:mx-auto" : undefined}
+            title={truncate ? value : undefined}
+          >
+            <span className={`text-black text-xl tracking-light hover:underline cursor-pointer tabular-nums ${truncate ? "block truncate" : ""}`}>
               {value}
             </span>
           </Link>

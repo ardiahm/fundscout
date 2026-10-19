@@ -1,5 +1,5 @@
 {
-  "investor": { "name": "Techstars", "type": "Accelerator", "websiteUrl": "https://www.techstars.com" },
+  "investor": { "name": "Techstars", "type": "Accelerator", "websiteUrl": "https://www.techstars.com", "avatarUrl": "https://cdn.bfldr.com/T71J6AJ4/at/q86ewb-df6l8w-98fkd7/TS_favcon.png?format=png" },
   "notes": "Only 8 rounds could be sourced in this pass (web search quota ran out partway). Six are accelerator checks from Techstars class announcements that state each company receives a capital investment; amounts are null because the announcements don't give a figure (published terms were $220,000 from Fall 2025). The other two are later rounds where Techstars is named as a participant. Older, better-known alumni (DigitalOcean, SendGrid, Remitly) were left out because no source found named Techstars as an investor in a specific round.",
   "investments": [
     {

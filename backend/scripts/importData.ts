@@ -90,6 +90,8 @@ export const InvestorFileSchema = z.object({
     name: z.string().min(1).max(80),
     type: z.enum(INVESTOR_TYPES),
     websiteUrl: z.url(),
+    // optional hand-picked logo, for sites whose favicon is too low-res
+    avatarUrl: z.url().optional(),
   }),
   // optional note, e.g. why there are fewer than 10 investments
   notes: z.string().optional(),
@@ -199,7 +201,10 @@ async function main() {
         ? existingInvestor
         : existingInvestor ??
           (await prisma.investor.create({
-            data: { ...data.investor, avatarUrl: logoUrlFromWebsite(data.investor.websiteUrl) },
+            data: {
+              ...data.investor,
+              avatarUrl: data.investor.avatarUrl ?? logoUrlFromWebsite(data.investor.websiteUrl),
+            },
           }));
 
       let fileNew = 0;

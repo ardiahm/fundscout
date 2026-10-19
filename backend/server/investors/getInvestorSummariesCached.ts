@@ -61,7 +61,7 @@ export const getInvestorSummariesCached = unstable_cache(
       };
     });
   },
-  ["investor-summaries-v4"],
+  ["investor-summaries-v5"],
   {
     revalidate: 60 * 60, // 1 hour
     tags: ["investors"],
