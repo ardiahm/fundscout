@@ -153,7 +153,9 @@ export default function PricingPageClient({ currentPlan, stage }: Props) {
                   +
                 </span>
               </summary>
-              <p className="max-w-prose pt-3 text-gray-600">{faq.answer}</p>
+              <p className="max-w-prose pt-3 text-gray-600 group-open:animate-in group-open:fade-in group-open:slide-in-from-top-1 group-open:duration-300 motion-reduce:animate-none">
+                {faq.answer}
+              </p>
             </details>
           ))}
         </div>
