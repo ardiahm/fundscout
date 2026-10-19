@@ -222,6 +222,7 @@ export type CompanySectorOrderByWithRelationInput = {
 
 export type CompanySectorWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  companyId_sectorId?: Prisma.CompanySectorCompanyIdSectorIdCompoundUniqueInput
   AND?: Prisma.CompanySectorWhereInput | Prisma.CompanySectorWhereInput[]
   OR?: Prisma.CompanySectorWhereInput[]
   NOT?: Prisma.CompanySectorWhereInput | Prisma.CompanySectorWhereInput[]
@@ -229,7 +230,7 @@ export type CompanySectorWhereUniqueInput = Prisma.AtLeast<{
   sectorId?: Prisma.IntFilter<"CompanySector"> | number
   company?: Prisma.XOR<Prisma.CompanyScalarRelationFilter, Prisma.CompanyWhereInput>
   sector?: Prisma.XOR<Prisma.SectorScalarRelationFilter, Prisma.SectorWhereInput>
-}, "id">
+}, "id" | "companyId_sectorId">
 
 export type CompanySectorOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -297,6 +298,11 @@ export type CompanySectorListRelationFilter = {
 
 export type CompanySectorOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type CompanySectorCompanyIdSectorIdCompoundUniqueInput = {
+  companyId: number
+  sectorId: number
 }
 
 export type CompanySectorCountOrderByAggregateInput = {

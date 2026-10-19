@@ -8,11 +8,11 @@ import { PrismaPg } from "@prisma/adapter-pg";
  *
  * HOW TO USE:
  * 1. Add calls inside `main()` using helpers below
- * 2. Run with: npx ts-node scripts/addData.ts
+ * 2. Run from backend/ with: npx tsx scripts/addData.ts
  *
  * PURPOSE:
  * - Add / update Investors, Companies, Sectors, Investments
- * - Safe to re-run (uses find-or-create patterns)
+ * - Safe to re-run (upserts on unique names; investments matched on investor, company, stage, date)
  * - Keep seed.ts untouched
  */
 
@@ -26,23 +26,21 @@ const prisma = new PrismaClient({ adapter });
    Helper Functions
    ===================== */
 
-/** Find or create an investor */
+/** Find or create an investor (name is unique) */
 async function getOrCreateInvestor(data: {
   name: string;
   type: string;
   websiteUrl?: string;
   avatarUrl?: string;
 }) {
-  const existing = await prisma.investor.findFirst({
+  return prisma.investor.upsert({
     where: { name: data.name },
+    update: {},
+    create: data,
   });
-
-  if (existing) return existing;
-
-  return prisma.investor.create({ data });
 }
 
-/** Find or create a company */
+/** Find or create a company (name is unique) */
 async function getOrCreateCompany(data: {
   name: string;
   description?: string;
@@ -50,13 +48,11 @@ async function getOrCreateCompany(data: {
   logoUrl?: string;
   location?: string;
 }) {
-  const existing = await prisma.company.findFirst({
+  return prisma.company.upsert({
     where: { name: data.name },
+    update: {},
+    create: data,
   });
-
-  if (existing) return existing;
-
-  return prisma.company.create({ data });
 }
 
 /** Find or create a sector */
@@ -72,24 +68,27 @@ async function getOrCreateSector(name: string) {
 async function addSectorToCompany(companyId: number, sectorName: string) {
   const sector = await getOrCreateSector(sectorName);
 
-  const existing = await prisma.companySector.findFirst({
+  return prisma.companySector.upsert({
     where: {
-      companyId,
-      sectorId: sector.id,
+      companyId_sectorId: {
+        companyId,
+        sectorId: sector.id,
+      },
     },
-  });
-
-  if (existing) return existing;
-
-  return prisma.companySector.create({
-    data: {
+    update: {},
+    create: {
       companyId,
       sectorId: sector.id,
     },
   });
 }
 
-/** Create an investment */
+/**
+ * Find or create an investment. The same investor, company, stage and date
+ * is treated as one investment, so re-running the script won't duplicate it.
+ * amount is the total round size, not the investor's own check.
+ * investedAt stays null when unknown (never defaults to today).
+ */
 async function createInvestment(params: {
   investorId: number;
   companyId: number;
@@ -97,14 +96,18 @@ async function createInvestment(params: {
   stage?: string;
   investedAt?: Date;
 }) {
+  const match = {
+    investorId: params.investorId,
+    companyId: params.companyId,
+    stage: params.stage ?? null,
+    investedAt: params.investedAt ?? null,
+  };
+
+  const existing = await prisma.investment.findFirst({ where: match });
+  if (existing) return existing;
+
   return prisma.investment.create({
-    data: {
-      investorId: params.investorId,
-      companyId: params.companyId,
-      amount: params.amount,
-      stage: params.stage,
-      investedAt: params.investedAt ?? new Date(),
-    },
+    data: { ...match, amount: params.amount },
   });
 }
 

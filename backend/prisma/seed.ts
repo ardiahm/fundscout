@@ -91,17 +91,25 @@ const companies: Prisma.CompanyCreateInput[] = [
 export async function main() {
   console.log("🌱 Seeding database...");
 
-  // --- Create Investors ---
+  // --- Create Investors (upsert on unique name, so re-seeding is safe) ---
   const createdInvestors = [];
   for (const inv of investors) {
-    const created = await prisma.investor.create({ data: inv });
+    const created = await prisma.investor.upsert({
+      where: { name: inv.name },
+      update: {},
+      create: inv,
+    });
     createdInvestors.push(created);
   }
 
   // --- Create Companies ---
   const createdCompanies = [];
   for (const c of companies) {
-    const created = await prisma.company.create({ data: c });
+    const created = await prisma.company.upsert({
+      where: { name: c.name },
+      update: {},
+      create: c,
+    });
     createdCompanies.push(created);
   }
 
@@ -175,8 +183,17 @@ export async function main() {
     },
   ];
 
+  // skip investments that already exist (same investor, company, stage, date)
   for (const inv of investments) {
-    await prisma.investment.create({ data: inv });
+    const existing = await prisma.investment.findFirst({
+      where: {
+        investorId: inv.investor.connect!.id,
+        companyId: inv.company.connect!.id,
+        stage: inv.stage,
+        investedAt: inv.investedAt,
+      },
+    });
+    if (!existing) await prisma.investment.create({ data: inv });
   }
 
   console.log("✅ Database seeded!");

@@ -233,16 +233,16 @@ export type InvestorOrderByWithRelationInput = {
 
 export type InvestorWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  name?: string
   AND?: Prisma.InvestorWhereInput | Prisma.InvestorWhereInput[]
   OR?: Prisma.InvestorWhereInput[]
   NOT?: Prisma.InvestorWhereInput | Prisma.InvestorWhereInput[]
-  name?: Prisma.StringFilter<"Investor"> | string
   type?: Prisma.StringFilter<"Investor"> | string
   avatarUrl?: Prisma.StringNullableFilter<"Investor"> | string | null
   websiteUrl?: Prisma.StringNullableFilter<"Investor"> | string | null
   investments?: Prisma.InvestmentListRelationFilter
   favoritedBy?: Prisma.FavoriteInvestorListRelationFilter
-}, "id">
+}, "id" | "name">
 
 export type InvestorOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
