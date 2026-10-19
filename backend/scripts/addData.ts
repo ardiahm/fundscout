@@ -1,5 +1,6 @@
 import {PrismaClient} from "../lib/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { logoUrlFromWebsite } from "../lib/logo";
 
 /**
  * ======================================
@@ -26,7 +27,7 @@ const prisma = new PrismaClient({ adapter });
    Helper Functions
    ===================== */
 
-/** Find or create an investor (name is unique) */
+/** Find or create an investor (name is unique). Logo defaults to the website's icon. */
 async function getOrCreateInvestor(data: {
   name: string;
   type: string;
@@ -36,11 +37,14 @@ async function getOrCreateInvestor(data: {
   return prisma.investor.upsert({
     where: { name: data.name },
     update: {},
-    create: data,
+    create: {
+      ...data,
+      avatarUrl: data.avatarUrl ?? logoUrlFromWebsite(data.websiteUrl),
+    },
   });
 }
 
-/** Find or create a company (name is unique) */
+/** Find or create a company (name is unique). Logo defaults to the website's icon. */
 async function getOrCreateCompany(data: {
   name: string;
   description?: string;
@@ -51,7 +55,10 @@ async function getOrCreateCompany(data: {
   return prisma.company.upsert({
     where: { name: data.name },
     update: {},
-    create: data,
+    create: {
+      ...data,
+      logoUrl: data.logoUrl ?? logoUrlFromWebsite(data.websiteUrl),
+    },
   });
 }
 
@@ -130,21 +137,18 @@ async function main() {
     name: "Northzone",
     type: "Venture Capital",
     websiteUrl: "https://www.northzone.com",
-    avatarUrl: "https://imagedelivery.net/jrR6kyj1O2ZmsraydueP7w/cb1dff3d-84b7-4a68-6f7d-438e13790300/public"
   });
 
   const valar = await getOrCreateInvestor({
     name: "Valar Ventures",
     type: "Venture Capital",
     websiteUrl: "https://www.valar.com",
-    avatarUrl: "https://cdn.prod.website-files.com/6368d53a1a07d773698447c6/662f7a2f173499f8bf04e77f_65cae6ac7e68c72f5d60db1e_Exit%2520(14).jpeg"
   });
 
   const luminar = await getOrCreateInvestor({
     name: "Luminar Ventures",
     type: "Venture Capital",
     websiteUrl: "https://www.luminarventures.com",
-    avatarUrl: "https://media.licdn.com/dms/image/v2/D4D0BAQHVV7r93GB_KA/company-logo_200_200/company-logo_200_200/0/1723106984809/luminar_ventures_logo?e=2147483647&v=beta&t=SWtwFDs5KDnhFGm0f0gFLlWRIz1yI7c7958KPkqWouA"
   });
 
   /* =====================
@@ -156,7 +160,6 @@ async function main() {
     description: "Online payments and financial infrastructure for the internet",
     websiteUrl: "https://stripe.com",
     location: "San Francisco, CA",
-    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQGluJhW7I1NYU7jF77E-9K9I46_ib_DUNHw&s"
   });
 
   const klarna = await getOrCreateCompany({
@@ -164,7 +167,6 @@ async function main() {
     description: "Buy now, pay later payments platform",
     websiteUrl: "https://www.klarna.com",
     location: "Stockholm, Sweden",
-    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwNflG1aiinrvf27uFevZrJqMEijybml_mOg&s"
   });
 
   const spotify = await getOrCreateCompany({
@@ -172,7 +174,6 @@ async function main() {
     description: "Audio streaming and media services platform",
     websiteUrl: "https://spotify.com",
     location: "Stockholm, Sweden",
-    logoUrl: "https://s3-alpha.figma.com/hub/file/2734964093/9f5edc36-eb4d-414a-8447-10514f2bc224-cover.png"
   });
 
   const wise = await getOrCreateCompany({
@@ -180,7 +181,6 @@ async function main() {
     description: "International money transfer and financial services",
     websiteUrl: "https://wise.com",
     location: "London, UK",
-    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Wise_logo_light-on-dark.png"
   });
 
   const n26 = await getOrCreateCompany({
@@ -188,7 +188,6 @@ async function main() {
     description: "Mobile-first digital bank",
     websiteUrl: "https://n26.com",
     location: "Berlin, Germany",
-    logoUrl: "https://images.ctfassets.net/q33z48p65a6w/42Hvr3OYJgxAEdzoB2quix/83aedba1d73629c9953b615197915ac6/N26_Newsroom___N26_Logo_Thumbnail.png"
   });
 
   const trustpilot = await getOrCreateCompany({
@@ -196,7 +195,6 @@ async function main() {
     description: "Online consumer review platform",
     websiteUrl: "https://www.trustpilot.com",
     location: "Copenhagen, Denmark",
-    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCOd3ntp5NXraRhl4aDopdp50Fn-ZqmqMpg&s"
   });
 
   const depop = await getOrCreateCompany({
@@ -204,7 +202,6 @@ async function main() {
     description: "Social shopping app for secondhand fashion",
     websiteUrl: "https://www.depop.com",
     location: "London, UK",
-    logoUrl: "https://www.eu-startups.com/wp-content/uploads/2020/03/20233103_1407119056046234_6506472858770742188_o-500x500.png"
   });
 
   /* =====================

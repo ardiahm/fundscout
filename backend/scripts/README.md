@@ -11,7 +11,8 @@ This guide is written so future-you (or a teammate) can confidently add **comple
 This script is designed to:
 
 - Add **real investors, companies, sectors, and investments**
-- Be **safe to re-run** (no duplicates)
+- Be **safe to re-run** (no duplicates): investor, company and sector names are unique in the DB, and an investment with the same investor, company, stage and date is skipped
+- Fill in logos automatically from each `websiteUrl` (see `lib/logo.ts`). To refresh existing logos, run `npx tsx scripts/refreshLogos.ts`
 - Keep `prisma/seed.ts` **clean and untouched**
 - Support incremental growth of the FundScout dataset
 
@@ -62,7 +63,6 @@ addData.ts follows this strict sequence, read below to see how to add data:
         name: "Investor Name",
         type: "Investor Type (VC, Accel., etc)",
         websiteUrl: "https://investorUrl",
-        avatarUrl: "https://logoUrl",
     });
     ```
 
@@ -76,7 +76,6 @@ addData.ts follows this strict sequence, read below to see how to add data:
         description: "one-sentence, factual description",
         websiteUrl: "https://investorUrl",
         location: "City, Country",
-        logoUrl: "https://logoUrl",
     });
     ```
 
@@ -94,6 +93,8 @@ addData.ts follows this strict sequence, read below to see how to add data:
 4. **Invesments**
 
     This defines the relationship between investors and companies. Remember, date must be entered in format: YYYY-MM-DD
+
+    `amount` is the **total round size**, not the investor's own check (shown in the app as "Avg. Round" / "Round Size"). Leave out `investedAt` if the date is unknown; it stays empty instead of defaulting to today.
 
     Template:
 
