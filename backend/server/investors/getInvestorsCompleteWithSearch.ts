@@ -67,7 +67,7 @@ export async function getInvestorsCompleteWithSearch(
               },
             },
           },
-          orderBy: { investedAt: "desc" },
+          orderBy: { investedAt: { sort: "desc", nulls: "last" } },
         },
         favoritedBy: userId
           ? {
@@ -125,7 +125,7 @@ export async function getInvestorsCompleteWithSearch(
               },
             },
           },
-          orderBy: { investedAt: "desc" },
+          orderBy: { investedAt: { sort: "desc", nulls: "last" } },
         },
         favoritedBy: userId
           ? {
@@ -178,7 +178,7 @@ export async function getInvestorsCompleteWithSearch(
               },
             },
           },
-          orderBy: { investedAt: "desc" },
+          orderBy: { investedAt: { sort: "desc", nulls: "last" } },
         },
         favoritedBy: userId
           ? {
@@ -226,7 +226,7 @@ export async function getInvestorsCompleteWithSearch(
               },
             },
           },
-          orderBy: { investedAt: "desc" },
+          orderBy: { investedAt: { sort: "desc", nulls: "last" } },
         },
         favoritedBy: userId
           ? {

@@ -63,7 +63,7 @@ export async function getInvestorsComplete(
             },
           },
         },
-        orderBy: { investedAt: "desc" },
+        orderBy: { investedAt: { sort: "desc", nulls: "last" } },
       },
       favoritedBy: userId
         ? {

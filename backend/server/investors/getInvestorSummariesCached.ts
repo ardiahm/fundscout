@@ -18,7 +18,7 @@ export const getInvestorSummariesCached = unstable_cache(
               select: { name: true },
             },
           },
-          orderBy: { investedAt: "desc" },
+          orderBy: { investedAt: { sort: "desc", nulls: "last" } },
         },
       },
     });
@@ -61,7 +61,7 @@ export const getInvestorSummariesCached = unstable_cache(
       };
     });
   },
-  ["investor-summaries-v1"],
+  ["investor-summaries-v2"],
   {
     revalidate: 60 * 60, // 1 hour
     tags: ["investors"],

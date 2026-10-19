@@ -47,7 +47,7 @@ export async function getInvestorByIdComplete(id: number, userId?: string) {
             },
           },
         },
-        orderBy: { investedAt: "desc" },
+        orderBy: { investedAt: { sort: "desc", nulls: "last" } },
       },
     },
   })

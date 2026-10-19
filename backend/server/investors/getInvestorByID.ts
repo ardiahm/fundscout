@@ -19,7 +19,7 @@ export async function getInvestorById(investorId: number) {
             }
           }
         },
-        orderBy: { investedAt: "desc" }
+        orderBy: { investedAt: { sort: "desc", nulls: "last" } }
       }
     }
   })

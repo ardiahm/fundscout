@@ -23,7 +23,7 @@ export async function getInvestorSummaries() {
             select: { name: true }
           }
         },
-        orderBy: { investedAt: "desc" }
+        orderBy: { investedAt: { sort: "desc", nulls: "last" } }
       }
     }
   })
