@@ -57,7 +57,7 @@ export default function FavoritesClient({
   return (
     <div className="w-full flex gap-4">
       {/* LEFT */}
-      <div className="flex-1 pl-10 pb-10 pr-10 pt-2">
+      <div className="flex-1 min-w-0 px-2 pb-10 pt-2 sm:px-10">
         {/* Header */}
         <div className="flex flex-col md:grid md:grid-cols-2 md:justify-end lg:grid lg:grid-cols-2 lg:justify-end">
           <div className="font-semibold px-4 text-3xl">
@@ -70,7 +70,7 @@ export default function FavoritesClient({
         </div>
 
         {/* Results */}
-        <div className="py-4 space-y-2 px-4 md:px-10">
+        <div className="py-4 space-y-2 px-0 sm:px-4 md:px-10">
           {visibleInvestors.map((investor, idx) => (
             <div
               key={investor.id}
