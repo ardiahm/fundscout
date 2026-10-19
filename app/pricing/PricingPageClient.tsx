@@ -35,7 +35,7 @@ export default function PricingPageClient({user, tier1, tier2}: Props) {
 
     return (
         <>
-        <div className="grid grid-cols-3 space-x-3 my-15 mx-30">
+        <div className="grid grid-cols-1 gap-4 my-8 mx-4 sm:mx-10 lg:grid-cols-3 lg:gap-3 lg:my-15 lg:mx-30">
             <PricingCardBase title={baseTitle}/>
             <PricingCardTier1 title={tier1Title}/>
             <PricingCardTier2 title={tier2Title}/>
