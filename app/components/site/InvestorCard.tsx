@@ -100,7 +100,7 @@ export function InvestorCard({
                     investorID={investor.id}
                   />
                   <Stat
-                    label="Avg. Check"
+                    label="Avg. Round"
                     value={
                       investor.averageInvestmentSize
                         ? `$${investor.averageInvestmentSize.toLocaleString()}`
@@ -135,7 +135,7 @@ function Stat({
         {label}
       </span>
       <div className="text-lg">
-        {label.toLocaleLowerCase() === "avg. check" ? (
+        {label.toLocaleLowerCase() === "avg. round" ? (
           <Link href={`/investor-profile/${investorID}`}>
             <span className="text-green-600 text-xl tracking-light hover:underline cursor-pointer tabular-nums">
               {value}

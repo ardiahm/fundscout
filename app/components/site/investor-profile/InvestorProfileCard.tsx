@@ -94,7 +94,7 @@ export default function InvestorProfileCard({
         {/* RIGHT COLUMN */}
         <div className="space-y-3 sm:text-right">
           <p>
-            Average Investment Size:{" "}
+            Average Round Size:{" "}
             <span className="font-semibold">
               {investor.averageInvestmentSize !== null
                 ? usdFormatter.format(investor.averageInvestmentSize)

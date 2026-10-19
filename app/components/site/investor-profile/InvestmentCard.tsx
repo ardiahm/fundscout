@@ -78,7 +78,7 @@ export default function InvestmentCards({ investments }: InvestmentCardsProps) {
             {/* Meta Grid */}
             <div className="grid grid-cols-2 gap-2 text-sm">
               <div>
-                <span className="text-gray-500">Amount</span>
+                <span className="text-gray-500">Round size</span>
                 <div className="font-medium">
                   {inv.amount !== null
                     ? `$${inv.amount.toLocaleString()}`

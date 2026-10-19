@@ -42,7 +42,7 @@ export function LoadingInvestorCard() {
                 </div>
 
                 <div className="grid grid-cols-4 gap-x-12 max-w-container mx-10 pt-2">
-                  <Stat label="Avg. Check" value={loadingStat} />
+                  <Stat label="Avg. Round" value={loadingStat} />
                   <Stat label="Latest Inv. Company" value={loadingStat} />
                   <Stat label="Latest Inv. Date" value={loadingStat} />
                   <Stat label="Total Inv." value={loadingStat} />
@@ -65,7 +65,7 @@ function Stat({ label, value }: { label: string; value: string }) {
         {label}
       </span>
       <div className="text-lg">
-        {label.toLocaleLowerCase() === "avg. check" ? (
+        {label.toLocaleLowerCase() === "avg. round" ? (
           <span className="text-green-600 tracking-light tabular-nums">
             {value}
           </span>

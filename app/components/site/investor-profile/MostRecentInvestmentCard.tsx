@@ -59,7 +59,7 @@ export default function MostRecentInvestmentCard({
               </div>
               <div>
                 <p className="text-xl font-semibold text-sky-600 pt-4">
-                  Investment Size:
+                  Round Size:
                 </p>
                 <p className="text-l font-semibold text-black">-{" "}${mostRecentInvestment?.amount?.toLocaleString()}</p>
               </div>
