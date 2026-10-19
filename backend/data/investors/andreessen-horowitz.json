@@ -1,0 +1,149 @@
+{
+  "investor": { "name": "Andreessen Horowitz", "type": "Venture Capital", "websiteUrl": "https://a16z.com" },
+  "notes": "GitHub's 2012 $100M round was its first outside funding and is labeled Series A. Databricks' Sept 2013 round was disclosed via SEC Form D ($13.9M, reported as ~$14M); exact day unknown. Cursor's Series A amount was reported by TechCrunch as 'over $60 million' via sources. Flock Safety's Mar 2025 round has no public series letter and is labeled Growth.",
+  "investments": [
+    {
+      "company": {
+        "name": "GitHub",
+        "description": "Platform for hosting code with Git version control and collaboration tools.",
+        "websiteUrl": "https://github.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Developer Tools", "SaaS"]
+      },
+      "stage": "Series A",
+      "amount": 100000000,
+      "investedAt": "2012-07-09",
+      "sourceUrl": "https://techcrunch.com/2012/07/09/github-pours-energies-into-enterprise-raises-100-million-from-power-vc-andreesen-horowitz/"
+    },
+    {
+      "company": {
+        "name": "Lyft",
+        "description": "Ridesharing app that connects passengers with drivers.",
+        "websiteUrl": "https://www.lyft.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Transportation", "Marketplace"]
+      },
+      "stage": "Series C",
+      "amount": 60000000,
+      "investedAt": "2013-05-23",
+      "sourceUrl": "https://techcrunch.com/2013/05/23/lyft-a16z"
+    },
+    {
+      "company": {
+        "name": "Databricks",
+        "description": "Data and AI platform built on Apache Spark for analytics and machine learning.",
+        "websiteUrl": "https://www.databricks.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Data & Analytics", "AI", "Cloud Infrastructure"]
+      },
+      "stage": "Series A",
+      "amount": 13900000,
+      "investedAt": "2013-09",
+      "sourceUrl": "https://venturebeat.com/technology/mysterious-big-data-startup-databricks-gets-14m-from-andreessen-horowitz"
+    },
+    {
+      "company": {
+        "name": "Coinbase",
+        "description": "Exchange and wallet platform for buying, selling and storing cryptocurrency.",
+        "websiteUrl": "https://www.coinbase.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Crypto", "Fintech"]
+      },
+      "stage": "Series B",
+      "amount": 25000000,
+      "investedAt": "2013-12-12",
+      "sourceUrl": "https://siliconangle.com/2013/12/12/coinbase-secures-25m-in-funding-proves-quality-bitcoin-services-rule-the-market/"
+    },
+    {
+      "company": {
+        "name": "Substack",
+        "description": "Platform for writers to publish and earn money from paid newsletters.",
+        "websiteUrl": "https://substack.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Media", "Social"]
+      },
+      "stage": "Series A",
+      "amount": 15300000,
+      "investedAt": "2019-07-16",
+      "sourceUrl": "https://techcrunch.com/2019/07/16/substack-series-a"
+    },
+    {
+      "company": {
+        "name": "Skydio",
+        "description": "Maker of autonomous drones for enterprise, public safety and defense use.",
+        "websiteUrl": "https://www.skydio.com",
+        "location": "San Mateo, CA",
+        "sectors": ["Robotics", "Hardware", "Defense Tech"]
+      },
+      "stage": "Series D",
+      "amount": 170000000,
+      "investedAt": "2021-03-01",
+      "sourceUrl": "https://skydio.com/blog/autonomous-drone-skydio-announces-170-million-series-d-funding"
+    },
+    {
+      "company": {
+        "name": "Character.AI",
+        "description": "Consumer app for chatting with customizable AI characters.",
+        "websiteUrl": "https://character.ai",
+        "location": "Menlo Park, CA",
+        "sectors": ["AI", "Entertainment", "Social"]
+      },
+      "stage": "Series A",
+      "amount": 150000000,
+      "investedAt": "2023-03-23",
+      "sourceUrl": "https://www.businesswire.com/news/home/20230323005299/en"
+    },
+    {
+      "company": {
+        "name": "Decagon",
+        "description": "AI agents that handle customer support conversations for businesses.",
+        "websiteUrl": "https://decagon.ai",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Enterprise Software"]
+      },
+      "stage": "Seed",
+      "amount": 5000000,
+      "investedAt": "2024-06-18",
+      "sourceUrl": "https://decagon.ai/blog/series-a"
+    },
+    {
+      "company": {
+        "name": "Cursor",
+        "description": "AI-powered code editor built by Anysphere.",
+        "websiteUrl": "https://cursor.com",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Developer Tools"]
+      },
+      "stage": "Series A",
+      "amount": 60000000,
+      "investedAt": "2024-08-09",
+      "sourceUrl": "https://techcrunch.com/2024/08/09/anysphere-a-github-copilot-rival-has-raised-60m-series-a-at-400m-valuation-from-a16z-thrive-sources-say/"
+    },
+    {
+      "company": {
+        "name": "Flock Safety",
+        "description": "License plate reader cameras and software for public safety agencies.",
+        "websiteUrl": "https://www.flocksafety.com",
+        "location": "Atlanta, GA",
+        "sectors": ["Hardware", "AI", "IoT"]
+      },
+      "stage": "Growth",
+      "amount": 275000000,
+      "investedAt": "2025-03-13",
+      "sourceUrl": "https://www.flocksafety.com/blog/flock-safety-secures-major-funding"
+    },
+    {
+      "company": {
+        "name": "Thinking Machines Lab",
+        "description": "AI research lab building multimodal models and tools for customizing them.",
+        "websiteUrl": "https://thinkingmachines.ai",
+        "location": "San Francisco, CA",
+        "sectors": ["AI"]
+      },
+      "stage": "Seed",
+      "amount": 2000000000,
+      "investedAt": "2025-07-15",
+      "sourceUrl": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+    }
+  ]
+}

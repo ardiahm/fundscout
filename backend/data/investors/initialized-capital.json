@@ -1,0 +1,55 @@
+{
+  "investor": { "name": "Initialized Capital", "type": "Venture Capital", "websiteUrl": "https://initialized.com" },
+  "investments": [
+    {
+      "company": { "name": "Freedom Robotics", "description": "Cloud software for monitoring, operating and managing fleets of robots.", "websiteUrl": "https://www.freedomrobotics.ai", "location": "San Francisco, CA", "sectors": ["Robotics", "Cloud Infrastructure"] },
+      "stage": "Seed", "amount": 6600000, "investedAt": "2019-07-23",
+      "sourceUrl": "https://techcrunch.com/2019/07/23/freedom-robotics-raises-6-6m-to-automate-robotic-fleets/"
+    },
+    {
+      "company": { "name": "Shogun", "description": "Page builder and storefront tools for e-commerce brands.", "websiteUrl": "https://getshogun.com", "location": "San Francisco, CA", "sectors": ["E-commerce", "SaaS"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2020-02-20",
+      "sourceUrl": "https://techcrunch.com/2020/02/20/shogun-series-a/"
+    },
+    {
+      "company": { "name": "Career Karma", "description": "App that connects students with coding bootcamps and career training programs.", "websiteUrl": "https://careerkarma.com", "location": "San Francisco, CA", "sectors": ["Edtech", "Marketplace"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2020-12-09",
+      "sourceUrl": "https://techcrunch.com/2020/12/09/career-karma-series-a/"
+    },
+    {
+      "company": { "name": "Routefusion", "description": "API platform for cross-border business payments.", "websiteUrl": "https://routefusion.com", "location": "Austin, TX", "sectors": ["Payments", "Fintech"] },
+      "stage": "Seed", "amount": 10500000, "investedAt": "2022-01-19",
+      "sourceUrl": "https://techcrunch.com/2022/01/19/routefusion-raises-10-5m-round-to-simplify-cross-border-payments/"
+    },
+    {
+      "company": { "name": "AstroForge", "description": "Space company developing spacecraft to mine asteroids for platinum-group metals.", "websiteUrl": "https://www.astroforge.io", "location": "Seal Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Seed", "amount": 13000000, "investedAt": "2022-05-26",
+      "sourceUrl": "https://techcrunch.com/2022/05/26/astroforge-raises-13m-seed-round-for-asteroid-mining-ambitions/"
+    },
+    {
+      "company": { "name": "Pano AI", "description": "Camera and AI system that detects wildfires early.", "websiteUrl": "https://www.pano.ai", "location": "San Francisco, CA", "sectors": ["Climate Tech", "AI", "Hardware"] },
+      "stage": "Series A", "amount": 20000000, "investedAt": "2022-09-19",
+      "sourceUrl": "https://blog.initialized.com/2022/09/pano-our-series-a-investment-in-climate-adaptation/"
+    },
+    {
+      "company": { "name": "PermitFlow", "description": "Software that automates construction permit applications for builders and contractors.", "websiteUrl": "https://www.permitflow.com", "location": "San Jose, CA", "sectors": ["Proptech", "SaaS"] },
+      "stage": "Seed", "amount": 5500000, "investedAt": "2023-05-08",
+      "sourceUrl": "https://techcrunch.com/2023/05/08/permitflow-construction-permit-automation/"
+    },
+    {
+      "company": { "name": "Picogrid", "description": "Software and hardware that integrate military sensors, drones and other defense systems.", "websiteUrl": "https://www.picogrid.com", "location": "El Segundo, CA", "sectors": ["Defense Tech", "IoT", "Hardware"] },
+      "stage": "Seed", "amount": 12000000, "investedAt": "2024-03-26",
+      "sourceUrl": "https://techcrunch.com/2024/03/26/picogrid-scores-new-funding-to-connect-the-militarys-stovepipe-systems/"
+    },
+    {
+      "company": { "name": "Greptile", "description": "AI tools that index codebases so developers can query and review code.", "websiteUrl": "https://www.greptile.com", "location": "San Francisco, CA", "sectors": ["Developer Tools", "AI"] },
+      "stage": "Seed", "amount": 4000000, "investedAt": "2024-06-06",
+      "sourceUrl": "https://techcrunch.com/2024/06/06/greptile-raises-4m-to-build-an-ai-code-base-expert/"
+    },
+    {
+      "company": { "name": "ZeroEntropy", "description": "Search and retrieval infrastructure, including rerankers, for AI applications.", "websiteUrl": "https://www.zeroentropy.dev", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Seed", "amount": 4200000, "investedAt": "2025-07-09",
+      "sourceUrl": "https://blog.initialized.com/2025/07/supercharging-llms-why-were-excited-to-lead-zeroentropys-4-2m-seed-round/"
+    }
+  ]
+}

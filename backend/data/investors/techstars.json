@@ -1,0 +1,46 @@
+{
+  "investor": { "name": "Techstars", "type": "Accelerator", "websiteUrl": "https://www.techstars.com" },
+  "notes": "Only 8 rounds could be sourced in this pass (web search quota ran out partway). Six are accelerator checks from Techstars class announcements that state each company receives a capital investment; amounts are null because the announcements don't give a figure (published terms were $220,000 from Fall 2025). The other two are later rounds where Techstars is named as a participant. Older, better-known alumni (DigitalOcean, SendGrid, Remitly) were left out because no source found named Techstars as an investor in a specific round.",
+  "investments": [
+    {
+      "company": { "name": "PeakMetrics", "description": "AI platform that monitors online narratives and detects coordinated information campaigns.", "websiteUrl": "https://www.peakmetrics.com", "location": "Los Angeles, CA", "sectors": ["AI", "Data & Analytics", "Cybersecurity"] },
+      "stage": "Series A", "amount": 6000000, "investedAt": "2026-04-13",
+      "sourceUrl": "https://www.techstars.com/blog/startup-spotlight/peakmetrics-raises-6m-series-a-to-advance-ai-narrative-intelligence"
+    },
+    {
+      "company": { "name": "InStockRx", "description": "Online marketplace where verified pharmacies buy and sell surplus medication inventory.", "websiteUrl": "https://instockrx.com", "location": "New Egypt, NJ", "sectors": ["Marketplace", "Healthtech"] },
+      "stage": "Series A", "amount": 5000000, "investedAt": "2026-07-17",
+      "sourceUrl": "https://www.techstars.com/blog/startup-spotlight/instockrx-raises-dollar5m-series-a-to-grow-its-pharmacy-to-pharmacy-marketplace"
+    },
+    {
+      "company": { "name": "OBSIDIA", "description": "RF-based technology that verifies semiconductor chip authenticity without modifying the chip.", "websiteUrl": "https://obsidiasemi.com", "location": "San Jose, CA", "sectors": ["Semiconductors", "Cybersecurity"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2026-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class"
+    },
+    {
+      "company": { "name": "Shepherd Space Systems", "description": "Maker of solid rocket motors using 3D-printed propellant grains with custom thrust profiles.", "websiteUrl": "https://shepherdspacesystems.com", "location": "Colorado Springs, CO", "sectors": ["Aerospace", "Space", "Manufacturing"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2026-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class"
+    },
+    {
+      "company": { "name": "Arterial", "description": "AI software that uses fleet vehicle cameras to inspect and map public road infrastructure.", "websiteUrl": "https://arterial.us", "location": "Boulder, CO", "sectors": ["AI", "Data & Analytics", "Transportation"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2026-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class"
+    },
+    {
+      "company": { "name": "MARASA", "description": "Develops self-reconfiguring chips designed for use in space.", "websiteUrl": "https://marasaco.com", "location": "Santa Fe, NM", "sectors": ["Semiconductors", "Space", "Hardware"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2026-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class"
+    },
+    {
+      "company": { "name": "Kestrel Labs", "description": "Software that converts building codes and design models into data to check designs for code compliance.", "websiteUrl": "https://kestrellabs.com", "location": "Denver, CO", "sectors": ["Proptech", "AI", "SaaS"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    },
+    {
+      "company": { "name": "Origami Space", "description": "Builds deployable RF and LiDAR antenna systems for satellites.", "websiteUrl": "https://origamispace.com", "location": "Berthoud, CO", "sectors": ["Space", "Aerospace", "Hardware"] },
+      "stage": "Pre-Seed", "amount": null, "investedAt": "2025-09-08",
+      "sourceUrl": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-fall-2025-accelerator-programs"
+    }
+  ]
+}

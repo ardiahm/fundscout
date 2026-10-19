@@ -1,0 +1,55 @@
+{
+  "investor": { "name": "Lux Capital", "type": "Venture Capital", "websiteUrl": "https://www.luxcapital.com" },
+  "investments": [
+    {
+      "company": { "name": "Hugging Face", "description": "Hosts an open platform for sharing machine learning models, datasets and apps.", "websiteUrl": "https://huggingface.co", "location": "New York, NY", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2022-05-09",
+      "sourceUrl": "https://huggingface.co/blog/series-c"
+    },
+    {
+      "company": { "name": "Hugging Face", "description": "Hosts an open platform for sharing machine learning models, datasets and apps.", "websiteUrl": "https://huggingface.co", "location": "New York, NY", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2021-03-11",
+      "sourceUrl": "https://techcrunch.com/2021/03/11/hugging-face-raises-40-million-for-its-natural-language-processing-library/"
+    },
+    {
+      "company": { "name": "Varda", "description": "Builds orbital capsules that manufacture materials in microgravity and return them to Earth.", "websiteUrl": "https://www.varda.com", "location": "El Segundo, CA", "sectors": ["Space", "Manufacturing", "Aerospace"] },
+      "stage": "Seed", "amount": 9000000, "investedAt": "2020-12-08",
+      "sourceUrl": "https://techcrunch.com/2020/12/08/space-manufacturing-startup-varda-incubated-at-founders-fund-emerges-with-9-million-in-funding/"
+    },
+    {
+      "company": { "name": "Hadrian", "description": "Operates automated factories that make precision components for aerospace and defense.", "websiteUrl": "https://www.hadrian.co", "location": "Torrance, CA", "sectors": ["Manufacturing", "Robotics", "Aerospace"] },
+      "stage": "Series C", "amount": 260000000, "investedAt": "2025-07-17",
+      "sourceUrl": "https://www.cooley.com/news/coverage/2025/2025-07-17-hadrian-secures-260-million-series-c"
+    },
+    {
+      "company": { "name": "Impulse Space", "description": "Builds in-space transportation vehicles that move satellites between orbits.", "websiteUrl": "https://impulsespace.com", "location": "Redondo Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Series B", "amount": 150000000, "investedAt": "2024-10-01",
+      "sourceUrl": "https://impulsespace.com/updates/impulse-space-secures-dollar150m-in-series-b-funding-to-support-ongoing-company-momentum"
+    },
+    {
+      "company": { "name": "Modal", "description": "Provides serverless cloud compute for running AI and data workloads.", "websiteUrl": "https://modal.com", "location": "New York, NY", "sectors": ["Cloud Infrastructure", "Developer Tools", "AI"] },
+      "stage": "Series D", "amount": 750000000, "investedAt": "2026-10-14",
+      "sourceUrl": "https://modal.com/blog/1-billion-annualized-run-rate-series-d"
+    },
+    {
+      "company": { "name": "Together AI", "description": "Provides a cloud platform for training and running open-source AI models.", "websiteUrl": "https://www.together.ai", "location": "San Francisco, CA", "sectors": ["AI", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 102500000, "investedAt": "2023-11-29",
+      "sourceUrl": "https://www.together.ai/blog/series-a"
+    },
+    {
+      "company": { "name": "Together AI", "description": "Provides a cloud platform for training and running open-source AI models.", "websiteUrl": "https://www.together.ai", "location": "San Francisco, CA", "sectors": ["AI", "Cloud Infrastructure"] },
+      "stage": "Series C", "amount": 800000000, "investedAt": "2026-07-01",
+      "sourceUrl": "https://www.together.ai/blog/announcing-our-series-c"
+    },
+    {
+      "company": { "name": "Crosby", "description": "Operates an AI-assisted law firm that reviews and redlines commercial contracts.", "websiteUrl": "https://crosby.ai", "location": "New York, NY", "sectors": ["Legal Tech", "AI"] },
+      "stage": "Series B", "amount": 60000000, "investedAt": "2026-03-31",
+      "sourceUrl": "https://www.luxcapital.com/news/were-backing-crosby-to-end-the-billiable-hour-for-laywers"
+    },
+    {
+      "company": { "name": "WindBorne", "description": "Operates long-duration weather balloons and AI models for weather forecasting.", "websiteUrl": "https://windbornesystems.com", "location": "Redwood City, CA", "sectors": ["AI", "Hardware", "Climate Tech"] },
+      "stage": "Series B", "amount": 37000000, "investedAt": "2026-08-05",
+      "sourceUrl": "https://windbornesystems.com/blog/windborne-systems-raises-37-million-to-build-the-worlds-weather-intelligence-infrastructure"
+    }
+  ]
+}

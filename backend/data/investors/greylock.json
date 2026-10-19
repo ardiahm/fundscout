@@ -1,0 +1,51 @@
+{
+  "investor": { "name": "Greylock", "type": "Venture Capital", "websiteUrl": "https://greylock.com" },
+  "notes": "Only 9 investments: research hit a web-search limit. Chronosphere appears twice (Series A and Series B, both Greylock-led). Rubrik Series B is reported as $40M by TechCrunch and $41M in funding records; $40M used to match the cited source. Snorkel AI date is month-only (July 2020 launch).",
+  "investments": [
+    {
+      "company": { "name": "Resolve AI", "description": "AI agents that troubleshoot production software incidents for engineering teams.", "websiteUrl": "https://www.resolve.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Seed", "amount": 35000000, "investedAt": "2024-10",
+      "sourceUrl": "https://www.thesaasnews.com/news/resolve-ai-secures-35-million-in-seed-round"
+    },
+    {
+      "company": { "name": "Baseten", "description": "Inference platform for deploying and serving machine learning models in production.", "websiteUrl": "https://www.baseten.co", "location": "San Francisco, CA", "sectors": ["AI", "Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series A", "amount": 12000000, "investedAt": "2022-04-26",
+      "sourceUrl": "https://vcnewsdaily.com/baseten/venture-capital-funding/bjgqccfgrd"
+    },
+    {
+      "company": { "name": "Snorkel AI", "description": "Data development platform for labeling and curating AI training data.", "websiteUrl": "https://snorkel.ai", "location": "Redwood City, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Series A", "amount": 12000000, "investedAt": "2020-07",
+      "sourceUrl": "https://techcrunch.com/2022/03/09/hear-how-snorkel-ai-pitched-and-won-over-greylock-on-techcrunch-live"
+    },
+    {
+      "company": { "name": "Abnormal AI", "description": "Behavioral AI platform that blocks email attacks and account takeovers.", "websiteUrl": "https://abnormal.ai", "location": "San Francisco, CA", "sectors": ["Cybersecurity", "AI"] },
+      "stage": "Series A", "amount": 24000000, "investedAt": "2019-11-19",
+      "sourceUrl": "https://fintech.global/2019/11/20/abnormal-security-bags-24m-series-a-led-by-greylock/"
+    },
+    {
+      "company": { "name": "Adept", "description": "AI research lab building models that take actions in software on a user's behalf.", "websiteUrl": "https://www.adept.ai", "location": "San Francisco, CA", "sectors": ["AI", "Productivity"] },
+      "stage": "Series A", "amount": 65000000, "investedAt": "2022-04-26",
+      "sourceUrl": "https://businesswire.com/news/home/20220426005963/en/AI-Transformer-Inventors-Launch-Adept-with-$65M-to-Lend-a-Hand-to-Knowledge-Workers"
+    },
+    {
+      "company": { "name": "Chronosphere", "description": "Cloud-native observability platform for metrics, traces and logs.", "websiteUrl": "https://chronosphere.io", "location": "New York, NY", "sectors": ["Cloud Infrastructure", "Developer Tools", "Data & Analytics"] },
+      "stage": "Series A", "amount": 11000000, "investedAt": "2019-11-05",
+      "sourceUrl": "https://techcrunch.com/2019/11/05/chronosphere-launches-with-11m-series-a-to-build-scalable-cloud-native-monitoring-tool"
+    },
+    {
+      "company": { "name": "Chronosphere", "description": "Cloud-native observability platform for metrics, traces and logs.", "websiteUrl": "https://chronosphere.io", "location": "New York, NY", "sectors": ["Cloud Infrastructure", "Developer Tools", "Data & Analytics"] },
+      "stage": "Series B", "amount": 43400000, "investedAt": "2021-01-05",
+      "sourceUrl": "https://techcrunch.com/2021/01/05/chronosphere-nabs-43m-series-b-to-expand-cloud-native-monitoring-tool/"
+    },
+    {
+      "company": { "name": "Figma", "description": "Browser-based collaborative interface design and prototyping tool.", "websiteUrl": "https://www.figma.com", "location": "San Francisco, CA", "sectors": ["Productivity", "SaaS"] },
+      "stage": "Series B", "amount": 25000000, "investedAt": "2018-02-01",
+      "sourceUrl": "https://www.varinsights.com/doc/figma-raises-m-series-b-led-by-kleiner-perkins-0001"
+    },
+    {
+      "company": { "name": "Rubrik", "description": "Data security and backup software for enterprise and cloud data.", "websiteUrl": "https://www.rubrik.com", "location": "Palo Alto, CA", "sectors": ["Cybersecurity", "Cloud Infrastructure", "Enterprise Software"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2015-05",
+      "sourceUrl": "https://techcrunch.com/2024/04/26/rubrik-ipo-paid-off-greylock-vc-asheem-chandna/"
+    }
+  ]
+}

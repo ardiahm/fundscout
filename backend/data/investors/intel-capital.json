@@ -1,0 +1,56 @@
+{
+  "investor": { "name": "Intel Capital", "type": "Corporate VC", "websiteUrl": "https://www.intelcapital.com" },
+  "notes": "Moderne's Series A closed at the end of 2021 but was first announced on 2023-02-07; the announcement date is used. Figure's Series C amount is reported as 'more than $1B'; SambaNova's Series E as 'more than $350M'.",
+  "investments": [
+    {
+      "company": { "name": "Fly.io", "description": "Runs a public cloud platform for deploying applications and AI agents close to users.", "websiteUrl": "https://fly.io", "location": "Chicago, IL", "sectors": ["Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series D", "amount": 25000000, "investedAt": "2026-07-24",
+      "sourceUrl": "https://www.intelcapital.com/fly-io-doubles-down-on-computers-for-agents-with-25m-to-deliver-the-next-generation-of-ai-infrastructure/"
+    },
+    {
+      "company": { "name": "Mueon", "description": "Develops Cubelets, stackable modular units that combine compute and memory for AI data centers.", "websiteUrl": "https://mueon.com", "location": "Portland, OR", "sectors": ["Semiconductors", "Hardware", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 65000000, "investedAt": "2026-10-15",
+      "sourceUrl": "https://www.intelcapital.com/mueon-raises-65m-in-series-a-funding-to-scale-its-cubelets-exponential-computing-platform/"
+    },
+    {
+      "company": { "name": "Higgsfield", "description": "Develops generative AI tools for creating video and images.", "websiteUrl": "https://higgsfield.ai", "location": "San Francisco, CA", "sectors": ["AI", "Media"] },
+      "stage": "Series B", "amount": 400000000, "investedAt": "2026-08-17",
+      "sourceUrl": "https://www.intelcapital.com/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million/"
+    },
+    {
+      "company": { "name": "Figure", "description": "Develops general-purpose humanoid robots.", "websiteUrl": "https://www.figure.ai", "location": "San Jose, CA", "sectors": ["Robotics", "AI"] },
+      "stage": "Series C", "amount": 1000000000, "investedAt": "2025-09-16",
+      "sourceUrl": "https://www.figure.ai/news/series-c"
+    },
+    {
+      "company": { "name": "SambaNova", "description": "Designs AI chips and systems for running large models in data centers.", "websiteUrl": "https://sambanova.ai", "location": "San Jose, CA", "sectors": ["Semiconductors", "AI", "Hardware"] },
+      "stage": "Series E", "amount": 350000000, "investedAt": "2026-02-24",
+      "sourceUrl": "https://sambanova.ai/press/sambanova-unveils-fastest-chip-for-agentic-ai-collaborates-with-intel-and-raises-350m"
+    },
+    {
+      "company": { "name": "Immuta", "description": "Provides data security and access governance software for cloud data platforms.", "websiteUrl": "https://www.immuta.com", "location": "Boston, MA", "sectors": ["Cybersecurity", "Data & Analytics"] },
+      "stage": "Series E", "amount": 100000000, "investedAt": "2022-06-08",
+      "sourceUrl": "https://techcrunch.com/2022/06/08/data-governance-startup-immuta-lands-100m-to-pursue-acquisitions/"
+    },
+    {
+      "company": { "name": "Censys", "description": "Maps internet-connected devices and services to help security teams find exposed assets.", "websiteUrl": "https://censys.com", "location": "Ann Arbor, MI", "sectors": ["Cybersecurity", "Data & Analytics"] },
+      "stage": "Series B", "amount": 35000000, "investedAt": "2022-01-27",
+      "sourceUrl": "https://techcrunch.com/2022/01/27/censys-iot-search-engine-new-ceo/"
+    },
+    {
+      "company": { "name": "Landing AI", "description": "Provides computer vision software for building and deploying visual inspection models.", "websiteUrl": "https://landing.ai", "location": "Palo Alto, CA", "sectors": ["AI", "Manufacturing", "Enterprise Software"] },
+      "stage": "Series A", "amount": 57000000, "investedAt": "2021-11-08",
+      "sourceUrl": "https://techcrunch.com/2021/11/08/landing-ai-machine-learning-operations-tools/"
+    },
+    {
+      "company": { "name": "Moderne", "description": "Provides automated code refactoring and remediation across large codebases.", "websiteUrl": "https://www.moderne.ai", "location": "Seattle, WA", "sectors": ["Developer Tools", "SaaS"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2023-02-07",
+      "sourceUrl": "https://techcrunch.com/2023/02/07/moderne-is-bringing-automated-code-remediation-across-complex-code-bases/"
+    },
+    {
+      "company": { "name": "Lilt", "description": "Provides AI-assisted translation and localization software for businesses.", "websiteUrl": "https://lilt.com", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"] },
+      "stage": "Series C", "amount": 55000000, "investedAt": "2022-04-07",
+      "sourceUrl": "https://techcrunch.com/2022/04/07/lilt-raises-55m-to-bolster-its-business-focused-ai-translation-platform/"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "investor": { "name": "Precursor Ventures", "type": "Micro VC", "websiteUrl": "https://precursorvc.com" },
+  "notes": "Hype was called Pico when it raised this round. Clutch and Guava HQs are taken from their LinkedIn pages.",
+  "investments": [
+    {
+      "company": { "name": "Passport", "description": "International shipping and customer service layer for brands selling abroad.", "websiteUrl": "https://www.passportshipping.com", "location": "San Francisco, CA", "sectors": ["Logistics", "E-commerce"] },
+      "stage": "Seed", "amount": 3000000, "investedAt": "2018-10-16",
+      "sourceUrl": "https://techcrunch.com/2018/10/16/passport-a-customer-service-company-focused-on-shipping-has-raised-3-million-in-seed-funding-from-some-notable-names/"
+    },
+    {
+      "company": { "name": "Populus", "description": "Data platform that helps cities manage shared scooters, bikes and curb use.", "websiteUrl": "https://www.populus.ai", "location": "San Francisco, CA", "sectors": ["Transportation", "Data & Analytics"] },
+      "stage": "Seed", "amount": 3100000, "investedAt": "2019-03-14",
+      "sourceUrl": "https://techcrunch.com/2019/03/14/populus-raises-3-1-million-to-help-cities-make-sense-of-shared-scooters-and-bikes/"
+    },
+    {
+      "company": { "name": "Hype", "description": "Paywall, checkout and audience analytics tools for media creators, formerly Pico.", "websiteUrl": "https://hype.co", "location": "Brooklyn, NY", "sectors": ["Media", "Payments", "SaaS"] },
+      "stage": "Seed", "amount": 4500000, "investedAt": "2019-05-29",
+      "sourceUrl": "https://techcrunch.com/2019/05/29/stripe-and-precursor-lead-4-5m-seed-into-media-crm-startup-pico/"
+    },
+    {
+      "company": { "name": "Incredible Health", "description": "Hiring platform that matches nurses with hospitals.", "websiteUrl": "https://www.incrediblehealth.com", "location": "San Francisco, CA", "sectors": ["Healthtech", "HR Tech", "Marketplace"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2019-09-12",
+      "sourceUrl": "https://techcrunch.com/2019/09/12/incredible-healths-hiring-platform-for-nurses-gets-15m-led-by-andreessen-horowitz/"
+    },
+    {
+      "company": { "name": "ShearShare", "description": "Marketplace app that lets stylists rent open chairs in salons.", "websiteUrl": "https://www.shearshare.com", "location": "Dallas, TX", "sectors": ["Marketplace"] },
+      "stage": "Seed", "amount": 2300000, "investedAt": "2020-10-26",
+      "sourceUrl": "https://techcrunch.com/2020/10/26/dallas-shearshare-has-a-marketplace-connecting-stylists-with-available-seats-at-salons-and-2-3-million-in-funding/"
+    },
+    {
+      "company": { "name": "Sounding Board", "description": "Leadership development and executive coaching platform for companies.", "websiteUrl": "https://www.soundingboardinc.com", "location": "San Francisco, CA", "sectors": ["HR Tech", "SaaS"] },
+      "stage": "Series A", "amount": 13100000, "investedAt": "2021-01-22",
+      "sourceUrl": "https://techcrunch.com/2021/01/22/sounding-board-raises-cash-as-startups-wake-up-to-executive-coaching/"
+    },
+    {
+      "company": { "name": "TrustLayer", "description": "Software that automates verification of insurance certificates and risk compliance.", "websiteUrl": "https://trustlayer.io", "location": "San Francisco, CA", "sectors": ["Insurtech", "SaaS"] },
+      "stage": "Seed", "amount": 6600000, "investedAt": "2021-02-02",
+      "sourceUrl": "https://techcrunch.com/2021/02/02/trustlayer-raises-6m-seed-to-become-the-carta-for-insurance/"
+    },
+    {
+      "company": { "name": "Guava", "description": "Banking and financial services for Black small-business owners.", "websiteUrl": "https://www.joinguava.com", "location": "New York, NY", "sectors": ["Fintech", "Banking"] },
+      "stage": "Pre-Seed", "amount": 2400000, "investedAt": "2022-07-26",
+      "sourceUrl": "https://techcrunch.com/2022/07/26/fintech-guava-raises-2-4m-to-provide-banking-services-to-black-small-business-owners/"
+    },
+    {
+      "company": { "name": "Clutch", "description": "Marketplace that connects content creators with businesses that need marketing work.", "websiteUrl": "https://www.thatsclutch.com", "location": "Houston, TX", "sectors": ["Marketplace", "Media"] },
+      "stage": "Pre-Seed", "amount": 1200000, "investedAt": "2022-08-04",
+      "sourceUrl": "https://techcrunch.com/2022/08/04/digital-marketplace-clutch-closes-1-2m-pre-seed-round-led-by-precursor-ventures/"
+    },
+    {
+      "company": { "name": "Grw AI", "description": "AI sales system that handles deal prep, follow-ups, CRM updates and call coaching.", "websiteUrl": "https://grw.ai", "location": "San Francisco, CA", "sectors": ["AI", "SaaS"] },
+      "stage": "Pre-Seed", "amount": 2400000, "investedAt": "2024-12-04",
+      "sourceUrl": "https://www.siliconlegal.com/sls-client-precursor-ventures-leads-grw-ais-2-4m-pre-seed-round/"
+    }
+  ]
+}

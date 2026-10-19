@@ -1,0 +1,141 @@
+{
+  "investor": {
+    "name": "Felicis",
+    "type": "Venture Capital",
+    "websiteUrl": "https://www.felicis.com"
+  },
+  "notes": "Only 8 rounds could be fully sourced with a confirmed US headquarters in this batch (web search budget ran out mid-research). Mercor appears twice at different stages (Series B and Series C), both led by Felicis. Semgrep's Series B was announced under its former name, r2c.",
+  "investments": [
+    {
+      "company": {
+        "name": "MotherDuck",
+        "description": "Serverless cloud data warehouse built on the DuckDB analytics database.",
+        "websiteUrl": "https://motherduck.com",
+        "location": "Seattle, WA",
+        "sectors": [
+          "Data & Analytics",
+          "Cloud Infrastructure"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 52500000,
+      "investedAt": "2023-09-20",
+      "sourceUrl": "https://felicis.com/blog/motherduck-series-b"
+    },
+    {
+      "company": {
+        "name": "Mercor",
+        "description": "AI recruiting platform that matches experts and contractors with AI labs and companies.",
+        "websiteUrl": "https://mercor.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "HR Tech",
+          "Marketplace"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 100000000,
+      "investedAt": "2025-02-20",
+      "sourceUrl": "https://techcrunch.com/2025/02/20/mercor-an-ai-recruiting-startup-founded-by-21-year-olds-raises-100m-at-2b-valuation/"
+    },
+    {
+      "company": {
+        "name": "Mercor",
+        "description": "AI recruiting platform that matches experts and contractors with AI labs and companies.",
+        "websiteUrl": "https://mercor.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "HR Tech",
+          "Marketplace"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 350000000,
+      "investedAt": "2025-10-27",
+      "sourceUrl": "https://techcrunch.com/2025/10/27/mercor-quintuples-valuation-to-10b-with-350m-series-c/"
+    },
+    {
+      "company": {
+        "name": "Letta",
+        "description": "Platform for building AI agents with long-term memory, from the creators of MemGPT.",
+        "websiteUrl": "https://www.letta.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "Developer Tools"
+        ]
+      },
+      "stage": "Seed",
+      "amount": 10000000,
+      "investedAt": "2024-09-23",
+      "sourceUrl": "https://techcrunch.com/2024/09/23/letta-one-of-uc-berkeleys-most-anticipated-ai-startups-has-just-come-out-of-stealth"
+    },
+    {
+      "company": {
+        "name": "Semgrep",
+        "description": "Static code analysis tool that finds security bugs in source code.",
+        "websiteUrl": "https://semgrep.dev",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "Cybersecurity",
+          "Developer Tools"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 27000000,
+      "investedAt": "2021-07",
+      "sourceUrl": "https://semgrep.dev/blog/2021/r2c-series-b-funding"
+    },
+    {
+      "company": {
+        "name": "Chalk",
+        "description": "Data platform that serves real-time features for machine learning and AI inference.",
+        "websiteUrl": "https://chalk.ai",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "Data & Analytics",
+          "Developer Tools"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 50000000,
+      "investedAt": "2025-05-28",
+      "sourceUrl": "https://www.streetinsider.com/Business+Wire/Chalk+Raises+%2450M+Series+A+to+Power+AI+Inference/24860170.html"
+    },
+    {
+      "company": {
+        "name": "Runway",
+        "description": "AI research company that builds generative video and image tools.",
+        "websiteUrl": "https://runwayml.com",
+        "location": "New York, NY",
+        "sectors": [
+          "AI",
+          "Media"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 50000000,
+      "investedAt": "2022-12-05",
+      "sourceUrl": "https://runway.com/news/runway-raises-50-series-c"
+    },
+    {
+      "company": {
+        "name": "Metaplane",
+        "description": "Data observability tool that monitors data warehouses and pipelines for quality issues.",
+        "websiteUrl": "https://www.metaplane.dev",
+        "location": "Boston, MA",
+        "sectors": [
+          "Data & Analytics",
+          "SaaS"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 13800000,
+      "investedAt": "2024-03-05",
+      "sourceUrl": "https://www.metaplane.dev/blog/metaplane-raises-13m-series-a"
+    }
+  ]
+}

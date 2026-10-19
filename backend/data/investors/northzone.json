@@ -1,0 +1,46 @@
+{
+  "investor": { "name": "Northzone", "type": "Venture Capital", "websiteUrl": "https://www.northzone.com" },
+  "notes": "Only 8 US rounds could be confirmed with sources that name Northzone and give a stage and US headquarters. Other US portfolio rounds (Blitzy $200M 2026, Filed $17.2M 2025, Bedrock Ocean Series A 2023) were left out because the stage or headquarters city could not be confirmed.",
+  "investments": [
+    {
+      "company": { "name": "Fubo", "description": "Live TV streaming service focused on sports.", "websiteUrl": "https://www.fubo.tv", "location": "New York, NY", "sectors": ["Media", "Entertainment"] },
+      "stage": "Series C", "amount": 55000000, "investedAt": "2017-06-19",
+      "sourceUrl": "https://northzone.com/2017/06/19/annoucing-investment-fubotv/"
+    },
+    {
+      "company": { "name": "Livepeer", "description": "Decentralized video transcoding and streaming infrastructure built on Ethereum.", "websiteUrl": "https://livepeer.org", "location": "New York, NY", "sectors": ["Crypto", "Cloud Infrastructure", "Media"] },
+      "stage": "Series A", "amount": 8000000, "investedAt": "2019-06-17",
+      "sourceUrl": "https://techcrunch.com/2019/06/17/decentralized-video-infrastructure-platform-livepeer-raises-8m-series-a/"
+    },
+    {
+      "company": { "name": "Magic", "description": "Developer SDK for passwordless login and embedded crypto wallets.", "websiteUrl": "https://magic.link", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cybersecurity", "Crypto"] },
+      "stage": "Series A", "amount": 27000000, "investedAt": "2021-07-22",
+      "sourceUrl": "https://techcrunch.com/2021/07/22/magic-27m-series-a-for-its-plug-and-play-passwordless-tech/"
+    },
+    {
+      "company": { "name": "Troop", "description": "Platform that lets retail investors pool shareholder votes on proxy proposals.", "websiteUrl": "https://www.troop.com", "location": "New York, NY", "sectors": ["Fintech"] },
+      "stage": "Seed", "amount": 4300000, "investedAt": "2022-11-02",
+      "sourceUrl": "https://techcrunch.com/2022/11/02/retail-investors-shareholder-proposal-proxy-voting-esg-activist-fund-troop-fintech-funding/"
+    },
+    {
+      "company": { "name": "GovDash", "description": "AI software that helps government contractors find, bid on and manage contracts.", "websiteUrl": "https://www.govdash.com", "location": "New York, NY", "sectors": ["AI", "Enterprise Software", "SaaS"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2024-04-17",
+      "sourceUrl": "https://www.govdash.com/blog/govdash-raises-10m-series-a-funding-round"
+    },
+    {
+      "company": { "name": "Nirvana", "description": "Health insurance eligibility and benefits verification software for care providers.", "websiteUrl": "https://www.meetnirvana.com", "location": "New York, NY", "sectors": ["Healthtech", "Insurtech", "AI"] },
+      "stage": "Series A", "amount": 24200000, "investedAt": "2024-09-12",
+      "sourceUrl": "https://businesswire.com/news/home/20240912185063/en/Nirvana-Raises-24.2M-Series-A-to-Revolutionize-Health-Insurance-Verification/"
+    },
+    {
+      "company": { "name": "Clarium", "description": "AI supply chain platform for hospitals and health systems.", "websiteUrl": "https://www.clariumhealth.com", "location": "New York, NY", "sectors": ["Healthtech", "AI", "Logistics"] },
+      "stage": "Series A", "amount": 27000000, "investedAt": "2025-05-08",
+      "sourceUrl": "https://www.fenwick.com/insights/experience/fenwick-represents-clarium-in-27m-series-a-funding"
+    },
+    {
+      "company": { "name": "GC AI", "description": "AI assistant for in-house legal teams to draft, review and research documents.", "websiteUrl": "https://gc.ai", "location": "San Francisco, CA", "sectors": ["Legal Tech", "AI"] },
+      "stage": "Series B", "amount": 60000000, "investedAt": "2025-11-12",
+      "sourceUrl": "https://www.artificiallawyer.com/2025/11/12/gc-ai-raises-60m-at-0-55-billion-valuation/"
+    }
+  ]
+}

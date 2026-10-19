@@ -1,0 +1,55 @@
+{
+  "investor": { "name": "Eclipse", "type": "Venture Capital", "websiteUrl": "https://eclipse.vc" },
+  "investments": [
+    {
+      "company": { "name": "Oxide", "description": "Builds rack-scale on-premises cloud computers that combine compute, storage and networking.", "websiteUrl": "https://oxide.computer", "location": "Emeryville, CA", "sectors": ["Cloud Infrastructure", "Hardware"] },
+      "stage": "Series D", "amount": 445000000, "investedAt": "2026-10-09",
+      "sourceUrl": "https://oxide.computer/blog/our-445m-series-d"
+    },
+    {
+      "company": { "name": "True Anomaly", "description": "Builds spacecraft and autonomy software for space security and defense missions.", "websiteUrl": "https://www.trueanomaly.space", "location": "Centennial, CO", "sectors": ["Space", "Defense Tech"] },
+      "stage": "Series A", "amount": 17000000, "investedAt": "2023-04-06",
+      "sourceUrl": "https://eclipse.capital/blog/true-anomaly-series-a/"
+    },
+    {
+      "company": { "name": "True Anomaly", "description": "Builds spacecraft and autonomy software for space security and defense missions.", "websiteUrl": "https://www.trueanomaly.space", "location": "Centennial, CO", "sectors": ["Space", "Defense Tech"] },
+      "stage": "Series D", "amount": 650000000, "investedAt": "2026-04-28",
+      "sourceUrl": "https://eclipse.capital/blog/the-next-frontier-of-the-space-economy"
+    },
+    {
+      "company": { "name": "Muon Space", "description": "Designs, builds and operates satellite constellations for government and commercial customers.", "websiteUrl": "https://www.muonspace.com", "location": "Mountain View, CA", "sectors": ["Space", "Aerospace", "Data & Analytics"] },
+      "stage": "Series C", "amount": 250000000, "investedAt": "2026-08-20",
+      "sourceUrl": "https://eclipse.capital/blog/the-mission-scale-infrastructure-layer-for-space"
+    },
+    {
+      "company": { "name": "Ursa Major", "description": "Designs and manufactures rocket engines and solid rocket motors.", "websiteUrl": "https://www.ursamajor.com", "location": "Berthoud, CO", "sectors": ["Aerospace", "Defense Tech", "Manufacturing"] },
+      "stage": "Series E", "amount": 100000000, "investedAt": "2025-11-18",
+      "sourceUrl": "https://eclipse.capital/blog/Flying-to-the-Next-Era-Multi-Domain-Superiority"
+    },
+    {
+      "company": { "name": "Antora", "description": "Makes modular thermal batteries that store energy as heat in carbon blocks.", "websiteUrl": "https://antora.com", "location": "Sunnyvale, CA", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Series C", "amount": 550000000, "investedAt": "2026-07-30",
+      "sourceUrl": "https://eclipse.capital/blog/speed-to-power"
+    },
+    {
+      "company": { "name": "Blue Water Autonomy", "description": "Develops autonomous ships for naval and commercial open-ocean operations.", "websiteUrl": "https://blw.ai", "location": "Boston, MA", "sectors": ["Autonomous Vehicles", "Defense Tech", "Robotics"] },
+      "stage": "Seed", "amount": 14000000, "investedAt": "2025-04-11",
+      "sourceUrl": "https://eclipse.capital/blog/introducing-blue-water-modernizing-the-maritime-economy-with-the-era-of-autonomous-ships"
+    },
+    {
+      "company": { "name": "Efficient Computer", "description": "Designs energy-efficient general-purpose processors and compilers.", "websiteUrl": "https://efficient.computer", "location": "Pittsburgh, PA", "sectors": ["Semiconductors", "Hardware"] },
+      "stage": "Seed", "amount": 16000000, "investedAt": "2024-03-07",
+      "sourceUrl": "https://eclipse.capital/blog/pioneering-energy-efficient-computing-our-seed-investment-in-efficient-computer"
+    },
+    {
+      "company": { "name": "Bright Machines", "description": "Provides software-defined automated manufacturing for electronics assembly.", "websiteUrl": "https://www.brightmachines.com", "location": "San Francisco, CA", "sectors": ["Manufacturing", "Robotics", "AI"] },
+      "stage": "Series C", "amount": 126000000, "investedAt": "2024-06-25",
+      "sourceUrl": "https://eclipse.capital/blog/pioneering-modern-manufacturing-bright-machines-series-c"
+    },
+    {
+      "company": { "name": "Tandem PV", "description": "Manufactures solar panels that layer perovskite cells on silicon modules.", "websiteUrl": "https://www.tandempv.com", "location": "Fremont, CA", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Series A", "amount": 50000000, "investedAt": "2025-03-04",
+      "sourceUrl": "https://eclipse.capital/blog/unlocking-us-energy-independence"
+    }
+  ]
+}

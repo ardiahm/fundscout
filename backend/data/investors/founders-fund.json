@@ -1,0 +1,55 @@
+{
+  "investor": { "name": "Founders Fund", "type": "Venture Capital", "websiteUrl": "https://foundersfund.com" },
+  "investments": [
+    {
+      "company": { "name": "Anduril", "description": "Builds autonomous defense systems, drones and AI-powered command and control software.", "websiteUrl": "https://www.anduril.com", "location": "Costa Mesa, CA", "sectors": ["Defense Tech", "AI", "Hardware"] },
+      "stage": "Series F", "amount": 1500000000, "investedAt": "2024-08-07",
+      "sourceUrl": "https://cooley.com/news/coverage/2024/2024-08-07-founders-fund-co-leads-andurils-1-5-billion-series-f"
+    },
+    {
+      "company": { "name": "Varda", "description": "Builds orbital capsules that manufacture materials in microgravity and return them to Earth.", "websiteUrl": "https://www.varda.com", "location": "El Segundo, CA", "sectors": ["Space", "Manufacturing", "Aerospace"] },
+      "stage": "Seed", "amount": 9000000, "investedAt": "2020-12-08",
+      "sourceUrl": "https://techcrunch.com/2020/12/08/space-manufacturing-startup-varda-incubated-at-founders-fund-emerges-with-9-million-in-funding/"
+    },
+    {
+      "company": { "name": "Hadrian", "description": "Operates automated factories that make precision components for aerospace and defense.", "websiteUrl": "https://www.hadrian.co", "location": "Torrance, CA", "sectors": ["Manufacturing", "Robotics", "Aerospace"] },
+      "stage": "Series C", "amount": 260000000, "investedAt": "2025-07-17",
+      "sourceUrl": "https://www.cooley.com/news/coverage/2025/2025-07-17-hadrian-secures-260-million-series-c"
+    },
+    {
+      "company": { "name": "Crusoe", "description": "Builds and operates AI data centers and a cloud computing platform.", "websiteUrl": "https://crusoe.ai", "location": "San Francisco, CA", "sectors": ["Cloud Infrastructure", "AI", "Energy"] },
+      "stage": "Series D", "amount": 600000000, "investedAt": "2024-12-12",
+      "sourceUrl": "https://crusoe.ai/newsroom/crusoe-closes-series-d-funding/"
+    },
+    {
+      "company": { "name": "Scale AI", "description": "Provides data labeling and evaluation services used to train AI models.", "websiteUrl": "https://scale.com", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2019-08-05",
+      "sourceUrl": "https://techcrunch.com/2019/08/05/scale-ai-and-its-22-year-old-ceo-lock-down-100-million-to-help-label-silicon-valleys-data"
+    },
+    {
+      "company": { "name": "Cognition", "description": "Develops Devin, an AI agent that writes and edits software code.", "websiteUrl": "https://cognition.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series A", "amount": 21000000, "investedAt": "2024-03-12",
+      "sourceUrl": "https://cognition.com/blog/introducing-devin"
+    },
+    {
+      "company": { "name": "Impulse Space", "description": "Builds in-space transportation vehicles that move satellites between orbits.", "websiteUrl": "https://impulsespace.com", "location": "Redondo Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Series B", "amount": 150000000, "investedAt": "2024-10-01",
+      "sourceUrl": "https://impulsespace.com/updates/impulse-space-secures-dollar150m-in-series-b-funding-to-support-ongoing-company-momentum"
+    },
+    {
+      "company": { "name": "Polymarket", "description": "Operates a prediction market where users trade on the outcomes of real-world events.", "websiteUrl": "https://polymarket.com", "location": "New York, NY", "sectors": ["Crypto", "Fintech", "Marketplace"] },
+      "stage": "Series B", "amount": 45000000, "investedAt": "2024-05-13",
+      "sourceUrl": "https://www.businesswire.com/news/home/20240513090515/en/Polymarket-Raises-%2470m-From-Thiels-Founders-Fund-General-Catalyst-Vitalik-Buterin-to-Scale-Global-Prediction-Market"
+    },
+    {
+      "company": { "name": "Radiant", "description": "Develops portable nuclear microreactors for off-grid and defense power.", "websiteUrl": "https://radiantnuclear.com", "location": "El Segundo, CA", "sectors": ["Energy", "Hardware"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2023-04",
+      "sourceUrl": "https://radiantnuclear.com/blog/series-b/"
+    },
+    {
+      "company": { "name": "Nominal", "description": "Provides software for testing, monitoring and analyzing data from hardware systems.", "websiteUrl": "https://nominal.io", "location": "Los Angeles, CA", "sectors": ["Data & Analytics", "Enterprise Software", "Defense Tech"] },
+      "stage": "Series B", "amount": 80000000, "investedAt": "2026-03-05",
+      "sourceUrl": "https://nominal.io/blog/series-b2"
+    }
+  ]
+}

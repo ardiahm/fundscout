@@ -1,0 +1,51 @@
+{
+  "investor": { "name": "Lightspeed Venture Partners", "type": "Venture Capital", "websiteUrl": "https://lsvp.com" },
+  "notes": "Only 9 investments: research hit a web-search limit, and several recent Lightspeed-backed companies were left out because their US headquarters could not be confirmed. Arctic Wolf Series A is dated only to 2012 by the source, so investedAt is null. Harvey Series H mapped to Growth; amount undisclosed.",
+  "investments": [
+    {
+      "company": { "name": "Arctic Wolf", "description": "Managed security operations and threat detection services for businesses.", "websiteUrl": "https://arcticwolf.com", "location": "Eden Prairie, MN", "sectors": ["Cybersecurity"] },
+      "stage": "Series A", "amount": 7200000, "investedAt": null,
+      "sourceUrl": "https://lsvp.com/stories/how-arctic-wolf-became-leader-of-the-pack-cyber-60/"
+    },
+    {
+      "company": { "name": "Rubrik", "description": "Data security and backup software for enterprise and cloud data.", "websiteUrl": "https://www.rubrik.com", "location": "Palo Alto, CA", "sectors": ["Cybersecurity", "Cloud Infrastructure", "Enterprise Software"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2015-03-24",
+      "sourceUrl": "https://lsvp.com/stories/why-we-invested-in-rubrik/"
+    },
+    {
+      "company": { "name": "Believer", "description": "Game studio building an open-world video game based on original IP.", "websiteUrl": "https://www.believer.gg", "location": "Los Angeles, CA", "sectors": ["Gaming", "Entertainment"] },
+      "stage": "Series A", "amount": 55000000, "investedAt": "2023-03-07",
+      "sourceUrl": "https://lsvp.com/stories/lightspeed-leads-55m-series-a-in-believer-an-ambitious-new-games-company/"
+    },
+    {
+      "company": { "name": "Wheel", "description": "Platform that lets companies launch branded virtual care services with its clinician network.", "websiteUrl": "https://www.wheel.com", "location": "Austin, TX", "sectors": ["Healthtech", "Enterprise Software"] },
+      "stage": "Series B", "amount": 50000000, "investedAt": "2021-05-19",
+      "sourceUrl": "https://lsvp.com/stories/virtual-health-care-that-works-for-everyone-everywhere-why-lightspeed-is-leading-a-50m-series-b-in-wheel/"
+    },
+    {
+      "company": { "name": "Tome", "description": "AI-native software for creating presentations and narratives.", "websiteUrl": "https://tome.app", "location": "San Francisco, CA", "sectors": ["AI", "Productivity"] },
+      "stage": "Series B", "amount": 43000000, "investedAt": "2023-02-22",
+      "sourceUrl": "https://www.fenwick.com/insights/experience/fenwick-represents-tome-in-43-million-series-b-financing"
+    },
+    {
+      "company": { "name": "Redpanda", "description": "Kafka-compatible streaming data platform written in C++.", "websiteUrl": "https://www.redpanda.com", "location": "San Francisco, CA", "sectors": ["Data & Analytics", "Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2023-06-27",
+      "sourceUrl": "https://lsvp.com/stories/why-lightspeed-is-leading-redpandas-100-million-series-c/"
+    },
+    {
+      "company": { "name": "Glean", "description": "AI-powered enterprise search and work assistant across company apps.", "websiteUrl": "https://www.glean.com", "location": "Palo Alto, CA", "sectors": ["Enterprise Software", "AI"] },
+      "stage": "Series D", "amount": 200000000, "investedAt": "2024-02-27",
+      "sourceUrl": "https://www.glean.com/press/glean-announces-over-200m-series-d-to-accelerate-secure-deployment-of-generative-ai-in-the-enterprise"
+    },
+    {
+      "company": { "name": "Anthropic", "description": "AI safety and research company that develops the Claude family of AI models.", "websiteUrl": "https://www.anthropic.com", "location": "San Francisco, CA", "sectors": ["AI"] },
+      "stage": "Series E", "amount": 3500000000, "investedAt": "2025-03-03",
+      "sourceUrl": "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation"
+    },
+    {
+      "company": { "name": "Harvey", "description": "Generative AI platform for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["Legal Tech", "AI"] },
+      "stage": "Growth", "amount": null, "investedAt": "2026-09-09",
+      "sourceUrl": "https://lsvp.com/stories/helping-legal-teams-own-their-intelligence-our-series-h-investment-in-harvey/"
+    }
+  ]
+}

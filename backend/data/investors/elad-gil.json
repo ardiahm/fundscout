@@ -1,0 +1,51 @@
+{
+  "investor": { "name": "Elad Gil", "type": "Angel", "websiteUrl": "https://eladgil.com" },
+  "notes": "9 rounds sourced (web search quota ran out partway). Older angel deals listed on eladgil.com (Airbnb, Stripe, Coinbase, Gusto, etc.) were left out because no round announcement found names him. Harvey appears twice (Seed participant, Series B co-lead).",
+  "investments": [
+    {
+      "company": { "name": "Harvey", "description": "Generative AI platform for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["AI", "Legal Tech"] },
+      "stage": "Seed", "amount": 5000000, "investedAt": "2022-11-23",
+      "sourceUrl": "https://techcrunch.com/2022/11/23/harvey-which-uses-ai-to-answer-legal-questions-lands-cash-from-openai/"
+    },
+    {
+      "company": { "name": "Harvey", "description": "Generative AI platform for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["AI", "Legal Tech"] },
+      "stage": "Series B", "amount": 80000000, "investedAt": "2023-12-19",
+      "sourceUrl": "https://www.harvey.ai/blog/series-b"
+    },
+    {
+      "company": { "name": "Perplexity", "description": "AI-powered answer engine that responds to questions with cited sources.", "websiteUrl": "https://www.perplexity.ai", "location": "San Francisco, CA", "sectors": ["AI"] },
+      "stage": "Series B", "amount": 73600000, "investedAt": "2024-01-04",
+      "sourceUrl": "https://www.perplexity.ai/hub/blog/perplexity-raises-series-b-funding-round"
+    },
+    {
+      "company": { "name": "Braintrust", "description": "Platform for evaluating, logging and monitoring AI applications in production.", "websiteUrl": "https://www.braintrust.dev", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series A", "amount": 36000000, "investedAt": "2024-10-08",
+      "sourceUrl": "https://www.braintrust.dev/blog/announcing-series-a"
+    },
+    {
+      "company": { "name": "Applied Intuition", "description": "Simulation and software tools for developing autonomous and software-defined vehicles.", "websiteUrl": "https://www.appliedintuition.com", "location": "Sunnyvale, CA", "sectors": ["Autonomous Vehicles", "AI", "Enterprise Software"] },
+      "stage": "Series E", "amount": 250000000, "investedAt": "2024-03-12",
+      "sourceUrl": "https://www.appliedintuition.com/blog/series-e"
+    },
+    {
+      "company": { "name": "Anduril", "description": "Defense technology company building autonomous systems and AI-driven sensor software.", "websiteUrl": "https://www.anduril.com", "location": "Costa Mesa, CA", "sectors": ["Defense Tech", "Robotics", "AI"] },
+      "stage": "Series D", "amount": 450000000, "investedAt": "2021-06-17",
+      "sourceUrl": "https://techcrunch.com/2021/06/17/anduril-funding-series-d-valuation/"
+    },
+    {
+      "company": { "name": "Abridge", "description": "AI software that generates clinical notes from patient-clinician conversations.", "websiteUrl": "https://www.abridge.com", "location": "Pittsburgh, PA", "sectors": ["Healthtech", "AI"] },
+      "stage": "Series D", "amount": 250000000, "investedAt": "2025-02-17",
+      "sourceUrl": "https://www.abridge.com/press-release/series-d"
+    },
+    {
+      "company": { "name": "Cognition", "description": "Developer of Devin, an autonomous AI software engineering agent.", "websiteUrl": "https://cognition.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Growth", "amount": 400000000, "investedAt": "2025-09-08",
+      "sourceUrl": "https://cognition.com/blog/funding-growth-and-the-next-frontier-of-ai-coding-agents"
+    },
+    {
+      "company": { "name": "Decagon", "description": "AI agents that handle customer support conversations for enterprises.", "websiteUrl": "https://decagon.ai", "location": "San Francisco, CA", "sectors": ["AI", "Enterprise Software"] },
+      "stage": "Series D", "amount": 250000000, "investedAt": "2026-01-27",
+      "sourceUrl": "https://decagon.ai/blog/series-d-announcement"
+    }
+  ]
+}

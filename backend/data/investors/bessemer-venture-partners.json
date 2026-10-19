@@ -1,0 +1,56 @@
+{
+  "investor": { "name": "Bessemer Venture Partners", "type": "Venture Capital", "websiteUrl": "https://www.bvp.com" },
+  "notes": "LaunchDarkly's January 2020 $54M round was described by TechCrunch as an extension with existing investors; it is recorded as Series D, as LaunchDarkly announced it.",
+  "investments": [
+    {
+      "company": { "name": "Render", "description": "Cloud platform for hosting and deploying web apps, services and databases.", "websiteUrl": "https://render.com", "location": "San Francisco, CA", "sectors": ["Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series B", "amount": 50000000, "investedAt": "2023-06-20",
+      "sourceUrl": "https://techcrunch.com/2023/06/20/render-bessemer-ventures-startup-cloud/"
+    },
+    {
+      "company": { "name": "Teleport", "description": "Identity-based access platform for servers, Kubernetes clusters and databases.", "websiteUrl": "https://goteleport.com", "location": "Oakland, CA", "sectors": ["Cybersecurity", "Cloud Infrastructure"] },
+      "stage": "Series C", "amount": 110000000, "investedAt": "2022-05-03",
+      "sourceUrl": "https://techcrunch.com/2022/05/03/2309618/"
+    },
+    {
+      "company": { "name": "Netlify", "description": "Platform for building, deploying and hosting websites and web apps.", "websiteUrl": "https://www.netlify.com", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series D", "amount": 105000000, "investedAt": "2021-11-17",
+      "sourceUrl": "https://techcrunch.com/2021/11/17/netlify-snags-105m-series-d-to-fuel-jamstack-focused-web-development/"
+    },
+    {
+      "company": { "name": "Lithic", "description": "Card issuing platform that lets companies create virtual and physical payment cards.", "websiteUrl": "https://www.lithic.com", "location": "New York, NY", "sectors": ["Fintech", "Payments"] },
+      "stage": "Series B", "amount": 43000000, "investedAt": "2021-05-20",
+      "sourceUrl": "https://techcrunch.com/2021/05/20/privacy-com-rebrands-to-lithic-raises-43m-for-virtual-payment-cards/"
+    },
+    {
+      "company": { "name": "Defcon AI", "description": "AI software for planning and modeling military logistics operations.", "websiteUrl": "https://www.defconai.com", "location": "McLean, VA", "sectors": ["AI", "Defense Tech", "Logistics"] },
+      "stage": "Seed", "amount": 44000000, "investedAt": "2024-08-20",
+      "sourceUrl": "https://techcrunch.com/2024/08/20/defcon-ai-raises-44m-seed-to-help-solve-military-logistics/"
+    },
+    {
+      "company": { "name": "Clarity", "description": "Security software that detects deepfakes and AI-driven fraud in video and hiring.", "websiteUrl": "https://www.getclarity.ai", "location": "New York, NY", "sectors": ["Cybersecurity", "AI"] },
+      "stage": "Seed", "amount": 16000000, "investedAt": "2024-02-15",
+      "sourceUrl": "https://techcrunch.com/2024/02/15/clarity-raises-16m-to-fight-deepfakes-through-detection/"
+    },
+    {
+      "company": { "name": "Rigetti", "description": "Quantum computing company that builds superconducting quantum processors.", "websiteUrl": "https://www.rigetti.com", "location": "Berkeley, CA", "sectors": ["Hardware", "Semiconductors", "Cloud Infrastructure"] },
+      "stage": "Series C", "amount": 79000000, "investedAt": "2020-08-04",
+      "sourceUrl": "https://techcrunch.com/2020/08/04/rigetti-raises-79m-series-c-for-its-quantum-computing-platform/"
+    },
+    {
+      "company": { "name": "LaunchDarkly", "description": "Feature flag and feature management platform for software teams.", "websiteUrl": "https://launchdarkly.com", "location": "Oakland, CA", "sectors": ["Developer Tools", "SaaS"] },
+      "stage": "Series D", "amount": 54000000, "investedAt": "2020-01-18",
+      "sourceUrl": "https://techcrunch.com/2020/01/18/launchdarkly-ceo-edith-harbaugh-explains-why-her-company-raised-another-54m/"
+    },
+    {
+      "company": { "name": "Courier", "description": "API platform for sending product notifications across email, SMS, push and chat.", "websiteUrl": "https://www.courier.com", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Communication"] },
+      "stage": "Series A", "amount": 10100000, "investedAt": "2020-09-14",
+      "sourceUrl": "https://techcrunch.com/2020/09/14/courier-raises-10-1m-series-a-to-help-developers-integrate-multi-channel-notifications/"
+    },
+    {
+      "company": { "name": "Luxury Presence", "description": "Website and marketing software for real estate agents and brokerages.", "websiteUrl": "https://www.luxurypresence.com", "location": "Los Angeles, CA", "sectors": ["Proptech", "SaaS"] },
+      "stage": "Series B", "amount": 25900000, "investedAt": "2021-11-16",
+      "sourceUrl": "https://techcrunch.com/2021/11/16/real-estate-marketing-software-provider-luxury-presence-raises-25-9m-in-bessemer-led-series-b/"
+    }
+  ]
+}

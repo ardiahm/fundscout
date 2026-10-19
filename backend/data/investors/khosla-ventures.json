@@ -1,0 +1,41 @@
+{
+  "investor": { "name": "Khosla Ventures", "type": "Venture Capital", "websiteUrl": "https://www.khoslaventures.com" },
+  "notes": "Only 7 rounds included: the shared web-search budget ran out mid-research, and several other Khosla rounds found (e.g. Singularity Series A, Realta Fusion seed, Physical Intelligence seed, Instacart Series A) could not be confirmed with a fetchable source plus company website/HQ, so they were left out rather than guessed.",
+  "investments": [
+    {
+      "company": { "name": "Varda", "description": "Builds orbital capsules that manufacture materials in microgravity and return them to Earth.", "websiteUrl": "https://www.varda.com", "location": "El Segundo, CA", "sectors": ["Space", "Manufacturing", "Aerospace"] },
+      "stage": "Series A", "amount": 42000000, "investedAt": "2021-07-30",
+      "sourceUrl": "https://www.siliconlegal.com/?p=19550"
+    },
+    {
+      "company": { "name": "Vayu Robotics", "description": "Develops AI-driven delivery robots that use low-cost sensing in place of lidar.", "websiteUrl": "https://www.vayurobotics.com", "location": "Palo Alto, CA", "sectors": ["Robotics", "AI", "Autonomous Vehicles"] },
+      "stage": "Seed", "amount": 12700000, "investedAt": "2023-10-03",
+      "sourceUrl": "https://www.businesswire.com/news/home/20231003218289/en"
+    },
+    {
+      "company": { "name": "Ramp", "description": "Offers corporate cards and spend management software for businesses.", "websiteUrl": "https://ramp.com", "location": "New York, NY", "sectors": ["Fintech", "SaaS", "Payments"] },
+      "stage": "Series D", "amount": 150000000, "investedAt": "2024-04-17",
+      "sourceUrl": "https://techcrunch.com/2024/04/17/ramp-raises-another-150-million-co-led-by-khosla-founders-fund-at-a-7-65b-valuation"
+    },
+    {
+      "company": { "name": "DoorDash", "description": "Operates an on-demand delivery platform connecting customers with local merchants.", "websiteUrl": "https://www.doordash.com", "location": "San Francisco, CA", "sectors": ["Logistics", "Marketplace"] },
+      "stage": "Series A", "amount": 17300000, "investedAt": "2014-05-22",
+      "sourceUrl": "https://techcrunch.com/2014/05/22/doordash-17-3m-sequoia"
+    },
+    {
+      "company": { "name": "Hermeus", "description": "Develops high-speed unmanned aircraft for defense applications.", "websiteUrl": "https://www.hermeus.com", "location": "El Segundo, CA", "sectors": ["Aerospace", "Defense Tech"] },
+      "stage": "Series C", "amount": 350000000, "investedAt": "2026-04-08",
+      "sourceUrl": "https://www.builtinla.com/articles/hermeus-raises-350m-series-c-20260408"
+    },
+    {
+      "company": { "name": "Mara", "description": "Builds counter-drone systems that use small autonomous interceptors against FPV drones.", "websiteUrl": "https://mara.inc", "location": "San Francisco, CA", "sectors": ["Defense Tech", "Hardware", "Robotics"] },
+      "stage": "Pre-Seed", "amount": 7000000, "investedAt": "2026-08-26",
+      "sourceUrl": "https://www.sovereignmagazine.com/article/mara-7m-khosla-counter-drone-fpv"
+    },
+    {
+      "company": { "name": "WindBorne", "description": "Operates long-duration weather balloons and AI models for weather forecasting.", "websiteUrl": "https://windbornesystems.com", "location": "Redwood City, CA", "sectors": ["AI", "Hardware", "Climate Tech"] },
+      "stage": "Series B", "amount": 37000000, "investedAt": "2026-08-05",
+      "sourceUrl": "https://windbornesystems.com/blog/windborne-systems-raises-37-million-to-build-the-worlds-weather-intelligence-infrastructure"
+    }
+  ]
+}

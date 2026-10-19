@@ -1,0 +1,56 @@
+{
+  "investor": { "name": "Thrive Capital", "type": "Venture Capital", "websiteUrl": "https://thrivecap.com" },
+  "notes": "Ramp's August 2023 round was not given a series letter in the source, so it is recorded as Growth. Databricks (Series J) and Helion (Series G) are mapped to Growth.",
+  "investments": [
+    {
+      "company": { "name": "Cursor", "description": "AI code editor that helps developers write and edit software.", "websiteUrl": "https://cursor.com", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series B", "amount": 105000000, "investedAt": "2025-01-16",
+      "sourceUrl": "https://www.cursor.com/blog/series-b"
+    },
+    {
+      "company": { "name": "Databricks", "description": "Data and AI platform built around the lakehouse architecture.", "websiteUrl": "https://www.databricks.com", "location": "San Francisco, CA", "sectors": ["Data & Analytics", "AI", "Cloud Infrastructure"] },
+      "stage": "Growth", "amount": 10000000000, "investedAt": "2024-12-17",
+      "sourceUrl": "https://www.databricks.com/company/newsroom/press-releases/databricks-raising-10b-series-j-investment-62b-valuation"
+    },
+    {
+      "company": { "name": "Helion", "description": "Company developing fusion power plants to generate electricity.", "websiteUrl": "https://www.helionenergy.com", "location": "Everett, WA", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Growth", "amount": 465000000, "investedAt": "2026-06-04",
+      "sourceUrl": "https://techcrunch.com/2026/06/04/helion-the-sam-altman-backed-fusion-startup-raises-465m-to-build-a-power-plant-for-microsoft/"
+    },
+    {
+      "company": { "name": "Mesh Optical Technologies", "description": "Manufacturer of optical transceivers for AI data centers.", "websiteUrl": "https://www.meshoptical.com", "location": "Los Angeles, CA", "sectors": ["Hardware", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 50000000, "investedAt": "2026-02-17",
+      "sourceUrl": "https://techcrunch.com/2026/02/17/spacex-vets-raise-50m-series-a-for-data-center-links/"
+    },
+    {
+      "company": { "name": "Unify", "description": "AI sales platform that uses buying signals to automate outbound prospecting.", "websiteUrl": "https://www.unifygtm.com", "location": "San Francisco, CA", "sectors": ["AI", "SaaS"] },
+      "stage": "Series A", "amount": 12000000, "investedAt": "2024-10-08",
+      "sourceUrl": "https://techcrunch.com/2024/10/08/unify-an-openai-converge-accelerator-grad-lands-12m-for-warm-outbound-messages/"
+    },
+    {
+      "company": { "name": "Stytch", "description": "API-first authentication platform for passwordless login and fraud prevention.", "websiteUrl": "https://stytch.com", "location": "San Francisco, CA", "sectors": ["Cybersecurity", "Developer Tools"] },
+      "stage": "Series A", "amount": 30000000, "investedAt": "2021-07-14",
+      "sourceUrl": "https://techcrunch.com/2021/07/14/ex-plaid-employees-raise-30m-for-stytch-an-api-first-passwordless-authentication-platform/"
+    },
+    {
+      "company": { "name": "Ramp", "description": "Corporate card and spend management software for businesses.", "websiteUrl": "https://ramp.com", "location": "New York, NY", "sectors": ["Fintech", "Payments", "SaaS"] },
+      "stage": "Growth", "amount": 300000000, "investedAt": "2023-08-22",
+      "sourceUrl": "https://techcrunch.com/2023/08/22/fintech-startup-ramp-raises-300m-at-a-28-lower-valuation-of-5-8b/"
+    },
+    {
+      "company": { "name": "Lattice", "description": "People management software for performance reviews, goals and engagement.", "websiteUrl": "https://lattice.com", "location": "San Francisco, CA", "sectors": ["HR Tech", "SaaS"] },
+      "stage": "Series F", "amount": 175000000, "investedAt": "2022-01-19",
+      "sourceUrl": "https://techcrunch.com/2022/01/19/lattice-raises-175m-more-at-a-3b-valuation-for-its-people-management-platform/"
+    },
+    {
+      "company": { "name": "Airtable", "description": "Low-code platform for building collaborative databases and apps.", "websiteUrl": "https://www.airtable.com", "location": "San Francisco, CA", "sectors": ["Productivity", "SaaS"] },
+      "stage": "Series D", "amount": 185000000, "investedAt": "2020-09-14",
+      "sourceUrl": "https://techcrunch.com/2020/09/14/airtable-raises-185m-and-launches-new-low-code-and-automation-features/"
+    },
+    {
+      "company": { "name": "Base Power", "description": "Company that installs home batteries and operates them as a distributed power network.", "websiteUrl": "https://www.basepowercompany.com", "location": "Austin, TX", "sectors": ["Energy", "Climate Tech", "Hardware"] },
+      "stage": "Series C", "amount": 1000000000, "investedAt": "2025-10-08",
+      "sourceUrl": "https://techcrunch.com/2025/10/08/base-power-raises-1b-to-deploy-home-batteries-everywhere/"
+    }
+  ]
+}

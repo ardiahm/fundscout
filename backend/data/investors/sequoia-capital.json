@@ -1,0 +1,149 @@
+{
+  "investor": { "name": "Sequoia Capital", "type": "Venture Capital", "websiteUrl": "https://www.sequoiacap.com" },
+  "notes": "Snowflake's Oct 2018 $450M round is described by the company as growth funding; it is widely recorded as its Series F. Notion's Oct 2021 $275M round (co-led by Coatue and Sequoia) has no official series letter and is labeled Growth. Verkada's Series B was co-led by Sequoia and Meritech.",
+  "investments": [
+    {
+      "company": {
+        "name": "DoorDash",
+        "description": "Online platform for ordering local restaurant and retail delivery.",
+        "websiteUrl": "https://www.doordash.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Marketplace", "Logistics", "E-commerce"]
+      },
+      "stage": "Series A",
+      "amount": 17300000,
+      "investedAt": "2014-05-22",
+      "sourceUrl": "https://techcrunch.com/2014/05/22/doordash-17-3m-sequoia"
+    },
+    {
+      "company": {
+        "name": "Zoom",
+        "description": "Video conferencing and communications software for businesses.",
+        "websiteUrl": "https://www.zoom.com",
+        "location": "San Jose, CA",
+        "sectors": ["Communication", "SaaS", "Enterprise Software"]
+      },
+      "stage": "Series D",
+      "amount": 100000000,
+      "investedAt": "2017-01-17",
+      "sourceUrl": "https://techcrunch.com/2017/01/17/sequoia-invests-100-million-in-zoom-video-conferencing-service"
+    },
+    {
+      "company": {
+        "name": "Ethos",
+        "description": "Online life insurance provider that uses data to issue policies without medical exams.",
+        "websiteUrl": "https://www.ethos.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Insurtech", "Fintech"]
+      },
+      "stage": "Series A",
+      "amount": 11500000,
+      "investedAt": "2018-06-14",
+      "sourceUrl": "https://fortune.com/2018/06/14/robert-downey-jr-jay-z-durant-ethos"
+    },
+    {
+      "company": {
+        "name": "Snowflake",
+        "description": "Cloud data platform for storing, processing and analyzing data.",
+        "websiteUrl": "https://www.snowflake.com",
+        "location": "Bozeman, MT",
+        "sectors": ["Data & Analytics", "Cloud Infrastructure", "SaaS"]
+      },
+      "stage": "Series F",
+      "amount": 450000000,
+      "investedAt": "2018-10-11",
+      "sourceUrl": "https://techcrunch.com/2018/10/11/snowflake-shovels-another-blizzard-of-cash-with-450-million-round/"
+    },
+    {
+      "company": {
+        "name": "Figma",
+        "description": "Browser-based collaborative interface design tool.",
+        "websiteUrl": "https://www.figma.com",
+        "location": "San Francisco, CA",
+        "sectors": ["SaaS", "Productivity", "Developer Tools"]
+      },
+      "stage": "Series C",
+      "amount": 40000000,
+      "investedAt": "2019-02-14",
+      "sourceUrl": "https://www.figma.com/blog/figma-series-c/"
+    },
+    {
+      "company": {
+        "name": "Verkada",
+        "description": "Cloud-managed security cameras, access control and building security systems.",
+        "websiteUrl": "https://www.verkada.com",
+        "location": "San Mateo, CA",
+        "sectors": ["Hardware", "Cybersecurity", "IoT"]
+      },
+      "stage": "Series B",
+      "amount": 40000000,
+      "investedAt": "2019-04-26",
+      "sourceUrl": "https://www.verkada.com/blog/verkada-raises-40-million-series-b-at-540-million-valuation/"
+    },
+    {
+      "company": {
+        "name": "Temporal",
+        "description": "Open source platform for orchestrating durable microservice workflows.",
+        "websiteUrl": "https://temporal.io",
+        "location": "Bellevue, WA",
+        "sectors": ["Developer Tools", "Cloud Infrastructure"]
+      },
+      "stage": "Series A",
+      "amount": 18750000,
+      "investedAt": "2020-10-15",
+      "sourceUrl": "https://temporal.io/news/temporal-raises-usd18-75m-series-a-increases-total-raised-to-usd25-5m"
+    },
+    {
+      "company": {
+        "name": "Vanta",
+        "description": "Software that automates security compliance audits such as SOC 2 and ISO 27001.",
+        "websiteUrl": "https://www.vanta.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Cybersecurity", "SaaS"]
+      },
+      "stage": "Series A",
+      "amount": 50000000,
+      "investedAt": "2021-05-04",
+      "sourceUrl": "https://www.businesswire.com/news/home/20210504005122/en/Vanta-Raises-50-Million-in-Series-A-Funding-Led-by-Sequoia"
+    },
+    {
+      "company": {
+        "name": "Notion",
+        "description": "Workspace software for notes, documents, wikis and project management.",
+        "websiteUrl": "https://www.notion.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Productivity", "SaaS"]
+      },
+      "stage": "Growth",
+      "amount": 275000000,
+      "investedAt": "2021-10-08",
+      "sourceUrl": "https://siliconangle.com/2021/10/08/productivity-startup-notion-valued-10b-latest-275m-funding-round"
+    },
+    {
+      "company": {
+        "name": "Harvey",
+        "description": "Generative AI platform for legal and professional services work.",
+        "websiteUrl": "https://www.harvey.ai",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Legal Tech", "Enterprise Software"]
+      },
+      "stage": "Series B",
+      "amount": 80000000,
+      "investedAt": "2023-12-19",
+      "sourceUrl": "https://www.harvey.ai/blog/harvey-raises-80m-series-b-from-elad-gil-kleiner-perkins-openai-and-sequoia"
+    },
+    {
+      "company": {
+        "name": "Fireworks AI",
+        "description": "Cloud platform for running and fine-tuning generative AI models.",
+        "websiteUrl": "https://fireworks.ai",
+        "location": "Redwood City, CA",
+        "sectors": ["AI", "Cloud Infrastructure", "Developer Tools"]
+      },
+      "stage": "Series B",
+      "amount": 52000000,
+      "investedAt": "2024-07-11",
+      "sourceUrl": "https://fireworks.ai/blog/fireworks-ai-series-b-compound-ai"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "investor": { "name": "Root Ventures", "type": "Micro VC", "websiteUrl": "https://root.vc" },
+  "investments": [
+    {
+      "company": { "name": "Dusty Robotics", "description": "Builds mobile robots that print building layouts directly onto construction site floors.", "websiteUrl": "https://www.dustyrobotics.com", "location": "Mountain View, CA", "sectors": ["Robotics", "Hardware"] },
+      "stage": "Series A", "amount": 16500000, "investedAt": "2021-06-15",
+      "sourceUrl": "https://techcrunch.com/2021/06/15/construction-robotics-firm-dusty-raises-16-5m/"
+    },
+    {
+      "company": { "name": "AllSpice", "description": "Provides version control and design review software for electronics hardware teams.", "websiteUrl": "https://allspice.io", "location": "Boston, MA", "sectors": ["Developer Tools", "Hardware", "SaaS"] },
+      "stage": "Seed", "amount": 3200000, "investedAt": "2022-01-31",
+      "sourceUrl": "https://techcrunch.com/2022/01/31/allspice-thinks-hardware-developers-lack-their-own-github-so-it-is-building-one/"
+    },
+    {
+      "company": { "name": "Kayhan Space", "description": "Develops space traffic coordination and collision avoidance software for satellite operators.", "websiteUrl": "https://www.kayhan.space", "location": "Boulder, CO", "sectors": ["Space", "SaaS"] },
+      "stage": "Seed", "amount": 3700000, "investedAt": "2021-12-14",
+      "sourceUrl": "https://kayhan.space/newsroom/space-traffic-analytics-startup-kayhan-space-raises-37-million-in-seed-funding/aid/32"
+    },
+    {
+      "company": { "name": "Quilter", "description": "Develops AI software that automates printed circuit board layout design.", "websiteUrl": "https://www.quilter.ai", "location": "Los Angeles, CA", "sectors": ["AI", "Hardware", "Developer Tools"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2024-02-12",
+      "sourceUrl": "https://quilter.ai/blog/series-a/"
+    },
+    {
+      "company": { "name": "ThruWave", "description": "Makes millimeter-wave imaging sensors that see inside packages in warehouses.", "websiteUrl": "https://www.thruwave.com", "location": "Seattle, WA", "sectors": ["Hardware", "Logistics"] },
+      "stage": "Seed", "amount": 6400000, "investedAt": "2020-09-03",
+      "sourceUrl": "https://www.geekwire.com/2020/x-ray-vision-warehouse-thruwave-raises-6-4m-help-retail-companies-see-packages/"
+    },
+    {
+      "company": { "name": "Zed", "description": "Develops a high-performance collaborative code editor.", "websiteUrl": "https://zed.dev", "location": "Boulder, CO", "sectors": ["Developer Tools", "Productivity"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2023-03-15",
+      "sourceUrl": "https://techcrunch.com/2023/03/15/zed-code-editor-raises-10m/"
+    },
+    {
+      "company": { "name": "nTop", "description": "Develops engineering design software for complex parts and additive manufacturing.", "websiteUrl": "https://www.ntop.com", "location": "New York, NY", "sectors": ["Enterprise Software", "Manufacturing"] },
+      "stage": "Series D", "amount": 65000000, "investedAt": "2021-11-18",
+      "sourceUrl": "https://techcrunch.com/2021/11/18/hardware-design-platform-ntopology-raises-65m"
+    },
+    {
+      "company": { "name": "Esper", "description": "Provides a platform to manage and deploy software on fleets of Android and edge devices.", "websiteUrl": "https://www.esper.io", "location": "Seattle, WA", "sectors": ["Developer Tools", "IoT", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 7600000, "investedAt": "2020-02-18",
+      "sourceUrl": "https://www.businesswire.com/news/home/20200218006146/en/"
+    },
+    {
+      "company": { "name": "Meroxa", "description": "Provides a real-time data pipeline platform for engineering teams.", "websiteUrl": "https://meroxa.com", "location": "San Francisco, CA", "sectors": ["Data & Analytics", "Developer Tools"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2021-04-13",
+      "sourceUrl": "https://www.mrweb.com/drno/printable/pn31330.htm"
+    },
+    {
+      "company": { "name": "Particle", "description": "Provides an IoT platform of connectivity hardware and cloud software for connected devices.", "websiteUrl": "https://www.particle.io", "location": "San Francisco, CA", "sectors": ["IoT", "Hardware", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 10400000, "investedAt": "2016-11-18",
+      "sourceUrl": "https://venturebeat.com/2016/11/18/particle-raises-10-4-million"
+    }
+  ]
+}

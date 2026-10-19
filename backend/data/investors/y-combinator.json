@@ -1,0 +1,162 @@
+{
+  "investor": { "name": "Y Combinator", "type": "Accelerator", "websiteUrl": "https://www.ycombinator.com" },
+  "notes": "Seed entries are YC batch investments, sourced from YC's own company directory pages (which list the batch). Batch round sizes and exact dates are not published, so amount and investedAt are null for those. Later-stage entries are YC Continuity fund deals. Coinbase's YC page lists Los Angeles; it is recorded here as San Francisco (where it was founded; the company is now remote-first).",
+  "investments": [
+    {
+      "company": {
+        "name": "Gusto",
+        "description": "Online payroll, benefits and HR software for small businesses.",
+        "websiteUrl": "https://gusto.com",
+        "location": "San Francisco, CA",
+        "sectors": ["HR Tech", "Fintech", "SaaS"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/gusto"
+    },
+    {
+      "company": {
+        "name": "Coinbase",
+        "description": "Exchange and wallet platform for buying, selling and storing cryptocurrency.",
+        "websiteUrl": "https://www.coinbase.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Crypto", "Fintech"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/coinbase"
+    },
+    {
+      "company": {
+        "name": "DoorDash",
+        "description": "Online platform for ordering local restaurant and retail delivery.",
+        "websiteUrl": "https://www.doordash.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Marketplace", "Logistics", "E-commerce"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/doordash"
+    },
+    {
+      "company": {
+        "name": "Cruise",
+        "description": "Developer of self-driving car technology, now part of General Motors.",
+        "websiteUrl": "https://www.getcruise.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Autonomous Vehicles", "AI", "Transportation"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/cruise"
+    },
+    {
+      "company": {
+        "name": "Scale AI",
+        "description": "Data labeling and evaluation platform for training AI models.",
+        "websiteUrl": "https://scale.com",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Data & Analytics"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/scale-ai"
+    },
+    {
+      "company": {
+        "name": "Brex",
+        "description": "Corporate cards, expense management and business banking for companies.",
+        "websiteUrl": "https://www.brex.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Fintech", "Payments", "SaaS"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/brex"
+    },
+    {
+      "company": {
+        "name": "Retool",
+        "description": "Low-code platform for building internal business tools.",
+        "websiteUrl": "https://retool.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Developer Tools", "SaaS"]
+      },
+      "stage": "Seed",
+      "amount": null,
+      "investedAt": null,
+      "sourceUrl": "https://www.ycombinator.com/companies/retool"
+    },
+    {
+      "company": {
+        "name": "Segment",
+        "description": "Customer data platform that collects and routes user event data, now owned by Twilio.",
+        "websiteUrl": "https://segment.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Data & Analytics", "Developer Tools"]
+      },
+      "stage": "Series C",
+      "amount": 64000000,
+      "investedAt": "2017-07",
+      "sourceUrl": "https://globalventuring.com/gv-takes-a-part-in-64m-round-for-segment"
+    },
+    {
+      "company": {
+        "name": "Convoy",
+        "description": "Digital freight network that matched shippers with trucking carriers.",
+        "websiteUrl": "https://convoy.com",
+        "location": "Seattle, WA",
+        "sectors": ["Logistics", "Marketplace", "Transportation"]
+      },
+      "stage": "Series B",
+      "amount": 62000000,
+      "investedAt": "2017-07-25",
+      "sourceUrl": "https://techcrunch.com/2017/07/25/in-a-first-deal-of-its-kind-convoy-lands-62-million-led-by-ycs-continuity-fund"
+    },
+    {
+      "company": {
+        "name": "Deel",
+        "description": "Platform for hiring, paying and managing employees and contractors globally.",
+        "websiteUrl": "https://www.deel.com",
+        "location": "San Francisco, CA",
+        "sectors": ["HR Tech", "Payments", "SaaS"]
+      },
+      "stage": "Series C",
+      "amount": 156000000,
+      "investedAt": "2021-04-21",
+      "sourceUrl": "https://www.orrick.com/en/News/2021/04/Orrick-Advises-New-Unicorn-Deel-on-its-156-Million-Series-Round"
+    },
+    {
+      "company": {
+        "name": "Pave",
+        "description": "Compensation benchmarking and planning software for companies.",
+        "websiteUrl": "https://www.pave.com",
+        "location": "San Francisco, CA",
+        "sectors": ["HR Tech", "Data & Analytics", "SaaS"]
+      },
+      "stage": "Series B",
+      "amount": 46000000,
+      "investedAt": "2021-08-10",
+      "sourceUrl": "https://builtin.com/articles/pave-raises-46m-series-b-fair-compensation-hiring"
+    },
+    {
+      "company": {
+        "name": "Webflow",
+        "description": "Visual website builder and hosting platform.",
+        "websiteUrl": "https://webflow.com",
+        "location": "San Francisco, CA",
+        "sectors": ["SaaS", "Developer Tools"]
+      },
+      "stage": "Series C",
+      "amount": 120000000,
+      "investedAt": "2022-03-16",
+      "sourceUrl": "https://www.silversmith.com/news/webflow-raises-120m-series-c-at-4b-valuation-led-by-yc-continuity"
+    }
+  ]
+}

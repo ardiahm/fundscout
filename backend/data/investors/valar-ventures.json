@@ -1,0 +1,51 @@
+{
+  "investor": { "name": "Valar Ventures", "type": "Venture Capital", "websiteUrl": "https://www.valar.com" },
+  "notes": "Valar's US portfolio is almost entirely fintech, so sectors are concentrated there. Petal, Novo and Majority each appear at two different stages. Majority is described by TechCrunch as Houston- and Stockholm-headquartered at the time of these rounds.",
+  "investments": [
+    {
+      "company": { "name": "Petal", "description": "Credit card issuer that underwrites applicants using bank cash-flow data.", "websiteUrl": "https://www.petalcard.com", "location": "New York, NY", "sectors": ["Fintech", "Consumer Finance"] },
+      "stage": "Series B", "amount": 30000000, "investedAt": "2019-01-29",
+      "sourceUrl": "https://techcrunch.com/2019/01/29/petal-series-b/"
+    },
+    {
+      "company": { "name": "Petal", "description": "Credit card issuer that underwrites applicants using bank cash-flow data.", "websiteUrl": "https://www.petalcard.com", "location": "New York, NY", "sectors": ["Fintech", "Consumer Finance"] },
+      "stage": "Series C", "amount": 55000000, "investedAt": "2020-09-24",
+      "sourceUrl": "https://techcrunch.com/2020/09/24/valar-petal-series-c/"
+    },
+    {
+      "company": { "name": "BlockFi", "description": "Crypto lending and interest account platform for retail and institutional clients.", "websiteUrl": "https://blockfi.com", "location": "Jersey City, NJ", "sectors": ["Crypto", "Fintech"] },
+      "stage": "Series A", "amount": 18300000, "investedAt": "2019-08-06",
+      "sourceUrl": "https://techcrunch.com/2019/08/06/blockfi-which-lends-money-to-cryptocurrency-holders-just-raised-18-3-million-led-by-valar-ventures/"
+    },
+    {
+      "company": { "name": "Even", "description": "Earned wage access and budgeting app offered through employers.", "websiteUrl": "https://www.even.com", "location": "Oakland, CA", "sectors": ["Fintech", "HR Tech"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2018-07-19",
+      "sourceUrl": "https://techcrunch.com/2018/07/19/even-raises-40m-to-transform-the-working-class-to-the-savings-class/"
+    },
+    {
+      "company": { "name": "Novo", "description": "Online business banking platform for small businesses.", "websiteUrl": "https://www.novo.co", "location": "Miami, FL", "sectors": ["Banking", "Fintech"] },
+      "stage": "Series A", "amount": 40700000, "investedAt": "2021-06-16",
+      "sourceUrl": "https://techcrunch.com/2021/06/16/novo-a-neobank-for-smbs-banks-41m/"
+    },
+    {
+      "company": { "name": "Novo", "description": "Online business banking platform for small businesses.", "websiteUrl": "https://www.novo.co", "location": "Miami, FL", "sectors": ["Banking", "Fintech"] },
+      "stage": "Series B", "amount": 90000000, "investedAt": "2022-01-11",
+      "sourceUrl": "https://techcrunch.com/2022/01/11/novo-the-smb-neobank-nabs-90m-at-a-700m-valuation/"
+    },
+    {
+      "company": { "name": "Octane", "description": "Point-of-sale financing platform for powersports and recreational vehicle purchases.", "websiteUrl": "https://www.octane.co", "location": "New York, NY", "sectors": ["Fintech", "Consumer Finance"] },
+      "stage": "Series D", "amount": 52000000, "investedAt": "2021-08-05",
+      "sourceUrl": "https://techcrunch.com/2021/08/05/octane-raises-52m-at-a-900m-valuation-to-help-people-finance-large-recreational-purchases/"
+    },
+    {
+      "company": { "name": "Majority", "description": "Mobile banking service built for migrants living in the US.", "websiteUrl": "https://www.majority.com", "location": "Houston, TX", "sectors": ["Banking", "Fintech"] },
+      "stage": "Seed", "amount": 19000000, "investedAt": "2021-06-22",
+      "sourceUrl": "https://techcrunch.com/2021/06/22/majority-raises-19-million-for-its-mobile-banking-service-for-migrants/"
+    },
+    {
+      "company": { "name": "Majority", "description": "Mobile banking service built for migrants living in the US.", "websiteUrl": "https://www.majority.com", "location": "Houston, TX", "sectors": ["Banking", "Fintech"] },
+      "stage": "Series A", "amount": 27000000, "investedAt": "2021-12-07",
+      "sourceUrl": "https://techcrunch.com/2021/12/07/majority-raises-27m-series-a-six-months-after-its-seed-round-to-expand-mobile-banking-for-migrants/"
+    }
+  ]
+}

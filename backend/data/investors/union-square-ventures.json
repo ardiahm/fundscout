@@ -1,0 +1,61 @@
+{
+  "investor": { "name": "Union Square Ventures", "type": "Venture Capital", "websiteUrl": "https://www.usv.com" },
+  "notes": "No seed-stage round could be confirmed from a primary source during this research pass, so USV's seed activity is not represented. Coinbase appears twice (Series A lead, Series C participant).",
+  "investments": [
+    {
+      "company": { "name": "Coinbase", "description": "Cryptocurrency exchange and wallet platform for buying, selling and storing digital assets.", "websiteUrl": "https://www.coinbase.com", "location": "San Francisco, CA", "sectors": ["Crypto", "Fintech"] },
+      "stage": "Series A", "amount": 5000000, "investedAt": "2013-05-07",
+      "sourceUrl": "https://www.ycombinator.com/blog/coinbase-yc-s12-raises-5m-from-union-square-ventures-largest-financing-round-yet-for-a-bitcoin-startup/"
+    },
+    {
+      "company": { "name": "Coinbase", "description": "Cryptocurrency exchange and wallet platform for buying, selling and storing digital assets.", "websiteUrl": "https://www.coinbase.com", "location": "San Francisco, CA", "sectors": ["Crypto", "Fintech"] },
+      "stage": "Series C", "amount": 75000000, "investedAt": "2015-01-20",
+      "sourceUrl": "https://techcrunch.com/2015/01/20/coinbase-confirms-75m-raise-from-dfj-nyse-strategic-banking-partners/"
+    },
+    {
+      "company": { "name": "Sift", "description": "Machine learning software that detects online payment fraud and account abuse.", "websiteUrl": "https://sift.com", "location": "San Francisco, CA", "sectors": ["Cybersecurity", "Fintech", "AI"] },
+      "stage": "Series A", "amount": 4000000, "investedAt": "2013-03-19",
+      "sourceUrl": "https://techcrunch.com/2013/03/19/ex-googlers-launch-sift-science-a-fraud-fighting-system-for-websites-backed-by-5-5m-in-funding-from-union-square-first-round-yc-others/"
+    },
+    {
+      "company": { "name": "Duolingo", "description": "Language-learning app offering gamified lessons in dozens of languages.", "websiteUrl": "https://www.duolingo.com", "location": "Pittsburgh, PA", "sectors": ["Edtech"] },
+      "stage": "Series B", "amount": 15000000, "investedAt": "2012-09-17",
+      "sourceUrl": "https://techcrunch.com/2012/09/17/duolingo-raises-15m-series-b-round-lead-by-nea-will-expand-to-more-languages-and-to-mobile-soon/"
+    },
+    {
+      "company": { "name": "Codecademy", "description": "Online platform with interactive courses for learning to code.", "websiteUrl": "https://www.codecademy.com", "location": "New York, NY", "sectors": ["Edtech", "Developer Tools"] },
+      "stage": "Series B", "amount": 10000000, "investedAt": "2012-06-19",
+      "sourceUrl": "https://techcrunch.com/2012/06/19/codecademy-plans-global-code-teaching-expansion-with-10m-from-branson-milner-kleiner-index-union-square/"
+    },
+    {
+      "company": { "name": "Stack Overflow", "description": "Question-and-answer community and knowledge platform for software developers.", "websiteUrl": "https://stackoverflow.com", "location": "New York, NY", "sectors": ["Developer Tools", "Social"] },
+      "stage": "Series D", "amount": 40000000, "investedAt": "2015-01-20",
+      "sourceUrl": "https://stackoverflow.blog/2015/01/20/andreessen-horowitz-invests-in-stack-exchange/"
+    },
+    {
+      "company": { "name": "Quizlet", "description": "Online study tool with flashcards, practice tests and learning games.", "websiteUrl": "https://quizlet.com", "location": "San Francisco, CA", "sectors": ["Edtech"] },
+      "stage": "Series A", "amount": 12000000, "investedAt": "2015-11-23",
+      "sourceUrl": "https://edsurge.com/news/2015-11-23-bootstrapped-since-2005-quizlet-raises-12-million-to-reach-1-billion-learners"
+    },
+    {
+      "company": { "name": "Leap", "description": "Software platform that connects distributed energy devices to demand response and grid services markets.", "websiteUrl": "https://www.leap.energy", "location": "San Francisco, CA", "sectors": ["Energy", "Climate Tech", "SaaS"] },
+      "stage": "Series A", "amount": 8200000, "investedAt": "2020-01-16",
+      "sourceUrl": "https://www.businesswire.com/news/home/20200116005190/en/Leap-Secures-Funding-Expand-Marketplace-Grid-Flexibility"
+    },
+    {
+      "company": { "name": "Karat", "description": "Business accounts and charge cards for online creators and growing businesses.", "websiteUrl": "https://trykarat.com", "location": "Los Angeles, CA", "sectors": ["Fintech", "Banking"] },
+      "stage": "Series A", "amount": 26000000, "investedAt": "2021-07-01",
+      "sourceUrl": "https://news.crunchbase.com/news/karat-raises-26m-series-a-to-build-financial-infrastructure-for-creators/"
+    },
+    {
+      "company": { "name": "Sofar Ocean", "description": "Ocean data platform built on a network of connected Spotter buoys and sensors.", "websiteUrl": "https://www.sofarocean.com", "location": "San Francisco, CA", "sectors": ["IoT", "Climate Tech", "Data & Analytics"] },
+      "stage": "Series B", "amount": 39000000, "investedAt": "2021-11-02",
+      "sourceUrl": "https://sofarocean.com/posts/as-climate-change-impacts-major-industries-globally-sofar-ocean-secures-39m-series-b-to-accelerate-its-ocean-intelligence-platform-to-drive-climate-mitigation-and-adaptation"
+    },
+    {
+      "company": { "name": "Tutor Intelligence", "description": "AI-powered robots for warehouse tasks such as palletizing and case picking.", "websiteUrl": "https://www.tutorintelligence.com", "location": "Watertown, MA", "sectors": ["Robotics", "AI", "Logistics"] },
+      "stage": "Series A", "amount": 34000000, "investedAt": "2025-12-02",
+      "sourceUrl": "https://pulse2.com/tutor-intelligence-34-million-series-a/"
+    }
+  ]
+}

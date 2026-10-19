@@ -1,0 +1,56 @@
+{
+  "investor": { "name": "GV", "type": "Corporate VC", "websiteUrl": "https://www.gv.com" },
+  "notes": "Sources were checked to name GV (not GGV Capital) in each round. Chronosphere's Jan 2023 round was an extension of its Series C.",
+  "investments": [
+    {
+      "company": { "name": "Harvey", "description": "Builds generative AI tools for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["AI", "Legal Tech"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2024-07-23",
+      "sourceUrl": "https://techcrunch.com/2024/07/23/openai-backed-legaltech-startup-harvey-raises-100m/"
+    },
+    {
+      "company": { "name": "Redpanda", "description": "Develops a Kafka-compatible data streaming platform.", "websiteUrl": "https://www.redpanda.com", "location": "San Francisco, CA", "sectors": ["Data & Analytics", "Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series B", "amount": 50000000, "investedAt": "2022-02-23",
+      "sourceUrl": "https://techcrunch.com/2022/02/23/with-mission-to-modernize-data-streaming-redpanda-snares-50m-series-b/"
+    },
+    {
+      "company": { "name": "Vercel", "description": "Provides a cloud platform for building and deploying frontend web applications.", "websiteUrl": "https://vercel.com", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series D", "amount": 150000000, "investedAt": "2021-11-23",
+      "sourceUrl": "https://techcrunch.com/2021/11/23/vercel-raises-150m-series-d-as-it-looks-to-build-an-end-to-end-front-end-development-platform/"
+    },
+    {
+      "company": { "name": "Merlin Labs", "description": "Develops autonomous flight software for fixed-wing aircraft.", "websiteUrl": "https://merlinlabs.com", "location": "Boston, MA", "sectors": ["Aerospace", "Autonomous Vehicles", "Defense Tech"] },
+      "stage": "Series B", "amount": 105000000, "investedAt": "2022-07-13",
+      "sourceUrl": "https://techcrunch.com/2022/07/13/autonomous-flight-startup-merlin-labs-lands-120m-and-u-s-air-force-partnership/"
+    },
+    {
+      "company": { "name": "Chronosphere", "description": "Provides a cloud-native observability platform for metrics, logs and traces.", "websiteUrl": "https://chronosphere.io", "location": "New York, NY", "sectors": ["Cloud Infrastructure", "Developer Tools", "Data & Analytics"] },
+      "stage": "Series C", "amount": 115000000, "investedAt": "2023-01-10",
+      "sourceUrl": "https://techcrunch.com/2023/01/10/observability-platform-chronosphere-raises-another-115m-at-a-1-6b-valuation/"
+    },
+    {
+      "company": { "name": "Pangea", "description": "Provides security APIs and guardrails for developers building applications and AI.", "websiteUrl": "https://pangea.cloud", "location": "Palo Alto, CA", "sectors": ["Cybersecurity", "Developer Tools"] },
+      "stage": "Series B", "amount": 26000000, "investedAt": "2022-11-30",
+      "sourceUrl": "https://techcrunch.com/2022/11/30/pangea-cyber-wants-to-simplify-security-for-developers-with-an-api-approach/"
+    },
+    {
+      "company": { "name": "Speakeasy", "description": "Generates SDKs and other tooling for companies that publish APIs.", "websiteUrl": "https://www.speakeasy.com", "location": "San Francisco, CA", "sectors": ["Developer Tools"] },
+      "stage": "Seed", "amount": 7600000, "investedAt": "2023-06-29",
+      "sourceUrl": "https://techcrunch.com/2023/06/29/speakeasy-is-using-ai-to-automate-api-creation-and-distribution/"
+    },
+    {
+      "company": { "name": "Blacksmith", "description": "Provides faster, lower-cost runners for GitHub Actions continuous integration jobs.", "websiteUrl": "https://www.blacksmith.sh", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 10000000, "investedAt": "2025-09-17",
+      "sourceUrl": "https://techcrunch.com/2025/09/17/google-ventures-doubles-down-on-dev-tool-startup-blacksmith-just-4-months-after-its-seed-round/"
+    },
+    {
+      "company": { "name": "Flock Freight", "description": "Operates a shared truckload freight shipping platform.", "websiteUrl": "https://www.flockfreight.com", "location": "San Diego, CA", "sectors": ["Logistics", "Transportation"] },
+      "stage": "Series C", "amount": 113500000, "investedAt": "2020-12-01",
+      "sourceUrl": "https://techcrunch.com/2020/12/01/softbank-volvo-back-flock-freight-with-113-5m-to-help-shippers-share-the-load/"
+    },
+    {
+      "company": { "name": "Modular", "description": "Develops software infrastructure for building and running AI models across different hardware.", "websiteUrl": "https://www.modular.com", "location": "Los Altos, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Seed", "amount": 30000000, "investedAt": "2022-06-30",
+      "sourceUrl": "https://techcrunch.com/2022/06/30/modular-closes-30m-seed-round-to-simplify-the-process-of-developing-ai-systems/"
+    }
+  ]
+}

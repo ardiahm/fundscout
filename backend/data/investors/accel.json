@@ -1,0 +1,136 @@
+{
+  "investor": { "name": "Accel", "type": "Venture Capital", "websiteUrl": "https://www.accel.com" },
+  "notes": "Qualtrics' May 2012 $70M round from Accel and Sequoia was its first institutional funding and is labeled Series A. Scale AI's $1B Series F was a mix of primary and secondary. Accel participated in (did not lead) the Cursor Series C and Thinking Machines Lab seed. Decagon's Series A was announced together with its a16z-led seed.",
+  "investments": [
+    {
+      "company": {
+        "name": "Qualtrics",
+        "description": "Software for running surveys and managing customer and employee experience.",
+        "websiteUrl": "https://www.qualtrics.com",
+        "location": "Provo, UT",
+        "sectors": ["SaaS", "Data & Analytics", "Enterprise Software"]
+      },
+      "stage": "Series A",
+      "amount": 70000000,
+      "investedAt": "2012-05-15",
+      "sourceUrl": "https://techcrunch.com/2012/05/15/qualtrics-raises-70m-accel-sequoia/"
+    },
+    {
+      "company": {
+        "name": "CrowdStrike",
+        "description": "Cloud-based endpoint protection and threat intelligence platform.",
+        "websiteUrl": "https://www.crowdstrike.com",
+        "location": "Austin, TX",
+        "sectors": ["Cybersecurity", "Cloud Infrastructure"]
+      },
+      "stage": "Series E",
+      "amount": 200000000,
+      "investedAt": "2018-06-19",
+      "sourceUrl": "https://venturebeat.com/2018/06/19/cybersecurity-startup-crowdstrike-raises-200-million-at-3-billion-valuation/"
+    },
+    {
+      "company": {
+        "name": "Webflow",
+        "description": "Visual website builder and hosting platform.",
+        "websiteUrl": "https://webflow.com",
+        "location": "San Francisco, CA",
+        "sectors": ["SaaS", "Developer Tools"]
+      },
+      "stage": "Series A",
+      "amount": 72000000,
+      "investedAt": "2019-08-07",
+      "sourceUrl": "https://www.forbes.com/sites/alexkonrad/2019/08/07/webflow-went-from-near-bankruptcy-to-72-million-series-a/"
+    },
+    {
+      "company": {
+        "name": "Vercel",
+        "description": "Cloud platform for deploying and hosting frontend web applications.",
+        "websiteUrl": "https://vercel.com",
+        "location": "San Francisco, CA",
+        "sectors": ["Cloud Infrastructure", "Developer Tools"]
+      },
+      "stage": "Series A",
+      "amount": 21000000,
+      "investedAt": "2020-04-21",
+      "sourceUrl": "https://vercel.com/blog/zeit-is-now-vercel"
+    },
+    {
+      "company": {
+        "name": "Linear",
+        "description": "Issue tracking and project planning software for product teams.",
+        "websiteUrl": "https://linear.app",
+        "location": "San Francisco, CA",
+        "sectors": ["Productivity", "Developer Tools", "SaaS"]
+      },
+      "stage": "Series B",
+      "amount": 35000000,
+      "investedAt": "2023-09-14",
+      "sourceUrl": "https://linear.app/blog/series-b"
+    },
+    {
+      "company": {
+        "name": "Scale AI",
+        "description": "Data labeling and evaluation platform for training AI models.",
+        "websiteUrl": "https://scale.com",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Data & Analytics"]
+      },
+      "stage": "Series F",
+      "amount": 1000000000,
+      "investedAt": "2024-05-21",
+      "sourceUrl": "https://scale.com/blog/scale-ai-series-f"
+    },
+    {
+      "company": {
+        "name": "Decagon",
+        "description": "AI agents that handle customer support conversations for businesses.",
+        "websiteUrl": "https://decagon.ai",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Enterprise Software"]
+      },
+      "stage": "Series A",
+      "amount": 30000000,
+      "investedAt": "2024-06-18",
+      "sourceUrl": "https://decagon.ai/blog/series-a"
+    },
+    {
+      "company": {
+        "name": "Cyera",
+        "description": "Data security platform that discovers and protects sensitive data in the cloud.",
+        "websiteUrl": "https://www.cyera.com",
+        "location": "New York, NY",
+        "sectors": ["Cybersecurity", "Data & Analytics", "AI"]
+      },
+      "stage": "Series D",
+      "amount": 300000000,
+      "investedAt": "2024-11-20",
+      "sourceUrl": "https://www.securityweek.com/cyera-raises-300-million-at-3-billion-valuation/"
+    },
+    {
+      "company": {
+        "name": "Cursor",
+        "description": "AI-powered code editor built by Anysphere.",
+        "websiteUrl": "https://cursor.com",
+        "location": "San Francisco, CA",
+        "sectors": ["AI", "Developer Tools"]
+      },
+      "stage": "Series C",
+      "amount": 900000000,
+      "investedAt": "2025-06-06",
+      "sourceUrl": "https://cursor.com/blog/series-c"
+    },
+    {
+      "company": {
+        "name": "Thinking Machines Lab",
+        "description": "AI research lab building multimodal models and tools for customizing them.",
+        "websiteUrl": "https://thinkingmachines.ai",
+        "location": "San Francisco, CA",
+        "sectors": ["AI"]
+      },
+      "stage": "Seed",
+      "amount": 2000000000,
+      "investedAt": "2025-07-15",
+      "sourceUrl": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+    }
+  ]
+}

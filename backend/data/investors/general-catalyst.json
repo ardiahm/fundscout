@@ -1,0 +1,145 @@
+{
+  "investor": {
+    "name": "General Catalyst",
+    "type": "Venture Capital",
+    "websiteUrl": "https://www.generalcatalyst.com"
+  },
+  "notes": "Only 8 investments: research hit a web-search limit, and several General Catalyst seed deals were left out because their US headquarters or round size could not be confirmed. All sources are General Catalyst's own announcements. Modal and Saronic round sizes are not stated in the source, so amount is null. GC participated (did not lead) in Applied Intuition, Saronic and Mercor rounds.",
+  "investments": [
+    {
+      "company": {
+        "name": "Hippocratic AI",
+        "description": "Builds safety-focused generative AI agents for non-diagnostic healthcare tasks.",
+        "websiteUrl": "https://www.hippocraticai.com",
+        "location": "Palo Alto, CA",
+        "sectors": [
+          "Healthtech",
+          "AI"
+        ]
+      },
+      "stage": "Series A",
+      "amount": 53000000,
+      "investedAt": "2024-03-18",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-hippocratic-ai"
+    },
+    {
+      "company": {
+        "name": "Collaborative Robotics",
+        "description": "Develops mobile collaborative robots that move materials alongside workers.",
+        "websiteUrl": "https://www.co.bot",
+        "location": "Santa Clara, CA",
+        "sectors": [
+          "Robotics",
+          "Manufacturing",
+          "Logistics"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 100000000,
+      "investedAt": "2024-04-10",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-collaborative-robotics"
+    },
+    {
+      "company": {
+        "name": "Finch",
+        "description": "Unified API for connecting apps to employer HR and payroll systems.",
+        "websiteUrl": "https://www.tryfinch.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "HR Tech",
+          "Developer Tools",
+          "Fintech"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 40000000,
+      "investedAt": "2023-02-22",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-finch-empowering-the-future-of-employment-with-a-universal-api"
+    },
+    {
+      "company": {
+        "name": "Mercor",
+        "description": "Platform that recruits domain experts to produce training data for AI labs.",
+        "websiteUrl": "https://www.mercor.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "AI",
+          "HR Tech",
+          "Marketplace"
+        ]
+      },
+      "stage": "Series B",
+      "amount": 100000000,
+      "investedAt": "2025-02-20",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-mercor"
+    },
+    {
+      "company": {
+        "name": "Meter",
+        "description": "Provides managed enterprise networking hardware, software and operations as a service.",
+        "websiteUrl": "https://www.meter.com",
+        "location": "San Francisco, CA",
+        "sectors": [
+          "Hardware",
+          "Cloud Infrastructure",
+          "Enterprise Software"
+        ]
+      },
+      "stage": "Series C",
+      "amount": 170000000,
+      "investedAt": "2025-06-12",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-meter"
+    },
+    {
+      "company": {
+        "name": "Modal",
+        "description": "Serverless cloud platform for running AI inference, training and batch jobs.",
+        "websiteUrl": "https://modal.com",
+        "location": "New York, NY",
+        "sectors": [
+          "Cloud Infrastructure",
+          "Developer Tools",
+          "AI"
+        ]
+      },
+      "stage": "Series C",
+      "amount": null,
+      "investedAt": "2026-05-21",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-modal"
+    },
+    {
+      "company": {
+        "name": "Saronic",
+        "description": "Builds autonomous surface vessels for defense and maritime operations.",
+        "websiteUrl": "https://www.saronic.com",
+        "location": "Austin, TX",
+        "sectors": [
+          "Defense Tech",
+          "Autonomous Vehicles",
+          "Robotics"
+        ]
+      },
+      "stage": "Series C",
+      "amount": null,
+      "investedAt": "2025-02-18",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-saronic"
+    },
+    {
+      "company": {
+        "name": "Applied Intuition",
+        "description": "Simulation and autonomy software for vehicle and defense developers.",
+        "websiteUrl": "https://www.appliedintuition.com",
+        "location": "Sunnyvale, CA",
+        "sectors": [
+          "Autonomous Vehicles",
+          "Enterprise Software",
+          "AI"
+        ]
+      },
+      "stage": "Series E",
+      "amount": 250000000,
+      "investedAt": "2024-03-12",
+      "sourceUrl": "https://www.generalcatalyst.com/stories/our-investment-in-applied-intuition"
+    }
+  ]
+}

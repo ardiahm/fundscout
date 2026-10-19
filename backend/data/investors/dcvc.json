@@ -1,0 +1,56 @@
+{
+  "investor": { "name": "DCVC", "type": "Venture Capital", "websiteUrl": "https://www.dcvc.com" },
+  "notes": "Agility Robotics' Oct 2020 $20M round is not labeled in DCVC's post; recorded as Series B per common reporting of it as the round after Agility's 2018 Series A. Rocket Lab Series E date is the Nov 2018 announcement; DCVC's post confirming its participation was published 2019-01-04.",
+  "investments": [
+    {
+      "company": { "name": "nTop", "description": "Develops engineering design software for complex parts and additive manufacturing.", "websiteUrl": "https://www.ntop.com", "location": "New York, NY", "sectors": ["Enterprise Software", "Manufacturing"] },
+      "stage": "Series A", "amount": 7600000, "investedAt": "2017-12-05",
+      "sourceUrl": "https://3dprintingindustry.com/news/ntopology-ceo-gives-insight-generative-design-raising-7-6m-125665/"
+    },
+    {
+      "company": { "name": "Rocket Lab", "description": "Builds small orbital launch vehicles and spacecraft for commercial and government customers.", "websiteUrl": "https://www.rocketlabusa.com", "location": "Long Beach, CA", "sectors": ["Space", "Aerospace"] },
+      "stage": "Series E", "amount": 140000000, "investedAt": "2018-11-15",
+      "sourceUrl": "https://www.dcvc.com/news-insights/rocket-lab-raises-140m-series-e-demonstrates-back-to-back-smallsat-launches-for-revenue"
+    },
+    {
+      "company": { "name": "Lumafield", "description": "Makes industrial CT scanners and cloud software for inspecting the inside of manufactured parts.", "websiteUrl": "https://www.lumafield.com", "location": "Cambridge, MA", "sectors": ["Hardware", "Manufacturing", "Data & Analytics"] },
+      "stage": "Series C", "amount": 75000000, "investedAt": "2025-03-13",
+      "sourceUrl": "https://www.dcvc.com/news-insights/lumafield-raises-75-million-to-give-manufacturers-a-look-deep-inside-their-products-as-they-come-out-of-the-lab-and-off-the-line"
+    },
+    {
+      "company": { "name": "Agility Robotics", "description": "Builds Digit, a bipedal humanoid robot for warehouse and logistics work.", "websiteUrl": "https://www.agilityrobotics.com", "location": "Salem, OR", "sectors": ["Robotics", "Logistics"] },
+      "stage": "Series B", "amount": 20000000, "investedAt": "2020-10-15",
+      "sourceUrl": "https://www.dcvc.com/news-insights/the-future-of-repetitive-physically-demanding-and-dangerous-work-dcvc-co-leads-investment-in-agility-robotics"
+    },
+    {
+      "company": { "name": "Zap Energy", "description": "Develops sheared-flow Z-pinch fusion technology for power generation.", "websiteUrl": "https://www.zapenergy.com", "location": "Everett, WA", "sectors": ["Energy", "Climate Tech"] },
+      "stage": "Series C", "amount": 160000000, "investedAt": "2022-06-22",
+      "sourceUrl": "https://techcrunch.com/2022/06/22/zap-energy-nets-160m-series-c-to-advance-its-lightning-in-a-bottle-fusion-tech/"
+    },
+    {
+      "company": { "name": "Reality Defender", "description": "Provides software that detects deepfake audio, video, images and text.", "websiteUrl": "https://www.realitydefender.com", "location": "New York, NY", "sectors": ["Cybersecurity", "AI"] },
+      "stage": "Series A", "amount": 15000000, "investedAt": "2023-10-17",
+      "sourceUrl": "https://techcrunch.com/2023/10/17/reality-defender-raises-15m-to-detect-text-video-and-image-deepfakes/"
+    },
+    {
+      "company": { "name": "Radiant", "description": "Develops portable nuclear microreactors for off-grid and military power.", "websiteUrl": "https://www.radiantnuclear.com", "location": "El Segundo, CA", "sectors": ["Energy", "Hardware", "Defense Tech"] },
+      "stage": "Series C", "amount": 100000000, "investedAt": "2024-11-14",
+      "sourceUrl": "https://www.dcvc.com/news-insights/radiant-industries-raises-100-million-dcvc-climate-led-series-c-to-speed-microreactors-to-market"
+    },
+    {
+      "company": { "name": "Slip Robotics", "description": "Builds robots that load and unload trucks at warehouse docks.", "websiteUrl": "https://www.sliprobotics.com", "location": "Atlanta, GA", "sectors": ["Robotics", "Logistics"] },
+      "stage": "Series B", "amount": 28000000, "investedAt": "2024-12-17",
+      "sourceUrl": "https://www.dcvc.com/news-insights/clearing-the-docks"
+    },
+    {
+      "company": { "name": "Emerald AI", "description": "Develops software that makes data center power demand flexible in response to grid signals.", "websiteUrl": "https://emeraldai.co", "location": "Washington, DC", "sectors": ["AI", "Energy", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 150000000, "investedAt": "2026-08-25",
+      "sourceUrl": "https://www.dcvc.com/news-insights/dcvc-co-leads-emerald-ais-150-million-series-a-round-to-transform-data-centers-into-intelligent-grid-responsive-assets"
+    },
+    {
+      "company": { "name": "Embark", "description": "Developed self-driving software for long-haul semi trucks.", "websiteUrl": "https://embarktrucks.com", "location": "San Francisco, CA", "sectors": ["Autonomous Vehicles", "Logistics", "Transportation"] },
+      "stage": "Series C", "amount": 70000000, "investedAt": "2019-09-25",
+      "sourceUrl": "https://www.forbes.com/sites/alanohnsman/2019/09/25/self-driving-startup-embark-raises-70-million-opens-freight-hubs-for-robot-big-rigs/"
+    }
+  ]
+}

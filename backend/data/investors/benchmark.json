@@ -1,0 +1,61 @@
+{
+  "investor": { "name": "Benchmark", "type": "Venture Capital", "websiteUrl": "https://www.benchmark.com" },
+  "notes": "Cerebras Series A (2016) has no exact announcement date in the source, so investedAt is null; TechCrunch gives the round as $25M while other reports say $27M.",
+  "investments": [
+    {
+      "company": { "name": "Snap", "description": "Camera and messaging company that makes the Snapchat app.", "websiteUrl": "https://www.snap.com", "location": "Santa Monica, CA", "sectors": ["Social", "Communication"] },
+      "stage": "Series A", "amount": 13500000, "investedAt": "2013-02-08",
+      "sourceUrl": "https://techcrunch.com/2013/02/08/snapchat-raises-13-5m-series-a-led-by-benchmark-now-sees-60m-snaps-sent-per-day/"
+    },
+    {
+      "company": { "name": "HackerOne", "description": "Bug bounty and vulnerability disclosure platform connecting companies with security researchers.", "websiteUrl": "https://www.hackerone.com", "location": "San Francisco, CA", "sectors": ["Cybersecurity"] },
+      "stage": "Series A", "amount": 9000000, "investedAt": "2014-05-28",
+      "sourceUrl": "https://techcrunch.com/2014/05/28/hackerone-get-9m-in-series-a-funding-to-build-bug-tracking-bounty-programs/"
+    },
+    {
+      "company": { "name": "Confluent", "description": "Data streaming platform built around Apache Kafka.", "websiteUrl": "https://www.confluent.io", "location": "Mountain View, CA", "sectors": ["Data & Analytics", "Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series A", "amount": 6900000, "investedAt": "2014-11-06",
+      "sourceUrl": "https://techcrunch.com/2014/11/06/confluent/"
+    },
+    {
+      "company": { "name": "Amplitude", "description": "Product analytics software for tracking how users engage with digital products.", "websiteUrl": "https://amplitude.com", "location": "San Francisco, CA", "sectors": ["Data & Analytics", "SaaS"] },
+      "stage": "Series A", "amount": 9000000, "investedAt": "2015-08",
+      "sourceUrl": "https://amplitude.com/press/series-a"
+    },
+    {
+      "company": { "name": "Cerebras", "description": "Maker of wafer-scale processors and systems for AI training and inference.", "websiteUrl": "https://www.cerebras.ai", "location": "Sunnyvale, CA", "sectors": ["Semiconductors", "AI", "Hardware"] },
+      "stage": "Series A", "amount": 25000000, "investedAt": null,
+      "sourceUrl": "https://techcrunch.com/2026/05/14/cerebras-ipo-makes-billions-for-benchmark-but-vc-eric-vishria-almost-didnt-take-the-meeting/"
+    },
+    {
+      "company": { "name": "LangChain", "description": "Open-source framework and platform for building applications with large language models.", "websiteUrl": "https://www.langchain.com", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Seed", "amount": 10000000, "investedAt": "2023-04-04",
+      "sourceUrl": "https://www.langchain.com/blog/announcing-our-10m-seed-round-led-by-benchmark"
+    },
+    {
+      "company": { "name": "Fireworks AI", "description": "Inference platform for running and fine-tuning generative AI models.", "websiteUrl": "https://fireworks.ai", "location": "Redwood City, CA", "sectors": ["AI", "Cloud Infrastructure", "Developer Tools"] },
+      "stage": "Series A", "amount": 25000000, "investedAt": "2024-03",
+      "sourceUrl": "https://www.thesaasnews.com/news/fireworks-ai-secures-25-million-in-series-a"
+    },
+    {
+      "company": { "name": "Mercor", "description": "AI-driven hiring platform that matches experts with AI labs and companies.", "websiteUrl": "https://www.mercor.com", "location": "San Francisco, CA", "sectors": ["AI", "HR Tech", "Marketplace"] },
+      "stage": "Series A", "amount": 30000000, "investedAt": "2024-09-23",
+      "sourceUrl": "https://pulse2.com/mercor-ai-based-hiring-platform-company-closes-30-million-series-a-at-250-million-valuation"
+    },
+    {
+      "company": { "name": "Reducto", "description": "AI document parsing service that turns complex documents into structured data.", "websiteUrl": "https://reducto.ai", "location": "San Francisco, CA", "sectors": ["AI", "Data & Analytics", "Developer Tools"] },
+      "stage": "Series A", "amount": 24500000, "investedAt": "2025-04-25",
+      "sourceUrl": "https://www.fortune.com/2025/04/25/exclusive-reducto-ai-document-parsing-startup-raises-24-5-million-series-a-led-by-benchmark/"
+    },
+    {
+      "company": { "name": "Exa", "description": "Web search engine and API built for AI applications and agents.", "websiteUrl": "https://exa.ai", "location": "San Francisco, CA", "sectors": ["AI", "Developer Tools"] },
+      "stage": "Series B", "amount": 85000000, "investedAt": "2025-09",
+      "sourceUrl": "https://www.lw.com/en/news/2025/09/latham-watkins-advises-exa-in-us85-million-series-b-financing-with-benchmark-and-lightspeed"
+    },
+    {
+      "company": { "name": "Starcloud", "description": "Company building orbital data centers for AI computing.", "websiteUrl": "https://www.starcloud.com", "location": "Redmond, WA", "sectors": ["Space", "Cloud Infrastructure", "AI"] },
+      "stage": "Series A", "amount": 170000000, "investedAt": "2026-03-30",
+      "sourceUrl": "https://techcrunch.com/2026/03/30/starcloud-raises-170-million-series-ato-build-data-centers-in-space/"
+    }
+  ]
+}

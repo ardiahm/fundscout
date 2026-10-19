@@ -1,0 +1,61 @@
+{
+  "investor": { "name": "Kleiner Perkins", "type": "Venture Capital", "websiteUrl": "https://www.kleinerperkins.com" },
+  "notes": "Rippling date is month-only (April 2019 per TechCrunch coverage; company blog shows only an update date). Browserbase Series A was co-led with CRV; date given as month only because sources differ (Oct 29 to Nov 12, 2024).",
+  "investments": [
+    {
+      "company": { "name": "Phia", "description": "AI shopping agent app that compares prices for new and secondhand fashion.", "websiteUrl": "https://phia.com", "location": "New York, NY", "sectors": ["E-commerce", "AI"] },
+      "stage": "Seed", "amount": 8000000, "investedAt": "2025-09-17",
+      "sourceUrl": "https://fortune.com/2025/09/17/fashion-tech-phia-fundraise-seed-round-phoebe-gates-kleiner-perkins"
+    },
+    {
+      "company": { "name": "Rippling", "description": "Workforce management platform for HR, payroll, IT and spend.", "websiteUrl": "https://www.rippling.com", "location": "San Francisco, CA", "sectors": ["HR Tech", "SaaS"] },
+      "stage": "Series A", "amount": 45000000, "investedAt": "2019-04",
+      "sourceUrl": "https://www.rippling.com/blog/rippling-45m-series-a-kleiner-perkins"
+    },
+    {
+      "company": { "name": "Together AI", "description": "Cloud platform for training, fine-tuning and running open-source AI models.", "websiteUrl": "https://www.together.ai", "location": "San Francisco, CA", "sectors": ["AI", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 102500000, "investedAt": "2023-11-29",
+      "sourceUrl": "https://www.together.ai/blog/series-a"
+    },
+    {
+      "company": { "name": "Browserbase", "description": "Headless browser infrastructure that lets AI agents and developers automate the web.", "websiteUrl": "https://www.browserbase.com", "location": "San Francisco, CA", "sectors": ["Developer Tools", "AI", "Cloud Infrastructure"] },
+      "stage": "Series A", "amount": 21000000, "investedAt": "2024-11",
+      "sourceUrl": "https://www.kleinerperkins.com/perspectives/browserbase-ai-seriesa/"
+    },
+    {
+      "company": { "name": "Profound", "description": "Platform that tracks how brands appear in AI chatbot and AI search answers.", "websiteUrl": "https://www.tryprofound.com", "location": "New York, NY", "sectors": ["AI", "Data & Analytics", "SaaS"] },
+      "stage": "Series A", "amount": 20000000, "investedAt": "2025-06",
+      "sourceUrl": "https://www.builtinnyc.com/articles/profound-raises-20m-series-a-20250625"
+    },
+    {
+      "company": { "name": "Figma", "description": "Browser-based collaborative interface design and prototyping tool.", "websiteUrl": "https://www.figma.com", "location": "San Francisco, CA", "sectors": ["Productivity", "SaaS"] },
+      "stage": "Series B", "amount": 25000000, "investedAt": "2018-02-01",
+      "sourceUrl": "https://www.figma.com/blog/figma-raises-usd25mm-series-b/"
+    },
+    {
+      "company": { "name": "Harvey", "description": "Generative AI platform for legal and professional services work.", "websiteUrl": "https://www.harvey.ai", "location": "San Francisco, CA", "sectors": ["Legal Tech", "AI"] },
+      "stage": "Series B", "amount": 80000000, "investedAt": "2023-12-19",
+      "sourceUrl": "https://www.harvey.ai/blog/harvey-raises-80m-series-b-from-elad-gil-kleiner-perkins-openai-and-sequoia"
+    },
+    {
+      "company": { "name": "Ambience Healthcare", "description": "AI software that automates clinical documentation and coding for health systems.", "websiteUrl": "https://www.ambiencehealthcare.com", "location": "San Francisco, CA", "sectors": ["Healthtech", "AI"] },
+      "stage": "Series B", "amount": 70000000, "investedAt": "2024-02-06",
+      "sourceUrl": "https://techcrunch.com/2024/02/06/ambience-healthcare-raises-70m-for-its-ai-assistant-led-by-openai-and-kleiner-perkins"
+    },
+    {
+      "company": { "name": "DoorDash", "description": "On-demand delivery platform connecting customers with local restaurants and stores.", "websiteUrl": "https://www.doordash.com", "location": "San Francisco, CA", "sectors": ["Logistics", "Marketplace"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2015-03",
+      "sourceUrl": "https://www.pymnts.com/news/2015/on-demand-delivery-firm-doordash-grabs-40m/"
+    },
+    {
+      "company": { "name": "Rapid Robotics", "description": "Rents preconfigured robotic arms for machine-tending tasks in factories.", "websiteUrl": "https://www.rapidrobotics.com", "location": "San Francisco, CA", "sectors": ["Robotics", "Manufacturing"] },
+      "stage": "Series B", "amount": 36700000, "investedAt": "2021-08-18",
+      "sourceUrl": "https://techcrunch.com/2021/08/18/rapid-robotics-raises-another-36-7m"
+    },
+    {
+      "company": { "name": "Glean", "description": "AI-powered enterprise search and work assistant across company apps.", "websiteUrl": "https://www.glean.com", "location": "Palo Alto, CA", "sectors": ["Enterprise Software", "AI"] },
+      "stage": "Series D", "amount": 200000000, "investedAt": "2024-02-27",
+      "sourceUrl": "https://www.glean.com/press/glean-announces-over-200m-series-d-to-accelerate-secure-deployment-of-generative-ai-in-the-enterprise"
+    }
+  ]
+}

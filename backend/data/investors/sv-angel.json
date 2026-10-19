@@ -1,0 +1,36 @@
+{
+  "investor": { "name": "SV Angel", "type": "Angel", "websiteUrl": "https://svangel.com" },
+  "notes": "Only 6 rounds included. SV Angel rarely leads and is usually listed among many co-investors, so few rounds have a dated source naming it with a clear stage and a verifiable US HQ. Even was acquired by One and even.com now redirects there.",
+  "investments": [
+    {
+      "company": { "name": "Practice Fusion", "description": "Cloud-based electronic health record software for physician practices.", "websiteUrl": "https://www.practicefusion.com", "location": "San Francisco, CA", "sectors": ["Healthtech", "SaaS"] },
+      "stage": "Series C", "amount": 34000000, "investedAt": "2012-06-28",
+      "sourceUrl": "https://techcrunch.com/2012/06/28/practice-fusion/"
+    },
+    {
+      "company": { "name": "Pinterest", "description": "Visual discovery platform where users save and share images and ideas.", "websiteUrl": "https://www.pinterest.com", "location": "San Francisco, CA", "sectors": ["Social", "Media"] },
+      "stage": "Series F", "amount": 200000000, "investedAt": "2014-05-15",
+      "sourceUrl": "https://techcrunch.com/2014/05/15/svangel-leads-pinterests-5-billion-round/"
+    },
+    {
+      "company": { "name": "Even", "description": "Earned wage access and budgeting app offered to hourly workers through employers.", "websiteUrl": "https://www.even.com", "location": "Oakland, CA", "sectors": ["Fintech", "Consumer Finance", "HR Tech"] },
+      "stage": "Series B", "amount": 40000000, "investedAt": "2018-07-19",
+      "sourceUrl": "https://techcrunch.com/2018/07/19/even-raises-40m-to-transform-the-working-class-to-the-savings-class/"
+    },
+    {
+      "company": { "name": "SST", "description": "Open-source framework for building and deploying serverless applications, formerly Serverless Stack.", "websiteUrl": "https://sst.dev", "location": "San Francisco, CA", "sectors": ["Developer Tools", "Cloud Infrastructure"] },
+      "stage": "Seed", "amount": 1000000, "investedAt": "2021-07-23",
+      "sourceUrl": "https://techcrunch.com/2021/07/23/serverless-stack-raises-1m-for-open-source-application-framework/"
+    },
+    {
+      "company": { "name": "Kumo", "description": "Platform that applies graph-based machine learning to enterprise data for predictions.", "websiteUrl": "https://kumo.ai", "location": "Mountain View, CA", "sectors": ["AI", "Data & Analytics"] },
+      "stage": "Series B", "amount": 18000000, "investedAt": "2022-09-27",
+      "sourceUrl": "https://techcrunch.com/2022/09/27/kumo-aims-to-bring-predictive-ai-to-the-enterprise-with-18m-in-fresh-capital/"
+    },
+    {
+      "company": { "name": "Method", "description": "Financial connectivity API for consumer debts such as loans and credit cards.", "websiteUrl": "https://methodfi.com", "location": "Austin, TX", "sectors": ["Fintech", "Developer Tools"] },
+      "stage": "Series A", "amount": 16000000, "investedAt": "2023-01-26",
+      "sourceUrl": "https://techcrunch.com/2023/01/26/method-raises-16m-to-power-loan-repayment-balance-transfers-and-more-across-fintech-apps/"
+    }
+  ]
+}
