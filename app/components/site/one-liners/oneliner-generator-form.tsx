@@ -148,7 +148,7 @@ export default function OneLinerGenerator() {
         >
           <FieldGroup className="w-full min-w-0">
             <FieldSet className="w-full min-w-0">
-              <div className="flex flex-row">
+              <div className="flex flex-col gap-6 sm:flex-row sm:gap-0">
                 <Controller
                   name="target"
                   control={form.control}
