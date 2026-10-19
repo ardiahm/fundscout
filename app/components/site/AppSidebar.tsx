@@ -23,7 +23,7 @@ import {
   SidebarMenuItem,
 } from "../ui/sidebar"
 
-const generatorItems = [
+export const generatorItems = [
   {
     title: "Pitch Deck Generator",
     url: "/coming-soon",

@@ -12,6 +12,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
 import { UserButton } from "@clerk/nextjs";
+import { generatorItems } from "./AppSidebar";
 
 export default function UnivNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -95,7 +96,7 @@ export default function UnivNavBar() {
         {/* Mobile Menu Panel */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            isMobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 sm:px-6 py-4">
@@ -115,13 +116,32 @@ export default function UnivNavBar() {
                 Favorites
               </Link>
               <Link
-                href="/dashboard"
+                href="/pricing"
                 onClick={closeMobileMenu}
                 className="text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2"
               >
                 Pricing
               </Link>
-              <div className="flex">
+
+              {/* Startup Generators */}
+              <div className="border-t border-gray-200 pt-3">
+                <p className="text-sm font-medium text-gray-500 pb-1">
+                  Startup Generators
+                </p>
+                {generatorItems.map((item) => (
+                  <Link
+                    key={item.title}
+                    href={item.url}
+                    onClick={closeMobileMenu}
+                    className="flex items-center gap-3 text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2"
+                  >
+                    <item.icon className="h-5 w-5" />
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="flex border-t border-gray-200 pt-3">
                 <UserButton />
                 <p className="text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2 px-3">Account</p>
               </div>
