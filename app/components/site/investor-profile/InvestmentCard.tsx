@@ -36,7 +36,7 @@ export default function InvestmentCards({ investments }: InvestmentCardsProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {investments.map((inv) => (
         <Card key={inv.id}>
           <CardContent className="p-5 space-y-4">

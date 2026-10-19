@@ -30,11 +30,11 @@ export default function LargestInvestmentCard({
           {/* Header and Logo */}
           <div>
             <div className="flex items-center justify-between">
-              <p className="text-3xl font-semibold text-emerald-700 font-style: underline">
+              <p className="text-2xl sm:text-3xl font-semibold text-emerald-700 font-style: underline">
                 Largest Investment:
               </p>
 
-              <div className="pr-6">
+              <div className="sm:pr-6">
                   {largestInvestment?.company.logoUrl && (
                     <img
                       src={largestInvestment.company.logoUrl}

@@ -38,18 +38,18 @@ export default function InvestorProfileCard({
   return (
     <Card>
       <CardHeader className="space-y-4">
-        <div className="flex items-center justify-between gap-6">
-          <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             {investor.avatarUrl && (
               <img
                 src={investor.avatarUrl}
                 alt={investor.name}
-                className="w-20 h-20 rounded-full object-cover"
+                className="w-14 h-14 sm:w-20 sm:h-20 rounded-full object-cover"
               />
             )}
 
             <div>
-              <CardTitle className="text-4xl">{investor.name}</CardTitle>
+              <CardTitle className="text-2xl sm:text-4xl">{investor.name}</CardTitle>
               <CardDescription className="italic pt-2">
                 {investor.type}
               </CardDescription>
@@ -75,7 +75,7 @@ export default function InvestorProfileCard({
         </div>
       </CardHeader>
 
-      <CardContent className="grid grid-cols-2 text-sm">
+      <CardContent className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 sm:gap-0">
         {/* LEFT COLUMN */}
         <div className="space-y-3">
           <p>
@@ -92,7 +92,7 @@ export default function InvestorProfileCard({
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="space-y-3 text-right">
+        <div className="space-y-3 sm:text-right">
           <p>
             Average Investment Size:{" "}
             <span className="font-semibold">

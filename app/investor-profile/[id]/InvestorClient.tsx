@@ -51,7 +51,7 @@ export default function InvestorClient({
   };
 
   return (
-    <div className="max-w-screen mx-10 px-6 py-6 space-y-10">
+    <div className="max-w-screen mx-2 px-2 py-6 space-y-10 sm:mx-10 sm:px-6">
       {/* ================= Investor Header ================= */}
       <header className="mb-6">
         <Button
@@ -70,7 +70,7 @@ export default function InvestorClient({
       </header>
 
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-[6fr_4fr] space-x-5 space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-[6fr_4fr] gap-5">
           <LargestInvestmentCard investor={investor} />
           <MostRecentInvestmentCard investor={investor} />
         </div>

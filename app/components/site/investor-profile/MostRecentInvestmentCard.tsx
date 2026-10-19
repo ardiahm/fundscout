@@ -33,11 +33,11 @@ export default function MostRecentInvestmentCard({
           {/* Header and Logo */}
           <div>
             <div className="flex items-center justify-between">
-              <p className="text-3xl font-semibold text-sky-600 font-style: underline">
+              <p className="text-2xl sm:text-3xl font-semibold text-sky-600 font-style: underline">
                 Most Recent:
               </p>
 
-              <div className="pr-6">
+              <div className="sm:pr-6">
                   {mostRecentInvestment?.company.logoUrl && (
                     <img
                       src={mostRecentInvestment.company.logoUrl}
