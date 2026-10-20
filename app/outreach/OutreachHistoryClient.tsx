@@ -1,33 +1,23 @@
 "use client";
 
-import {
-  Empty,
-  EmptyContent,
-  EmptyDescription,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle,
-} from "@/app/components/ui/empty";
-import { Button } from "@/app/components/ui/button";
-import { BookX } from "lucide-react";
-import type { OneLinerInteraction } from "@/backend/types/oneliner";
-import { EmptyHistoricalOneLiners } from "../components/site/one-liners/EmptyHistoricalOneLiners";
-import { DisplayHistoricalOneLiners } from "../components/site/one-liners/DisplayHistoricalOneLiners";
+import type { OutreachInteraction } from "@/backend/types/outreach";
+import { EmptyHistoricalOutreach } from "../components/site/outreach/EmptyHistoricalOutreach";
+import { DisplayHistoricalOutreach } from "../components/site/outreach/DisplayHistoricalOutreach";
 import { useEffect } from "react"
 
-type HistoryClientProps = {
+type OutreachHistoryClientProps = {
   userId: string;
-  userHistory: OneLinerInteraction[];
+  userHistory: OutreachInteraction[];
   deleteAction: (interactionId: string) => Promise<void>;
 };
 
-// history client checks if a user has any historical one liners
+// history client checks if a user has any historical outreach
 export function OutreachHistoryClient({
   userId,
   userHistory,
   deleteAction,
-}: HistoryClientProps) {
-  let count = userHistory?.length;
+}: OutreachHistoryClientProps) {
+  const count = userHistory?.length;
 
   let hasHistory = false;
 
@@ -40,16 +30,16 @@ export function OutreachHistoryClient({
   }, []);
 
   return (
-    // if they have history, display historical one liners, else display empty historical one liners component
-    // empty component redircts to /one-liner/generator (form)
+    // if they have history, display historical outreach, else display empty historical outreach component
+    // empty component redirects to /outreach/generator (form)
     <div>
       {hasHistory ? (
-        <DisplayHistoricalOneLiners
+        <DisplayHistoricalOutreach
           history={userHistory}
           deleteAction={deleteAction}
         />
       ) : (
-        <EmptyHistoricalOneLiners />
+        <EmptyHistoricalOutreach />
       )}
     </div>
   );

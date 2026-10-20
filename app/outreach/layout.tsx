@@ -8,7 +8,7 @@ import BottomNewsletter from "../components/site/BottomNewsletter";
 import {Toaster} from "@/app/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "One Liner Generator",
+  title: "Outreach Generator",
 };
 
 export default function OutreachLayout({

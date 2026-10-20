@@ -1,10 +1,7 @@
-import OneLinerClient from "./generator/generator-client";
 import { ensureUser } from "@/app/lib/auth/ensureUser";
-import { prisma } from "@/backend/lib/prisma";
-import { getUsersOneLinerHistory } from "@/backend/api/oneliner/getUsersOneLinerHistory";
-import { EmptyHistoricalOneLiners } from "@/app/components/site/one-liners/EmptyHistoricalOneLiners";
-import { HistoryClient } from "@/app/one-liner/HistoryClient";
-import { deleteOneLinerInteraction } from "@/backend/server/one-liners/deleteOneLinerInteraction";
+import { getUsersOutreachHistory } from "@/backend/api/outreach/getUsersOutreachHistory";
+import { OutreachHistoryClient } from "@/app/outreach/OutreachHistoryClient";
+import { deleteOutreachInteraction } from "@/backend/server/outreach/deleteOutreachInteraction";
 
 export default async function OutreachPage() {
   // verify user
@@ -15,13 +12,11 @@ export default async function OutreachPage() {
     return 0;
   }
 
-  let userHistory = await getUsersOneLinerHistory(userId);
-
-  
+  const userHistory = await getUsersOutreachHistory(userId);
 
   return (
-    <div className="p-5 lg:mx-30 md:mx-30 sm:mx-20">
-      <HistoryClient userId={userId} userHistory={userHistory} deleteAction={deleteOneLinerInteraction} />
+    <div className="p-2 sm:p-5 lg:mx-30 md:mx-30 sm:mx-20">
+      <OutreachHistoryClient userId={userId} userHistory={userHistory} deleteAction={deleteOutreachInteraction} />
     </div>
   );
 }
