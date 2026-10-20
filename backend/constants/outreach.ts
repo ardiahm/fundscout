@@ -1,55 +1,31 @@
 import {
-  OutreachGoal,
+  OutreachAsk,
   OutreachMethod,
-  OutreachRelationship,
-  OutreachCallToAction,
   OutreachTone,
   OutreachLength,
-} from "@/backend/lib/generated/prisma/client";
+} from "@/backend/lib/generated/prisma/enums";
 
 import type { OutreachSubmission } from "@/backend/types/outreach";
+import * as z from "zod";
 
-export const outreachGoalLabels: Record<OutreachGoal, string> = {
-  [OutreachGoal.BOOK_A_MEETING]: "Book a meeting",
-  [OutreachGoal.ASK_FOR_ADVICE]: "Ask for advice",
-  [OutreachGoal.PITCH_PRODUCT_SERVICE]: "Pitch a product/service",
-  [OutreachGoal.FOLLOW_UP]: "Follow up",
-  [OutreachGoal.NETWORK]: "Network",
-  [OutreachGoal.RECRUITING_JOB_OPPORTUNITY]: "Recruiting/job opportunity",
-  [OutreachGoal.PARTNERSHIP]: "Partnership",
-  [OutreachGoal.OTHER]: "Other",
+export const outreachAskLabels: Record<OutreachAsk, string> = {
+  [OutreachAsk.BOOK_A_CALL]: "Book a call",
+  [OutreachAsk.GET_ADVICE]: "Get advice",
+  [OutreachAsk.GET_FEEDBACK]: "Get feedback",
+  [OutreachAsk.AN_INTRODUCTION]: "An introduction",
+  [OutreachAsk.GET_A_REPLY]: "Get a reply",
+  [OutreachAsk.OTHER]: "Other",
 };
 
 export const outreachMethodLabels: Record<OutreachMethod, string> = {
   [OutreachMethod.EMAIL]: "Email",
-  [OutreachMethod.MESSAGE_LINKEDIN_MOBILE]: "Message (LinkedIn or Mobile)",
-};
-
-export const outreachRelationshipLabels: Record<OutreachRelationship, string> = {
-  [OutreachRelationship.COLD_OUTREACH]: "Cold outreach",
-  [OutreachRelationship.MET_BEFORE]: "Met before",
-  [OutreachRelationship.REFERRED_BY_SOMEONE]: "Referred by someone",
-  [OutreachRelationship.EXISTING_CUSTOMER_CLIENT]: "Existing customer/client",
-  [OutreachRelationship.PAST_CONVERSATION]: "Past conversation",
-  [OutreachRelationship.FRIEND_ACQUAINTANCE]: "Friend/acquaintance",
-};
-
-export const outreachCallToActionLabels: Record<OutreachCallToAction, string> = {
-  [OutreachCallToAction.SCHEDULE_A_CALL]: "Schedule a call",
-  [OutreachCallToAction.REPLY_WITH_INTEREST]: "Reply with interest",
-  [OutreachCallToAction.GIVE_FEEDBACK]: "Give feedback",
-  [OutreachCallToAction.TRY_THE_PRODUCT]: "Try the product",
-  [OutreachCallToAction.MAKE_AN_INTRODUCTION]: "Make an introduction",
-  [OutreachCallToAction.ANSWER_A_QUESTION]: "Answer a question",
-  [OutreachCallToAction.OTHER]: "Other",
+  [OutreachMethod.MESSAGE_LINKEDIN_MOBILE]: "Message",
 };
 
 export const outreachToneLabels: Record<OutreachTone, string> = {
   [OutreachTone.PROFESSIONAL]: "Professional",
-  [OutreachTone.CASUAL]: "Casual",
   [OutreachTone.FRIENDLY]: "Friendly",
-  [OutreachTone.CONFIDENT]: "Confident",
-  [OutreachTone.WARM]: "Warm",
+  [OutreachTone.CASUAL]: "Casual",
   [OutreachTone.DIRECT]: "Direct",
 };
 
@@ -59,47 +35,53 @@ export const outreachLengthLabels: Record<OutreachLength, string> = {
   [OutreachLength.DETAILED]: "Detailed",
 };
 
-const displayValue = (value?: string | null) => {
-  const trimmed = value?.trim();
-  return trimmed ? trimmed : "Not provided";
-};
+// shared by the outreach form (client) and generateOutreach (server)
+export const outreachFormSchema = z.object({
+  sender: z
+    .string()
+    .trim()
+    .min(2, "Tell us at least your name.")
+    .max(300, "Who you are cannot be more than 300 characters."),
+  recipient: z
+    .string()
+    .trim()
+    .min(2, "Tell us who you're writing to.")
+    .max(300, "Who you're writing to cannot be more than 300 characters."),
+  reason: z
+    .string()
+    .trim()
+    .min(10, "Please give at least 10 characters of context.")
+    .max(1000, "Why you're reaching out cannot be more than 1000 characters."),
+
+  ask: z.enum(OutreachAsk, { message: "Please select what you want from them." }),
+  method: z.enum(OutreachMethod, { message: "Please select a format." }),
+  tone: z.enum(OutreachTone, { message: "Please select a tone." }),
+  length: z.enum(OutreachLength, { message: "Please select a length." }),
+});
+
+export type OutreachFormValues = z.infer<typeof outreachFormSchema>;
 
 export type FormattedOutreachSubmission = Omit<
   OutreachSubmission,
-  "goal" | "method" | "relationship" | "call_to_action" | "tone" | "length"
+  "id" | "ask" | "method" | "tone" | "length"
 > & {
-  goal: string;
+  ask: string;
   method: string;
-  relationship: string;
-  call_to_action: string;
   tone: string;
   length: string;
 };
 
+// swap enum values for readable labels before sending to Gemini
 export function formatOutreachSubmissionForGemini(
-  submission: OutreachSubmission,
+  submission: Omit<OutreachSubmission, "id">,
 ): FormattedOutreachSubmission {
   return {
-    ...submission,
+    sender: submission.sender.trim(),
+    recipient: submission.recipient.trim(),
+    reason: submission.reason.trim(),
 
-    sender_name: displayValue(submission.sender_name),
-    sender_role: displayValue(submission.sender_role),
-    sender_company: displayValue(submission.sender_company),
-    sender_background: displayValue(submission.sender_background),
-
-    recipient_name: displayValue(submission.recipient_name),
-    recipient_role: displayValue(submission.recipient_role),
-    recipient_company: displayValue(submission.recipient_company),
-    recipient_industry: displayValue(submission.recipient_industry),
-
-    relationship_context: displayValue(submission.relationship_context),
-    reason_for_reaching_out: displayValue(submission.reason_for_reaching_out),
-    call_to_action_details: displayValue(submission.call_to_action_details),
-
-    goal: outreachGoalLabels[submission.goal],
+    ask: outreachAskLabels[submission.ask],
     method: outreachMethodLabels[submission.method],
-    relationship: outreachRelationshipLabels[submission.relationship],
-    call_to_action: outreachCallToActionLabels[submission.call_to_action],
     tone: outreachToneLabels[submission.tone],
     length: outreachLengthLabels[submission.length],
   };
