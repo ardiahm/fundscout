@@ -97,6 +97,7 @@ model User {
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
   outreachHistory OutreachHistory?
+  valuationHistory ValuationHistory?
 }
 
 model FavoriteInvestor {
@@ -239,4 +240,62 @@ model RateLimit {
   updatedAt DateTime @updatedAt
 
   @@unique([key, action])
+}
+
+model ValuationHistory {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  interactions ValuationInteraction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ValuationInteraction {
+  id String @id @default(cuid())
+
+  historyId String
+  history   ValuationHistory @relation(fields: [historyId], references: [id], onDelete: Cascade)
+
+  submission ValuationSubmission?
+
+  // computed range, methods, comparables and the optional write-up
+  response Json
+
+  createdAt DateTime @default(now())
+}
+
+model ValuationSubmission {
+  id String @id @default(cuid())
+
+  interactionId String               @unique
+  interaction   ValuationInteraction @relation(fields: [interactionId], references: [id], onDelete: Cascade)
+
+  companyName String?
+  stage       ValuationStage
+  sector      String
+  raiseAmount Float
+
+  // only filled in when the startup has revenue
+  hasRevenue     Boolean
+  monthlyRevenue Float?
+  monthlyGrowth  Float?
+  grossMargin    Float?
+
+  // 1-5 self ratings
+  teamRating        Int
+  marketRating      Int
+  productRating     Int
+  competitionRating Int
+  tractionRating    Int
+}
+
+enum ValuationStage {
+  PRE_SEED
+  SEED
+  SERIES_A
+  SERIES_B
 }

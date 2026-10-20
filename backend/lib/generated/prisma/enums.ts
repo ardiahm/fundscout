@@ -82,3 +82,13 @@ export const OutreachLength = {
 } as const
 
 export type OutreachLength = (typeof OutreachLength)[keyof typeof OutreachLength]
+
+
+export const ValuationStage = {
+  PRE_SEED: 'PRE_SEED',
+  SEED: 'SEED',
+  SERIES_A: 'SERIES_A',
+  SERIES_B: 'SERIES_B'
+} as const
+
+export type ValuationStage = (typeof ValuationStage)[keyof typeof ValuationStage]

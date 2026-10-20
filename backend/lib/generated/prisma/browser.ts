@@ -87,3 +87,18 @@ export type OutreachSubmission = Prisma.OutreachSubmissionModel
  * 
  */
 export type RateLimit = Prisma.RateLimitModel
+/**
+ * Model ValuationHistory
+ * 
+ */
+export type ValuationHistory = Prisma.ValuationHistoryModel
+/**
+ * Model ValuationInteraction
+ * 
+ */
+export type ValuationInteraction = Prisma.ValuationInteractionModel
+/**
+ * Model ValuationSubmission
+ * 
+ */
+export type ValuationSubmission = Prisma.ValuationSubmissionModel

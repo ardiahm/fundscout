@@ -397,7 +397,10 @@ export const ModelName = {
   OutreachHistory: 'OutreachHistory',
   OutreachInteraction: 'OutreachInteraction',
   OutreachSubmission: 'OutreachSubmission',
-  RateLimit: 'RateLimit'
+  RateLimit: 'RateLimit',
+  ValuationHistory: 'ValuationHistory',
+  ValuationInteraction: 'ValuationInteraction',
+  ValuationSubmission: 'ValuationSubmission'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -413,7 +416,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor" | "oneLinerHistory" | "oneLinerInteraction" | "oneLinerSubmission" | "outreachHistory" | "outreachInteraction" | "outreachSubmission" | "rateLimit"
+    modelProps: "investor" | "company" | "sector" | "companySector" | "investment" | "user" | "favoriteInvestor" | "oneLinerHistory" | "oneLinerInteraction" | "oneLinerSubmission" | "outreachHistory" | "outreachInteraction" | "outreachSubmission" | "rateLimit" | "valuationHistory" | "valuationInteraction" | "valuationSubmission"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1453,6 +1456,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ValuationHistory: {
+      payload: Prisma.$ValuationHistoryPayload<ExtArgs>
+      fields: Prisma.ValuationHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ValuationHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ValuationHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.ValuationHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ValuationHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.ValuationHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.ValuationHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.ValuationHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ValuationHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.ValuationHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>
+        }
+        update: {
+          args: Prisma.ValuationHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.ValuationHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ValuationHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ValuationHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.ValuationHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.ValuationHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateValuationHistory>
+        }
+        groupBy: {
+          args: Prisma.ValuationHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ValuationHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ValuationHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ValuationHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
+    ValuationInteraction: {
+      payload: Prisma.$ValuationInteractionPayload<ExtArgs>
+      fields: Prisma.ValuationInteractionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ValuationInteractionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ValuationInteractionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>
+        }
+        findFirst: {
+          args: Prisma.ValuationInteractionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ValuationInteractionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>
+        }
+        findMany: {
+          args: Prisma.ValuationInteractionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>[]
+        }
+        create: {
+          args: Prisma.ValuationInteractionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>
+        }
+        createMany: {
+          args: Prisma.ValuationInteractionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ValuationInteractionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>[]
+        }
+        delete: {
+          args: Prisma.ValuationInteractionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>
+        }
+        update: {
+          args: Prisma.ValuationInteractionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>
+        }
+        deleteMany: {
+          args: Prisma.ValuationInteractionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ValuationInteractionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ValuationInteractionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>[]
+        }
+        upsert: {
+          args: Prisma.ValuationInteractionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationInteractionPayload>
+        }
+        aggregate: {
+          args: Prisma.ValuationInteractionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateValuationInteraction>
+        }
+        groupBy: {
+          args: Prisma.ValuationInteractionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ValuationInteractionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ValuationInteractionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ValuationInteractionCountAggregateOutputType> | number
+        }
+      }
+    }
+    ValuationSubmission: {
+      payload: Prisma.$ValuationSubmissionPayload<ExtArgs>
+      fields: Prisma.ValuationSubmissionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ValuationSubmissionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ValuationSubmissionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>
+        }
+        findFirst: {
+          args: Prisma.ValuationSubmissionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ValuationSubmissionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>
+        }
+        findMany: {
+          args: Prisma.ValuationSubmissionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>[]
+        }
+        create: {
+          args: Prisma.ValuationSubmissionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>
+        }
+        createMany: {
+          args: Prisma.ValuationSubmissionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ValuationSubmissionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>[]
+        }
+        delete: {
+          args: Prisma.ValuationSubmissionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>
+        }
+        update: {
+          args: Prisma.ValuationSubmissionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>
+        }
+        deleteMany: {
+          args: Prisma.ValuationSubmissionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ValuationSubmissionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ValuationSubmissionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>[]
+        }
+        upsert: {
+          args: Prisma.ValuationSubmissionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ValuationSubmissionPayload>
+        }
+        aggregate: {
+          args: Prisma.ValuationSubmissionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateValuationSubmission>
+        }
+        groupBy: {
+          args: Prisma.ValuationSubmissionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ValuationSubmissionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ValuationSubmissionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ValuationSubmissionCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1654,6 +1879,47 @@ export const RateLimitScalarFieldEnum = {
 export type RateLimitScalarFieldEnum = (typeof RateLimitScalarFieldEnum)[keyof typeof RateLimitScalarFieldEnum]
 
 
+export const ValuationHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ValuationHistoryScalarFieldEnum = (typeof ValuationHistoryScalarFieldEnum)[keyof typeof ValuationHistoryScalarFieldEnum]
+
+
+export const ValuationInteractionScalarFieldEnum = {
+  id: 'id',
+  historyId: 'historyId',
+  response: 'response',
+  createdAt: 'createdAt'
+} as const
+
+export type ValuationInteractionScalarFieldEnum = (typeof ValuationInteractionScalarFieldEnum)[keyof typeof ValuationInteractionScalarFieldEnum]
+
+
+export const ValuationSubmissionScalarFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  companyName: 'companyName',
+  stage: 'stage',
+  sector: 'sector',
+  raiseAmount: 'raiseAmount',
+  hasRevenue: 'hasRevenue',
+  monthlyRevenue: 'monthlyRevenue',
+  monthlyGrowth: 'monthlyGrowth',
+  grossMargin: 'grossMargin',
+  teamRating: 'teamRating',
+  marketRating: 'marketRating',
+  productRating: 'productRating',
+  competitionRating: 'competitionRating',
+  tractionRating: 'tractionRating'
+} as const
+
+export type ValuationSubmissionScalarFieldEnum = (typeof ValuationSubmissionScalarFieldEnum)[keyof typeof ValuationSubmissionScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1811,6 +2077,32 @@ export const RateLimitOrderByRelevanceFieldEnum = {
 } as const
 
 export type RateLimitOrderByRelevanceFieldEnum = (typeof RateLimitOrderByRelevanceFieldEnum)[keyof typeof RateLimitOrderByRelevanceFieldEnum]
+
+
+export const ValuationHistoryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
+} as const
+
+export type ValuationHistoryOrderByRelevanceFieldEnum = (typeof ValuationHistoryOrderByRelevanceFieldEnum)[keyof typeof ValuationHistoryOrderByRelevanceFieldEnum]
+
+
+export const ValuationInteractionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  historyId: 'historyId'
+} as const
+
+export type ValuationInteractionOrderByRelevanceFieldEnum = (typeof ValuationInteractionOrderByRelevanceFieldEnum)[keyof typeof ValuationInteractionOrderByRelevanceFieldEnum]
+
+
+export const ValuationSubmissionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  companyName: 'companyName',
+  sector: 'sector'
+} as const
+
+export type ValuationSubmissionOrderByRelevanceFieldEnum = (typeof ValuationSubmissionOrderByRelevanceFieldEnum)[keyof typeof ValuationSubmissionOrderByRelevanceFieldEnum]
 
 
 
@@ -2007,6 +2299,20 @@ export type EnumOutreachLengthFieldRefInput<$PrismaModel> = FieldRefInputType<$P
 export type ListEnumOutreachLengthFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OutreachLength[]'>
     
 
+
+/**
+ * Reference to a field of type 'ValuationStage'
+ */
+export type EnumValuationStageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ValuationStage'>
+    
+
+
+/**
+ * Reference to a field of type 'ValuationStage[]'
+ */
+export type ListEnumValuationStageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ValuationStage[]'>
+    
+
 /**
  * Batch Payload for updateMany & deleteMany & createMany
  */
@@ -2116,6 +2422,9 @@ export type GlobalOmitConfig = {
   outreachInteraction?: Prisma.OutreachInteractionOmit
   outreachSubmission?: Prisma.OutreachSubmissionOmit
   rateLimit?: Prisma.RateLimitOmit
+  valuationHistory?: Prisma.ValuationHistoryOmit
+  valuationInteraction?: Prisma.ValuationInteractionOmit
+  valuationSubmission?: Prisma.ValuationSubmissionOmit
 }
 
 /* Types for Logging */

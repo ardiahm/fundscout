@@ -64,7 +64,10 @@ export const ModelName = {
   OutreachHistory: 'OutreachHistory',
   OutreachInteraction: 'OutreachInteraction',
   OutreachSubmission: 'OutreachSubmission',
-  RateLimit: 'RateLimit'
+  RateLimit: 'RateLimit',
+  ValuationHistory: 'ValuationHistory',
+  ValuationInteraction: 'ValuationInteraction',
+  ValuationSubmission: 'ValuationSubmission'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -245,6 +248,47 @@ export const RateLimitScalarFieldEnum = {
 export type RateLimitScalarFieldEnum = (typeof RateLimitScalarFieldEnum)[keyof typeof RateLimitScalarFieldEnum]
 
 
+export const ValuationHistoryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ValuationHistoryScalarFieldEnum = (typeof ValuationHistoryScalarFieldEnum)[keyof typeof ValuationHistoryScalarFieldEnum]
+
+
+export const ValuationInteractionScalarFieldEnum = {
+  id: 'id',
+  historyId: 'historyId',
+  response: 'response',
+  createdAt: 'createdAt'
+} as const
+
+export type ValuationInteractionScalarFieldEnum = (typeof ValuationInteractionScalarFieldEnum)[keyof typeof ValuationInteractionScalarFieldEnum]
+
+
+export const ValuationSubmissionScalarFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  companyName: 'companyName',
+  stage: 'stage',
+  sector: 'sector',
+  raiseAmount: 'raiseAmount',
+  hasRevenue: 'hasRevenue',
+  monthlyRevenue: 'monthlyRevenue',
+  monthlyGrowth: 'monthlyGrowth',
+  grossMargin: 'grossMargin',
+  teamRating: 'teamRating',
+  marketRating: 'marketRating',
+  productRating: 'productRating',
+  competitionRating: 'competitionRating',
+  tractionRating: 'tractionRating'
+} as const
+
+export type ValuationSubmissionScalarFieldEnum = (typeof ValuationSubmissionScalarFieldEnum)[keyof typeof ValuationSubmissionScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -402,4 +446,30 @@ export const RateLimitOrderByRelevanceFieldEnum = {
 } as const
 
 export type RateLimitOrderByRelevanceFieldEnum = (typeof RateLimitOrderByRelevanceFieldEnum)[keyof typeof RateLimitOrderByRelevanceFieldEnum]
+
+
+export const ValuationHistoryOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
+} as const
+
+export type ValuationHistoryOrderByRelevanceFieldEnum = (typeof ValuationHistoryOrderByRelevanceFieldEnum)[keyof typeof ValuationHistoryOrderByRelevanceFieldEnum]
+
+
+export const ValuationInteractionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  historyId: 'historyId'
+} as const
+
+export type ValuationInteractionOrderByRelevanceFieldEnum = (typeof ValuationInteractionOrderByRelevanceFieldEnum)[keyof typeof ValuationInteractionOrderByRelevanceFieldEnum]
+
+
+export const ValuationSubmissionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  interactionId: 'interactionId',
+  companyName: 'companyName',
+  sector: 'sector'
+} as const
+
+export type ValuationSubmissionOrderByRelevanceFieldEnum = (typeof ValuationSubmissionOrderByRelevanceFieldEnum)[keyof typeof ValuationSubmissionOrderByRelevanceFieldEnum]
 
