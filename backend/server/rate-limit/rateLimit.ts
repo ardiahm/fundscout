@@ -85,3 +85,29 @@ export async function checkRateLimit({
     resetAt: existing.resetAt,
   };
 }
+
+// read-only check, for actions that should only count once they succeed
+export async function getRateLimitStatus({
+  key,
+  action,
+  limit,
+}: Omit<RateLimitOptions, "windowMs">) {
+  const existing = await prisma.rateLimit.findUnique({
+    where: {
+      key_action: {
+        key,
+        action,
+      },
+    },
+  });
+
+  if (!existing || existing.resetAt <= new Date()) {
+    return { allowed: true, remaining: limit, resetAt: null };
+  }
+
+  return {
+    allowed: existing.count < limit,
+    remaining: Math.max(limit - existing.count, 0),
+    resetAt: existing.resetAt,
+  };
+}
