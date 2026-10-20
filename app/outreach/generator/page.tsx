@@ -1,9 +1,9 @@
 
-import OneLinerClient from "@/app/one-liner/generator/one-liner-client";
+import OutreachGeneratorClient from "@/app/outreach/generator/generator-client";
 
 
 export default function OutreachGeneratorPage() {
     return (
-        <OneLinerClient />
+        <OutreachGeneratorClient />
     )
 }

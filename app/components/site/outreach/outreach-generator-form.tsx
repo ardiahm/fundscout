@@ -10,12 +10,11 @@ import {
 } from "../../ui/card";
 import { Button } from "@/app/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "../../ui/radio-group";
-import { Controller, useForm } from "react-hook-form";
+import { Control, Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -27,152 +26,48 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@/app/components/ui/input-group";
-import OneLinerGeminiCommunication from "@/backend/api/oneliner/generateOneLiners";
-import "dotenv/config";
+import OutreachGeminiCommunication from "@/backend/api/outreach/generateOutreach";
 import { useRouter } from "next/navigation";
 import {
-  OutreachGoal,
+  OutreachAsk,
   OutreachMethod,
-  OutreachRelationship,
-  OutreachCallToAction,
   OutreachTone,
   OutreachLength,
-} from "@/backend/lib/generated/prisma/client";
-import * as z from "zod";
-
-export const formSchema = z.object({
-  // Sender
-  sender_name: z
-    .string()
-    .min(2, "Your name must be at least 2 characters.")
-    .max(64, "Your name cannot be more than 64 characters."),
-
-  sender_role: z
-    .string()
-    .min(4, "Your role must be at least 4 characters.")
-    .max(64, "Your role cannot be more than 64 characters.")
-    .optional(),
-
-  sender_company: z
-    .string()
-    .min(4, "Your company must be at least 4 characters.")
-    .max(64, "Your company cannot be more than 64 characters.")
-    .optional(),
-
-  sender_background: z
-    .string()
-    .min(4, "Your background must be at least 4 characters.")
-    .max(500, "Your background cannot be more than 500 characters.")
-    .optional(),
-
-  // Recipient
-  recipient_name: z
-    .string()
-    .min(4, "Recipient name must be at least 4 characters.")
-    .max(64, "Recipient name cannot be more than 64 characters.")
-    .optional(),
-
-  recipient_role: z
-    .string()
-    .min(4, "Recipient role must be at least 4 characters.")
-    .max(64, "Recipient role cannot be more than 64 characters.")
-    .optional(),
-
-  recipient_company: z
-    .string()
-    .min(4, "Recipient company must be at least 4 characters.")
-    .max(64, "Recipient company cannot be more than 64 characters.")
-    .optional(),
-
-  recipient_industry: z
-    .string()
-    .min(4, "Recipient industry must be at least 4 characters.")
-    .max(64, "Recipient industry cannot be more than 64 characters.")
-    .optional(),
-
-  // Outreach details
-  goal: z.enum(OutreachGoal, {
-    message: "Please select an outreach goal.",
-  }),
-
-  method: z.enum(OutreachMethod, {
-    message: "Please select an outreach method.",
-  }),
-
-  relationship: z.enum(OutreachRelationship, {
-    message: "Please select your relationship to the recipient.",
-  }),
-
-  relationship_context: z
-    .string()
-    .max(500, "Relationship context cannot be more than 500 characters.")
-    .optional(),
-
-  // Message context
-  reason_for_reaching_out: z
-    .string()
-    .min(10, "Please give at least 10 characters of context.")
-    .max(500, "Reason cannot be more than 1000 characters."),
-
-  // Ask
-  call_to_action: z.enum(OutreachCallToAction, {
-    message: "Please select a call to action.",
-  }),
-
-  call_to_action_details: z
-    .string()
-    .max(500, "Call to action details cannot be more than 500 characters.")
-    .optional(),
-
-  // Style
-  tone: z.enum(OutreachTone, {
-    message: "Please select a tone.",
-  }),
-
-  length: z.enum(OutreachLength, {
-    message: "Please select a length.",
-  }),
-});
+} from "@/backend/lib/generated/prisma/enums";
+import {
+  outreachFormSchema,
+  type OutreachFormValues,
+  outreachAskLabels,
+  outreachMethodLabels,
+  outreachToneLabels,
+  outreachLengthLabels,
+} from "@/backend/constants/outreach";
 
 export default function OutreachGeneratorForm() {
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<OutreachFormValues>({
+    resolver: zodResolver(outreachFormSchema),
     defaultValues: {
-      sender_name: "",
-      sender_role: "",
-      sender_company: "",
-      sender_background: "",
+      sender: "",
+      recipient: "",
+      reason: "",
 
-      recipient_name: "",
-      recipient_role: "",
-      recipient_company: "",
-      recipient_industry: "",
-
-      goal: OutreachGoal.BOOK_A_MEETING,
+      ask: OutreachAsk.BOOK_A_CALL,
       method: OutreachMethod.EMAIL,
-      relationship: OutreachRelationship.COLD_OUTREACH,
-      relationship_context: "",
-
-      reason_for_reaching_out: "",
-
-      call_to_action: OutreachCallToAction.SCHEDULE_A_CALL,
-      call_to_action_details: "",
-
       tone: OutreachTone.PROFESSIONAL,
       length: OutreachLength.SHORT,
     },
   });
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: OutreachFormValues) {
     try {
       console.log("beginning to generate");
       console.log("form submission: ", data);
 
       const toastId = toast.loading("Generating...");
 
-      const result = await OneLinerGeminiCommunication(data);
+      const result = await OutreachGeminiCommunication(data);
 
       if (!result.success) {
         toast.error(result.error, {
@@ -183,7 +78,7 @@ export default function OutreachGeneratorForm() {
       }
 
       toast.success(
-        `One-liners generated! ${result.remaining} generations remaining today.`,
+        `Outreach generated! ${result.remaining} generations remaining today.`,
         {
           id: toastId,
         },
@@ -191,9 +86,9 @@ export default function OutreachGeneratorForm() {
 
       console.log(result.data);
 
-      router.replace("/one-liner", { scroll: true });
+      router.replace("/outreach", { scroll: true });
     } catch (error) {
-      toast.error("Something went wrong while generating one-liners.");
+      toast.error("Something went wrong while generating outreach.");
 
       console.error("Unexpected generation error:", error);
     }
@@ -202,16 +97,16 @@ export default function OutreachGeneratorForm() {
   return (
     <Card className="mx-auto w-full max-w-3xl overflow-hidden px-5">
       <CardHeader className="flex flex-col items-center text-center">
-        <CardTitle className="text-4xl">One Liner Generator</CardTitle>
+        <CardTitle className="text-4xl">Outreach Generator</CardTitle>
         <CardDescription>
-          Fill out the form below to generate some catchy one liners which
-          perfectly describe your product!
+          Tell us who you are, who you&apos;re writing to and why, and
+          we&apos;ll draft the email or message for you!
         </CardDescription>
       </CardHeader>
 
       <CardContent className="w-full min-w-0">
         <form
-          id="oneliner"
+          id="outreach"
           onSubmit={form.handleSubmit(onSubmit, (errors) => {
             console.log("Form verification failed:", errors);
           })}
@@ -219,303 +114,61 @@ export default function OutreachGeneratorForm() {
         >
           <FieldGroup className="w-full min-w-0">
             <FieldSet className="w-full min-w-0">
-              <div className="flex flex-row">
-                <Controller
-                  name="target"
+              <TextAreaField
+                control={form.control}
+                name="sender"
+                label="Who are you?"
+                placeholder="Ahmed, founder of FundScout. Previously built payments infrastructure at a Series B fintech."
+                maxLength={300}
+                rows={3}
+              />
+              <TextAreaField
+                control={form.control}
+                name="recipient"
+                label="Who are you writing to?"
+                placeholder="Jordan Lee, partner at Sequoia who led seed rounds in developer tools."
+                maxLength={300}
+                rows={3}
+              />
+              <TextAreaField
+                control={form.control}
+                name="reason"
+                label="Why are you reaching out?"
+                placeholder="We met at YC Demo Day in March. Their portfolio overlaps with what I'm building, and I'd value their take before we raise."
+                maxLength={1000}
+                rows={6}
+              />
+              <ChoiceField
+                control={form.control}
+                name="ask"
+                label="What do you want from them?"
+                labels={outreachAskLabels}
+                className="grid grid-cols-2 gap-3 sm:grid-cols-3"
+              />
+            </FieldSet>
+
+            {/* ================= Style ================= */}
+            <FieldSet className="w-full min-w-0">
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
+                <ChoiceField
                   control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field
-                      data-invalid={fieldState.invalid}
-                      className="w-full min-w-0"
-                    >
-                      <FieldLabel>Who are you targeting?</FieldLabel>
-                      <RadioGroup
-                        value={field.value}
-                        onValueChange={field.onChange}
-                        className="grid gap-3"
-                      >
-                        <Field orientation="horizontal">
-                          <RadioGroupItem
-                            value="Businesses"
-                            id="target-businesses"
-                          />
-                          <FieldLabel htmlFor="target-businesses">
-                            Businesses
-                          </FieldLabel>
-                        </Field>
-                        <Field orientation="horizontal">
-                          <RadioGroupItem
-                            value="Consumers"
-                            id="target-consumers"
-                          />
-                          <FieldLabel htmlFor="target-consumers">
-                            Consumers
-                          </FieldLabel>
-                        </Field>
-                        <Field orientation="horizontal">
-                          <RadioGroupItem value="Both" id="target-both" />
-                          <FieldLabel htmlFor="target-both">Both</FieldLabel>
-                        </Field>
-                      </RadioGroup>
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
+                  name="method"
+                  label="Format"
+                  labels={outreachMethodLabels}
                 />
-                <Controller
-                  name="industry"
+                <ChoiceField
                   control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field
-                      data-invalid={fieldState.invalid}
-                      className="w-full min-w-0"
-                    >
-                      <FieldLabel htmlFor="industry-response">
-                        What industry are you building in?
-                      </FieldLabel>
-                      <InputGroup className="w-full min-w-0 overflow-hidden">
-                        <InputGroupTextarea
-                          {...field}
-                          id="industry-response"
-                          placeholder="Finance, Restaurant, Marketing, etc."
-                          rows={6}
-                          maxLength={64}
-                          className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                          aria-invalid={fieldState.invalid}
-                        />
-                        <InputGroupAddon align="block-end">
-                          <InputGroupText className="tabular-nums">
-                            {field.value?.length ?? 0}/64 characters
-                          </InputGroupText>
-                        </InputGroupAddon>
-                      </InputGroup>
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
+                  name="tone"
+                  label="Tone"
+                  labels={outreachToneLabels}
+                />
+                <ChoiceField
+                  control={form.control}
+                  name="length"
+                  label="Length"
+                  labels={outreachLengthLabels}
                 />
               </div>
-
-              <Controller
-                name="name"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    className="w-full min-w-0"
-                  >
-                    <FieldLabel htmlFor="name-response">
-                      What&apos;s the name of your product/company?
-                    </FieldLabel>
-
-                    <InputGroup className="w-full min-w-0 overflow-hidden">
-                      <InputGroupTextarea
-                        {...field}
-                        id="name-response"
-                        placeholder="Dysipher, FundScout, Lexia, etc."
-                        rows={6}
-                        maxLength={30}
-                        className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                        aria-invalid={fieldState.invalid}
-                      />
-
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText className="tabular-nums">
-                          {field.value?.length ?? 0}/30 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-
-              <Controller
-                name="explanation"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    className="w-full min-w-0"
-                  >
-                    <FieldLabel htmlFor="explanation-response">
-                      In simple terms, what does your solution do?
-                    </FieldLabel>
-
-                    <InputGroup className="w-full min-w-0 overflow-hidden">
-                      <InputGroupTextarea
-                        {...field}
-                        id="explanation-response"
-                        placeholder="Turning dormant, unorganized data into interpretable, actionable insights."
-                        rows={6}
-                        maxLength={512}
-                        className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                        aria-invalid={fieldState.invalid}
-                      />
-
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText className="tabular-nums">
-                          {field.value?.length ?? 0}/512 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <Controller
-                name="user"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    className="w-full min-w-0"
-                  >
-                    <FieldLabel htmlFor="user-response">
-                      Who is your ideal user?
-                    </FieldLabel>
-
-                    <InputGroup className="w-full min-w-0 overflow-hidden">
-                      <InputGroupTextarea
-                        {...field}
-                        id="user-response"
-                        placeholder="HR, Doctors, Coaches, etc."
-                        rows={6}
-                        maxLength={256}
-                        className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                        aria-invalid={fieldState.invalid}
-                      />
-
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText className="tabular-nums">
-                          {field.value?.length ?? 0}/256 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <Controller
-                name="problem"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    className="w-full min-w-0"
-                  >
-                    <FieldLabel htmlFor="problem-response">
-                      What problem does your solution solve?
-                    </FieldLabel>
-
-                    <InputGroup className="w-full min-w-0 overflow-hidden">
-                      <InputGroupTextarea
-                        {...field}
-                        id="user-response"
-                        placeholder="Managers have to deal with messy paperwork."
-                        rows={6}
-                        maxLength={256}
-                        className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                        aria-invalid={fieldState.invalid}
-                      />
-
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText className="tabular-nums">
-                          {field.value?.length ?? 0}/256 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <Controller
-                name="result"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    className="w-full min-w-0"
-                  >
-                    <FieldLabel htmlFor="problem-response">
-                      What is the biggest outcome from using your solution?
-                    </FieldLabel>
-
-                    <InputGroup className="w-full min-w-0 overflow-hidden">
-                      <InputGroupTextarea
-                        {...field}
-                        id="user-response"
-                        placeholder="Saves money and time."
-                        rows={6}
-                        maxLength={256}
-                        className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                        aria-invalid={fieldState.invalid}
-                      />
-
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText className="tabular-nums">
-                          {field.value?.length ?? 0}/256 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
-              <Controller
-                name="unique"
-                control={form.control}
-                render={({ field, fieldState }) => (
-                  <Field
-                    data-invalid={fieldState.invalid}
-                    className="w-full min-w-0"
-                  >
-                    <FieldLabel htmlFor="unique-response">
-                      What makes it better, faster, cheaper, easier, or more
-                      unique than existing options?
-                    </FieldLabel>
-
-                    <InputGroup className="w-full min-w-0 overflow-hidden">
-                      <InputGroupTextarea
-                        {...field}
-                        id="user-response"
-                        placeholder="First web-based application to support multiple employee-accounts."
-                        rows={6}
-                        maxLength={256}
-                        className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
-                        aria-invalid={fieldState.invalid}
-                      />
-
-                      <InputGroupAddon align="block-end">
-                        <InputGroupText className="tabular-nums">
-                          {field.value?.length ?? 0}/256 characters
-                        </InputGroupText>
-                      </InputGroupAddon>
-                    </InputGroup>
-
-                    {fieldState.invalid && (
-                      <FieldError errors={[fieldState.error]} />
-                    )}
-                  </Field>
-                )}
-              />
             </FieldSet>
           </FieldGroup>
         </form>
@@ -524,7 +177,7 @@ export default function OutreachGeneratorForm() {
       <CardFooter className="flex justify-end">
         <Button
           type="submit"
-          form="oneliner"
+          form="outreach"
           size="lg"
           className="px-8 py-6 text-lg font-semibold bg-blue-600 text-white hover:bg-blue-700"
         >
@@ -532,5 +185,105 @@ export default function OutreachGeneratorForm() {
         </Button>
       </CardFooter>
     </Card>
+  );
+}
+
+/* ---------- Text field helper ---------- */
+
+type TextFieldName = "sender" | "recipient" | "reason";
+
+function TextAreaField({
+  control,
+  name,
+  label,
+  placeholder,
+  maxLength,
+  rows = 1,
+}: {
+  control: Control<OutreachFormValues>;
+  name: TextFieldName;
+  label: string;
+  placeholder: string;
+  maxLength: number;
+  rows?: number;
+}) {
+  const id = `${name}-response`;
+
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({ field, fieldState }) => (
+        <Field data-invalid={fieldState.invalid} className="w-full min-w-0">
+          <FieldLabel htmlFor={id}>{label}</FieldLabel>
+
+          <InputGroup className="w-full min-w-0 overflow-hidden">
+            <InputGroupTextarea
+              {...field}
+              id={id}
+              placeholder={placeholder}
+              rows={rows}
+              maxLength={maxLength}
+              className="min-h-10 w-full min-w-0 resize-none whitespace-pre-wrap break-words [overflow-wrap:anywhere]"
+              aria-invalid={fieldState.invalid}
+            />
+
+            <InputGroupAddon align="block-end">
+              <InputGroupText className="tabular-nums">
+                {field.value?.length ?? 0}/{maxLength} characters
+              </InputGroupText>
+            </InputGroupAddon>
+          </InputGroup>
+
+          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+        </Field>
+      )}
+    />
+  );
+}
+
+/* ---------- Choice field helper ---------- */
+
+type ChoiceFieldName = "ask" | "method" | "tone" | "length";
+
+function ChoiceField({
+  control,
+  name,
+  label,
+  labels,
+  className = "grid gap-3",
+}: {
+  control: Control<OutreachFormValues>;
+  name: ChoiceFieldName;
+  label: string;
+  labels: Record<string, string>;
+  // layout of the options; a single column by default
+  className?: string;
+}) {
+  return (
+    <Controller
+      name={name}
+      control={control}
+      render={({ field, fieldState }) => (
+        <Field data-invalid={fieldState.invalid} className="w-full min-w-0">
+          <FieldLabel>{label}</FieldLabel>
+          <RadioGroup
+            value={field.value}
+            onValueChange={field.onChange}
+            className={className}
+          >
+            {Object.entries(labels).map(([value, optionLabel]) => (
+              <Field key={value} orientation="horizontal">
+                <RadioGroupItem value={value} id={`${name}-${value}`} />
+                <FieldLabel htmlFor={`${name}-${value}`} className="font-normal">
+                  {optionLabel}
+                </FieldLabel>
+              </Field>
+            ))}
+          </RadioGroup>
+          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+        </Field>
+      )}
+    />
   );
 }
