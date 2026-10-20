@@ -191,35 +191,23 @@ model OutreachSubmission {
   interactionId String              @unique
   interaction   OutreachInteraction @relation(fields: [interactionId], references: [id], onDelete: Cascade)
 
-  sender_name       String
-  sender_role       String?
-  sender_company    String?
-  sender_background String?
+  // free text, so one form works for any kind of recipient
+  sender    String
+  recipient String
+  reason    String
 
-  recipient_name     String?
-  recipient_role     String?
-  recipient_company  String?
-  recipient_industry String?
-
-  goal                    OutreachGoal
-  method                  OutreachMethod
-  relationship            OutreachRelationship
-  relationship_context    String?
-  reason_for_reaching_out String
-  call_to_action          OutreachCallToAction
-  call_to_action_details  String?
-  tone                    OutreachTone
-  length                  OutreachLength
+  ask    OutreachAsk
+  method OutreachMethod
+  tone   OutreachTone
+  length OutreachLength
 }
 
-enum OutreachGoal {
-  BOOK_A_MEETING
-  ASK_FOR_ADVICE
-  PITCH_PRODUCT_SERVICE
-  FOLLOW_UP
-  NETWORK
-  RECRUITING_JOB_OPPORTUNITY
-  PARTNERSHIP
+enum OutreachAsk {
+  BOOK_A_CALL
+  GET_ADVICE
+  GET_FEEDBACK
+  AN_INTRODUCTION
+  GET_A_REPLY
   OTHER
 }
 
@@ -228,31 +216,10 @@ enum OutreachMethod {
   MESSAGE_LINKEDIN_MOBILE
 }
 
-enum OutreachRelationship {
-  COLD_OUTREACH
-  MET_BEFORE
-  REFERRED_BY_SOMEONE
-  EXISTING_CUSTOMER_CLIENT
-  PAST_CONVERSATION
-  FRIEND_ACQUAINTANCE
-}
-
-enum OutreachCallToAction {
-  SCHEDULE_A_CALL
-  REPLY_WITH_INTEREST
-  GIVE_FEEDBACK
-  TRY_THE_PRODUCT
-  MAKE_AN_INTRODUCTION
-  ANSWER_A_QUESTION
-  OTHER
-}
-
 enum OutreachTone {
   PROFESSIONAL
-  CASUAL
   FRIENDLY
-  CONFIDENT
-  WARM
+  CASUAL
   DIRECT
 }
 

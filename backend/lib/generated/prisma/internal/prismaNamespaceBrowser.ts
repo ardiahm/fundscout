@@ -220,21 +220,11 @@ export type OutreachInteractionScalarFieldEnum = (typeof OutreachInteractionScal
 export const OutreachSubmissionScalarFieldEnum = {
   id: 'id',
   interactionId: 'interactionId',
-  sender_name: 'sender_name',
-  sender_role: 'sender_role',
-  sender_company: 'sender_company',
-  sender_background: 'sender_background',
-  recipient_name: 'recipient_name',
-  recipient_role: 'recipient_role',
-  recipient_company: 'recipient_company',
-  recipient_industry: 'recipient_industry',
-  goal: 'goal',
+  sender: 'sender',
+  recipient: 'recipient',
+  reason: 'reason',
+  ask: 'ask',
   method: 'method',
-  relationship: 'relationship',
-  relationship_context: 'relationship_context',
-  reason_for_reaching_out: 'reason_for_reaching_out',
-  call_to_action: 'call_to_action',
-  call_to_action_details: 'call_to_action_details',
   tone: 'tone',
   length: 'length'
 } as const
@@ -397,17 +387,9 @@ export type OutreachInteractionOrderByRelevanceFieldEnum = (typeof OutreachInter
 export const OutreachSubmissionOrderByRelevanceFieldEnum = {
   id: 'id',
   interactionId: 'interactionId',
-  sender_name: 'sender_name',
-  sender_role: 'sender_role',
-  sender_company: 'sender_company',
-  sender_background: 'sender_background',
-  recipient_name: 'recipient_name',
-  recipient_role: 'recipient_role',
-  recipient_company: 'recipient_company',
-  recipient_industry: 'recipient_industry',
-  relationship_context: 'relationship_context',
-  reason_for_reaching_out: 'reason_for_reaching_out',
-  call_to_action_details: 'call_to_action_details'
+  sender: 'sender',
+  recipient: 'recipient',
+  reason: 'reason'
 } as const
 
 export type OutreachSubmissionOrderByRelevanceFieldEnum = (typeof OutreachSubmissionOrderByRelevanceFieldEnum)[keyof typeof OutreachSubmissionOrderByRelevanceFieldEnum]

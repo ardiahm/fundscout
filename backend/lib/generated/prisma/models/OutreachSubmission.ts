@@ -27,21 +27,11 @@ export type AggregateOutreachSubmission = {
 export type OutreachSubmissionMinAggregateOutputType = {
   id: string | null
   interactionId: string | null
-  sender_name: string | null
-  sender_role: string | null
-  sender_company: string | null
-  sender_background: string | null
-  recipient_name: string | null
-  recipient_role: string | null
-  recipient_company: string | null
-  recipient_industry: string | null
-  goal: $Enums.OutreachGoal | null
+  sender: string | null
+  recipient: string | null
+  reason: string | null
+  ask: $Enums.OutreachAsk | null
   method: $Enums.OutreachMethod | null
-  relationship: $Enums.OutreachRelationship | null
-  relationship_context: string | null
-  reason_for_reaching_out: string | null
-  call_to_action: $Enums.OutreachCallToAction | null
-  call_to_action_details: string | null
   tone: $Enums.OutreachTone | null
   length: $Enums.OutreachLength | null
 }
@@ -49,21 +39,11 @@ export type OutreachSubmissionMinAggregateOutputType = {
 export type OutreachSubmissionMaxAggregateOutputType = {
   id: string | null
   interactionId: string | null
-  sender_name: string | null
-  sender_role: string | null
-  sender_company: string | null
-  sender_background: string | null
-  recipient_name: string | null
-  recipient_role: string | null
-  recipient_company: string | null
-  recipient_industry: string | null
-  goal: $Enums.OutreachGoal | null
+  sender: string | null
+  recipient: string | null
+  reason: string | null
+  ask: $Enums.OutreachAsk | null
   method: $Enums.OutreachMethod | null
-  relationship: $Enums.OutreachRelationship | null
-  relationship_context: string | null
-  reason_for_reaching_out: string | null
-  call_to_action: $Enums.OutreachCallToAction | null
-  call_to_action_details: string | null
   tone: $Enums.OutreachTone | null
   length: $Enums.OutreachLength | null
 }
@@ -71,21 +51,11 @@ export type OutreachSubmissionMaxAggregateOutputType = {
 export type OutreachSubmissionCountAggregateOutputType = {
   id: number
   interactionId: number
-  sender_name: number
-  sender_role: number
-  sender_company: number
-  sender_background: number
-  recipient_name: number
-  recipient_role: number
-  recipient_company: number
-  recipient_industry: number
-  goal: number
+  sender: number
+  recipient: number
+  reason: number
+  ask: number
   method: number
-  relationship: number
-  relationship_context: number
-  reason_for_reaching_out: number
-  call_to_action: number
-  call_to_action_details: number
   tone: number
   length: number
   _all: number
@@ -95,21 +65,11 @@ export type OutreachSubmissionCountAggregateOutputType = {
 export type OutreachSubmissionMinAggregateInputType = {
   id?: true
   interactionId?: true
-  sender_name?: true
-  sender_role?: true
-  sender_company?: true
-  sender_background?: true
-  recipient_name?: true
-  recipient_role?: true
-  recipient_company?: true
-  recipient_industry?: true
-  goal?: true
+  sender?: true
+  recipient?: true
+  reason?: true
+  ask?: true
   method?: true
-  relationship?: true
-  relationship_context?: true
-  reason_for_reaching_out?: true
-  call_to_action?: true
-  call_to_action_details?: true
   tone?: true
   length?: true
 }
@@ -117,21 +77,11 @@ export type OutreachSubmissionMinAggregateInputType = {
 export type OutreachSubmissionMaxAggregateInputType = {
   id?: true
   interactionId?: true
-  sender_name?: true
-  sender_role?: true
-  sender_company?: true
-  sender_background?: true
-  recipient_name?: true
-  recipient_role?: true
-  recipient_company?: true
-  recipient_industry?: true
-  goal?: true
+  sender?: true
+  recipient?: true
+  reason?: true
+  ask?: true
   method?: true
-  relationship?: true
-  relationship_context?: true
-  reason_for_reaching_out?: true
-  call_to_action?: true
-  call_to_action_details?: true
   tone?: true
   length?: true
 }
@@ -139,21 +89,11 @@ export type OutreachSubmissionMaxAggregateInputType = {
 export type OutreachSubmissionCountAggregateInputType = {
   id?: true
   interactionId?: true
-  sender_name?: true
-  sender_role?: true
-  sender_company?: true
-  sender_background?: true
-  recipient_name?: true
-  recipient_role?: true
-  recipient_company?: true
-  recipient_industry?: true
-  goal?: true
+  sender?: true
+  recipient?: true
+  reason?: true
+  ask?: true
   method?: true
-  relationship?: true
-  relationship_context?: true
-  reason_for_reaching_out?: true
-  call_to_action?: true
-  call_to_action_details?: true
   tone?: true
   length?: true
   _all?: true
@@ -234,21 +174,11 @@ export type OutreachSubmissionGroupByArgs<ExtArgs extends runtime.Types.Extensio
 export type OutreachSubmissionGroupByOutputType = {
   id: string
   interactionId: string
-  sender_name: string
-  sender_role: string | null
-  sender_company: string | null
-  sender_background: string | null
-  recipient_name: string | null
-  recipient_role: string | null
-  recipient_company: string | null
-  recipient_industry: string | null
-  goal: $Enums.OutreachGoal
+  sender: string
+  recipient: string
+  reason: string
+  ask: $Enums.OutreachAsk
   method: $Enums.OutreachMethod
-  relationship: $Enums.OutreachRelationship
-  relationship_context: string | null
-  reason_for_reaching_out: string
-  call_to_action: $Enums.OutreachCallToAction
-  call_to_action_details: string | null
   tone: $Enums.OutreachTone
   length: $Enums.OutreachLength
   _count: OutreachSubmissionCountAggregateOutputType | null
@@ -277,21 +207,11 @@ export type OutreachSubmissionWhereInput = {
   NOT?: Prisma.OutreachSubmissionWhereInput | Prisma.OutreachSubmissionWhereInput[]
   id?: Prisma.StringFilter<"OutreachSubmission"> | string
   interactionId?: Prisma.StringFilter<"OutreachSubmission"> | string
-  sender_name?: Prisma.StringFilter<"OutreachSubmission"> | string
-  sender_role?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  sender_company?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  sender_background?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_name?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_role?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_company?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_industry?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  goal?: Prisma.EnumOutreachGoalFilter<"OutreachSubmission"> | $Enums.OutreachGoal
+  sender?: Prisma.StringFilter<"OutreachSubmission"> | string
+  recipient?: Prisma.StringFilter<"OutreachSubmission"> | string
+  reason?: Prisma.StringFilter<"OutreachSubmission"> | string
+  ask?: Prisma.EnumOutreachAskFilter<"OutreachSubmission"> | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFilter<"OutreachSubmission"> | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFilter<"OutreachSubmission"> | $Enums.OutreachRelationship
-  relationship_context?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  reason_for_reaching_out?: Prisma.StringFilter<"OutreachSubmission"> | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFilter<"OutreachSubmission"> | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
   tone?: Prisma.EnumOutreachToneFilter<"OutreachSubmission"> | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFilter<"OutreachSubmission"> | $Enums.OutreachLength
   interaction?: Prisma.XOR<Prisma.OutreachInteractionScalarRelationFilter, Prisma.OutreachInteractionWhereInput>
@@ -300,21 +220,11 @@ export type OutreachSubmissionWhereInput = {
 export type OutreachSubmissionOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   interactionId?: Prisma.SortOrder
-  sender_name?: Prisma.SortOrder
-  sender_role?: Prisma.SortOrderInput | Prisma.SortOrder
-  sender_company?: Prisma.SortOrderInput | Prisma.SortOrder
-  sender_background?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_role?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_company?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_industry?: Prisma.SortOrderInput | Prisma.SortOrder
-  goal?: Prisma.SortOrder
+  sender?: Prisma.SortOrder
+  recipient?: Prisma.SortOrder
+  reason?: Prisma.SortOrder
+  ask?: Prisma.SortOrder
   method?: Prisma.SortOrder
-  relationship?: Prisma.SortOrder
-  relationship_context?: Prisma.SortOrderInput | Prisma.SortOrder
-  reason_for_reaching_out?: Prisma.SortOrder
-  call_to_action?: Prisma.SortOrder
-  call_to_action_details?: Prisma.SortOrderInput | Prisma.SortOrder
   tone?: Prisma.SortOrder
   length?: Prisma.SortOrder
   interaction?: Prisma.OutreachInteractionOrderByWithRelationInput
@@ -327,21 +237,11 @@ export type OutreachSubmissionWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.OutreachSubmissionWhereInput | Prisma.OutreachSubmissionWhereInput[]
   OR?: Prisma.OutreachSubmissionWhereInput[]
   NOT?: Prisma.OutreachSubmissionWhereInput | Prisma.OutreachSubmissionWhereInput[]
-  sender_name?: Prisma.StringFilter<"OutreachSubmission"> | string
-  sender_role?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  sender_company?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  sender_background?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_name?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_role?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_company?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  recipient_industry?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  goal?: Prisma.EnumOutreachGoalFilter<"OutreachSubmission"> | $Enums.OutreachGoal
+  sender?: Prisma.StringFilter<"OutreachSubmission"> | string
+  recipient?: Prisma.StringFilter<"OutreachSubmission"> | string
+  reason?: Prisma.StringFilter<"OutreachSubmission"> | string
+  ask?: Prisma.EnumOutreachAskFilter<"OutreachSubmission"> | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFilter<"OutreachSubmission"> | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFilter<"OutreachSubmission"> | $Enums.OutreachRelationship
-  relationship_context?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
-  reason_for_reaching_out?: Prisma.StringFilter<"OutreachSubmission"> | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFilter<"OutreachSubmission"> | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.StringNullableFilter<"OutreachSubmission"> | string | null
   tone?: Prisma.EnumOutreachToneFilter<"OutreachSubmission"> | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFilter<"OutreachSubmission"> | $Enums.OutreachLength
   interaction?: Prisma.XOR<Prisma.OutreachInteractionScalarRelationFilter, Prisma.OutreachInteractionWhereInput>
@@ -350,21 +250,11 @@ export type OutreachSubmissionWhereUniqueInput = Prisma.AtLeast<{
 export type OutreachSubmissionOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   interactionId?: Prisma.SortOrder
-  sender_name?: Prisma.SortOrder
-  sender_role?: Prisma.SortOrderInput | Prisma.SortOrder
-  sender_company?: Prisma.SortOrderInput | Prisma.SortOrder
-  sender_background?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_role?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_company?: Prisma.SortOrderInput | Prisma.SortOrder
-  recipient_industry?: Prisma.SortOrderInput | Prisma.SortOrder
-  goal?: Prisma.SortOrder
+  sender?: Prisma.SortOrder
+  recipient?: Prisma.SortOrder
+  reason?: Prisma.SortOrder
+  ask?: Prisma.SortOrder
   method?: Prisma.SortOrder
-  relationship?: Prisma.SortOrder
-  relationship_context?: Prisma.SortOrderInput | Prisma.SortOrder
-  reason_for_reaching_out?: Prisma.SortOrder
-  call_to_action?: Prisma.SortOrder
-  call_to_action_details?: Prisma.SortOrderInput | Prisma.SortOrder
   tone?: Prisma.SortOrder
   length?: Prisma.SortOrder
   _count?: Prisma.OutreachSubmissionCountOrderByAggregateInput
@@ -378,42 +268,22 @@ export type OutreachSubmissionScalarWhereWithAggregatesInput = {
   NOT?: Prisma.OutreachSubmissionScalarWhereWithAggregatesInput | Prisma.OutreachSubmissionScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
   interactionId?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
-  sender_name?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
-  sender_role?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  sender_company?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  sender_background?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  recipient_name?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  recipient_role?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  recipient_company?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  recipient_industry?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  goal?: Prisma.EnumOutreachGoalWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachGoal
+  sender?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
+  recipient?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
+  reason?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
+  ask?: Prisma.EnumOutreachAskWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachRelationship
-  relationship_context?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
-  reason_for_reaching_out?: Prisma.StringWithAggregatesFilter<"OutreachSubmission"> | string
-  call_to_action?: Prisma.EnumOutreachCallToActionWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.StringNullableWithAggregatesFilter<"OutreachSubmission"> | string | null
   tone?: Prisma.EnumOutreachToneWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthWithAggregatesFilter<"OutreachSubmission"> | $Enums.OutreachLength
 }
 
 export type OutreachSubmissionCreateInput = {
   id?: string
-  sender_name: string
-  sender_role?: string | null
-  sender_company?: string | null
-  sender_background?: string | null
-  recipient_name?: string | null
-  recipient_role?: string | null
-  recipient_company?: string | null
-  recipient_industry?: string | null
-  goal: $Enums.OutreachGoal
+  sender: string
+  recipient: string
+  reason: string
+  ask: $Enums.OutreachAsk
   method: $Enums.OutreachMethod
-  relationship: $Enums.OutreachRelationship
-  relationship_context?: string | null
-  reason_for_reaching_out: string
-  call_to_action: $Enums.OutreachCallToAction
-  call_to_action_details?: string | null
   tone: $Enums.OutreachTone
   length: $Enums.OutreachLength
   interaction: Prisma.OutreachInteractionCreateNestedOneWithoutSubmissionInput
@@ -422,42 +292,22 @@ export type OutreachSubmissionCreateInput = {
 export type OutreachSubmissionUncheckedCreateInput = {
   id?: string
   interactionId: string
-  sender_name: string
-  sender_role?: string | null
-  sender_company?: string | null
-  sender_background?: string | null
-  recipient_name?: string | null
-  recipient_role?: string | null
-  recipient_company?: string | null
-  recipient_industry?: string | null
-  goal: $Enums.OutreachGoal
+  sender: string
+  recipient: string
+  reason: string
+  ask: $Enums.OutreachAsk
   method: $Enums.OutreachMethod
-  relationship: $Enums.OutreachRelationship
-  relationship_context?: string | null
-  reason_for_reaching_out: string
-  call_to_action: $Enums.OutreachCallToAction
-  call_to_action_details?: string | null
   tone: $Enums.OutreachTone
   length: $Enums.OutreachLength
 }
 
 export type OutreachSubmissionUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_name?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  goal?: Prisma.EnumOutreachGoalFieldUpdateOperationsInput | $Enums.OutreachGoal
+  sender?: Prisma.StringFieldUpdateOperationsInput | string
+  recipient?: Prisma.StringFieldUpdateOperationsInput | string
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  ask?: Prisma.EnumOutreachAskFieldUpdateOperationsInput | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFieldUpdateOperationsInput | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFieldUpdateOperationsInput | $Enums.OutreachRelationship
-  relationship_context?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  reason_for_reaching_out?: Prisma.StringFieldUpdateOperationsInput | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFieldUpdateOperationsInput | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tone?: Prisma.EnumOutreachToneFieldUpdateOperationsInput | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFieldUpdateOperationsInput | $Enums.OutreachLength
   interaction?: Prisma.OutreachInteractionUpdateOneRequiredWithoutSubmissionNestedInput
@@ -466,21 +316,11 @@ export type OutreachSubmissionUpdateInput = {
 export type OutreachSubmissionUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   interactionId?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_name?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  goal?: Prisma.EnumOutreachGoalFieldUpdateOperationsInput | $Enums.OutreachGoal
+  sender?: Prisma.StringFieldUpdateOperationsInput | string
+  recipient?: Prisma.StringFieldUpdateOperationsInput | string
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  ask?: Prisma.EnumOutreachAskFieldUpdateOperationsInput | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFieldUpdateOperationsInput | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFieldUpdateOperationsInput | $Enums.OutreachRelationship
-  relationship_context?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  reason_for_reaching_out?: Prisma.StringFieldUpdateOperationsInput | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFieldUpdateOperationsInput | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tone?: Prisma.EnumOutreachToneFieldUpdateOperationsInput | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFieldUpdateOperationsInput | $Enums.OutreachLength
 }
@@ -488,42 +328,22 @@ export type OutreachSubmissionUncheckedUpdateInput = {
 export type OutreachSubmissionCreateManyInput = {
   id?: string
   interactionId: string
-  sender_name: string
-  sender_role?: string | null
-  sender_company?: string | null
-  sender_background?: string | null
-  recipient_name?: string | null
-  recipient_role?: string | null
-  recipient_company?: string | null
-  recipient_industry?: string | null
-  goal: $Enums.OutreachGoal
+  sender: string
+  recipient: string
+  reason: string
+  ask: $Enums.OutreachAsk
   method: $Enums.OutreachMethod
-  relationship: $Enums.OutreachRelationship
-  relationship_context?: string | null
-  reason_for_reaching_out: string
-  call_to_action: $Enums.OutreachCallToAction
-  call_to_action_details?: string | null
   tone: $Enums.OutreachTone
   length: $Enums.OutreachLength
 }
 
 export type OutreachSubmissionUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_name?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  goal?: Prisma.EnumOutreachGoalFieldUpdateOperationsInput | $Enums.OutreachGoal
+  sender?: Prisma.StringFieldUpdateOperationsInput | string
+  recipient?: Prisma.StringFieldUpdateOperationsInput | string
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  ask?: Prisma.EnumOutreachAskFieldUpdateOperationsInput | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFieldUpdateOperationsInput | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFieldUpdateOperationsInput | $Enums.OutreachRelationship
-  relationship_context?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  reason_for_reaching_out?: Prisma.StringFieldUpdateOperationsInput | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFieldUpdateOperationsInput | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tone?: Prisma.EnumOutreachToneFieldUpdateOperationsInput | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFieldUpdateOperationsInput | $Enums.OutreachLength
 }
@@ -531,21 +351,11 @@ export type OutreachSubmissionUpdateManyMutationInput = {
 export type OutreachSubmissionUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   interactionId?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_name?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  goal?: Prisma.EnumOutreachGoalFieldUpdateOperationsInput | $Enums.OutreachGoal
+  sender?: Prisma.StringFieldUpdateOperationsInput | string
+  recipient?: Prisma.StringFieldUpdateOperationsInput | string
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  ask?: Prisma.EnumOutreachAskFieldUpdateOperationsInput | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFieldUpdateOperationsInput | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFieldUpdateOperationsInput | $Enums.OutreachRelationship
-  relationship_context?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  reason_for_reaching_out?: Prisma.StringFieldUpdateOperationsInput | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFieldUpdateOperationsInput | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tone?: Prisma.EnumOutreachToneFieldUpdateOperationsInput | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFieldUpdateOperationsInput | $Enums.OutreachLength
 }
@@ -564,21 +374,11 @@ export type OutreachSubmissionOrderByRelevanceInput = {
 export type OutreachSubmissionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   interactionId?: Prisma.SortOrder
-  sender_name?: Prisma.SortOrder
-  sender_role?: Prisma.SortOrder
-  sender_company?: Prisma.SortOrder
-  sender_background?: Prisma.SortOrder
-  recipient_name?: Prisma.SortOrder
-  recipient_role?: Prisma.SortOrder
-  recipient_company?: Prisma.SortOrder
-  recipient_industry?: Prisma.SortOrder
-  goal?: Prisma.SortOrder
+  sender?: Prisma.SortOrder
+  recipient?: Prisma.SortOrder
+  reason?: Prisma.SortOrder
+  ask?: Prisma.SortOrder
   method?: Prisma.SortOrder
-  relationship?: Prisma.SortOrder
-  relationship_context?: Prisma.SortOrder
-  reason_for_reaching_out?: Prisma.SortOrder
-  call_to_action?: Prisma.SortOrder
-  call_to_action_details?: Prisma.SortOrder
   tone?: Prisma.SortOrder
   length?: Prisma.SortOrder
 }
@@ -586,21 +386,11 @@ export type OutreachSubmissionCountOrderByAggregateInput = {
 export type OutreachSubmissionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   interactionId?: Prisma.SortOrder
-  sender_name?: Prisma.SortOrder
-  sender_role?: Prisma.SortOrder
-  sender_company?: Prisma.SortOrder
-  sender_background?: Prisma.SortOrder
-  recipient_name?: Prisma.SortOrder
-  recipient_role?: Prisma.SortOrder
-  recipient_company?: Prisma.SortOrder
-  recipient_industry?: Prisma.SortOrder
-  goal?: Prisma.SortOrder
+  sender?: Prisma.SortOrder
+  recipient?: Prisma.SortOrder
+  reason?: Prisma.SortOrder
+  ask?: Prisma.SortOrder
   method?: Prisma.SortOrder
-  relationship?: Prisma.SortOrder
-  relationship_context?: Prisma.SortOrder
-  reason_for_reaching_out?: Prisma.SortOrder
-  call_to_action?: Prisma.SortOrder
-  call_to_action_details?: Prisma.SortOrder
   tone?: Prisma.SortOrder
   length?: Prisma.SortOrder
 }
@@ -608,21 +398,11 @@ export type OutreachSubmissionMaxOrderByAggregateInput = {
 export type OutreachSubmissionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   interactionId?: Prisma.SortOrder
-  sender_name?: Prisma.SortOrder
-  sender_role?: Prisma.SortOrder
-  sender_company?: Prisma.SortOrder
-  sender_background?: Prisma.SortOrder
-  recipient_name?: Prisma.SortOrder
-  recipient_role?: Prisma.SortOrder
-  recipient_company?: Prisma.SortOrder
-  recipient_industry?: Prisma.SortOrder
-  goal?: Prisma.SortOrder
+  sender?: Prisma.SortOrder
+  recipient?: Prisma.SortOrder
+  reason?: Prisma.SortOrder
+  ask?: Prisma.SortOrder
   method?: Prisma.SortOrder
-  relationship?: Prisma.SortOrder
-  relationship_context?: Prisma.SortOrder
-  reason_for_reaching_out?: Prisma.SortOrder
-  call_to_action?: Prisma.SortOrder
-  call_to_action_details?: Prisma.SortOrder
   tone?: Prisma.SortOrder
   length?: Prisma.SortOrder
 }
@@ -659,20 +439,12 @@ export type OutreachSubmissionUncheckedUpdateOneWithoutInteractionNestedInput = 
   update?: Prisma.XOR<Prisma.XOR<Prisma.OutreachSubmissionUpdateToOneWithWhereWithoutInteractionInput, Prisma.OutreachSubmissionUpdateWithoutInteractionInput>, Prisma.OutreachSubmissionUncheckedUpdateWithoutInteractionInput>
 }
 
-export type EnumOutreachGoalFieldUpdateOperationsInput = {
-  set?: $Enums.OutreachGoal
+export type EnumOutreachAskFieldUpdateOperationsInput = {
+  set?: $Enums.OutreachAsk
 }
 
 export type EnumOutreachMethodFieldUpdateOperationsInput = {
   set?: $Enums.OutreachMethod
-}
-
-export type EnumOutreachRelationshipFieldUpdateOperationsInput = {
-  set?: $Enums.OutreachRelationship
-}
-
-export type EnumOutreachCallToActionFieldUpdateOperationsInput = {
-  set?: $Enums.OutreachCallToAction
 }
 
 export type EnumOutreachToneFieldUpdateOperationsInput = {
@@ -685,42 +457,22 @@ export type EnumOutreachLengthFieldUpdateOperationsInput = {
 
 export type OutreachSubmissionCreateWithoutInteractionInput = {
   id?: string
-  sender_name: string
-  sender_role?: string | null
-  sender_company?: string | null
-  sender_background?: string | null
-  recipient_name?: string | null
-  recipient_role?: string | null
-  recipient_company?: string | null
-  recipient_industry?: string | null
-  goal: $Enums.OutreachGoal
+  sender: string
+  recipient: string
+  reason: string
+  ask: $Enums.OutreachAsk
   method: $Enums.OutreachMethod
-  relationship: $Enums.OutreachRelationship
-  relationship_context?: string | null
-  reason_for_reaching_out: string
-  call_to_action: $Enums.OutreachCallToAction
-  call_to_action_details?: string | null
   tone: $Enums.OutreachTone
   length: $Enums.OutreachLength
 }
 
 export type OutreachSubmissionUncheckedCreateWithoutInteractionInput = {
   id?: string
-  sender_name: string
-  sender_role?: string | null
-  sender_company?: string | null
-  sender_background?: string | null
-  recipient_name?: string | null
-  recipient_role?: string | null
-  recipient_company?: string | null
-  recipient_industry?: string | null
-  goal: $Enums.OutreachGoal
+  sender: string
+  recipient: string
+  reason: string
+  ask: $Enums.OutreachAsk
   method: $Enums.OutreachMethod
-  relationship: $Enums.OutreachRelationship
-  relationship_context?: string | null
-  reason_for_reaching_out: string
-  call_to_action: $Enums.OutreachCallToAction
-  call_to_action_details?: string | null
   tone: $Enums.OutreachTone
   length: $Enums.OutreachLength
 }
@@ -743,42 +495,22 @@ export type OutreachSubmissionUpdateToOneWithWhereWithoutInteractionInput = {
 
 export type OutreachSubmissionUpdateWithoutInteractionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_name?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  goal?: Prisma.EnumOutreachGoalFieldUpdateOperationsInput | $Enums.OutreachGoal
+  sender?: Prisma.StringFieldUpdateOperationsInput | string
+  recipient?: Prisma.StringFieldUpdateOperationsInput | string
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  ask?: Prisma.EnumOutreachAskFieldUpdateOperationsInput | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFieldUpdateOperationsInput | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFieldUpdateOperationsInput | $Enums.OutreachRelationship
-  relationship_context?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  reason_for_reaching_out?: Prisma.StringFieldUpdateOperationsInput | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFieldUpdateOperationsInput | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tone?: Prisma.EnumOutreachToneFieldUpdateOperationsInput | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFieldUpdateOperationsInput | $Enums.OutreachLength
 }
 
 export type OutreachSubmissionUncheckedUpdateWithoutInteractionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_name?: Prisma.StringFieldUpdateOperationsInput | string
-  sender_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  sender_background?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_role?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_company?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  recipient_industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  goal?: Prisma.EnumOutreachGoalFieldUpdateOperationsInput | $Enums.OutreachGoal
+  sender?: Prisma.StringFieldUpdateOperationsInput | string
+  recipient?: Prisma.StringFieldUpdateOperationsInput | string
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  ask?: Prisma.EnumOutreachAskFieldUpdateOperationsInput | $Enums.OutreachAsk
   method?: Prisma.EnumOutreachMethodFieldUpdateOperationsInput | $Enums.OutreachMethod
-  relationship?: Prisma.EnumOutreachRelationshipFieldUpdateOperationsInput | $Enums.OutreachRelationship
-  relationship_context?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  reason_for_reaching_out?: Prisma.StringFieldUpdateOperationsInput | string
-  call_to_action?: Prisma.EnumOutreachCallToActionFieldUpdateOperationsInput | $Enums.OutreachCallToAction
-  call_to_action_details?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tone?: Prisma.EnumOutreachToneFieldUpdateOperationsInput | $Enums.OutreachTone
   length?: Prisma.EnumOutreachLengthFieldUpdateOperationsInput | $Enums.OutreachLength
 }
@@ -788,21 +520,11 @@ export type OutreachSubmissionUncheckedUpdateWithoutInteractionInput = {
 export type OutreachSubmissionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   interactionId?: boolean
-  sender_name?: boolean
-  sender_role?: boolean
-  sender_company?: boolean
-  sender_background?: boolean
-  recipient_name?: boolean
-  recipient_role?: boolean
-  recipient_company?: boolean
-  recipient_industry?: boolean
-  goal?: boolean
+  sender?: boolean
+  recipient?: boolean
+  reason?: boolean
+  ask?: boolean
   method?: boolean
-  relationship?: boolean
-  relationship_context?: boolean
-  reason_for_reaching_out?: boolean
-  call_to_action?: boolean
-  call_to_action_details?: boolean
   tone?: boolean
   length?: boolean
   interaction?: boolean | Prisma.OutreachInteractionDefaultArgs<ExtArgs>
@@ -811,21 +533,11 @@ export type OutreachSubmissionSelect<ExtArgs extends runtime.Types.Extensions.In
 export type OutreachSubmissionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   interactionId?: boolean
-  sender_name?: boolean
-  sender_role?: boolean
-  sender_company?: boolean
-  sender_background?: boolean
-  recipient_name?: boolean
-  recipient_role?: boolean
-  recipient_company?: boolean
-  recipient_industry?: boolean
-  goal?: boolean
+  sender?: boolean
+  recipient?: boolean
+  reason?: boolean
+  ask?: boolean
   method?: boolean
-  relationship?: boolean
-  relationship_context?: boolean
-  reason_for_reaching_out?: boolean
-  call_to_action?: boolean
-  call_to_action_details?: boolean
   tone?: boolean
   length?: boolean
   interaction?: boolean | Prisma.OutreachInteractionDefaultArgs<ExtArgs>
@@ -834,21 +546,11 @@ export type OutreachSubmissionSelectCreateManyAndReturn<ExtArgs extends runtime.
 export type OutreachSubmissionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   interactionId?: boolean
-  sender_name?: boolean
-  sender_role?: boolean
-  sender_company?: boolean
-  sender_background?: boolean
-  recipient_name?: boolean
-  recipient_role?: boolean
-  recipient_company?: boolean
-  recipient_industry?: boolean
-  goal?: boolean
+  sender?: boolean
+  recipient?: boolean
+  reason?: boolean
+  ask?: boolean
   method?: boolean
-  relationship?: boolean
-  relationship_context?: boolean
-  reason_for_reaching_out?: boolean
-  call_to_action?: boolean
-  call_to_action_details?: boolean
   tone?: boolean
   length?: boolean
   interaction?: boolean | Prisma.OutreachInteractionDefaultArgs<ExtArgs>
@@ -857,26 +559,16 @@ export type OutreachSubmissionSelectUpdateManyAndReturn<ExtArgs extends runtime.
 export type OutreachSubmissionSelectScalar = {
   id?: boolean
   interactionId?: boolean
-  sender_name?: boolean
-  sender_role?: boolean
-  sender_company?: boolean
-  sender_background?: boolean
-  recipient_name?: boolean
-  recipient_role?: boolean
-  recipient_company?: boolean
-  recipient_industry?: boolean
-  goal?: boolean
+  sender?: boolean
+  recipient?: boolean
+  reason?: boolean
+  ask?: boolean
   method?: boolean
-  relationship?: boolean
-  relationship_context?: boolean
-  reason_for_reaching_out?: boolean
-  call_to_action?: boolean
-  call_to_action_details?: boolean
   tone?: boolean
   length?: boolean
 }
 
-export type OutreachSubmissionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "interactionId" | "sender_name" | "sender_role" | "sender_company" | "sender_background" | "recipient_name" | "recipient_role" | "recipient_company" | "recipient_industry" | "goal" | "method" | "relationship" | "relationship_context" | "reason_for_reaching_out" | "call_to_action" | "call_to_action_details" | "tone" | "length", ExtArgs["result"]["outreachSubmission"]>
+export type OutreachSubmissionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "interactionId" | "sender" | "recipient" | "reason" | "ask" | "method" | "tone" | "length", ExtArgs["result"]["outreachSubmission"]>
 export type OutreachSubmissionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   interaction?: boolean | Prisma.OutreachInteractionDefaultArgs<ExtArgs>
 }
@@ -895,21 +587,11 @@ export type $OutreachSubmissionPayload<ExtArgs extends runtime.Types.Extensions.
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     interactionId: string
-    sender_name: string
-    sender_role: string | null
-    sender_company: string | null
-    sender_background: string | null
-    recipient_name: string | null
-    recipient_role: string | null
-    recipient_company: string | null
-    recipient_industry: string | null
-    goal: $Enums.OutreachGoal
+    sender: string
+    recipient: string
+    reason: string
+    ask: $Enums.OutreachAsk
     method: $Enums.OutreachMethod
-    relationship: $Enums.OutreachRelationship
-    relationship_context: string | null
-    reason_for_reaching_out: string
-    call_to_action: $Enums.OutreachCallToAction
-    call_to_action_details: string | null
     tone: $Enums.OutreachTone
     length: $Enums.OutreachLength
   }, ExtArgs["result"]["outreachSubmission"]>
@@ -1338,21 +1020,11 @@ export interface Prisma__OutreachSubmissionClient<T, Null = never, ExtArgs exten
 export interface OutreachSubmissionFieldRefs {
   readonly id: Prisma.FieldRef<"OutreachSubmission", 'String'>
   readonly interactionId: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly sender_name: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly sender_role: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly sender_company: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly sender_background: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly recipient_name: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly recipient_role: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly recipient_company: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly recipient_industry: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly goal: Prisma.FieldRef<"OutreachSubmission", 'OutreachGoal'>
+  readonly sender: Prisma.FieldRef<"OutreachSubmission", 'String'>
+  readonly recipient: Prisma.FieldRef<"OutreachSubmission", 'String'>
+  readonly reason: Prisma.FieldRef<"OutreachSubmission", 'String'>
+  readonly ask: Prisma.FieldRef<"OutreachSubmission", 'OutreachAsk'>
   readonly method: Prisma.FieldRef<"OutreachSubmission", 'OutreachMethod'>
-  readonly relationship: Prisma.FieldRef<"OutreachSubmission", 'OutreachRelationship'>
-  readonly relationship_context: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly reason_for_reaching_out: Prisma.FieldRef<"OutreachSubmission", 'String'>
-  readonly call_to_action: Prisma.FieldRef<"OutreachSubmission", 'OutreachCallToAction'>
-  readonly call_to_action_details: Prisma.FieldRef<"OutreachSubmission", 'String'>
   readonly tone: Prisma.FieldRef<"OutreachSubmission", 'OutreachTone'>
   readonly length: Prisma.FieldRef<"OutreachSubmission", 'OutreachLength'>
 }
