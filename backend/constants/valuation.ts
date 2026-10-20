@@ -32,6 +32,13 @@ export const BENCHMARK_ROUND_SIZE: Record<ValuationStage, number> = {
 // fewer FundScout rounds than this and we fall back to a broader sample
 export const MIN_COMPARABLE_ROUNDS = 5;
 
+// FundScout's rounds skew toward large funds, so blend them with the benchmark.
+// FundScout's share = rounds / (rounds + this), e.g. 7 rounds -> 19%, 50 -> 62%
+export const BLEND_PRIOR_ROUNDS = 30;
+
+// with at least this many methods, drop the highest and lowest from the range
+export const TRIM_RANGE_MIN_METHODS = 4;
+
 // scorecard: how much each self rating moves the baseline
 export const SCORECARD_WEIGHTS = {
   team: 0.3,

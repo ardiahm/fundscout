@@ -1,6 +1,7 @@
 import { ValuationStage } from "@/backend/lib/generated/prisma/enums";
 import {
   BENCHMARK_ROUND_SIZE,
+  BLEND_PRIOR_ROUNDS,
   MIN_COMPARABLE_ROUNDS,
   valuationStageLabels,
 } from "@/backend/constants/valuation";
@@ -63,6 +64,17 @@ function summarize(rows: RoundRow[]) {
   };
 }
 
+// trust FundScout more the more rounds it has, the benchmark otherwise
+export function blendWithBenchmark(stage: ValuationStage, medianRound: number, sampleSize: number) {
+  const fundScoutShare = sampleSize / (sampleSize + BLEND_PRIOR_ROUNDS);
+  const benchmark = BENCHMARK_ROUND_SIZE[stage];
+
+  return {
+    blendedRound: fundScoutShare * medianRound + (1 - fundScoutShare) * benchmark,
+    fundScoutShare,
+  };
+}
+
 // use the most specific sample with enough rounds: stage + sector, then stage, then a benchmark
 export function pickComparables({
   stage,
@@ -80,11 +92,25 @@ export function pickComparables({
   const stageRounds = dedupeRounds(stageRows);
 
   if (sectorRounds.length >= MIN_COMPARABLE_ROUNDS) {
-    return { source: "stage-and-sector", stageLabel, sector, ...summarize(sectorRounds) };
+    const summary = summarize(sectorRounds);
+    return {
+      source: "stage-and-sector",
+      stageLabel,
+      sector,
+      ...summary,
+      ...blendWithBenchmark(stage, summary.medianRound, summary.sampleSize),
+    };
   }
 
   if (stageRounds.length >= MIN_COMPARABLE_ROUNDS) {
-    return { source: "stage", stageLabel, sector: null, ...summarize(stageRounds) };
+    const summary = summarize(stageRounds);
+    return {
+      source: "stage",
+      stageLabel,
+      sector: null,
+      ...summary,
+      ...blendWithBenchmark(stage, summary.medianRound, summary.sampleSize),
+    };
   }
 
   const benchmark = BENCHMARK_ROUND_SIZE[stage];
@@ -97,6 +123,8 @@ export function pickComparables({
     medianRound: benchmark,
     p25Round: benchmark * 0.6,
     p75Round: benchmark * 1.5,
+    blendedRound: benchmark,
+    fundScoutShare: 0,
     // still show whatever real rounds we have
     examples: mostRecent(stageRounds),
   };

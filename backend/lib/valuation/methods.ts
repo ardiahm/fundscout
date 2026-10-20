@@ -6,6 +6,7 @@ import {
   REVENUE_MULTIPLE_BANDS,
   SCORECARD_WEIGHTS,
   STAGE_DILUTION,
+  TRIM_RANGE_MIN_METHODS,
 } from "@/backend/constants/valuation";
 import { formatUSD } from "@/app/lib/utils";
 import type {
@@ -45,13 +46,14 @@ export function comparablesMethod(
   comparables: Comparables,
 ): ValuationMethodResult {
   const dilution = STAGE_DILUTION[inputs.stage];
-  const value = tidy(preMoneyFromRound(comparables.medianRound, dilution));
+  const value = tidy(preMoneyFromRound(comparables.blendedRound, dilution));
   const percent = Math.round(dilution * 100);
+  const share = Math.round((comparables.fundScoutShare ?? 0) * 100);
 
   const sample =
     comparables.source === "benchmark"
-      ? `FundScout doesn't have enough ${comparables.stageLabel} rounds yet, so this uses a typical market round of ${usd(comparables.medianRound)}`
-      : `The typical ${comparables.stageLabel}${comparables.sector ? ` ${comparables.sector}` : ""} round on FundScout is ${usd(comparables.medianRound)} (${comparables.sampleSize} rounds)`;
+      ? `FundScout doesn't have enough ${comparables.stageLabel} rounds yet, so this uses a typical market round of ${usd(comparables.blendedRound)}`
+      : `The typical ${comparables.stageLabel}${comparables.sector ? ` ${comparables.sector}` : ""} round on FundScout is ${usd(comparables.medianRound)} (${comparables.sampleSize} rounds). Blended with the wider market (FundScout counts for ${share}%), that's ${usd(comparables.blendedRound)}`;
 
   return {
     key: "comparables",
@@ -158,7 +160,8 @@ function median(sortedValues: number[]) {
     : (sortedValues[middle - 1] + sortedValues[middle]) / 2;
 }
 
-// runs every method that applies and turns them into a low / mid / high range
+// runs every method that applies and turns them into a low / mid / high range.
+// mid is the median of every method; low and high skip the extremes when there are 4+
 export function computeValuation(
   inputs: ValuationInputs,
   comparables: Comparables,
@@ -175,10 +178,14 @@ export function computeValuation(
 
   const values = methods.map((method) => method.value).sort((a, b) => a - b);
 
+  // one outlier method shouldn't stretch the range
+  const rangeValues =
+    values.length >= TRIM_RANGE_MIN_METHODS ? values.slice(1, -1) : values;
+
   return {
-    low: values[0],
+    low: rangeValues[0],
     mid: tidy(median(values)),
-    high: values[values.length - 1],
+    high: rangeValues[rangeValues.length - 1],
     methods,
   };
 }

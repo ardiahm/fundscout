@@ -10,7 +10,13 @@ import {
   targetDilutionMethod,
   type ValuationInputs,
 } from "./methods";
-import { dedupeRounds, pickComparables, quantile, type RoundRow } from "./comparables";
+import {
+  blendWithBenchmark,
+  dedupeRounds,
+  pickComparables,
+  quantile,
+  type RoundRow,
+} from "./comparables";
 import type { Comparables } from "@/backend/types/valuation";
 
 const preRevenueSeed: ValuationInputs = {
@@ -39,15 +45,17 @@ const revenueSeriesA: ValuationInputs = {
   grossMargin: 75,
 };
 
-// a $4M median round: 4M * 0.8 / 0.2 = $16M pre-money
+// a $4M blended round: 4M * 0.8 / 0.2 = $16M pre-money
 const comparables: Comparables = {
   source: "stage",
   stageLabel: "Seed",
   sector: null,
   sampleSize: 12,
-  medianRound: 4_000_000,
+  medianRound: 6_000_000,
   p25Round: 2_000_000,
-  p75Round: 6_000_000,
+  p75Round: 8_000_000,
+  blendedRound: 4_000_000,
+  fundScoutShare: 0.2,
   examples: [],
 };
 
@@ -90,6 +98,9 @@ describe("comparables", () => {
     expect(result.source).toBe("stage-and-sector");
     expect(result.sector).toBe("Fintech");
     expect(result.medianRound).toBe(3_000_000);
+    // 5 rounds -> FundScout counts for 5/35, the $3.5M Seed benchmark for the rest
+    expect(result.fundScoutShare).toBeCloseTo(5 / 35);
+    expect(result.blendedRound).toBeCloseTo((5 / 35) * 3_000_000 + (30 / 35) * 3_500_000);
     expect(result.examples).toHaveLength(5);
   });
 
@@ -113,7 +124,18 @@ describe("comparables", () => {
     });
     expect(benchmark.source).toBe("benchmark");
     expect(benchmark.medianRound).toBe(1_000_000);
+    expect(benchmark.blendedRound).toBe(1_000_000);
+    expect(benchmark.fundScoutShare).toBe(0);
     expect(benchmark.sampleSize).toBe(3);
+  });
+
+  it("trusts FundScout more as it gets more rounds", () => {
+    const few = blendWithBenchmark(ValuationStage.SEED, 10_500_000, 7);
+    const many = blendWithBenchmark(ValuationStage.SEED, 10_500_000, 300);
+
+    expect(few.fundScoutShare).toBeCloseTo(0.19, 2);
+    expect(many.fundScoutShare).toBeGreaterThan(0.9);
+    expect(few.blendedRound).toBeLessThan(many.blendedRound);
   });
 });
 
@@ -182,8 +204,8 @@ describe("computeValuation", () => {
       "berkus",
       "targetDilution",
     ]);
-    // berkus 5M, raise 8M, comparables 16M, scorecard 16M
-    expect(result.low).toBe(5_000_000);
+    // berkus 5M, raise 8M, comparables 16M, scorecard 16M: the range drops 5M and one 16M
+    expect(result.low).toBe(8_000_000);
     expect(result.mid).toBe(12_000_000);
     expect(result.high).toBe(16_000_000);
   });
@@ -199,8 +221,20 @@ describe("computeValuation", () => {
     ]);
     // $1.2M ARR x 21.6
     expect(result.methods.find((m) => m.key === "revenueMultiple")?.value).toBe(25_900_000);
-    expect(result.low).toBeLessThanOrEqual(result.mid);
-    expect(result.mid).toBeLessThanOrEqual(result.high);
+    // 16M, 16M, 25.9M, 40M: the range drops 16M and 40M
+    expect(result.low).toBe(16_000_000);
+    expect(result.mid).toBe(21_000_000);
+    expect(result.high).toBe(25_900_000);
+  });
+
+  it("keeps every method in the range when only three apply", () => {
+    const preRevenueSeriesA = { ...preRevenueSeed, stage: ValuationStage.SERIES_A };
+    const result = computeValuation(preRevenueSeriesA, comparables);
+
+    // comparables 16M, scorecard 16M, raise 8M
+    expect(result.methods).toHaveLength(3);
+    expect(result.low).toBe(8_000_000);
+    expect(result.high).toBe(16_000_000);
   });
 
   it("gives the same answer for the same inputs", () => {

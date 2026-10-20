@@ -54,6 +54,10 @@ export type Comparables = {
   medianRound: number;
   p25Round: number;
   p75Round: number;
+  // FundScout's median mixed with the market benchmark; this is what the math uses
+  blendedRound: number;
+  // how much of blendedRound comes from FundScout (0-1). Missing on early saved results
+  fundScoutShare?: number;
   examples: ComparableRound[];
 };
 

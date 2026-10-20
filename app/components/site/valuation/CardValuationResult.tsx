@@ -158,7 +158,7 @@ export function CardValuationResult({
   );
 }
 
-// a line from low to high, with a dot for each method and a marker at the midpoint
+// spans every method; the shaded part is the range, so outlier methods sit outside it
 function RangeBar({
   low,
   high,
@@ -170,12 +170,19 @@ function RangeBar({
   mid: number;
   methods: ValuationMethodResult[];
 }) {
-  const spread = high - low;
+  const values = methods.map((method) => method.value);
+  const min = Math.min(low, ...values);
+  const max = Math.max(high, ...values);
+  const spread = max - min;
   const position = (value: number) =>
-    spread === 0 ? 50 : ((value - low) / spread) * 100;
+    spread === 0 ? 50 : ((value - min) / spread) * 100;
 
   return (
-    <div className="relative mt-5 mb-1 h-2 rounded-full bg-emerald-200" aria-hidden>
+    <div className="relative mt-5 mb-1 h-2 rounded-full bg-emerald-100" aria-hidden>
+      <span
+        className="absolute inset-y-0 rounded-full bg-emerald-300"
+        style={{ left: `${position(low)}%`, right: `${100 - position(high)}%` }}
+      />
       {methods.map((method) => (
         <span
           key={method.key}
@@ -193,8 +200,17 @@ function RangeBar({
 }
 
 function ComparablesPanel({ comparables }: { comparables: Comparables }) {
-  const { source, sampleSize, stageLabel, sector, medianRound, p25Round, p75Round, examples } =
-    comparables;
+  const {
+    source,
+    sampleSize,
+    stageLabel,
+    sector,
+    medianRound,
+    p25Round,
+    p75Round,
+    fundScoutShare,
+    examples,
+  } = comparables;
 
   const heading =
     source === "benchmark"
@@ -203,7 +219,17 @@ function ComparablesPanel({ comparables }: { comparables: Comparables }) {
 
   return (
     <div className="grid gap-3 rounded-xl border border-sky-100 bg-sky-50 p-4">
-      <p className="m-0 text-sm font-medium">{heading}</p>
+      <div className="grid gap-1">
+        <p className="m-0 text-sm font-medium">{heading}</p>
+        {/* older results were saved before blending */}
+        {source !== "benchmark" && fundScoutShare !== undefined && (
+          <p className="m-0 text-xs text-muted-foreground">
+            FundScout&apos;s rounds lean toward large funds, so they count for{" "}
+            {Math.round(fundScoutShare * 100)}% of the estimate for now, alongside
+            typical market rounds. That share grows as we add more rounds.
+          </p>
+        )}
+      </div>
       <div className="grid grid-cols-2 gap-2 text-sm">
         <div>
           <p className="m-0 text-muted-foreground">Typical round</p>
