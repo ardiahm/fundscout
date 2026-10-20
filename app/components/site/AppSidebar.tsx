@@ -41,7 +41,7 @@ export const generatorItems = [
   },
 ];
 
-const toolItems = [
+export const toolItems = [
   {
     title: "Investor Finder",
     url: "/coming-soon",

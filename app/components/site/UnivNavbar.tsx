@@ -12,7 +12,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
 import { UserButton } from "@clerk/nextjs";
-import { generatorItems } from "./AppSidebar";
+import { generatorItems, toolItems } from "./AppSidebar";
 
 export default function UnivNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -139,6 +139,26 @@ export default function UnivNavBar() {
                     {item.title}
                   </Link>
                 ))}
+              </div>
+
+              {/* Startup Tools (only the ones that exist so far) */}
+              <div className="border-t border-gray-200 pt-3">
+                <p className="text-sm font-medium text-gray-500 pb-1">
+                  Startup Tools
+                </p>
+                {toolItems
+                  .filter((item) => item.url !== "/coming-soon")
+                  .map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.url}
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-3 text-xl text-gray-800 hover:text-blue-600 transition-colors duration-200 py-2"
+                    >
+                      <item.icon className="h-5 w-5" />
+                      {item.title}
+                    </Link>
+                  ))}
               </div>
 
               <div className="flex border-t border-gray-200 pt-3">
